@@ -1,0 +1,1025 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="Nacos初探（单机）, Java,Python,GO">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>Nacos初探（单机） | Murray个人笔记</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery.min.js"></script>
+
+<meta name="generator" content="Hexo 5.2.0"><link rel="alternate" href="/atom.xml" title="Murray个人笔记" type="application/atom+xml">
+</head>
+
+
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">Murray个人笔记</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">Murray个人笔记</div>
+        <div class="logo-desc">
+            
+            Never really desperate, only the lost of the soul.
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/5.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">Nacos初探（单机）</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+        padding-top: 1.5rem
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        height: calc(100vh - 250px);
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/docker/">
+                                <span class="chip bg-color">docker</span>
+                            </a>
+                        
+                            <a href="/tags/nacos/">
+                                <span class="chip bg-color">nacos</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2021-02-28
+                </div>
+                
+
+                
+
+                
+
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h3 id="Mysql"><a href="#Mysql" class="headerlink" title="Mysql"></a>Mysql</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">docker run -p 13306:3306 --name mysql57 \</span><br><span class="line">--restart=always \</span><br><span class="line">--privileged=<span class="literal">true</span> \</span><br><span class="line">-v /home/data/mysql/conf:/etc/mysql/conf.d \</span><br><span class="line">-v /home/data/mysql/logs:/logs \</span><br><span class="line">-v /home/data/mysql/data:/var/lib/mysql \</span><br><span class="line">-e MYSQL_ROOT_PASSWORD=1q2w3e \</span><br><span class="line">-e MYSQL_DATABASE=nacos \</span><br><span class="line">-e MYSQL_USER=nacos \</span><br><span class="line">-e MYSQL_PASSWORD=1q2w3e \</span><br><span class="line">-d mysql:5.7</span><br></pre></td></tr></table></figure>
+
+<h3 id="Nacos之Docker部署"><a href="#Nacos之Docker部署" class="headerlink" title="Nacos之Docker部署"></a>Nacos之Docker部署</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">docker run -d \</span><br><span class="line">--privileged=<span class="literal">true</span> \</span><br><span class="line">-e PREFER_HOST_MODE=ip \</span><br><span class="line">-e MODE=standalone \</span><br><span class="line">--link mysql57:mysql_host \</span><br><span class="line">-e SPRING_DATASOURCE_PLATFORM=mysql \</span><br><span class="line">-e MYSQL_SERVICE_HOST=mysql_host \</span><br><span class="line">-e MYSQL_SERVICE_PORT=3306 \</span><br><span class="line">-e MYSQL_SERVICE_USER=root \</span><br><span class="line">-e MYSQL_SERVICE_PASSWORD=1q2w3e \</span><br><span class="line">-e MYSQL_SERVICE_DB_NAME=nacos \</span><br><span class="line">-e TIME_ZONE=<span class="string">&#x27;Asia/Shanghai&#x27;</span> \</span><br><span class="line">-v /home/data/nacos/logs:/home/nacos/logs \</span><br><span class="line">-p 8848:8848 \</span><br><span class="line">--name nacos \</span><br><span class="line">--restart=always \</span><br><span class="line">nacos/nacos-server</span><br></pre></td></tr></table></figure>
+<h3 id="Nacos初始化数据库"><a href="#Nacos初始化数据库" class="headerlink" title="Nacos初始化数据库"></a>Nacos初始化数据库</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br></pre></td><td class="code"><pre><span class="line">ALTER DATABASE `nacos`</span><br><span class="line">DEFAULT CHARACTER SET utf8mb4</span><br><span class="line">DEFAULT COLLATE utf8mb4_general_ci;</span><br><span class="line">create database <span class="keyword">if</span> not exists nacos default charset utf8mb4 collate utf8mb4_general_ci;</span><br><span class="line">CREATE TABLE config_info (</span><br><span class="line">  id bigint NOT NULL AUTO_INCREMENT,</span><br><span class="line">  data_id varchar(255) NOT NULL,</span><br><span class="line">  group_id varchar(128) NOT NULL,</span><br><span class="line">  tenant_id varchar(128) default <span class="string">&#x27;&#x27;</span>,</span><br><span class="line">  app_name varchar(128),</span><br><span class="line">  content longtext,</span><br><span class="line">  md5 varchar(32) DEFAULT NULL,</span><br><span class="line">  gmt_create timestamp NOT NULL DEFAULT <span class="string">&#x27;2010-05-05 00:00:00&#x27;</span>,</span><br><span class="line">  gmt_modified timestamp NOT NULL DEFAULT <span class="string">&#x27;2010-05-05 00:00:00&#x27;</span>,</span><br><span class="line">  src_user varchar(128) DEFAULT NULL,</span><br><span class="line">  src_ip varchar(50) DEFAULT NULL,</span><br><span class="line">  c_desc varchar(256) DEFAULT NULL,</span><br><span class="line">  c_use varchar(64) DEFAULT NULL,</span><br><span class="line">  effect varchar(64) DEFAULT NULL,</span><br><span class="line">  <span class="built_in">type</span> varchar(64) DEFAULT NULL,</span><br><span class="line">  c_schema LONG VARCHAR DEFAULT NULL,</span><br><span class="line">  constraint configinfo_id_key PRIMARY KEY (id),</span><br><span class="line">  constraint uk_configinfo_datagrouptenant UNIQUE (data_id,group_id,tenant_id));</span><br><span class="line">CREATE INDEX configinfo_dataid_key_idx ON config_info(data_id);</span><br><span class="line">CREATE INDEX configinfo_groupid_key_idx ON config_info(group_id);</span><br><span class="line">CREATE INDEX configinfo_dataid_group_key_idx ON config_info(data_id, group_id);</span><br><span class="line">CREATE TABLE his_config_info (</span><br><span class="line">  id bigint NOT NULL,</span><br><span class="line">  nid bigint NOT NULL AUTO_INCREMENT,</span><br><span class="line">  data_id varchar(255) NOT NULL,</span><br><span class="line">  group_id varchar(128) NOT NULL,</span><br><span class="line">  tenant_id varchar(128) default <span class="string">&#x27;&#x27;</span>,</span><br><span class="line">  app_name varchar(128),</span><br><span class="line">  content longtext,</span><br><span class="line">  md5 varchar(32) DEFAULT NULL,</span><br><span class="line">  gmt_create timestamp NOT NULL DEFAULT <span class="string">&#x27;2010-05-05 00:00:00.000&#x27;</span>,</span><br><span class="line">  gmt_modified timestamp NOT NULL DEFAULT <span class="string">&#x27;2010-05-05 00:00:00.000&#x27;</span>,</span><br><span class="line">  src_user varchar(128),</span><br><span class="line">  src_ip varchar(50) DEFAULT NULL,</span><br><span class="line">  op_type char(10) DEFAULT NULL,</span><br><span class="line">  constraint hisconfiginfo_nid_key PRIMARY KEY (nid));</span><br><span class="line">CREATE INDEX hisconfiginfo_dataid_key_idx ON his_config_info(data_id);</span><br><span class="line">CREATE INDEX hisconfiginfo_gmt_create_idx ON his_config_info(gmt_create);</span><br><span class="line">CREATE INDEX hisconfiginfo_gmt_modified_idx ON his_config_info(gmt_modified);</span><br><span class="line">CREATE TABLE config_info_beta (</span><br><span class="line">  id bigint NOT NULL AUTO_INCREMENT,</span><br><span class="line">  data_id varchar(255) NOT NULL,</span><br><span class="line">  group_id varchar(128) NOT NULL,</span><br><span class="line">  tenant_id varchar(128) default <span class="string">&#x27;&#x27;</span>,</span><br><span class="line">  app_name varchar(128),</span><br><span class="line">  content longtext,</span><br><span class="line">  beta_ips varchar(1024),</span><br><span class="line">  md5 varchar(32) DEFAULT NULL,</span><br><span class="line">  gmt_create timestamp NOT NULL DEFAULT <span class="string">&#x27;2010-05-05 00:00:00&#x27;</span>,</span><br><span class="line">  gmt_modified timestamp NOT NULL DEFAULT <span class="string">&#x27;2010-05-05 00:00:00&#x27;</span>,</span><br><span class="line">  src_user varchar(128),</span><br><span class="line">  src_ip varchar(50) DEFAULT NULL,</span><br><span class="line">  constraint configinfobeta_id_key PRIMARY KEY (id),</span><br><span class="line">  constraint uk_configinfobeta_datagrouptenant UNIQUE (data_id,group_id,tenant_id));</span><br><span class="line">CREATE TABLE config_info_tag (</span><br><span class="line">  id bigint NOT NULL AUTO_INCREMENT,</span><br><span class="line">  data_id varchar(255) NOT NULL,</span><br><span class="line">  group_id varchar(128) NOT NULL,</span><br><span class="line">  tenant_id varchar(128) default <span class="string">&#x27;&#x27;</span>,</span><br><span class="line">  tag_id varchar(128) NOT NULL,</span><br><span class="line">  app_name varchar(128),</span><br><span class="line">  content longtext,</span><br><span class="line">  md5 varchar(32) DEFAULT NULL,</span><br><span class="line">  gmt_create timestamp NOT NULL DEFAULT <span class="string">&#x27;2010-05-05 00:00:00&#x27;</span>,</span><br><span class="line">  gmt_modified timestamp NOT NULL DEFAULT <span class="string">&#x27;2010-05-05 00:00:00&#x27;</span>,</span><br><span class="line">  src_user varchar(128),</span><br><span class="line">  src_ip varchar(50) DEFAULT NULL,</span><br><span class="line">  constraint configinfotag_id_key PRIMARY KEY (id),</span><br><span class="line">  constraint uk_configinfotag_datagrouptenanttag UNIQUE (data_id,group_id,tenant_id,tag_id));</span><br><span class="line">CREATE TABLE config_info_aggr (</span><br><span class="line">  id bigint NOT NULL AUTO_INCREMENT,</span><br><span class="line">  data_id varchar(255) NOT NULL,</span><br><span class="line">  group_id varchar(128) NOT NULL,</span><br><span class="line">  tenant_id varchar(128) default <span class="string">&#x27;&#x27;</span>,</span><br><span class="line">  datum_id varchar(255) NOT NULL,</span><br><span class="line">  app_name varchar(128),</span><br><span class="line">  content longtext,</span><br><span class="line">  gmt_modified timestamp NOT NULL DEFAULT <span class="string">&#x27;2010-05-05 00:00:00&#x27;</span>,</span><br><span class="line">  constraint configinfoaggr_id_key PRIMARY KEY (id),</span><br><span class="line">  constraint uk_configinfoaggr_datagrouptenantdatum UNIQUE (data_id,group_id,tenant_id,datum_id));</span><br><span class="line">CREATE TABLE app_list (</span><br><span class="line"> id bigint NOT NULL AUTO_INCREMENT,</span><br><span class="line"> app_name varchar(128) NOT NULL,</span><br><span class="line"> is_dynamic_collect_disabled smallint DEFAULT 0,</span><br><span class="line"> last_sub_info_collected_time timestamp DEFAULT <span class="string">&#x27;1970-01-01 08:00:00.0&#x27;</span>,</span><br><span class="line"> sub_info_lock_owner varchar(128),</span><br><span class="line"> sub_info_lock_time timestamp DEFAULT <span class="string">&#x27;1970-01-01 08:00:00.0&#x27;</span>,</span><br><span class="line"> constraint applist_id_key PRIMARY KEY (id),</span><br><span class="line"> constraint uk_appname UNIQUE (app_name));</span><br><span class="line">CREATE TABLE app_configdata_relation_subs (</span><br><span class="line">  id bigint NOT NULL AUTO_INCREMENT,</span><br><span class="line">  app_name varchar(128) NOT NULL,</span><br><span class="line">  data_id varchar(255) NOT NULL,</span><br><span class="line">  group_id varchar(128) NOT NULL,</span><br><span class="line">  gmt_modified timestamp DEFAULT <span class="string">&#x27;2010-05-05 00:00:00&#x27;</span>,</span><br><span class="line">  constraint configdatarelationsubs_id_key PRIMARY KEY (id),</span><br><span class="line">  constraint uk_app_sub_config_datagroup UNIQUE (app_name, data_id, group_id));</span><br><span class="line">CREATE TABLE app_configdata_relation_pubs (</span><br><span class="line">  id bigint NOT NULL AUTO_INCREMENT,</span><br><span class="line">  app_name varchar(128) NOT NULL,</span><br><span class="line">  data_id varchar(255) NOT NULL,</span><br><span class="line">  group_id varchar(128) NOT NULL,</span><br><span class="line">  gmt_modified timestamp DEFAULT <span class="string">&#x27;2010-05-05 00:00:00&#x27;</span>,</span><br><span class="line">  constraint configdatarelationpubs_id_key PRIMARY KEY (id),</span><br><span class="line">  constraint uk_app_pub_config_datagroup UNIQUE (app_name, data_id, group_id));</span><br><span class="line">CREATE TABLE config_tags_relation (</span><br><span class="line">  id bigint NOT NULL,</span><br><span class="line">  tag_name varchar(128) NOT NULL,</span><br><span class="line">  tag_type varchar(64) DEFAULT NULL,</span><br><span class="line">  data_id varchar(255) NOT NULL,</span><br><span class="line">  group_id varchar(128) NOT NULL,</span><br><span class="line">  tenant_id varchar(128) DEFAULT <span class="string">&#x27;&#x27;</span>,</span><br><span class="line">  nid bigint NOT NULL AUTO_INCREMENT,</span><br><span class="line">  constraint config_tags_id_key PRIMARY KEY (nid),</span><br><span class="line">  constraint uk_configtagrelation_configidtag UNIQUE (id, tag_name, tag_type));</span><br><span class="line">CREATE INDEX config_tags_tenant_id_idx ON config_tags_relation(tenant_id);</span><br><span class="line">CREATE TABLE group_capacity (</span><br><span class="line">  id bigint NOT NULL AUTO_INCREMENT,</span><br><span class="line">  group_id varchar(128) DEFAULT <span class="string">&#x27;&#x27;</span>,</span><br><span class="line">  quota int(10) DEFAULT 0,</span><br><span class="line">  `usage` int(10) DEFAULT 0,</span><br><span class="line">  max_size int(10) DEFAULT 0,</span><br><span class="line">  max_aggr_count int(10) DEFAULT 0,</span><br><span class="line">  max_aggr_size int(10) DEFAULT 0,</span><br><span class="line">  max_history_count int(10) DEFAULT 0,</span><br><span class="line">  gmt_create timestamp DEFAULT <span class="string">&#x27;2010-05-05 00:00:00&#x27;</span>,</span><br><span class="line">  gmt_modified timestamp DEFAULT <span class="string">&#x27;2010-05-05 00:00:00&#x27;</span>,</span><br><span class="line">  constraint group_capacity_id_key PRIMARY KEY (id),</span><br><span class="line">  constraint uk_group_id UNIQUE (group_id));</span><br><span class="line">CREATE TABLE tenant_capacity (</span><br><span class="line">  id bigint NOT NULL AUTO_INCREMENT,</span><br><span class="line">  tenant_id varchar(128) DEFAULT <span class="string">&#x27;&#x27;</span>,</span><br><span class="line">  quota int(10) DEFAULT 0,</span><br><span class="line">  `usage` int(10) DEFAULT 0,</span><br><span class="line">  max_size int(10) DEFAULT 0,</span><br><span class="line">  max_aggr_count int(10) DEFAULT 0,</span><br><span class="line">  max_aggr_size int(10) DEFAULT 0,</span><br><span class="line">  max_history_count int(10) DEFAULT 0,</span><br><span class="line">  gmt_create timestamp DEFAULT <span class="string">&#x27;2010-05-05 00:00:00&#x27;</span>,</span><br><span class="line">  gmt_modified timestamp DEFAULT <span class="string">&#x27;2010-05-05 00:00:00&#x27;</span>,</span><br><span class="line">  constraint tenant_capacity_id_key PRIMARY KEY (id),</span><br><span class="line">  constraint uk_tenant_id UNIQUE (tenant_id));</span><br><span class="line">CREATE TABLE tenant_info (</span><br><span class="line">  id bigint NOT NULL AUTO_INCREMENT,</span><br><span class="line">  kp varchar(128) NOT NULL,</span><br><span class="line">  tenant_id varchar(128)  DEFAULT <span class="string">&#x27;&#x27;</span>,</span><br><span class="line">  tenant_name varchar(128)  DEFAULT <span class="string">&#x27;&#x27;</span>,</span><br><span class="line">  tenant_desc varchar(256)  DEFAULT NULL,</span><br><span class="line">  create_source varchar(32) DEFAULT NULL,</span><br><span class="line">  gmt_create bigint NOT NULL,</span><br><span class="line">  gmt_modified bigint NOT NULL,</span><br><span class="line">  constraint tenant_info_id_key PRIMARY KEY (id),</span><br><span class="line">  constraint uk_tenant_info_kptenantid UNIQUE (kp,tenant_id));</span><br><span class="line">CREATE INDEX tenant_info_tenant_id_idx ON tenant_info(tenant_id);</span><br><span class="line">CREATE TABLE users (</span><br><span class="line">        username varchar(50) NOT NULL PRIMARY KEY,</span><br><span class="line">        password varchar(500) NOT NULL,</span><br><span class="line">        enabled boolean NOT NULL DEFAULT <span class="literal">true</span></span><br><span class="line">);</span><br><span class="line">CREATE TABLE roles (</span><br><span class="line">        username varchar(50) NOT NULL,</span><br><span class="line">        `role` varchar(50) NOT NULL,</span><br><span class="line">        constraint uk_username_role UNIQUE (username,role)</span><br><span class="line">);</span><br><span class="line">CREATE TABLE permissions (</span><br><span class="line">    `role` varchar(50) NOT NULL,</span><br><span class="line">    resource varchar(512) NOT NULL,</span><br><span class="line">    `action` varchar(8) NOT NULL,</span><br><span class="line">    constraint uk_role_permission UNIQUE (role,resource,action)</span><br><span class="line">);</span><br><span class="line">INSERT INTO users (username, password, enabled) VALUES (<span class="string">&#x27;nacos&#x27;</span>, <span class="string">&#x27;$2a$10$EuWPZHzz32dJN7jexM34MOeYirDdFAZm2kuWj7VEOJhhZkDrxfvUu&#x27;</span>, TRUE);</span><br><span class="line">INSERT INTO roles (username, role) VALUES (<span class="string">&#x27;nacos&#x27;</span>, <span class="string">&#x27;ROLE_ADMIN&#x27;</span>);</span><br><span class="line">/******************************************/</span><br><span class="line">/*   ipv6 support   */</span><br><span class="line">/******************************************/</span><br><span class="line">ALTER TABLE `config_info_tag`</span><br><span class="line">MODIFY COLUMN `src_ip` varchar(50) CHARACTER SET utf8 COLLATE utf8_bin NULL DEFAULT NULL COMMENT <span class="string">&#x27;source ip&#x27;</span> AFTER `src_user`;</span><br><span class="line">ALTER TABLE `his_config_info`</span><br><span class="line">MODIFY COLUMN `src_ip` varchar(50) CHARACTER SET utf8 COLLATE utf8_bin NULL DEFAULT NULL AFTER `src_user`;</span><br><span class="line">ALTER TABLE `config_info`</span><br><span class="line">MODIFY COLUMN `src_ip` varchar(50) CHARACTER SET utf8 COLLATE utf8_bin NULL DEFAULT NULL COMMENT <span class="string">&#x27;source ip&#x27;</span> AFTER `src_user`;</span><br><span class="line">ALTER TABLE `config_info_beta`</span><br><span class="line">MODIFY COLUMN `src_ip` varchar(50) CHARACTER SET utf8 COLLATE utf8_bin NULL DEFAULT NULL COMMENT <span class="string">&#x27;source ip&#x27;</span> AFTER `src_user`;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">Murray</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://github.com/sunglowrise/sunglowrise.github.io/2021/02/28/Nacos%E5%88%9D%E6%8E%A2(1_4_1)/">https://github.com/sunglowrise/sunglowrise.github.io/2021/02/28/Nacos%E5%88%9D%E6%8E%A2(1_4_1)/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">Murray</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/docker/">
+                                    <span class="chip bg-color">docker</span>
+                                </a>
+                            
+                                <a href="/tags/nacos/">
+                                    <span class="chip bg-color">nacos</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2021/03/05/hello-world/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Hello World">
+                        
+                        <span class="card-title">Hello World</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-03-05
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            Murray
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Hexo/">
+                        <span class="chip bg-color">Hexo</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2020/10/08/EMQ%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="EMQ Docker 部署">
+                        
+                        <span class="card-title">EMQ Docker 部署</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-10-08
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            Murray
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/mq/">
+                        <span class="chip bg-color">mq</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: Murray个人笔记<br />'
+            + '文章作者: Murray<br />'
+            + '文章链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+<!-- 代码块折行 -->
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+    <div class="container row center-align" style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            <span id="year">2020</span>
+            <a href="/about" target="_blank">Murray</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/sunglowrise" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:sunglowrise@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+
+
+
+
+    <a href="https://www.zhihu.com/people/ma-liang-19-36" class="tooltipped" target="_blank" data-tooltip="关注我的知乎: https://www.zhihu.com/people/ma-liang-19-36" data-position="top" data-delay="50">
+        <i class="fab fa-zhihu1">知</i>
+    </a>
+
+
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/search.xml", 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <script type="text/javascript" src="/libs/background/ribbon-dynamic.js" async="async"></script>
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>

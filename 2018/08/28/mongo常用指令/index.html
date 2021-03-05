@@ -1,0 +1,996 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="mongodb基本指令, Java,Python,GO">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>mongodb基本指令 | Murray个人笔记</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery.min.js"></script>
+
+<meta name="generator" content="Hexo 5.2.0"><link rel="alternate" href="/atom.xml" title="Murray个人笔记" type="application/atom+xml">
+</head>
+
+
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">Murray个人笔记</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">Murray个人笔记</div>
+        <div class="logo-desc">
+            
+            Never really desperate, only the lost of the soul.
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/15.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">mongodb基本指令</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+        padding-top: 1.5rem
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        height: calc(100vh - 250px);
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/mongodb/">
+                                <span class="chip bg-color">mongodb</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2018-08-28
+                </div>
+                
+
+                
+
+                
+
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br><span class="line">255</span><br><span class="line">256</span><br><span class="line">257</span><br><span class="line">258</span><br><span class="line">259</span><br><span class="line">260</span><br><span class="line">261</span><br><span class="line">262</span><br><span class="line">263</span><br><span class="line">264</span><br><span class="line">265</span><br><span class="line">266</span><br><span class="line">267</span><br><span class="line">268</span><br><span class="line">269</span><br><span class="line">270</span><br><span class="line">271</span><br><span class="line">272</span><br><span class="line">273</span><br><span class="line">274</span><br><span class="line">275</span><br><span class="line">276</span><br><span class="line">277</span><br><span class="line">278</span><br><span class="line">279</span><br><span class="line">280</span><br><span class="line">281</span><br><span class="line">282</span><br></pre></td><td class="code"><pre><span class="line">一、数据库常用命令</span><br><span class="line"></span><br><span class="line">1、Help查看命令提示</span><br><span class="line">help</span><br><span class="line">db.help();</span><br><span class="line">db.yourColl.help();</span><br><span class="line">db.youColl.find().help();</span><br><span class="line">rs.help();</span><br><span class="line"></span><br><span class="line">2、切换&#x2F;创建数据库</span><br><span class="line">use yourDB; &#x2F;&#x2F;当创建一个集合(table)的时候会自动创建当前数据库</span><br><span class="line"></span><br><span class="line">3、查询所有数据库</span><br><span class="line">show dbs;</span><br><span class="line"></span><br><span class="line">4、删除当前使用数据库</span><br><span class="line">db.dropDatabase();</span><br><span class="line"></span><br><span class="line">5、从指定主机上克隆数据库</span><br><span class="line">db.cloneDatabase(“127.0.0.1”); &#x2F;&#x2F;将指定机器上的数据库的数据克隆到当前数据库</span><br><span class="line"></span><br><span class="line">6、从指定的机器上复制指定数据库数据到某个数据库</span><br><span class="line">db.copyDatabase(&quot;mydb&quot;, &quot;temp&quot;, &quot;127.0.0.1&quot;);&#x2F;&#x2F;将本机的mydb的数据复制到temp数据库中</span><br><span class="line"></span><br><span class="line">7、修复当前数据库</span><br><span class="line">db.repairDatabase();</span><br><span class="line"></span><br><span class="line">8、查看当前使用的数据库</span><br><span class="line">db.getName();</span><br><span class="line">db; &#x2F;&#x2F;db和getName方法是一样的效果，都可以查询当前使用的数据库</span><br><span class="line"></span><br><span class="line">9、显示当前db状态</span><br><span class="line">db.stats();</span><br><span class="line"></span><br><span class="line">10、当前db版本</span><br><span class="line">db.version();</span><br><span class="line"></span><br><span class="line">11、查看当前db的链接机器地址</span><br><span class="line">db.getMongo();</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">二、Collection聚集集合</span><br><span class="line">1、创建一个聚集集合（table）</span><br><span class="line">db.createCollection(“collName”, &#123;size: 20, capped: 5, max: 100&#125;);&#x2F;&#x2F;创建成功会显示&#123;“ok”:1&#125;</span><br><span class="line">&#x2F;&#x2F;判断集合是否为定容量db.collName.isCapped();</span><br><span class="line"></span><br><span class="line">2、得到指定名称的聚集集合（table）</span><br><span class="line">db.getCollection(&quot;account&quot;);</span><br><span class="line"></span><br><span class="line">3、得到当前db的所有聚集集合</span><br><span class="line">db.getCollectionNames();</span><br><span class="line"></span><br><span class="line">4、显示当前db所有聚集索引的状态</span><br><span class="line">db.printCollectionStats();</span><br><span class="line"></span><br><span class="line">三、用户相关 </span><br><span class="line">1、添加一个用户</span><br><span class="line">db.addUser(&quot;name&quot;);</span><br><span class="line">db.addUser(&quot;userName&quot;, &quot;pwd123&quot;, true); 添加用户、设置密码、是否只读</span><br><span class="line"></span><br><span class="line">2、数据库认证、安全模式</span><br><span class="line">db.auth(&quot;userName&quot;, &quot;123123&quot;);</span><br><span class="line"></span><br><span class="line">3、显示当前所有用户</span><br><span class="line">show users;</span><br><span class="line"></span><br><span class="line">4、删除用户</span><br><span class="line">db.removeUser(&quot;userName&quot;);</span><br><span class="line"></span><br><span class="line">四、聚集集合查询 </span><br><span class="line">1、查询所有记录</span><br><span class="line">db.userInfo.find();</span><br><span class="line">相当于：select* from userInfo;</span><br><span class="line">默认每页显示20条记录，当显示不下的情况下，可以用it迭代命令查询下一页数据。注意：键入it命令不能带“；”</span><br><span class="line"></span><br><span class="line">2、查询去掉后的当前聚集集合中的某列的重复数据</span><br><span class="line">db.userInfo.distinct(&quot;name&quot;);</span><br><span class="line">相当于：select distict name from userInfo;</span><br><span class="line"></span><br><span class="line">3、查询age &#x3D; 22的记录</span><br><span class="line">db.userInfo.find(&#123;&quot;age&quot;: 22&#125;);</span><br><span class="line">相当于： select * from userInfo where age &#x3D; 22;</span><br><span class="line"></span><br><span class="line">4、查询age &gt; 22的记录</span><br><span class="line">db.userInfo.find(&#123;age: &#123;$gt: 22&#125;&#125;);</span><br><span class="line">相当于：select * from userInfo where age &gt;22;</span><br><span class="line"></span><br><span class="line">5、查询age &lt; 22的记录db.userInfo.find(&#123;age: &#123;$lt: 22&#125;&#125;);</span><br><span class="line">相当于：select * from userInfo where age &lt;22;</span><br><span class="line"></span><br><span class="line">6、查询age &gt;&#x3D; 25的记录</span><br><span class="line">db.userInfo.find(&#123;age: &#123;$gte: 25&#125;&#125;);</span><br><span class="line">相当于：select * from userInfo where age &gt;&#x3D; 25;</span><br><span class="line"></span><br><span class="line">7、查询age &lt;&#x3D; 25的记录</span><br><span class="line">db.userInfo.find(&#123;age: &#123;$lte: 25&#125;&#125;);</span><br><span class="line"></span><br><span class="line">8、查询age &gt;&#x3D; 23 并且 age &lt;&#x3D; 26</span><br><span class="line">db.userInfo.find(&#123;age: &#123;$gte: 23, $lte: 26&#125;&#125;);</span><br><span class="line"></span><br><span class="line">9、查询name中包含 mongo的数据</span><br><span class="line">db.userInfo.find(&#123;name: &#x2F;mongo&#x2F;&#125;);</span><br><span class="line">&#x2F;&#x2F;相当于select * from userInfo where name like ‘%mongo%&#39;;</span><br><span class="line"></span><br><span class="line">10、查询name中以mongo开头的</span><br><span class="line">db.userInfo.find(&#123;name: &#x2F;^mongo&#x2F;&#125;);</span><br><span class="line">select * from userInfo where name like ‘mongo%&#39;;</span><br><span class="line"></span><br><span class="line">11、查询指定列name、age数据</span><br><span class="line">db.userInfo.find(&#123;&#125;, &#123;name: 1, age: 1&#125;);</span><br><span class="line">相当于：select name, age from userInfo;</span><br><span class="line"></span><br><span class="line">12、查询指定列name、age数据, age &gt; 25</span><br><span class="line">db.userInfo.find(&#123;age: &#123;$gt: 25&#125;&#125;, &#123;name: 1, age: 1&#125;);</span><br><span class="line">相当于：select name, age from userInfo where age &gt;25;</span><br><span class="line"></span><br><span class="line">13、按照年龄排序</span><br><span class="line">升序：db.userInfo.find().sort(&#123;age: 1&#125;);</span><br><span class="line">降序：db.userInfo.find().sort(&#123;age: -1&#125;);</span><br><span class="line"></span><br><span class="line">14、查询name &#x3D; zhangsan, age &#x3D; 22的数据</span><br><span class="line">db.userInfo.find(&#123;name: &#39;zhangsan&#39;, age: 22&#125;);</span><br><span class="line">相当于：select * from userInfo where name &#x3D; ‘zhangsan&#39; and age &#x3D; ‘22&#39;;</span><br><span class="line"></span><br><span class="line">15、查询前5条数据</span><br><span class="line">db.userInfo.find().limit(5);</span><br><span class="line">相当于：select * from userInfo limit 5;</span><br><span class="line"></span><br><span class="line">16、查询10条以后的数据</span><br><span class="line">db.userInfo.find().skip(10);</span><br><span class="line">相当于：select * from userInfo where id not in (select * from userInfo limit 10);</span><br><span class="line"></span><br><span class="line">17、查询在5-10之间的数据</span><br><span class="line">db.userInfo.find().limit(10).skip(5);</span><br><span class="line">可用于分页，limit是pageSize，skip是第几页*pageSize</span><br><span class="line"></span><br><span class="line">18、or与 查询</span><br><span class="line">db.userInfo.find(&#123;$or: [&#123;age: 22&#125;, &#123;age: 25&#125;]&#125;);</span><br><span class="line">相当于：select * from userInfo where age &#x3D; 22 or age &#x3D; 25;</span><br><span class="line"></span><br><span class="line">19、查询第一条数据</span><br><span class="line">db.userInfo.findOne();</span><br><span class="line">相当于：select * from userInfo limit 1;</span><br><span class="line">db.userInfo.find().limit(1);</span><br><span class="line"></span><br><span class="line">20、查询某个结果集的记录条数</span><br><span class="line">db.userInfo.find(&#123;age: &#123;$gte: 25&#125;&#125;).count();</span><br><span class="line">相当于：select count(*) from userInfo where age &gt;&#x3D; 20;</span><br><span class="line"></span><br><span class="line">21、按照某列进行排序</span><br><span class="line">db.userInfo.find(&#123;sex: &#123;$exists: true&#125;&#125;).count();</span><br><span class="line">相当于：select count(sex) from userInfo;</span><br><span class="line"></span><br><span class="line">五、索引</span><br><span class="line">1、创建索引</span><br><span class="line">db.userInfo.ensureIndex(&#123;name: 1&#125;);</span><br><span class="line">db.userInfo.ensureIndex(&#123;name: 1, ts: -1&#125;);</span><br><span class="line"></span><br><span class="line">2、查询当前聚集集合所有索引</span><br><span class="line">db.userInfo.getIndexes();</span><br><span class="line"></span><br><span class="line">3、查看总索引记录大小</span><br><span class="line">db.userInfo.totalIndexSize();</span><br><span class="line"></span><br><span class="line">4、读取当前集合的所有index信息</span><br><span class="line">db.users.reIndex();</span><br><span class="line"></span><br><span class="line">5、删除指定索引</span><br><span class="line">db.users.dropIndex(&quot;name_1&quot;);</span><br><span class="line"></span><br><span class="line">6、删除所有索引索引</span><br><span class="line">db.users.dropIndexes();</span><br><span class="line"></span><br><span class="line">六、修改、添加、删除集合数据</span><br><span class="line">1、添加</span><br><span class="line">db.users.save(&#123;name: ‘zhangsan&#39;, age: 25, sex: true&#125;);</span><br><span class="line"></span><br><span class="line">2、修改</span><br><span class="line">db.users.update(&#123;age: 25&#125;, &#123;$set: &#123;name: &#39;changeName&#39;&#125;&#125;, false, true);</span><br><span class="line">相当于：update users set name &#x3D; ‘changeName&#39; where age &#x3D; 25;</span><br><span class="line">db.users.update(&#123;name: &#39;Lisi&#39;&#125;, &#123;$inc: &#123;age: 50&#125;&#125;, false, true);</span><br><span class="line">相当于：update users set age &#x3D; age + 50 where name &#x3D; ‘Lisi&#39;;</span><br><span class="line">db.users.update(&#123;name: &#39;Lisi&#39;&#125;, &#123;$inc: &#123;age: 50&#125;, $set: &#123;name: &#39;hoho&#39;&#125;&#125;, false, true);</span><br><span class="line">相当于：update users set age &#x3D; age + 50, name &#x3D; ‘hoho&#39; where name &#x3D; ‘Lisi&#39;;</span><br><span class="line"></span><br><span class="line">3、删除</span><br><span class="line">db.users.remove(&#123;age: 132&#125;);</span><br><span class="line"></span><br><span class="line">4、查询修改删除</span><br><span class="line">db.users.findAndModify(&#123;</span><br><span class="line">    query: &#123;age: &#123;$gte: 25&#125;&#125;, </span><br><span class="line">    sort: &#123;age: -1&#125;, </span><br><span class="line">    update: &#123;$set: &#123;name: &#39;a2&#39;&#125;, $inc: &#123;age: 2&#125;&#125;,</span><br><span class="line">    remove: true</span><br><span class="line">&#125;);</span><br><span class="line">db.runCommand(&#123; findandmodify : &quot;users&quot;, </span><br><span class="line">    query: &#123;age: &#123;$gte: 25&#125;&#125;, </span><br><span class="line">    sort: &#123;age: -1&#125;, </span><br><span class="line">    update: &#123;$set: &#123;name: &#39;a2&#39;&#125;, $inc: &#123;age: 2&#125;&#125;,</span><br><span class="line">    remove: true</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">update 或 remove 其中一个是必须的参数; 其他参数可选。</span><br><span class="line"></span><br><span class="line">七、语句块操作 </span><br><span class="line">1、简单Hello World</span><br><span class="line">print(&quot;Hello World!&quot;);</span><br><span class="line"></span><br><span class="line">2、将一个对象转换成json</span><br><span class="line">tojson(new Object());</span><br><span class="line">tojson(new Object(&#39;a&#39;));</span><br><span class="line"></span><br><span class="line">3、循环添加数据</span><br><span class="line">&gt; for (var i &#x3D; 0; i &lt; 30; i++) &#123;</span><br><span class="line"> 	db.users.save(&#123;name: &quot;u_&quot; + i, age: 22 + i, sex: i % 2&#125;);</span><br><span class="line">  &#125;;</span><br><span class="line"> </span><br><span class="line">4、find 游标查询</span><br><span class="line">&gt;var cursor &#x3D; db.users.find();</span><br><span class="line">&gt; while (cursor.hasNext()) &#123; </span><br><span class="line">    printjson(cursor.next()); </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">这样就查询所有的users信息，同样可以这样写</span><br><span class="line"></span><br><span class="line">5、forEach迭代循环</span><br><span class="line">db.users.find().forEach(printjson);</span><br><span class="line">forEach中必须传递一个函数来处理每条迭代的数据信息</span><br><span class="line"></span><br><span class="line">6、将find游标当数组处理</span><br><span class="line">var cursor &#x3D; db.users.find();</span><br><span class="line">cursor[4];</span><br><span class="line"></span><br><span class="line">取得下标索引为4的那条数据</span><br><span class="line">既然可以当做数组处理，那么就可以获得它的长度：cursor.length();或者cursor.count();</span><br><span class="line"></span><br><span class="line">也可以用循环显示数据</span><br><span class="line">for (var i &#x3D; 0, len &#x3D; c.length(); i &lt; len; i++) printjson(c[i]);</span><br><span class="line"></span><br><span class="line">7、将find游标转换成数组</span><br><span class="line">&gt; var arr &#x3D; db.users.find().toArray();</span><br><span class="line">&gt; printjson(arr[2]);</span><br><span class="line">用toArray方法将其转换为数组</span><br><span class="line"></span><br><span class="line">8、定制我们自己的查询结果</span><br><span class="line">只显示age &lt;&#x3D; 28的并且只显示age这列数据</span><br><span class="line">db.users.find(&#123;age: &#123;$lte: 28&#125;&#125;, &#123;age: 1&#125;).forEach(printjson);</span><br><span class="line">db.users.find(&#123;age: &#123;$lte: 28&#125;&#125;, &#123;age: true&#125;).forEach(printjson);</span><br><span class="line"></span><br><span class="line">排除age的列</span><br><span class="line">db.users.find(&#123;age: &#123;$lte: 28&#125;&#125;, &#123;age: false&#125;).forEach(printjson);</span><br><span class="line"></span><br><span class="line">9、forEach传递函数显示信息</span><br><span class="line">db.things.find(&#123;x:4&#125;).forEach(function(x) &#123;print(tojson(x));&#125;);</span><br><span class="line"></span><br><span class="line">八、其他 </span><br><span class="line">1、查询之前的错误信息</span><br><span class="line">db.getPrevError();</span><br><span class="line"></span><br><span class="line">2、清除错误记录</span><br><span class="line">db.resetError();</span><br><span class="line"></span><br><span class="line">查看聚集集合基本信息</span><br><span class="line">1、查看帮助  db.yourColl.help();</span><br><span class="line">2、查询当前集合的数据条数  db.yourColl.count();</span><br><span class="line">3、查看数据空间大小 db.userInfo.dataSize();</span><br><span class="line">4、得到当前聚集集合所在的db db.userInfo.getDB();</span><br><span class="line">5、得到当前聚集的状态 db.userInfo.stats();</span><br><span class="line">6、得到聚集集合总大小 db.userInfo.totalSize();</span><br><span class="line">7、聚集集合储存空间大小 db.userInfo.storageSize();</span><br><span class="line">8、Shard版本信息  db.userInfo.getShardVersion()</span><br><span class="line">9、聚集集合重命名 db.userInfo.renameCollection(&quot;users&quot;); 将userInfo重命名为users</span><br><span class="line">10、删除当前聚集集合 db.userInfo.drop();</span><br><span class="line"></span><br><span class="line">show dbs:显示数据库列表 </span><br><span class="line">show collections：显示当前数据库中的集合（类似关系数据库中的表） </span><br><span class="line">show users：显示用户 </span><br><span class="line">use &lt;db name&gt;：切换当前数据库，这和MS-SQL里面的意思一样 </span><br><span class="line">db.help()：显示数据库操作命令，里面有很多的命令 </span><br><span class="line">db.foo.help()：显示集合操作命令，同样有很多的命令，foo指的是当前数据库下，一个叫foo的集合，并非真正意义上的命令 </span><br><span class="line">db.foo.find()：对于当前数据库中的foo集合进行数据查找（由于没有条件，会列出所有数据） </span><br><span class="line">db.foo.find( &#123; a : 1 &#125; )：对于当前数据库中的foo集合进行查找，条件是数据中有一个属性叫a，且a的值为1</span><br></pre></td></tr></table></figure>
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">Murray</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://github.com/sunglowrise/sunglowrise.github.io/2018/08/28/mongo%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4/">https://github.com/sunglowrise/sunglowrise.github.io/2018/08/28/mongo%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">Murray</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/mongodb/">
+                                    <span class="chip bg-color">mongodb</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2018/11/23/%E7%AE%80%E5%8D%95shell%E8%84%9A%E6%9C%AC/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="简单shell脚本">
+                        
+                        <span class="card-title">简单shell脚本</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2018-11-23
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            Murray
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/shell/">
+                        <span class="chip bg-color">shell</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2018/08/08/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="正则表达式">
+                        
+                        <span class="card-title">正则表达式</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2018-08-08
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            Murray
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/regex/">
+                        <span class="chip bg-color">regex</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: Murray个人笔记<br />'
+            + '文章作者: Murray<br />'
+            + '文章链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+<!-- 代码块折行 -->
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+    <div class="container row center-align" style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            <span id="year">2020</span>
+            <a href="/about" target="_blank">Murray</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/sunglowrise" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:sunglowrise@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+
+
+
+
+    <a href="https://www.zhihu.com/people/ma-liang-19-36" class="tooltipped" target="_blank" data-tooltip="关注我的知乎: https://www.zhihu.com/people/ma-liang-19-36" data-position="top" data-delay="50">
+        <i class="fab fa-zhihu1">知</i>
+    </a>
+
+
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/search.xml", 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <script type="text/javascript" src="/libs/background/ribbon-dynamic.js" async="async"></script>
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>
