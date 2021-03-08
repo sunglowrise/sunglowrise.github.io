@@ -249,11 +249,11 @@
     .toc-widget {
         width: 345px;
         padding-left: 20px;
+        padding-bottom: 20px;
     }
 
     .toc-widget .toc-title {
-        margin: 35px 0 15px 0;
-        padding-left: 17px;
+        padding: 35px 0 15px 17px;
         font-size: 1.5rem;
         font-weight: bold;
         line-height: 1.5rem;
@@ -266,7 +266,8 @@
     }
 
     #toc-content {
-        height: calc(100vh - 250px);
+        <!-- height: calc(100vh - 250px); -->
+        padding-bottom: 30px;
         overflow: auto;
     }
 
@@ -362,6 +363,11 @@
             </div>
         </div>
         <hr class="clearfix">
+
+        
+
+        
+
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h3 id="常用的正则表达式元字符"><a href="#常用的正则表达式元字符" class="headerlink" title="常用的正则表达式元字符"></a>常用的正则表达式元字符</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line">* 匹配重复零次或多次前一字符 </span><br><span class="line">+ 匹配一个或多个前面的字符.它的作用和*很相似,但唯一的区别是它不匹配零个字 符的情况</span><br><span class="line"></span><br><span class="line">? 匹配零或一个前面的字符。它一般用于匹配单个字符 </span><br><span class="line"></span><br><span class="line">. 匹配任意字符( 除换行符 ) </span><br><span class="line"></span><br><span class="line">^ 匹配一行的开头,但依赖于上下文环境,可能在正则表达式中表示否定一个字符 集的意思</span><br><span class="line"></span><br><span class="line">[...] 匹配集合中任意字符 如&quot;[xyz]&quot; 匹配字符 x, y, 或z</span><br><span class="line"></span><br><span class="line">[^...] 匹配不属集合 中 任意字符</span><br><span class="line"></span><br><span class="line">^, $ 匹配 行首、行尾</span><br><span class="line"></span><br><span class="line">\&lt;, \&gt; 用于表示单词的边界。\&lt; 匹配词首，\&gt;词尾，如&quot;\&lt;the\&gt;&quot; 匹配单词&quot;the&quot;</span><br><span class="line">... 正则表达式分组。进行子字符串提取(substring extraction)一起使用很有用</span><br><span class="line"></span><br><span class="line">\n 第 n 个分组内容  </span><br><span class="line"></span><br><span class="line">\ 转义(escapes) 一个特殊的字符,使这个字符表示原来字面上的意思。&quot;\$&quot;表示 了原来的字面意思&quot;$&quot;,而不是在正则表达式中表达的匹配行尾的意思.&quot;\\&quot;也被 解释成了字面上的意思&quot;\&quot;</span><br><span class="line"></span><br><span class="line">\&#123; \&#125; 指示前面正则表达式匹配的次数. </span><br><span class="line"></span><br><span class="line">要转义是因为不转义的话大括号只是表示他们字面上的意思.这个用法只是技巧上 的而不是基本正则表达式的内容.&quot;[0-9]\&#123;5\&#125;&quot; 精确匹配5个数字(从0到9的数字). </span><br><span class="line"></span><br><span class="line">| &quot;或&quot;，正则操作符用于匹配一组可选的字符</span><br><span class="line"></span><br><span class="line">&#123;n&#125; n是一个非负整数。匹配确定的n次。例如，&#39;&#39;o&#123;2&#125;&#39;&#39; 不能匹配 &quot;Bob&quot;中的&#39;&#39;o&#39;&#39;，但是能匹配&quot;food&quot; 中的两个o。</span><br><span class="line"></span><br><span class="line">&#123;n,&#125; n是一个非负整数。至少匹配n次。例如，&#39;&#39;o&#123;2,&#125;&#39;&#39; 不能匹配&quot;Bob&quot;中的&#39;o&#39;&#39;，但能匹配 &quot;foooood&quot;中的所有o。&#39;&#39;o&#123;1,&#125;&#39;&#39;等价于&#39;&#39;o+&#39;&#39;。&#39;&#39;o&#123;0,&#125;&#39;&#39;则等价于&#39;&#39;o*&#39;&#39;。</span><br><span class="line"></span><br><span class="line">&#123;n,m&#125; m和n均为非负整数，其中n&lt;&#x3D;m。最少匹配n次且最多匹配m次。例如，&quot;o&#123;1,3&#125;&quot;将匹配 &quot;fooooood&quot;中的前三个o。&#39;&#39;o&#123;0,1&#125;&#39;&#39;等价于&#39;&#39;o?&#39;&#39;。请注意在逗号和两个数之间不能有空格。</span><br><span class="line"></span><br><span class="line">\b 匹配一个单词边界，也就是指单词和空格间的位置。例如，&#39;&#39;er\b&#39;&#39; 可以匹配&quot;never&quot; 中的&#39;&#39;er&#39;&#39;，但不能匹配 &quot;verb&quot;中的 &#39;&#39;er&#39;&#39;。 </span><br><span class="line"></span><br><span class="line">\B 匹配非单词边界。&#39;&#39;er\B&#39;&#39;能匹配&quot;verb&quot;中的&#39;&#39;er&#39;&#39;，但不能匹配&quot;never&quot;中的 &#39;&#39;er&#39;&#39;</span><br><span class="line"></span><br><span class="line">\w 匹配包括下划线的任何单词字符。等价于&#39;&#39;[A-Za-z0-9_]&#39;&#39;。</span><br><span class="line"></span><br><span class="line">\W 匹配任何非单词字符。等价于&#39;&#39;[^A-Za-z0-9_]&#39;&#39;。</span><br><span class="line"></span><br><span class="line">\d 匹配一个数字字符。等价于[0-9]。</span><br><span class="line"></span><br><span class="line">\D 匹配一个非数字字符。等价于[^0-9]。</span><br><span class="line"></span><br><span class="line">\f 匹配一个换页符。等价于\x0c和\cL。</span><br><span class="line"></span><br><span class="line">\n 匹配一个换行符。等价于\x0a和\cJ。</span><br><span class="line"></span><br><span class="line">\r 匹配一个回车符。等价于\x0d和\cM。</span><br><span class="line"></span><br><span class="line">\s 匹配任何空白字符，包括空格、制表符、换页符等等。等价于[\f\n\r\t\v]。</span><br><span class="line"></span><br><span class="line">\S 匹配任何非空白字符。等价于[^\f\n\r\t\v]。</span><br><span class="line"></span><br><span class="line">\t 匹配一个制表符。等价于\x09 和 \cI。</span><br><span class="line"></span><br><span class="line">\v 匹配一个垂直制表符。等价于\x0b和\cK。</span><br></pre></td></tr></table></figure>
@@ -372,6 +378,7 @@
 
 <h3 id="匹配模式"><a href="#匹配模式" class="headerlink" title="匹配模式"></a>匹配模式</h3><p>修饰符 | 描述<br>| — | — |<br>re.I | 使匹配对大小写不敏感<br>re.L | 做本地化识别（locale-aware）匹配<br>re.M | 多行匹配，影响 ^ 和 $<br>re.S | 使 . 匹配包括换行在内的所有字符<br>re.U | 根据Unicode字符集解析字符。这个标志影响 \w, \W, \b, \B.<br>re.X | 该标志通过给予你更灵活的格式以便你将正则表达式写得更易于理解。</p>
 
+                
             </div>
             <hr/>
 
@@ -600,6 +607,10 @@
 
     
 
+    
+
+    
+
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
@@ -754,12 +765,9 @@
 <script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
 
 
-<!-- 代码块折行 -->
-
-
     </div>
     <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
-        <div class="toc-widget" style="background-color: white;">
+        <div class="toc-widget card" style="background-color: white;">
             <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
             <div id="toc-content"></div>
         </div>
@@ -863,6 +871,9 @@
     <div class="container row center-align" style="margin-bottom: 0px !important;">
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
+            
+                <span id="year">2020-2021</span>
+            
             <span id="year">2020</span>
             <a href="/about" target="_blank">Murray</a>
             |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
@@ -936,10 +947,95 @@
     </div>
 </div>
 
-<script src="/js/search.js"></script>
 <script type="text/javascript">
 $(function () {
-    searchFunc("/search.xml", 'searchInput', 'searchResult');
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
 });
 </script>
 
@@ -987,12 +1083,12 @@ $(function () {
 
     
 
+    <!--腾讯兔小巢-->
+    
     
 
     
 
-    
-    <script type="text/javascript" src="/libs/background/ribbon-dynamic.js" async="async"></script>
     
 
     

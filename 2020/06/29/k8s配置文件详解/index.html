@@ -249,11 +249,11 @@
     .toc-widget {
         width: 345px;
         padding-left: 20px;
+        padding-bottom: 20px;
     }
 
     .toc-widget .toc-title {
-        margin: 35px 0 15px 0;
-        padding-left: 17px;
+        padding: 35px 0 15px 17px;
         font-size: 1.5rem;
         font-weight: bold;
         line-height: 1.5rem;
@@ -266,7 +266,8 @@
     }
 
     #toc-content {
-        height: calc(100vh - 250px);
+        <!-- height: calc(100vh - 250px); -->
+        padding-bottom: 30px;
         overflow: auto;
     }
 
@@ -366,9 +367,15 @@
             </div>
         </div>
         <hr class="clearfix">
+
+        
+
+        
+
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h3 id="k8s-yaml文件详解"><a href="#k8s-yaml文件详解" class="headerlink" title="k8s yaml文件详解"></a>k8s yaml文件详解</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br></pre></td><td class="code"><pre><span class="line">apiVersion: v1             <span class="comment">#指定api版本，此值必须在kubectl apiversion中  </span></span><br><span class="line">kind: Pod                  <span class="comment">#指定创建资源的角色/类型  </span></span><br><span class="line">metadata:                  <span class="comment">#资源的元数据/属性  </span></span><br><span class="line">  name: web04-pod          <span class="comment">#资源的名字，在同一个namespace中必须唯一  </span></span><br><span class="line">  labels:                  <span class="comment">#设定资源的标签，详情请见http://blog.csdn.net/liyingke112/article/details/77482384</span></span><br><span class="line">    k8s-app: apache  </span><br><span class="line">    version: v1  </span><br><span class="line">    kubernetes.io/cluster-service: <span class="string">&quot;true&quot;</span>  </span><br><span class="line">  annotations:             <span class="comment">#自定义注解列表  </span></span><br><span class="line">    - name: String         <span class="comment">#自定义注解名字  </span></span><br><span class="line">spec:<span class="comment">#specification of the resource content 指定该资源的内容  </span></span><br><span class="line">  restartPolicy: Always    <span class="comment">#表明该容器一直运行，默认k8s的策略，在此容器退出后，会立即创建一个相同的容器  </span></span><br><span class="line">  nodeSelector:            <span class="comment">#节点选择，先给主机打标签kubectl label nodes kube-node1 zone=node1  </span></span><br><span class="line">    zone: node1  </span><br><span class="line">  containers:  </span><br><span class="line">  - name: web04-pod        <span class="comment">#容器的名字  </span></span><br><span class="line">    image: web:apache      <span class="comment">#容器使用的镜像地址  </span></span><br><span class="line">    imagePullPolicy: Never <span class="comment">#三个选择Always、Never、IfNotPresent，每次启动时检查和更新（从registery）images的策略，</span></span><br><span class="line">                           <span class="comment"># Always，每次都检查</span></span><br><span class="line">                           <span class="comment"># Never，每次都不检查（不管本地是否有）</span></span><br><span class="line">                           <span class="comment"># IfNotPresent，如果本地有就不检查，如果没有就拉取</span></span><br><span class="line">    <span class="built_in">command</span>: [<span class="string">&#x27;sh&#x27;</span>]        <span class="comment">#启动容器的运行命令，将覆盖容器中的Entrypoint,对应Dockefile中的ENTRYPOINT  </span></span><br><span class="line">    args: [<span class="string">&quot;<span class="subst">$(str)</span>&quot;</span>]       <span class="comment">#启动容器的命令参数，对应Dockerfile中CMD参数  </span></span><br><span class="line">    env:                   <span class="comment">#指定容器中的环境变量  </span></span><br><span class="line">    - name: str            <span class="comment">#变量的名字  </span></span><br><span class="line">      value: <span class="string">&quot;/etc/run.sh&quot;</span> <span class="comment">#变量的值  </span></span><br><span class="line">    resources:             <span class="comment">#资源管理，请求请见http://blog.csdn.net/liyingke112/article/details/77452630</span></span><br><span class="line">      requests:            <span class="comment">#容器运行时，最低资源需求，也就是说最少需要多少资源容器才能正常运行  </span></span><br><span class="line">        cpu: 0.1           <span class="comment">#CPU资源（核数），两种方式，浮点数或者是整数+m，0.1=100m，最少值为0.001核（1m）</span></span><br><span class="line">        memory: 32Mi       <span class="comment">#内存使用量  </span></span><br><span class="line">      limits:              <span class="comment">#资源限制  </span></span><br><span class="line">        cpu: 0.5  </span><br><span class="line">        memory: 32Mi  </span><br><span class="line">    ports:  </span><br><span class="line">    - containerPort: 80    <span class="comment">#容器开发对外的端口</span></span><br><span class="line">      name: httpd          <span class="comment">#名称</span></span><br><span class="line">      protocol: TCP  </span><br><span class="line">    livenessProbe:         <span class="comment">#pod内容器健康检查的设置，详情请见http://blog.csdn.net/liyingke112/article/details/77531584</span></span><br><span class="line">      httpGet:             <span class="comment">#通过httpget检查健康，返回200-399之间，则认为容器正常  </span></span><br><span class="line">        path: /            <span class="comment">#URI地址  </span></span><br><span class="line">        port: 80  </span><br><span class="line">        <span class="comment">#host: 127.0.0.1   #主机地址  </span></span><br><span class="line">        scheme: HTTP  </span><br><span class="line">      initialDelaySeconds: 180 <span class="comment">#表明第一次检测在容器启动后多长时间后开始  </span></span><br><span class="line">      timeoutSeconds: 5    <span class="comment">#检测的超时时间  </span></span><br><span class="line">      periodSeconds: 15    <span class="comment">#检查间隔时间  </span></span><br><span class="line">      <span class="comment">#也可以用这种方法  </span></span><br><span class="line">      <span class="comment">#exec: 执行命令的方法进行监测，如果其退出码不为0，则认为容器正常  </span></span><br><span class="line">      <span class="comment">#  command:  </span></span><br><span class="line">      <span class="comment">#    - cat  </span></span><br><span class="line">      <span class="comment">#    - /tmp/health  </span></span><br><span class="line">      <span class="comment">#也可以用这种方法  </span></span><br><span class="line">      <span class="comment">#tcpSocket: //通过tcpSocket检查健康   </span></span><br><span class="line">      <span class="comment">#  port: number   </span></span><br><span class="line">    lifecycle:             <span class="comment">#生命周期管理  </span></span><br><span class="line">      postStart:           <span class="comment">#容器运行之前运行的任务  </span></span><br><span class="line">        <span class="built_in">exec</span>:  </span><br><span class="line">          <span class="built_in">command</span>:  </span><br><span class="line">            - <span class="string">&#x27;sh&#x27;</span>  </span><br><span class="line">            - <span class="string">&#x27;yum upgrade -y&#x27;</span>  </span><br><span class="line">      preStop:             <span class="comment">#容器关闭之前运行的任务  </span></span><br><span class="line">        <span class="built_in">exec</span>:  </span><br><span class="line">          <span class="built_in">command</span>: [<span class="string">&#x27;service httpd stop&#x27;</span>]  </span><br><span class="line">    volumeMounts:          <span class="comment">#详情请见http://blog.csdn.net/liyingke112/article/details/76577520</span></span><br><span class="line">    - name: volume         <span class="comment">#挂载设备的名字，与volumes[*].name 需要对应    </span></span><br><span class="line">      mountPath: /data     <span class="comment">#挂载到容器的某个路径下  </span></span><br><span class="line">      readOnly: True  </span><br><span class="line">  volumes:                 <span class="comment">#定义一组挂载设备  </span></span><br><span class="line">  - name: volume           <span class="comment">#定义一个挂载设备的名字  </span></span><br><span class="line">    <span class="comment">#meptyDir: &#123;&#125;  </span></span><br><span class="line">    hostPath:  </span><br><span class="line">      path: /opt           <span class="comment">#挂载设备类型为hostPath，路径为宿主机下的/opt,这里设备类型支持很多种</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+                
             </div>
             <hr/>
 
@@ -601,6 +608,10 @@
 
     
 
+    
+
+    
+
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
@@ -758,12 +769,9 @@
 <script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
 
 
-<!-- 代码块折行 -->
-
-
     </div>
     <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
-        <div class="toc-widget" style="background-color: white;">
+        <div class="toc-widget card" style="background-color: white;">
             <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
             <div id="toc-content"></div>
         </div>
@@ -867,6 +875,9 @@
     <div class="container row center-align" style="margin-bottom: 0px !important;">
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
+            
+                <span id="year">2020-2021</span>
+            
             <span id="year">2020</span>
             <a href="/about" target="_blank">Murray</a>
             |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
@@ -940,10 +951,95 @@
     </div>
 </div>
 
-<script src="/js/search.js"></script>
 <script type="text/javascript">
 $(function () {
-    searchFunc("/search.xml", 'searchInput', 'searchResult');
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
 });
 </script>
 
@@ -991,12 +1087,12 @@ $(function () {
 
     
 
+    <!--腾讯兔小巢-->
+    
     
 
     
 
-    
-    <script type="text/javascript" src="/libs/background/ribbon-dynamic.js" async="async"></script>
     
 
     

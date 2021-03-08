@@ -249,11 +249,11 @@
     .toc-widget {
         width: 345px;
         padding-left: 20px;
+        padding-bottom: 20px;
     }
 
     .toc-widget .toc-title {
-        margin: 35px 0 15px 0;
-        padding-left: 17px;
+        padding: 35px 0 15px 17px;
         font-size: 1.5rem;
         font-weight: bold;
         line-height: 1.5rem;
@@ -266,7 +266,8 @@
     }
 
     #toc-content {
-        height: calc(100vh - 250px);
+        <!-- height: calc(100vh - 250px); -->
+        padding-bottom: 30px;
         overflow: auto;
     }
 
@@ -366,12 +367,18 @@
             </div>
         </div>
         <hr class="clearfix">
+
+        
+
+        
+
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h2 id="k8s操作"><a href="#k8s操作" class="headerlink" title="k8s操作"></a>k8s操作</h2><h4 id="k8s指令"><a href="#k8s指令" class="headerlink" title="k8s指令"></a>k8s指令</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"># 创建RC</span><br><span class="line">kubectl create -f &lt;xxx-rc.yaml&gt;</span><br><span class="line"></span><br><span class="line"># 获取RC</span><br><span class="line">kubectl get rc</span><br><span class="line"></span><br><span class="line"># 删除rc</span><br><span class="line">kubectl delete rc &lt;rc_name&gt;</span><br><span class="line"></span><br><span class="line"># 获取pod</span><br><span class="line">kubectl get pods</span><br><span class="line"></span><br><span class="line"># 获取某个命名空间的pod</span><br><span class="line">kubectl get pods --namespace&#x3D;default # 默认的命名空间为 default</span><br><span class="line"></span><br><span class="line"># 获取nodes</span><br><span class="line">kubectl get nodes</span><br><span class="line"></span><br><span class="line"># 获取node的详细信息</span><br><span class="line">kubectl describe node &lt;node_name&gt;</span><br><span class="line"></span><br><span class="line"># 获取pod的详细信息</span><br><span class="line">kubectl describe pod &lt;pod_name&gt;</span><br><span class="line"></span><br><span class="line"># 创建副本数量,如3</span><br><span class="line">kubectl scale rc &lt;pod_name&gt; --replicas&#x3D;3</span><br><span class="line"></span><br><span class="line"># 创建deployment</span><br><span class="line">kubectl create -f &lt;deployment.yaml&gt;</span><br><span class="line"></span><br><span class="line"># 查看deployment</span><br><span class="line">kubectl get deploymnets</span><br><span class="line"></span><br><span class="line"># 查看Replicas Set</span><br><span class="line">kubectl get rs</span><br><span class="line"></span><br><span class="line"># 查看endpoint</span><br><span class="line">kubectl get endpoints</span><br><span class="line"></span><br><span class="line"># 查看service的详细信息</span><br><span class="line">kubectl get svc &lt;xxx-service&gt; -o yaml</span><br><span class="line"></span><br><span class="line"># 查看namspaces</span><br><span class="line">kubectl get namespaces</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 <h4 id="1-操作命令"><a href="#1-操作命令" class="headerlink" title="1. 操作命令"></a>1. 操作命令</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 查看指令用API</span></span><br><span class="line">kubectl explain &lt;<span class="built_in">source</span>&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看api-version</span></span><br><span class="line">kubectl api-versions</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看到所有nodes节点的IP和状态(一般该命令在master执行)。</span></span><br><span class="line">kubectl get nodes</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看已经创建的pods</span></span><br><span class="line">kubectl get pods</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看某个pod内部详情</span></span><br><span class="line">kubectl get pods &lt;pod_name&gt; -o yaml</span><br><span class="line">kubectl describe pods &lt;pod_name&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看某个pod的日志</span></span><br><span class="line">kubectl logs &lt;pod_name&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看系统中的services</span></span><br><span class="line">kubectl get services</span><br><span class="line">kubectl get svc</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看集群中的所有deployment(官方推荐使用deployment来替代rc)</span></span><br><span class="line">kubectl get deployments</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看Replication Controller</span></span><br><span class="line">kubectl get rc</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看ReplicaSet</span></span><br><span class="line">kubectl get rs</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看集群情况(一般该命令在master执行)</span></span><br><span class="line">kubectl cluster-info</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看事件</span></span><br><span class="line">kubectl get events</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看系统中的secret</span></span><br><span class="line">kubectl get secret</span><br><span class="line"></span><br><span class="line"><span class="comment">#查看集群中的所有namespace</span></span><br><span class="line">kubectl get namespace</span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用yaml创建pod, 不仅可以创建pod，还可以创建rc,deployment,service等。</span></span><br><span class="line">kubectl create -f &lt;xxx.yaml&gt;</span><br><span class="line">kubectl apply -f &lt;xxx.yaml&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 根据label筛选查看pods (label一般都是写在yaml文件中)</span></span><br><span class="line">kubectl get pods -l app=nginx</span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除pods,如果还pod有类似deployment，rc保护，那么会删除失败。</span></span><br><span class="line">kubectl delete pods &lt;pod_name&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 在集群运行应用程序（nginx）</span></span><br><span class="line">kubectl run nginxdemo --image=nginx --replicas=3 --labels=<span class="string">&#x27;app=nginx&#x27;</span> --port=80</span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建服务service，对外暴露端口88</span></span><br><span class="line">kubectl expose deployment nginx --port=88  --target-port=80 --<span class="built_in">type</span>=NodePort --name=nginx-svc</span><br><span class="line"></span><br><span class="line"><span class="comment"># pod副本的扩容与缩容</span></span><br><span class="line">kubectl scale deployment nginxdemo --replicas=10 </span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看扩容进度</span></span><br><span class="line">kubectl rollout status deployment nginxdemo</span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除资源</span></span><br><span class="line"><span class="comment"># pod与rs不能直接删除，因为他们被deployment控制，即使删除某一个pod或rs，deployment会立刻创建新的pod，来与配置中副本对应。</span></span><br><span class="line"><span class="comment"># 要删除pod和rs，只能删除对用的deployment，使用kubectl delete 可以删除deployment 和 svc。</span></span><br><span class="line">kubectl delete deployment nginxdemo</span><br><span class="line">kubectl delete svc nginxdemo</span><br><span class="line"></span><br><span class="line"><span class="comment"># 执行容器的命令</span></span><br><span class="line">kubectl <span class="built_in">exec</span> &lt;pod-name&gt; date <span class="comment">#执行Pod的date命令，默认使用第一个容器</span></span><br><span class="line">kubectl <span class="built_in">exec</span> &lt;pod-name&gt; -c &lt;container-name&gt; date <span class="comment"># 执行Pod中某个容器的date命令</span></span><br><span class="line">kubectl <span class="built_in">exec</span> -ti &lt;pod-name&gt; -c &lt;container-name&gt; /bin/bash <span class="comment"># 通过bash获取Pod中某个容器的TTY</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看容器的日志</span></span><br><span class="line">kubectl logs &lt;pod-name&gt; <span class="comment"># 查看容器输出到stdout的日志</span></span><br><span class="line">kubectl logs -f &lt;pod-name&gt; -c &lt;container-name&gt; <span class="comment"># 跟踪查看容器日志</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
+                
             </div>
             <hr/>
 
@@ -604,6 +611,10 @@
 
     
 
+    
+
+    
+
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
@@ -761,12 +772,9 @@
 <script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
 
 
-<!-- 代码块折行 -->
-
-
     </div>
     <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
-        <div class="toc-widget" style="background-color: white;">
+        <div class="toc-widget card" style="background-color: white;">
             <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
             <div id="toc-content"></div>
         </div>
@@ -870,6 +878,9 @@
     <div class="container row center-align" style="margin-bottom: 0px !important;">
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
+            
+                <span id="year">2020-2021</span>
+            
             <span id="year">2020</span>
             <a href="/about" target="_blank">Murray</a>
             |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
@@ -943,10 +954,95 @@
     </div>
 </div>
 
-<script src="/js/search.js"></script>
 <script type="text/javascript">
 $(function () {
-    searchFunc("/search.xml", 'searchInput', 'searchResult');
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
 });
 </script>
 
@@ -994,12 +1090,12 @@ $(function () {
 
     
 
+    <!--腾讯兔小巢-->
+    
     
 
     
 
-    
-    <script type="text/javascript" src="/libs/background/ribbon-dynamic.js" async="async"></script>
     
 
     
