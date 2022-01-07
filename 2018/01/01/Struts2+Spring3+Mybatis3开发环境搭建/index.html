@@ -1,0 +1,1173 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="Struts2+Spring3+Mybatis3开发环境搭建, Java,Python,GO">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>Struts2+Spring3+Mybatis3开发环境搭建 | Murray个人笔记</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery.min.js"></script>
+
+<meta name="generator" content="Hexo 5.2.0"><link rel="alternate" href="/atom.xml" title="Murray个人笔记" type="application/atom+xml">
+</head>
+
+
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">Murray个人笔记</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">Murray个人笔记</div>
+        <div class="logo-desc">
+            
+            Never really desperate, only the lost of the soul.
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/21.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">Struts2+Spring3+Mybatis3开发环境搭建</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+        padding-bottom: 20px;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+        padding-top: 1.5rem
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        <!-- height: calc(100vh - 250px); -->
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/Java/">
+                                <span class="chip bg-color">Java</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2018-01-01
+                </div>
+                
+
+                
+
+                
+
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <blockquote>
+<p>Struts2+Spring3+Mybatis3开发环境搭建<br><a target="_blank" rel="noopener" href="http://blog.csdn.net/shan9liang/article/details/9079567">http://blog.csdn.net/shan9liang/article/details/9079567</a></p>
+</blockquote>
+<h3 id="Struts2-Spring3-Mybatis3开发环境搭建"><a href="#Struts2-Spring3-Mybatis3开发环境搭建" class="headerlink" title="Struts2+Spring3+Mybatis3开发环境搭建"></a>Struts2+Spring3+Mybatis3开发环境搭建</h3><h4 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Struts-2.3.14</span><br><span class="line">Spring-3.2.1</span><br><span class="line">MyBatis-3.2.2</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>在apache-tomcat-7.0.39下测试通过</p>
+</blockquote>
+<h4 id="入口web-xml"><a href="#入口web-xml" class="headerlink" title="入口web.xml"></a>入口web.xml</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version&#x3D;&quot;1.0&quot; encoding&#x3D;&quot;UTF-8&quot;?&gt;  </span><br><span class="line">&lt;web-app xmlns:xsi&#x3D;&quot;http:&#x2F;&#x2F;www.w3.org&#x2F;2001&#x2F;XMLSchema-instance&quot;  </span><br><span class="line">    xmlns&#x3D;&quot;http:&#x2F;&#x2F;java.sun.com&#x2F;xml&#x2F;ns&#x2F;javaee&quot; xmlns:web&#x3D;&quot;http:&#x2F;&#x2F;java.sun.com&#x2F;xml&#x2F;ns&#x2F;javaee&#x2F;web-app_2_5.xsd&quot;  </span><br><span class="line">    xsi:schemaLocation&#x3D;&quot;http:&#x2F;&#x2F;java.sun.com&#x2F;xml&#x2F;ns&#x2F;javaee http:&#x2F;&#x2F;java.sun.com&#x2F;xml&#x2F;ns&#x2F;javaee&#x2F;web-app_3_0.xsd&quot;  </span><br><span class="line">    id&#x3D;&quot;WebApp_ID&quot; version&#x3D;&quot;3.0&quot;&gt;  </span><br><span class="line">    &lt;display-name&gt;test_ssm&lt;&#x2F;display-name&gt;  </span><br><span class="line">    &lt;welcome-file-list&gt;  </span><br><span class="line">        &lt;welcome-file&gt;index.jsp&lt;&#x2F;welcome-file&gt;  </span><br><span class="line">    &lt;&#x2F;welcome-file-list&gt;  </span><br><span class="line">  </span><br><span class="line">    &lt;!-- 配置spring资源 --&gt;  </span><br><span class="line">    &lt;context-param&gt;  </span><br><span class="line">        &lt;param-name&gt;contextConfigLocation&lt;&#x2F;param-name&gt;  </span><br><span class="line">        &lt;param-value&gt;classpath:config&#x2F;applicationContext-*.xml&lt;&#x2F;param-value&gt;  </span><br><span class="line">    &lt;&#x2F;context-param&gt;  </span><br><span class="line">  </span><br><span class="line">    &lt;!-- 配置spring --&gt;  </span><br><span class="line">    &lt;listener&gt;  </span><br><span class="line">        &lt;listener-class&gt;org.springframework.web.context.ContextLoaderListener&lt;&#x2F;listener-class&gt;  </span><br><span class="line">    &lt;&#x2F;listener&gt;  </span><br><span class="line">  </span><br><span class="line">    &lt;!-- 配置Struts2 --&gt;  </span><br><span class="line">    &lt;filter&gt;  </span><br><span class="line">        &lt;filter-name&gt;struts2&lt;&#x2F;filter-name&gt;  </span><br><span class="line">        &lt;filter-class&gt;org.apache.struts2.dispatcher.ng.filter.StrutsPrepareAndExecuteFilter&lt;&#x2F;filter-class&gt;  </span><br><span class="line">        &lt;init-param&gt;  </span><br><span class="line">            &lt;param-name&gt;config&lt;&#x2F;param-name&gt;  </span><br><span class="line">            &lt;param-value&gt;struts-default.xml,struts-plugin.xml,&#x2F;config&#x2F;struts.xml&lt;&#x2F;param-value&gt;  </span><br><span class="line">        &lt;&#x2F;init-param&gt;  </span><br><span class="line">    &lt;&#x2F;filter&gt;  </span><br><span class="line">  </span><br><span class="line">    &lt;filter-mapping&gt;  </span><br><span class="line">        &lt;filter-name&gt;struts2&lt;&#x2F;filter-name&gt;  </span><br><span class="line">        &lt;url-pattern&gt;&#x2F;*&lt;&#x2F;url-pattern&gt;  </span><br><span class="line">    &lt;&#x2F;filter-mapping&gt;  </span><br><span class="line">  </span><br><span class="line">&lt;&#x2F;web-app&gt;  </span><br></pre></td></tr></table></figure>
+
+<h4 id="Spring配置文件"><a href="#Spring配置文件" class="headerlink" title="Spring配置文件"></a>Spring配置文件</h4><blockquote>
+<p>applicationContext-common.xml</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version&#x3D;&quot;1.0&quot; encoding&#x3D;&quot;UTF-8&quot;?&gt;  </span><br><span class="line">&lt;beans xmlns&#x3D;&quot;http:&#x2F;&#x2F;www.springframework.org&#x2F;schema&#x2F;beans&quot;  </span><br><span class="line">    xmlns:xsi&#x3D;&quot;http:&#x2F;&#x2F;www.w3.org&#x2F;2001&#x2F;XMLSchema-instance&quot; xmlns:aop&#x3D;&quot;http:&#x2F;&#x2F;www.springframework.org&#x2F;schema&#x2F;aop&quot;  </span><br><span class="line">    xmlns:context&#x3D;&quot;http:&#x2F;&#x2F;www.springframework.org&#x2F;schema&#x2F;context&quot; xmlns:tx&#x3D;&quot;http:&#x2F;&#x2F;www.springframework.org&#x2F;schema&#x2F;tx&quot;  </span><br><span class="line">    xsi:schemaLocation&#x3D;&quot;http:&#x2F;&#x2F;www.springframework.org&#x2F;schema&#x2F;beans http:&#x2F;&#x2F;www.springframework.org&#x2F;schema&#x2F;beans&#x2F;spring-beans-3.2.xsd  </span><br><span class="line">        http:&#x2F;&#x2F;www.springframework.org&#x2F;schema&#x2F;aop http:&#x2F;&#x2F;www.springframework.org&#x2F;schema&#x2F;aop&#x2F;spring-aop-3.2.xsd  </span><br><span class="line">        http:&#x2F;&#x2F;www.springframework.org&#x2F;schema&#x2F;context http:&#x2F;&#x2F;www.springframework.org&#x2F;schema&#x2F;context&#x2F;spring-context-3.2.xsd  </span><br><span class="line">        http:&#x2F;&#x2F;www.springframework.org&#x2F;schema&#x2F;tx http:&#x2F;&#x2F;www.springframework.org&#x2F;schema&#x2F;tx&#x2F;spring-tx-3.2.xsd&quot;&gt;  </span><br><span class="line">  </span><br><span class="line">    &lt;!-- 启用spring注解支持 --&gt;  </span><br><span class="line">    &lt;context:annotation-config &#x2F;&gt;  </span><br><span class="line">  </span><br><span class="line">    &lt;!-- 配置DataSource数据源 --&gt;  </span><br><span class="line">    &lt;bean id&#x3D;&quot;dataSource&quot;  </span><br><span class="line">        class&#x3D;&quot;org.springframework.jdbc.datasource.DriverManagerDataSource&quot;&gt;  </span><br><span class="line">        &lt;property name&#x3D;&quot;driverClassName&quot; value&#x3D;&quot;com.mysql.jdbc.Driver&quot; &#x2F;&gt;  </span><br><span class="line">        &lt;property name&#x3D;&quot;url&quot; value&#x3D;&quot;jdbc:mysql:&#x2F;&#x2F;localhost:3306&#x2F;mybatis&quot; &#x2F;&gt;  </span><br><span class="line">        &lt;property name&#x3D;&quot;username&quot; value&#x3D;&quot;root&quot; &#x2F;&gt;  </span><br><span class="line">        &lt;property name&#x3D;&quot;password&quot; value&#x3D;&quot;123456&quot; &#x2F;&gt;  </span><br><span class="line">    &lt;&#x2F;bean&gt;  </span><br><span class="line">  </span><br><span class="line">    &lt;!--创建sqlSessionFactory --&gt;  </span><br><span class="line">    &lt;bean id&#x3D;&quot;sqlSessionFactory&quot; class&#x3D;&quot;org.mybatis.spring.SqlSessionFactoryBean&quot;&gt;  </span><br><span class="line">        &lt;property name&#x3D;&quot;configLocation&quot; value&#x3D;&quot;classpath:config&#x2F;mabatis-config.xml&quot; &#x2F;&gt;  </span><br><span class="line">        &lt;property name&#x3D;&quot;dataSource&quot; ref&#x3D;&quot;dataSource&quot; &#x2F;&gt;     </span><br><span class="line">        &lt;property name&#x3D;&quot;mapperLocations&quot; value&#x3D;&quot;classpath:com&#x2F;jialin&#x2F;mapper&#x2F;**&#x2F;*.xml&quot; &#x2F;&gt;    </span><br><span class="line">          </span><br><span class="line">    &lt;&#x2F;bean&gt;  </span><br><span class="line">  </span><br><span class="line">&lt;!-- 配置事务管理器，注意这里的dataSource和SqlSessionFactoryBean的dataSource要一致，不然事务就没有作用了 --&gt;  </span><br><span class="line"> &lt;bean id&#x3D;&quot;transactionManager&quot; class&#x3D;&quot;org.springframework.jdbc.datasource.DataSourceTransactionManager&quot;&gt;  </span><br><span class="line">    &lt;property name&#x3D;&quot;dataSource&quot; ref&#x3D;&quot;dataSource&quot; &#x2F;&gt;  </span><br><span class="line">&lt;&#x2F;bean&gt;   </span><br><span class="line">   </span><br><span class="line">&lt;!-- 配置事务的传播特性 --&gt;  </span><br><span class="line"> &lt;bean id&#x3D;&quot;baseTransactionProxy&quot; class&#x3D;&quot;org.springframework.transaction.interceptor.TransactionProxyFactoryBean&quot; abstract&#x3D;&quot;true&quot;&gt;  </span><br><span class="line">    &lt;property name&#x3D;&quot;transactionManager&quot; ref&#x3D;&quot;transactionManager&quot; &#x2F;&gt;  </span><br><span class="line">    &lt;property name&#x3D;&quot;transactionAttributes&quot;&gt;  </span><br><span class="line">        &lt;props&gt;  </span><br><span class="line">            &lt;prop key&#x3D;&quot;add*&quot;&gt;PROPAGATION_REQUIRED&lt;&#x2F;prop&gt;  </span><br><span class="line">            &lt;prop key&#x3D;&quot;edit*&quot;&gt;PROPAGATION_REQUIRED&lt;&#x2F;prop&gt;  </span><br><span class="line">            &lt;prop key&#x3D;&quot;remove*&quot;&gt;PROPAGATION_REQUIRED&lt;&#x2F;prop&gt;  </span><br><span class="line">            &lt;prop key&#x3D;&quot;insert*&quot;&gt;PROPAGATION_REQUIRED&lt;&#x2F;prop&gt;  </span><br><span class="line">            &lt;prop key&#x3D;&quot;update*&quot;&gt;PROPAGATION_REQUIRED&lt;&#x2F;prop&gt;  </span><br><span class="line">            &lt;prop key&#x3D;&quot;del*&quot;&gt;PROPAGATION_REQUIRED&lt;&#x2F;prop&gt;  </span><br><span class="line">            &lt;prop key&#x3D;&quot;*&quot;&gt;readOnly&lt;&#x2F;prop&gt;  </span><br><span class="line">        &lt;&#x2F;props&gt;  </span><br><span class="line">    &lt;&#x2F;property&gt;  </span><br><span class="line">&lt;&#x2F;bean&gt;   </span><br><span class="line">  </span><br><span class="line">&lt;&#x2F;beans&gt;  </span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>applicationContext-beans.xml</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version&#x3D;&quot;1.0&quot; encoding&#x3D;&quot;UTF-8&quot;?&gt;  </span><br><span class="line">&lt;beans xmlns&#x3D;&quot;http:&#x2F;&#x2F;www.springframework.org&#x2F;schema&#x2F;beans&quot;  </span><br><span class="line">    xmlns:xsi&#x3D;&quot;http:&#x2F;&#x2F;www.w3.org&#x2F;2001&#x2F;XMLSchema-instance&quot; xmlns:aop&#x3D;&quot;http:&#x2F;&#x2F;www.springframework.org&#x2F;schema&#x2F;aop&quot;  </span><br><span class="line">    xmlns:context&#x3D;&quot;http:&#x2F;&#x2F;www.springframework.org&#x2F;schema&#x2F;context&quot; xmlns:tx&#x3D;&quot;http:&#x2F;&#x2F;www.springframework.org&#x2F;schema&#x2F;tx&quot;  </span><br><span class="line">    xsi:schemaLocation&#x3D;&quot;http:&#x2F;&#x2F;www.springframework.org&#x2F;schema&#x2F;beans http:&#x2F;&#x2F;www.springframework.org&#x2F;schema&#x2F;beans&#x2F;spring-beans-3.2.xsd  </span><br><span class="line">        http:&#x2F;&#x2F;www.springframework.org&#x2F;schema&#x2F;aop http:&#x2F;&#x2F;www.springframework.org&#x2F;schema&#x2F;aop&#x2F;spring-aop-3.2.xsd  </span><br><span class="line">        http:&#x2F;&#x2F;www.springframework.org&#x2F;schema&#x2F;context http:&#x2F;&#x2F;www.springframework.org&#x2F;schema&#x2F;context&#x2F;spring-context-3.2.xsd  </span><br><span class="line">        http:&#x2F;&#x2F;www.springframework.org&#x2F;schema&#x2F;tx http:&#x2F;&#x2F;www.springframework.org&#x2F;schema&#x2F;tx&#x2F;spring-tx-3.2.xsd&quot;&gt;  </span><br><span class="line">  </span><br><span class="line">     </span><br><span class="line">    &lt;bean id&#x3D;&quot;userInfoDao&quot;  class&#x3D;&quot;org.mybatis.spring.mapper.MapperFactoryBean&quot;  </span><br><span class="line">        scope&#x3D;&quot;prototype&quot;&gt;  </span><br><span class="line">        &lt;property name&#x3D;&quot;mapperInterface&quot; value&#x3D;&quot;com.jialin.dao.UserInfoDao&quot; &#x2F;&gt;  </span><br><span class="line">        &lt;property name&#x3D;&quot;sqlSessionFactory&quot; ref&#x3D;&quot;sqlSessionFactory&quot; &#x2F;&gt;  </span><br><span class="line">    &lt;&#x2F;bean&gt;  </span><br><span class="line">  </span><br><span class="line">    &lt;bean id&#x3D;&quot;userInfoService&quot; class&#x3D;&quot;com.jialin.service.UserInfoService&quot;  </span><br><span class="line">        scope&#x3D;&quot;prototype&quot;&gt;  </span><br><span class="line">        &lt;property name&#x3D;&quot;userInfoDao&quot; ref&#x3D;&quot;userInfoDao&quot; &#x2F;&gt;  </span><br><span class="line">    &lt;&#x2F;bean&gt;  </span><br><span class="line">  </span><br><span class="line">    &lt;!-- 为IRegisterService接口配置事务拦截器，baseTransactionProxy是事务拦截器，在Controller中获取这个对象 --&gt;  </span><br><span class="line">    &lt;bean id&#x3D;&quot;IUserInfoService&quot; parent&#x3D;&quot;baseTransactionProxy&quot;&gt;  </span><br><span class="line">        &lt;!-- 实现类 --&gt;  </span><br><span class="line">        &lt;property name&#x3D;&quot;target&quot; ref&#x3D;&quot;userInfoService&quot; &#x2F;&gt;  </span><br><span class="line">    &lt;&#x2F;bean&gt;  </span><br><span class="line">  </span><br><span class="line">    &lt;bean id&#x3D;&quot;userManageAction&quot; class&#x3D;&quot;com.jialin.action.UserManageAction&quot;  </span><br><span class="line">        scope&#x3D;&quot;prototype&quot;&gt;  </span><br><span class="line">        &lt;property name&#x3D;&quot;userInfoService&quot; ref&#x3D;&quot;IUserInfoService&quot; &#x2F;&gt;  </span><br><span class="line">    &lt;&#x2F;bean&gt;  </span><br><span class="line">  </span><br><span class="line">&lt;&#x2F;beans&gt;  </span><br></pre></td></tr></table></figure>
+
+<h4 id="Struts配置文件"><a href="#Struts配置文件" class="headerlink" title="Struts配置文件"></a>Struts配置文件</h4><blockquote>
+<p>struts.xml</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version&#x3D;&quot;1.0&quot; encoding&#x3D;&quot;UTF-8&quot; ?&gt;  </span><br><span class="line">&lt;!DOCTYPE struts PUBLIC  </span><br><span class="line">    &quot;-&#x2F;&#x2F;Apache Software Foundation&#x2F;&#x2F;DTD Struts Configuration 2.0&#x2F;&#x2F;EN&quot;  </span><br><span class="line">    &quot;http:&#x2F;&#x2F;struts.apache.org&#x2F;dtds&#x2F;struts-2.0.dtd&quot;&gt;  </span><br><span class="line">  </span><br><span class="line">&lt;struts&gt;  </span><br><span class="line">      </span><br><span class="line">    &lt;!-- 将Action的创建交给spring来管理 --&gt;    </span><br><span class="line">    &lt;constant name&#x3D;&quot;struts.objectFactory&quot; value&#x3D;&quot;spring&quot; &#x2F;&gt;    </span><br><span class="line">      </span><br><span class="line">    &lt;!-- 更改struts2请求Action的后缀名，默认为action。若想去掉后缀，设为&quot;,&quot;即可 --&gt;  </span><br><span class="line">    &lt;constant name&#x3D;&quot;struts.action.extension&quot; value&#x3D;&quot;,&quot;&gt;&lt;&#x2F;constant&gt;  </span><br><span class="line">  </span><br><span class="line">    &lt;package name&#x3D;&quot;abstract_struts&quot; abstract&#x3D;&quot;true&quot; extends&#x3D;&quot;struts-default&quot;  </span><br><span class="line">        namespace&#x3D;&quot;&#x2F;&quot;&gt;  </span><br><span class="line">        &lt;!-- 公共东西可以放到这个抽象包下 --&gt;    </span><br><span class="line">    &lt;&#x2F;package&gt;  </span><br><span class="line">      </span><br><span class="line">    &lt;!-- 包含的配置文件 --&gt;  </span><br><span class="line">    &lt;include file&#x3D;&quot;&#x2F;config&#x2F;struts-user.xml&quot;&gt;&lt;&#x2F;include&gt;  </span><br><span class="line">&lt;&#x2F;struts&gt;  </span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>struts-user.xml</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version&#x3D;&quot;1.0&quot; encoding&#x3D;&quot;UTF-8&quot; ?&gt;  </span><br><span class="line">&lt;!DOCTYPE struts PUBLIC  </span><br><span class="line">    &quot;-&#x2F;&#x2F;Apache Software Foundation&#x2F;&#x2F;DTD Struts Configuration 2.0&#x2F;&#x2F;EN&quot;  </span><br><span class="line">    &quot;http:&#x2F;&#x2F;struts.apache.org&#x2F;dtds&#x2F;struts-2.0.dtd&quot;&gt;  </span><br><span class="line">  </span><br><span class="line">&lt;struts&gt;  </span><br><span class="line">     </span><br><span class="line">    &lt;package name&#x3D;&quot;MyActions&quot; extends&#x3D;&quot;struts-default&quot;&gt;       </span><br><span class="line">        &lt;action name&#x3D;&quot;*_*&quot; class&#x3D;&quot;userManageAction&quot; method&#x3D;&quot;&#123;1&#125;&quot;&gt;  </span><br><span class="line">            &lt;result name&#x3D;&quot;success&quot; type&#x3D;&quot;redirect&quot;&gt;&#x2F;&#123;2&#125;.jsp&lt;&#x2F;result&gt;  </span><br><span class="line">        &lt;&#x2F;action&gt;  </span><br><span class="line">    &lt;&#x2F;package&gt;  </span><br><span class="line">  </span><br><span class="line">&lt;&#x2F;struts&gt;  </span><br></pre></td></tr></table></figure>
+
+<h4 id="Mybatis配置文件"><a href="#Mybatis配置文件" class="headerlink" title="Mybatis配置文件"></a>Mybatis配置文件</h4><blockquote>
+<p>mabatis-config.xml</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version&#x3D;&quot;1.0&quot; encoding&#x3D;&quot;UTF-8&quot; ?&gt;  </span><br><span class="line">&lt;!DOCTYPE configuration PUBLIC &quot;-&#x2F;&#x2F;mybatis.org&#x2F;&#x2F;DTD Config 3.0&#x2F;&#x2F;EN&quot; &quot;http:&#x2F;&#x2F;mybatis.org&#x2F;dtd&#x2F;mybatis-3-config.dtd&quot;&gt;  </span><br><span class="line">&lt;configuration&gt;  </span><br><span class="line">  </span><br><span class="line">      &lt;typeAliases&gt;    </span><br><span class="line">            &lt;typeAlias alias&#x3D;&quot;userinfo&quot; type&#x3D;&quot;com.jialin.entity.UserInfo&quot;&#x2F;&gt;    </span><br><span class="line">      &lt;&#x2F;typeAliases&gt;    </span><br><span class="line">        </span><br><span class="line">      &lt;!-- 因为已经在applicationContext-common中指定了映射文件的位置，这里就省略了 --&gt;  </span><br><span class="line">      &lt;!-- &lt;mappers&gt;    </span><br><span class="line">            &lt;mapper resource&#x3D;&quot;com&#x2F;jialin&#x2F;dao&#x2F;registerMapper.xml&quot;&#x2F;&gt;    </span><br><span class="line">      &lt;&#x2F;mappers&gt;   --&gt;  </span><br><span class="line">  </span><br><span class="line">&lt;&#x2F;configuration&gt;  </span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>UserManageAction.java</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br></pre></td><td class="code"><pre><span class="line">package com.jialin.action;  </span><br><span class="line">  </span><br><span class="line">import com.jialin.entity.UserInfo;  </span><br><span class="line">import com.jialin.service.IUserInfoService;  </span><br><span class="line">  </span><br><span class="line">public class UserManageAction &#123;  </span><br><span class="line">  </span><br><span class="line">    private IUserInfoService userInfoService;  </span><br><span class="line">  </span><br><span class="line">    public IUserInfoService getUserInfoService() &#123;  </span><br><span class="line">        return userInfoService;  </span><br><span class="line">    &#125;  </span><br><span class="line">  </span><br><span class="line">    public void setUserInfoService(IUserInfoService userInfoService) &#123;  </span><br><span class="line">        this.userInfoService &#x3D; userInfoService;  </span><br><span class="line">    &#125;  </span><br><span class="line">  </span><br><span class="line">    private UserInfo userInfo;  </span><br><span class="line">  </span><br><span class="line">    public UserInfo getUserInfo() &#123;  </span><br><span class="line">        return userInfo;  </span><br><span class="line">    &#125;  </span><br><span class="line">  </span><br><span class="line">    public void setUserInfo(UserInfo userInfo) &#123;  </span><br><span class="line">        this.userInfo &#x3D; userInfo;  </span><br><span class="line">    &#125;  </span><br><span class="line">  </span><br><span class="line">      </span><br><span class="line">   </span><br><span class="line">    public String insertUser() &#123;  </span><br><span class="line">  </span><br><span class="line">        userInfoService.insertUser(userInfo);  </span><br><span class="line">        return &quot;success&quot;;  </span><br><span class="line">    &#125;  </span><br><span class="line">  </span><br><span class="line">    public String editUser() &#123;  </span><br><span class="line">  </span><br><span class="line">        userInfoService.edit(userInfo);  </span><br><span class="line">        return &quot;success&quot;;  </span><br><span class="line">    &#125;  </span><br><span class="line">  </span><br><span class="line">    public String removeUser() &#123;  </span><br><span class="line">  </span><br><span class="line">        userInfoService.remove(userInfo);  </span><br><span class="line">        return &quot;success&quot;;  </span><br><span class="line">    &#125;  </span><br><span class="line">  </span><br><span class="line">    public String getUserById() &#123;  </span><br><span class="line">        userInfoService.get(userInfo);  </span><br><span class="line">        return &quot;success&quot;;  </span><br><span class="line">    &#125;  </span><br><span class="line">  </span><br><span class="line">    public String getListByName() &#123;  </span><br><span class="line">  </span><br><span class="line">        userInfoService.getList(userInfo);  </span><br><span class="line">  </span><br><span class="line">        return &quot;success&quot;;  </span><br><span class="line">    &#125;  </span><br><span class="line">  </span><br><span class="line">    public String getAllUser() &#123;  </span><br><span class="line">        userInfoService.getAllUser();  </span><br><span class="line">        return &quot;success&quot;;  </span><br><span class="line">    &#125;  </span><br><span class="line">  </span><br><span class="line">&#125;  </span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>IUserInfoService.java</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">package com.jialin.service;  </span><br><span class="line">  </span><br><span class="line">import java.util.List;  </span><br><span class="line">  </span><br><span class="line">import com.jialin.entity.UserInfo;  </span><br><span class="line">  </span><br><span class="line">public interface IUserInfoService &#123;  </span><br><span class="line">    public void insertUser(UserInfo user);  </span><br><span class="line">  </span><br><span class="line">    public void edit(UserInfo user);  </span><br><span class="line">  </span><br><span class="line">    public void remove(UserInfo user);  </span><br><span class="line">  </span><br><span class="line">    public UserInfo get(UserInfo user);  </span><br><span class="line">  </span><br><span class="line">    public List getList(UserInfo user);  </span><br><span class="line">      </span><br><span class="line">    public List getAllUser();  </span><br><span class="line">&#125;  </span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>UserInfoService.java</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br></pre></td><td class="code"><pre><span class="line">package com.jialin.service;  </span><br><span class="line">  </span><br><span class="line">import java.util.List;  </span><br><span class="line">  </span><br><span class="line">import java.util.Iterator;  </span><br><span class="line">  </span><br><span class="line">import com.jialin.dao.UserInfoDao;  </span><br><span class="line">import com.jialin.entity.UserInfo;  </span><br><span class="line">  </span><br><span class="line">public class UserInfoService implements IUserInfoService &#123;  </span><br><span class="line">      </span><br><span class="line">    private UserInfoDao userInfoDao;  </span><br><span class="line">      </span><br><span class="line">  </span><br><span class="line">    public UserInfoDao getUserInfoDao() &#123;  </span><br><span class="line">        return userInfoDao;  </span><br><span class="line">    &#125;  </span><br><span class="line">  </span><br><span class="line">    public void setUserInfoDao(UserInfoDao userInfoDao) &#123;  </span><br><span class="line">        this.userInfoDao &#x3D; userInfoDao;  </span><br><span class="line">    &#125;  </span><br><span class="line">  </span><br><span class="line">    @Override  </span><br><span class="line">    public void insertUser(UserInfo user)  </span><br><span class="line">    &#123;  </span><br><span class="line">        userInfoDao.insertUser(user);  </span><br><span class="line">    &#125;  </span><br><span class="line">  </span><br><span class="line">    @Override  </span><br><span class="line">    public void edit(UserInfo user) &#123;  </span><br><span class="line">        userInfoDao.edit(user);  </span><br><span class="line">          </span><br><span class="line">    &#125;  </span><br><span class="line">  </span><br><span class="line">    @Override  </span><br><span class="line">    public void remove(UserInfo user) &#123;  </span><br><span class="line">        userInfoDao.remove(user);  </span><br><span class="line">          </span><br><span class="line">    &#125;  </span><br><span class="line">  </span><br><span class="line">    @Override  </span><br><span class="line">    public UserInfo get(UserInfo user) &#123;  </span><br><span class="line">        UserInfo user1&#x3D;userInfoDao.get(user);  </span><br><span class="line">        System.out.println(user1.getUsername());  </span><br><span class="line">        return user1;  </span><br><span class="line">    &#125;  </span><br><span class="line">  </span><br><span class="line">    @Override  </span><br><span class="line">    public List getList(UserInfo user) &#123;  </span><br><span class="line">        List list&#x3D;userInfoDao.getList(user);  </span><br><span class="line">          </span><br><span class="line">        for(Iterator iter&#x3D;list.iterator();iter.hasNext();)  </span><br><span class="line">        &#123;  </span><br><span class="line">            UserInfo user1&#x3D;(UserInfo)iter.next();  </span><br><span class="line">            System.out.println(user1.getUsername()+&quot;,&quot;);  </span><br><span class="line">        &#125;  </span><br><span class="line">          </span><br><span class="line">        return list;  </span><br><span class="line">    &#125;  </span><br><span class="line">  </span><br><span class="line">    @Override  </span><br><span class="line">    public List getAllUser() &#123;  </span><br><span class="line">        List list&#x3D; userInfoDao.getAllUser();  </span><br><span class="line">        for(Iterator iter&#x3D;list.iterator();iter.hasNext();)  </span><br><span class="line">        &#123;  </span><br><span class="line">            UserInfo user&#x3D;(UserInfo)iter.next();  </span><br><span class="line">            System.out.println(user.getUsername()+&quot;,&quot;);  </span><br><span class="line">        &#125;  </span><br><span class="line">          </span><br><span class="line">        return list;  </span><br><span class="line">    &#125;  </span><br><span class="line">      </span><br><span class="line">&#125;  </span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>UserInfoDao.java</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">package com.jialin.dao;  </span><br><span class="line">  </span><br><span class="line">import java.util.List;  </span><br><span class="line">  </span><br><span class="line">import com.jialin.entity.UserInfo;  </span><br><span class="line">  </span><br><span class="line">public interface UserInfoDao &#123;  </span><br><span class="line">      </span><br><span class="line">    public void insertUser(UserInfo user);  </span><br><span class="line">  </span><br><span class="line">    public void edit(UserInfo user);  </span><br><span class="line">  </span><br><span class="line">    public void remove(UserInfo user);  </span><br><span class="line">  </span><br><span class="line">    public UserInfo get(UserInfo user);  </span><br><span class="line">  </span><br><span class="line">    public List getList(UserInfo user);  </span><br><span class="line">      </span><br><span class="line">    public List getAllUser();  </span><br><span class="line">&#125; </span><br></pre></td></tr></table></figure>
+
+
+<blockquote>
+<p>UserInfo.java</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">package com.jialin.entity;  </span><br><span class="line">  </span><br><span class="line">public class UserInfo &#123;  </span><br><span class="line">    private int id;  </span><br><span class="line">    private String username;  </span><br><span class="line">    private String password;  </span><br><span class="line">    private String ismanager;  </span><br><span class="line">  </span><br><span class="line">    public void setIsmanager(String ismanager) &#123;  </span><br><span class="line">        this.ismanager &#x3D; ismanager;  </span><br><span class="line">    &#125;  </span><br><span class="line">  </span><br><span class="line">    public String getIsmanager() &#123;  </span><br><span class="line">        return ismanager;  </span><br><span class="line">    &#125;  </span><br><span class="line">  </span><br><span class="line">    public void setUsername(String username) &#123;  </span><br><span class="line">        this.username &#x3D; username;  </span><br><span class="line">    &#125;  </span><br><span class="line">  </span><br><span class="line">    public String getUsername() &#123;  </span><br><span class="line">        return username;  </span><br><span class="line">    &#125;  </span><br><span class="line">  </span><br><span class="line">    public void setPassword(String password) &#123;  </span><br><span class="line">        this.password &#x3D; password;  </span><br><span class="line">    &#125;  </span><br><span class="line">  </span><br><span class="line">    public String getPassword() &#123;  </span><br><span class="line">        return password;  </span><br><span class="line">    &#125;  </span><br><span class="line">  </span><br><span class="line">    public void setId(int id) &#123;  </span><br><span class="line">        this.id &#x3D; id;  </span><br><span class="line">    &#125;  </span><br><span class="line">  </span><br><span class="line">    public int getId() &#123;  </span><br><span class="line">        return id;  </span><br><span class="line">    &#125;  </span><br><span class="line">  </span><br><span class="line">&#125;  </span><br></pre></td></tr></table></figure>
+
+<h4 id="Mybaitis映射文件"><a href="#Mybaitis映射文件" class="headerlink" title="Mybaitis映射文件"></a>Mybaitis映射文件</h4><blockquote>
+<p>userinfo-mapper.xml</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version&#x3D;&quot;1.0&quot; encoding&#x3D;&quot;UTF-8&quot;?&gt;    </span><br><span class="line">&lt;!DOCTYPE mapper PUBLIC &quot;-&#x2F;&#x2F;mybatis.org&#x2F;&#x2F;DTD Mapper 3.0&#x2F;&#x2F;EN&quot; &quot;http:&#x2F;&#x2F;mybatis.org&#x2F;dtd&#x2F;mybatis-3-mapper.dtd&quot;&gt;     </span><br><span class="line">    </span><br><span class="line">&lt;mapper namespace&#x3D;&quot;com.jialin.dao.UserInfoDao&quot;&gt;     </span><br><span class="line">      &lt;!-- 自动生成id策略 --&gt;  </span><br><span class="line">    &lt;insert id&#x3D;&quot;insertUser&quot;  parameterType&#x3D;&quot;userinfo&quot;  useGeneratedKeys&#x3D;&quot;true&quot;  keyProperty&#x3D;&quot;id&quot;&gt;    </span><br><span class="line">            insert into userinfo(username,password,ismanager) values (#&#123;username&#125;,#&#123;password&#125;,#&#123;ismanager&#125;)    </span><br><span class="line">    &lt;&#x2F;insert&gt;    </span><br><span class="line">      </span><br><span class="line">    &lt;!-- userInfoResultMap是userinfo-resultmap.xml中定义的resultmap --&gt;  </span><br><span class="line">    &lt;select id&#x3D;&quot;getList&quot;  parameterType&#x3D;&quot;userinfo&quot; resultType&#x3D;&quot;list&quot; resultMap&#x3D;&quot;userInfoResultMap&quot;&gt;  </span><br><span class="line">            select * from userinfo where username like &#39;%&#39; #&#123;username&#125; &#39;%&#39;  </span><br><span class="line">    &lt;&#x2F;select&gt;  </span><br><span class="line">      </span><br><span class="line">    &lt;select id&#x3D;&quot;getAllUser&quot; resultType&#x3D;&quot;list&quot;  resultMap&#x3D;&quot;userInfoResultMap&quot;&gt;  </span><br><span class="line">            select * from userinfo  </span><br><span class="line">    &lt;&#x2F;select&gt;  </span><br><span class="line">      </span><br><span class="line">    &lt;select id&#x3D;&quot;get&quot;  parameterType&#x3D;&quot;userinfo&quot;  resultType&#x3D;&quot;com.jialin.entity.UserInfo&quot; resultMap&#x3D;&quot;userInfoResultMap&quot;&gt;  </span><br><span class="line">        &lt;![CDATA[ </span><br><span class="line">            select * from userinfo where id &#x3D; #&#123;id&#125; </span><br><span class="line">        ]]&gt;  </span><br><span class="line">    &lt;&#x2F;select&gt;  </span><br><span class="line">      </span><br><span class="line">    &lt;update id&#x3D;&quot;edit&quot;  parameterType&#x3D;&quot;userinfo&quot;&gt;  </span><br><span class="line">        update userinfo set  </span><br><span class="line">        username &#x3D; #&#123;username&#125;,  </span><br><span class="line">        password &#x3D; #&#123;password&#125;  </span><br><span class="line">        where id &#x3D; #&#123;id&#125;  </span><br><span class="line">    &lt;&#x2F;update&gt;  </span><br><span class="line">      </span><br><span class="line">    &lt;delete id&#x3D;&quot;remove&quot; parameterType&#x3D;&quot;userinfo&quot;&gt;  </span><br><span class="line">        delete from userinfo where id &#x3D; #&#123;id&#125;  </span><br><span class="line">    &lt;&#x2F;delete&gt;  </span><br><span class="line">      </span><br><span class="line">&lt;&#x2F;mapper&gt;    </span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>userinfo-resultMap.xml</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version&#x3D;&quot;1.0&quot; encoding&#x3D;&quot;UTF-8&quot;?&gt;  </span><br><span class="line">&lt;!DOCTYPE mapper PUBLIC &quot;-&#x2F;&#x2F;mybatis.org&#x2F;&#x2F;DTD Mapper 3.0&#x2F;&#x2F;EN&quot;   </span><br><span class="line">    &quot;http:&#x2F;&#x2F;mybatis.org&#x2F;dtd&#x2F;mybatis-3-mapper.dtd&quot;&gt;  </span><br><span class="line">&lt;mapper namespace&#x3D;&quot;com.jialin.dao.UserInfoDao&quot;&gt;  </span><br><span class="line">    &lt;resultMap type&#x3D;&quot;com.jialin.entity.UserInfo&quot; id&#x3D;&quot;userInfoResultMap&quot;&gt;  </span><br><span class="line">        &lt;id property&#x3D;&quot;id&quot; column&#x3D;&quot;id&quot;&#x2F;&gt;  </span><br><span class="line">        &lt;result property&#x3D;&quot;username&quot; column&#x3D;&quot;username&quot;&#x2F;&gt;  </span><br><span class="line">        &lt;result property&#x3D;&quot;password&quot; column&#x3D;&quot;password&quot;&#x2F;&gt;  </span><br><span class="line">        &lt;result property&#x3D;&quot;ismanager&quot; column&#x3D;&quot;ismanager&quot;&#x2F;&gt;  </span><br><span class="line">    &lt;&#x2F;resultMap&gt;  </span><br><span class="line">&lt;&#x2F;mapper&gt;  </span><br></pre></td></tr></table></figure>
+
+<h4 id="测试jsp"><a href="#测试jsp" class="headerlink" title="测试jsp"></a>测试jsp</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br></pre></td><td class="code"><pre><span class="line">&lt;%@ page contentType&#x3D;&quot;text&#x2F;html; charset&#x3D;UTF-8&quot;%&gt;  </span><br><span class="line"> </span><br><span class="line">&lt;html&gt;  </span><br><span class="line">&lt;head&gt;  </span><br><span class="line">&lt;title&gt;&lt;&#x2F;title&gt;  </span><br><span class="line">  </span><br><span class="line">&lt;script type&#x3D;&quot;text&#x2F;javascript&quot;&gt;  </span><br><span class="line">      </span><br><span class="line">    function insertUser()  </span><br><span class="line">    &#123;  </span><br><span class="line">        var myform&#x3D;document.forms[0];  </span><br><span class="line">        myform.action&#x3D;&quot;insertUser_success&quot;;  </span><br><span class="line">        myform.method&#x3D;&quot;post&quot;;  </span><br><span class="line">        myform.submit();  </span><br><span class="line">    &#125;  </span><br><span class="line">      </span><br><span class="line">    function getUserByName()  </span><br><span class="line">    &#123;  </span><br><span class="line">        var myform&#x3D;document.forms[0];  </span><br><span class="line">        myform.action&#x3D;&quot;getListByName_success&quot;;  </span><br><span class="line">        myform.method&#x3D;&quot;post&quot;;  </span><br><span class="line">        myform.submit();  </span><br><span class="line">    &#125;  </span><br><span class="line">      </span><br><span class="line">    function getAllUser()  </span><br><span class="line">    &#123;  </span><br><span class="line">        var myform&#x3D;document.forms[0];  </span><br><span class="line">        myform.action&#x3D;&quot;getAllUser_success&quot;;  </span><br><span class="line">        myform.method&#x3D;&quot;post&quot;;  </span><br><span class="line">        myform.submit();  </span><br><span class="line">    &#125;  </span><br><span class="line">      </span><br><span class="line">    function editUser()  </span><br><span class="line">    &#123;  </span><br><span class="line">        var myform&#x3D;document.forms[0];  </span><br><span class="line">        myform.action&#x3D;&quot;editUser_success&quot;;  </span><br><span class="line">        myform.method&#x3D;&quot;post&quot;;  </span><br><span class="line">        myform.submit();  </span><br><span class="line">    &#125;</span><br><span class="line">      </span><br><span class="line">    function getUserById()  </span><br><span class="line">    &#123;  </span><br><span class="line">        var myform&#x3D;document.forms[0];  </span><br><span class="line">        myform.action&#x3D;&quot;getUserById_success&quot;;  </span><br><span class="line">        myform.method&#x3D;&quot;post&quot;;  </span><br><span class="line">        myform.submit();  </span><br><span class="line">    &#125;  </span><br><span class="line">      </span><br><span class="line">    function removeUser()  </span><br><span class="line">    &#123;  </span><br><span class="line">        var myform&#x3D;document.forms[0];  </span><br><span class="line">        myform.action&#x3D;&quot;removeUser_success&quot;;  </span><br><span class="line">        myform.method&#x3D;&quot;post&quot;;  </span><br><span class="line">        myform.submit();  </span><br><span class="line">    &#125;  </span><br><span class="line">  </span><br><span class="line">&lt;&#x2F;script&gt;  </span><br><span class="line">&lt;&#x2F;head&gt;  </span><br><span class="line">&lt;body&gt;  </span><br><span class="line">    &lt;h1&gt;用户管理&lt;&#x2F;h1&gt;  </span><br><span class="line">    &lt;hr&gt;  </span><br><span class="line">    &lt;form name&#x3D;&quot;myform&quot; &gt;  </span><br><span class="line">        id:&lt;input type&#x3D;&quot;text&quot; name&#x3D;&quot;userInfo.id&quot;&gt; &lt;br&gt;  </span><br><span class="line">        用户名：&lt;input type&#x3D;&quot;text&quot; name&#x3D;&quot;userInfo.username&quot;&gt; &lt;br&gt;  </span><br><span class="line">        密码：&lt;input type&#x3D;&quot;text&quot; name&#x3D;&quot;userInfo.password&quot;&gt;  &lt;br&gt;  </span><br><span class="line">        是否为管理员：&lt;input type&#x3D;&quot;text&quot; name&#x3D;&quot;userInfo.ismanager&quot;&gt;&lt;br&gt;  </span><br><span class="line">        &lt;input type&#x3D;&quot;button&quot; name&#x3D;&quot;btninsert&quot; onclick&#x3D;&quot;insertUser()&quot; value&#x3D;&quot;增加&quot; &#x2F;&gt;  </span><br><span class="line">        &lt;input type&#x3D;&quot;button&quot; name&#x3D;&quot;btnedit&quot; onclick&#x3D;&quot;editUser()&quot; value&#x3D;&quot;修改&quot; &#x2F;&gt;  </span><br><span class="line">        &lt;input type&#x3D;&quot;button&quot; name&#x3D;&quot;btnremove&quot; onclick&#x3D;&quot;removeUser()&quot; value&#x3D;&quot;删除&quot;  &#x2F;&gt;&lt;br&gt;  </span><br><span class="line">        &lt;input type&#x3D;&quot;button&quot; name&#x3D;&quot;btnget&quot; onclick&#x3D;&quot;getUserById()&quot; value&#x3D;&quot;按id查询&quot;  &#x2F;&gt;  </span><br><span class="line">        &lt;input type&#x3D;&quot;button&quot; name&#x3D;&quot;btngetlist&quot; onclick&#x3D;&quot;getUserByName()&quot; value&#x3D;&quot;按名称查询&quot;  &#x2F;&gt;  </span><br><span class="line">        &lt;input type&#x3D;&quot;button&quot; name&#x3D;&quot;btngetall&quot; onclick&#x3D;&quot;getAllUser()&quot; value&#x3D;&quot;查询全部&quot;  &#x2F;&gt;  </span><br><span class="line">    &lt;&#x2F;form&gt;  </span><br><span class="line">&lt;&#x2F;body&gt;  </span><br><span class="line">&lt;&#x2F;html&gt;</span><br></pre></td></tr></table></figure>
+
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">Murray</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://github.com/sunglowrise/sunglowrise.github.io/2018/01/01/Struts2+Spring3+Mybatis3%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/">https://github.com/sunglowrise/sunglowrise.github.io/2018/01/01/Struts2+Spring3+Mybatis3%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">Murray</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/Java/">
+                                    <span class="chip bg-color">Java</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2018/01/01/JVM%E5%8E%9F%E7%90%86%E8%AE%B2%E8%A7%A3%E5%92%8C%E8%B0%83%E4%BC%98/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="JVM原理讲解和调优">
+                        
+                        <span class="card-title">JVM原理讲解和调优</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2018-01-01
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            Murray
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Java/">
+                        <span class="chip bg-color">Java</span>
+                    </a>
+                    
+                    <a href="/tags/Jvm/">
+                        <span class="chip bg-color">Jvm</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2018/01/01/java%E6%8A%80%E6%9C%AF%E6%A0%88/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="java技术栈">
+                        
+                        <span class="card-title">java技术栈</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2018-01-01
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            Murray
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Java/">
+                        <span class="chip bg-color">Java</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: Murray个人笔记<br />'
+            + '文章作者: Murray<br />'
+            + '文章链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+    <div class="container row center-align" style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2020-2022</span>
+            
+            <span id="year">2020</span>
+            <a href="/about" target="_blank">Murray</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <br>
+            
+            <span id="icp"><img src="/medias/icp.png" style="vertical-align: text-bottom;" />
+                <a href="https://beian.miit.gov.cn" target="_blank">浙ICP备2021006498号</a>
+            </span>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/sunglowrise" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:sunglowrise@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+
+
+
+
+    <a href="https://www.zhihu.com/people/ma-liang-19-36" class="tooltipped" target="_blank" data-tooltip="关注我的知乎: https://www.zhihu.com/people/ma-liang-19-36" data-position="top" data-delay="50">
+        <i class="fab fa-zhihu1">知</i>
+    </a>
+
+
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    <!--腾讯兔小巢-->
+    
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>

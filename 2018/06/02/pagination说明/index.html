@@ -1,0 +1,1446 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="pagination说明, Java,Python,GO">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>pagination说明 | Murray个人笔记</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery.min.js"></script>
+
+<meta name="generator" content="Hexo 5.2.0"><link rel="alternate" href="/atom.xml" title="Murray个人笔记" type="application/atom+xml">
+</head>
+
+
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">Murray个人笔记</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">Murray个人笔记</div>
+        <div class="logo-desc">
+            
+            Never really desperate, only the lost of the soul.
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/20.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">pagination说明</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+        padding-bottom: 20px;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+        padding-top: 1.5rem
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        <!-- height: calc(100vh - 250px); -->
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/Js/">
+                                <span class="chip bg-color">Js</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2018-06-02
+                </div>
+                
+
+                
+
+                
+
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="Constructor"><a href="#Constructor" class="headerlink" title="Constructor"></a>Constructor</h1><h2 id="Commonly-used"><a href="#Commonly-used" class="headerlink" title="Commonly used"></a>Commonly used</h2><h3 id="dataSource-array-string-object-function"><a href="#dataSource-array-string-object-function" class="headerlink" title="dataSource array | string | object | function"></a>dataSource <em>array | string | object | function</em></h3><p>数据源，最终提供给分页组件的是一个数组</p>
+<p>数据源支持 4 种格式</p>
+<ol>
+<li><p><strong>Array</strong></p>
+<p> 直接提供一个数组，如：</p>
+<pre><code> [&#39;1&#39;, &#39;2&#39;, &#39;3&#39;, &#39;4&#39;]</code></pre>
+</li>
+<li><p><strong>Object</strong></p>
+<p> 提供一个对象，里面要包含数组，可以通过 <code>locator: &#39;data&#39;</code> 指定这个数组</p>
+<pre><code> &#123;
+     data: [&#39;1&#39;, &#39;2&#39;, &#39;3&#39;, &#39;4&#39;]
+ &#125;        </code></pre>
+</li>
+<li><p><strong>Function</strong></p>
+<p> 提供一个自定义函数，根据自己的业务逻辑返回数组，自定义程度很高，可以实现上面 2 种方式</p>
+<p> 可以动态组装数据，使用 <code>done</code> 返回数据，如：</p>
+<pre><code> dataSource: function(done)&#123;
+     var result = [];
+
+     for(var i = 1; i &lt; 196; i++)&#123;
+         result.push(i);
+     &#125;
+
+     done(result);
+ &#125;</code></pre>
+<p> 也可以发送请求获取数据，使用 <code>done</code> 异步返回数据</p>
+<pre><code> dataSource: function(done)&#123;
+     $.ajax(&#123;
+         type: &#39;GET&#39;,
+         url: &#39;/test.json&#39;,
+         success: function(response)&#123;
+             done(response);
+         &#125;
+     &#125;);
+ &#125;</code></pre>
+</li>
+<li><p><strong>URL</strong></p>
+<p> 提供一个URL，通过 Ajax 返回数据，适用于异步分页，每次请求返回一页的数据，返回的数据也可以通过 <code>locator</code> 查找</p>
+</li>
+</ol>
+<pre><code>如果URL为 file, http 或 https 协议，会用 `jsonp` 发送请求，否则为 Ajax
+
+    /test.json
+
+每次分页发起请求时，会附加两个参数 `pageNumber` 和 `pageSize` ，也可使用 `alias` 来指定参数名
+
+    /test.json?pageNumber=2&amp;pageSize=10</code></pre>
+<h3 id="locator-string-function"><a href="#locator-string-function" class="headerlink" title="locator string | function"></a>locator <em>string | function</em></h3><p>这个参数与 <code>dataSource</code> 相关，一般情况下，<code>dataSource</code> 是一个数组，可以直接传给分页组件处理。但如果返回的是 Object，那么就需要指定那个数组，默认为 <code>data</code></p>
+<p>指定 <code>locator</code> 可定位到数据源的位置，支持 2 种方式</p>
+<ol>
+<li><p><strong>String</strong></p>
+<pre><code> &#123;
+     data: [&#39;1&#39;, &#39;2&#39;, &#39;3&#39;, &#39;4&#39;]
+ &#125;</code></pre>
+<p> 指定 <code>locator: &#39;data&#39;</code> 之后，最终传给分页组件的就是 <code>[&#39;1&#39;, &#39;2&#39;, &#39;3&#39;, &#39;4&#39;]</code> </p>
+</li>
+</ol>
+<pre><code>此外，还支持多层定位，如果 `dataSource` 是如下，则可用 `locator: &#39;a.b&#39;`
+
+
+    &#123;
+        a: &#123;b: [&#39;1&#39;, &#39;2&#39;, &#39;3&#39;, &#39;4&#39;]&#125;
+    &#125;</code></pre>
+<ol start="2">
+<li><p><strong>Function</strong></p>
+<p> 提供一个自定义函数，找到数组的位置，并返回</p>
+</li>
+</ol>
+<pre><code>    locator: function()&#123;
+        // find data and return
+        return &#39;a.b&#39;;
+    &#125;</code></pre>
+<p>通过 Ajax 获取的数据同样会应用此规则</p>
+<h3 id="totalNumber-number-default-1"><a href="#totalNumber-number-default-1" class="headerlink" title="totalNumber number (default 1)"></a>totalNumber <em>number (default <code>1</code>)</em></h3><p>条目总数，异步分页时必填，模拟分页时为数组的长度</p>
+<h3 id="pageNumber-number-default-1"><a href="#pageNumber-number-default-1" class="headerlink" title="pageNumber number (default 1)"></a>pageNumber <em>number (default <code>1</code>)</em></h3><p>指定初始化时加载哪一页的数据</p>
+<h3 id="pageSize-number-default-10"><a href="#pageSize-number-default-10" class="headerlink" title="pageSize number (default 10)"></a>pageSize <em>number (default <code>10</code>)</em></h3><p>每页的条目数</p>
+<h3 id="pageRange-number-default-2"><a href="#pageRange-number-default-2" class="headerlink" title="pageRange number (default 2)"></a>pageRange <em>number (default <code>2</code>)</em></h3><p>可见的页码范围，即当前页码两边的页码数量。比如当前是第 6 页，设置 pageRange 为 2，则页码条显示为 ‘1… 4 5 <code>6</code> 7 8’</p>
+<h3 id="callback-function-data-pagination"><a href="#callback-function-data-pagination" class="headerlink" title="callback function(data, pagination)"></a>callback <em>function(data, pagination)</em></h3><p>每次翻页时的回调，<code>callback</code> 会传入两个参数</p>
+<pre><code>callback: function(data, pagination)&#123; ... &#125;</code></pre>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>类型</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>data</td>
+<td>array</td>
+<td>当页数据</td>
+</tr>
+<tr>
+<td>pagination</td>
+<td>object</td>
+<td>包含当页配置信息的对象</td>
+</tr>
+</tbody></table>
+<p>pagination 对象包含以下属性值：</p>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>类型</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>pageNumber</td>
+<td>number</td>
+<td>当前页码</td>
+</tr>
+<tr>
+<td>pageRange</td>
+<td>number</td>
+<td>页码范围</td>
+</tr>
+<tr>
+<td>pageSize</td>
+<td>number</td>
+<td>每页条目数</td>
+</tr>
+<tr>
+<td>totalPage</td>
+<td>number</td>
+<td>总页数</td>
+</tr>
+<tr>
+<td>totalNumber</td>
+<td>number</td>
+<td>总条目数</td>
+</tr>
+<tr>
+<td>el</td>
+<td>jQueryObject</td>
+<td>分页实例的容器</td>
+</tr>
+<tr>
+<td>direction</td>
+<td>number</td>
+<td>分页方向，往前翻页时值为 -1，往后翻为 1，初始化时为 0</td>
+</tr>
+</tbody></table>
+<h3 id="alias-object"><a href="#alias-object" class="headerlink" title="alias object"></a>alias <em>object</em></h3><p>请求的参数别名，用于异步分页，默认为空</p>
+<pre><code>alias: &#123;
+    pageNumber: &#39;pageNum&#39;,
+    pageSize: &#39;limit&#39;
+&#125;</code></pre>
+<p>那么通过 Ajax 发起请求时，会替换默认的 <code>pageNumber</code> 和 <code>pageSize</code></p>
+<pre><code>/test.json?pageNum=2&amp;limit=10    </code></pre>
+<h2 id="Display-control"><a href="#Display-control" class="headerlink" title="Display control"></a>Display control</h2><h3 id="showPrevious-boolean-default-true"><a href="#showPrevious-boolean-default-true" class="headerlink" title="showPrevious boolean (default true)"></a>showPrevious <em>boolean (default <code>true</code>)</em></h3><p>是否显示 ‘上一页’</p>
+<h3 id="showNext-boolean-default-true"><a href="#showNext-boolean-default-true" class="headerlink" title="showNext boolean (default true)"></a>showNext <em>boolean (default <code>true</code>)</em></h3><p>是否显示 ‘下一页’</p>
+<h3 id="showPageNumbers-boolean-default-true"><a href="#showPageNumbers-boolean-default-true" class="headerlink" title="showPageNumbers boolean (default true)"></a>showPageNumbers <em>boolean (default <code>true</code>)</em></h3><p>是否显示 ‘页码’</p>
+<h3 id="showNavigator-boolean-default-false"><a href="#showNavigator-boolean-default-false" class="headerlink" title="showNavigator boolean (default false)"></a>showNavigator <em>boolean (default <code>false</code>)</em></h3><p>是否显示导航器</p>
+<h3 id="showGoInput-boolean-default-false"><a href="#showGoInput-boolean-default-false" class="headerlink" title="showGoInput boolean (default false)"></a>showGoInput <em>boolean (default <code>false</code>)</em></h3><p>是否显示跳转输入框</p>
+<h3 id="showGoButton-boolean-default-false"><a href="#showGoButton-boolean-default-false" class="headerlink" title="showGoButton boolean (default false)"></a>showGoButton <em>boolean (default <code>false</code>)</em></h3><p>是否显示跳转按钮</p>
+<h3 id="showFirstOnEllipsisShow-boolean-default-true"><a href="#showFirstOnEllipsisShow-boolean-default-true" class="headerlink" title="showFirstOnEllipsisShow boolean (default true)"></a>showFirstOnEllipsisShow <em>boolean (default <code>true</code>)</em></h3><p>是否在有省略号时显示开始页码</p>
+<pre><code>showBeginingOnOmit: false,
+pageRange: 1,
+totalNumber: 100,
+pageSize: 10</code></pre>
+<p>如上设置，分页条会显示成这样 ‘… 4 <code>5</code> 6 … 10’</p>
+<h3 id="showLastOnEllipsisShow-boolean-default-true"><a href="#showLastOnEllipsisShow-boolean-default-true" class="headerlink" title="showLastOnEllipsisShow boolean (default true)"></a>showLastOnEllipsisShow <em>boolean (default <code>true</code>)</em></h3><p>是否在有省略号时显示结束页码</p>
+<pre><code>showEndingOnOmit: false,
+pageRange: 1,
+totalNumber: 100,
+pageSize: 10</code></pre>
+<p>如上设置，分页条会显示成这样 ‘1 … 4 <code>5</code> 6 …’</p>
+<h3 id="autoHidePrevious-boolean-default-false"><a href="#autoHidePrevious-boolean-default-false" class="headerlink" title="autoHidePrevious boolean (default false)"></a>autoHidePrevious <em>boolean (default <code>false</code>)</em></h3><p>是否在当前显示为第一页时隐藏 ‘上一页’ 按钮</p>
+<p>See <a href="/index.html#auto_hide">demo</a></p>
+<h3 id="autoHideNext-boolean-default-false"><a href="#autoHideNext-boolean-default-false" class="headerlink" title="autoHideNext boolean (default false)"></a>autoHideNext <em>boolean (default <code>false</code>)</em></h3><p>是否在当前显示为最后一页时隐藏 ‘下一页’ 按钮</p>
+<p>See <a href="/index.html#auto_hide">demo</a></p>
+<h2 id="Style"><a href="#Style" class="headerlink" title="Style"></a>Style</h2><h3 id="classPrefix-string"><a href="#classPrefix-string" class="headerlink" title="classPrefix string"></a>classPrefix <em>string</em></h3><p>样式前缀，默认为 <code>pagination</code></p>
+<h3 id="className-string"><a href="#className-string" class="headerlink" title="className string"></a>className <em>string</em></h3><p>附加给分页容器的额外样式类，默认为空</p>
+<h3 id="activeClassName-string"><a href="#activeClassName-string" class="headerlink" title="activeClassName string"></a>activeClassName <em>string</em></h3><p>选中页码的样式类，默认为 <code>active</code></p>
+<h3 id="disableClassName-string"><a href="#disableClassName-string" class="headerlink" title="disableClassName string"></a>disableClassName <em>string</em></h3><p>不可用页码的样式类，默认为 <code>disabled</code></p>
+<h3 id="ulClassName-string"><a href="#ulClassName-string" class="headerlink" title="ulClassName string"></a>ulClassName <em>string</em></h3><p>附加给分页容器下的 ‘ul’ 元素的样式类，默认为空</p>
+<h2 id="Customize"><a href="#Customize" class="headerlink" title="Customize"></a>Customize</h2><h3 id="prevText-string"><a href="#prevText-string" class="headerlink" title="prevText string"></a>prevText <em>string</em></h3><p>‘上一页’ 的文本，默认为 <code>&amp;laquo;</code>，即符号 &laquo;</p>
+<h3 id="nextText-string"><a href="#nextText-string" class="headerlink" title="nextText string"></a>nextText <em>string</em></h3><p>‘下一页’ 的文本，默认为 <code>&amp;raquo;</code>，即符号 &raquo;</p>
+<h3 id="ellipsisText-string"><a href="#ellipsisText-string" class="headerlink" title="ellipsisText string"></a>ellipsisText <em>string</em></h3><p>省略号文本，默认为 <code>...</code></p>
+<h3 id="goButtonText-string"><a href="#goButtonText-string" class="headerlink" title="goButtonText string"></a>goButtonText <em>string</em></h3><p>跳转按钮文本，默认为 <code>Go</code></p>
+<h3 id="formatNavigator-string-function"><a href="#formatNavigator-string-function" class="headerlink" title="formatNavigator string | function"></a>formatNavigator <em>string | function</em></h3><p>导航器格式化模板，默认为 <code>&lt;%= currentPage %&gt; / &lt;%= totalPage %&gt;</code>，也可提供一个自定义函数，返回一个这样的字符串</p>
+<p>提供 3 个模板变量</p>
+<ul>
+<li><code>currentPage</code> 当前页码</li>
+<li><code>totalPage</code> 总页数</li>
+<li><code>totalNumber</code> 总条目数</li>
+</ul>
+<p>See <a href="/index.html#format_navigator">demo</a></p>
+<h3 id="formatGoInput-string-function"><a href="#formatGoInput-string-function" class="headerlink" title="formatGoInput string | function"></a>formatGoInput <em>string | function</em></h3><p>跳转输入框格式化模板，默认为 <code>&lt;%= input %&gt;</code>，也可提供一个自定义函数，返回一个这样的字符串</p>
+<p><code>&lt;%= input %&gt;</code> 相当于 <code>&lt;input type=&quot;text&quot; class=&quot;J-paginationjs-go-pagenumber&quot;&gt;</code> 的一个包装，所以，也可自定义一个输入框标签元素，只需要确保带有 <code>J-paginationjs-go-pagenumber</code> 这个class即可</p>
+<p>提供 4 个模板变量</p>
+<ul>
+<li><code>input</code> 输入框</li>
+<li><code>currentPage</code> 当前页码</li>
+<li><code>totalPage</code> 总页数</li>
+<li><code>totalNumber</code> 总条目数</li>
+</ul>
+<p>See <a href="/index.html#format_go_input">demo</a></p>
+<h3 id="formatGoButton-string-function"><a href="#formatGoButton-string-function" class="headerlink" title="formatGoButton string | function"></a>formatGoButton <em>string | function</em></h3><p>跳转按钮格式化模板，默认为 <code>&lt;%= button %&gt;</code>，也可提供一个自定义函数，返回一个这样的字符串</p>
+<p><code>&lt;%= button %&gt;</code> 相当于 <code>&lt;input type=&quot;button&quot; class=&quot;J-paginationjs-go-button&quot;&gt;</code>，所以，也可自定义一个跳转按钮的标签元素，只需要确保带有 <code>J-paginationjs-go-button</code> 这个class即可</p>
+<p>提供 4 个模板变量</p>
+<ul>
+<li><code>button</code> 按钮</li>
+<li><code>currentPage</code> 当前页码</li>
+<li><code>totalPage</code> 总页数</li>
+<li><code>totalNumber</code> 总条目数</li>
+</ul>
+<h3 id="header-string-function"><a href="#header-string-function" class="headerlink" title="header string | function"></a>header <em>string | function</em></h3><p>自定义头部内容，默认为空</p>
+<p>提供 3 个模板变量</p>
+<ul>
+<li><code>currentPage</code> 当前页码</li>
+<li><code>totalPage</code> 总页数</li>
+<li><code>totalNumber</code> 总条目数</li>
+</ul>
+<h3 id="footer-string-function"><a href="#footer-string-function" class="headerlink" title="footer string | function"></a>footer <em>string | function</em></h3><p>自定义尾部内容，默认为空</p>
+<p>提供 3 个模板变量</p>
+<ul>
+<li><code>currentPage</code> 当前页码</li>
+<li><code>totalPage</code> 总页数</li>
+<li><code>totalNumber</code> 总条目数</li>
+</ul>
+<h3 id="pageLink-string"><a href="#pageLink-string" class="headerlink" title="pageLink string"></a>pageLink <em>string</em></h3><p>分页的链接，默认为空</p>
+<h2 id="Utilities"><a href="#Utilities" class="headerlink" title="Utilities"></a>Utilities</h2><h3 id="formatResult-function-data"><a href="#formatResult-function-data" class="headerlink" title="formatResult function(data)"></a>formatResult <em>function(data)</em></h3><p>提供一个自定义函数，处理每次分页的数组数据，在分页 <code>callback</code> 触发之前调用</p>
+<p>可以返回一个处理后的数组，或者直接在传过来的 <code>data</code> 数组里处理</p>
+<p>See <a href="/index.html#formatResult">demo</a></p>
+<h3 id="formatAjaxError-function-jqXHR-textStatus-errorThrown"><a href="#formatAjaxError-function-jqXHR-textStatus-errorThrown" class="headerlink" title="formatAjaxError function(jqXHR, textStatus, errorThrown)"></a>formatAjaxError <em>function(jqXHR, textStatus, errorThrown)</em></h3><p>提供一个自定义函数，用于渲染错误信息，默认为空</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">formatAjaxError: function(jqXHR, textStatus, errorThrown)&#123; ... &#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="ajax-object"><a href="#ajax-object" class="headerlink" title="ajax object"></a>ajax <em>object</em></h3><p>针对内置 Ajax 请求方法的参数作更加自定义的配置，参数必须与 <code>$.ajax</code> 兼容，适用于异步分页</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>类型</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>type</td>
+<td>string</td>
+<td>请求的方法类型，默认为 <code>GET</code></td>
+</tr>
+<tr>
+<td>dataType</td>
+<td>string</td>
+<td>数据格式，比如：<code>xml</code>，<code>json</code>，<code>jsonp</code>，或者其他 jQuery 支持的格式，默认为 <code>json</code></td>
+</tr>
+<tr>
+<td>data</td>
+<td>object</td>
+<td>默认情况下，分页请求都会被附加 <code>pageNumber</code> 和 <code>pageSize</code> 两个参数，某些情况下，可能还需要其他的参数，那么就可使用此参数解决，例如：<code>&#123; ajax: &#123; data: &#123;dbType: &#39;oracle&#39;&#125; &#125; &#125;</code></td>
+</tr>
+<tr>
+<td>cache</td>
+<td>boolean</td>
+<td>如果设置为 <code>false</code>，将会强制请求不被浏览器缓存，默认为 <code>true</code></td>
+</tr>
+<tr>
+<td>async</td>
+<td>boolean</td>
+<td>默认所有请求都以异步方式发送，默认为 <code>true</code>。如果需要同步方式，设置为 <code>false</code> 即可，跨域请求或 <code>dataType: &#39;jsonp&#39;</code> 不支持同步操作。</td>
+</tr>
+<tr>
+<td>beforeSend</td>
+<td>function</td>
+<td>发起请求之前的回调函数，可用于发送前修改 jqXHR 对象。beforeSend 函数返回 <code>false</code> 将取消该请求。</td>
+</tr>
+</tbody></table>
+<p>参数的更多信息，请参阅 <a target="_blank" rel="noopener" href="http://api.jquery.com/jquery.ajax/">JQuery API Documentation</a></p>
+<h3 id="triggerPagingOnInit-boolean-default-true"><a href="#triggerPagingOnInit-boolean-default-true" class="headerlink" title="triggerPagingOnInit boolean (default true)"></a>triggerPagingOnInit <em>boolean (default <code>true</code>)</em></h3><p>是否在初始化时触发默认分页，有些情况下，你可能希望默认触发首次分页，因为你已经用AJAX加载了内容并且内容已显示</p>
+<p>也有其他的用法，例如：默认加载第二页的数据</p>
+<pre><code>triggerPagingOnInit: true，
+pageNum: 2</code></pre>
+<h3 id="hideWhenLessThanOnePage-boolean-default-false"><a href="#hideWhenLessThanOnePage-boolean-default-false" class="headerlink" title="hideWhenLessThanOnePage boolean (default false)"></a>hideWhenLessThanOnePage <em>boolean (default <code>false</code>)</em></h3><p>是否在总页数小于1页时隐藏分页</p>
+<h3 id="inlineStyle-boolean-default-true"><a href="#inlineStyle-boolean-default-true" class="headerlink" title="inlineStyle boolean (default true)"></a>inlineStyle <em>boolean (default <code>true</code>)</em></h3><p>是否使用内联样式</p>
+<p>分页组件自带了样式内容，默认情况下，会在 head 里插入一个 <code>style</code> 标签元素，并放入分页自带的样式内容</p>
+<p>如果你觉得使用 <code>link</code> 外链样式文件更好，那么可以将此项设置为 <code>false</code>来阻止插入行为，并将你的样式文件以 <code>link</code> 方式引用</p>
+<p>默认的样式在这下载 <a href="../dist/2.0.6/pagination.css">pagination.css</a> <a href="../dist/2.0.6/pagination.less">pagination.less</a>，但你完全可以自己编写这些样式</p>
+<p><s>注意，只有使用带样式版本的分页组件，此项设置才会生效，即 <code>pagination-with-styles.js</code></s></p>
+<p>注意，从 2.0.6 起，不再支持 inlineStyle 配置，样式需要单独用 Link 标签引入</p>
+<h1 id="Methods"><a href="#Methods" class="headerlink" title="Methods"></a>Methods</h1><p>分页初始化之后，可以使用下面列出的方法来改变分页的行为</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var container &#x3D; $(&#39;#example1&#39;);</span><br><span class="line">container.pagination(&#123; ... &#125;);</span><br><span class="line"></span><br><span class="line">container.pagination(&#39;previous&#39;);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="previous"><a href="#previous" class="headerlink" title="previous"></a>previous</h3><p>触发上一页</p>
+<h3 id="next"><a href="#next" class="headerlink" title="next"></a>next</h3><p>触发下一页</p>
+<h3 id="go"><a href="#go" class="headerlink" title="go"></a>go</h3><p>跳转到指定页，有以下 2 种使用方式</p>
+<pre><code>container.pagination(&#39;go&#39;, 8)
+container.pagination(8)</code></pre>
+<p>也支持自定义回调函数，例如：</p>
+<pre><code>container.pagination(&#39;go&#39;, 8, function(data, pagination)&#123;
+    // template method of yourself
+&#125;)</code></pre>
+<p>注意，设置自定义函数后，就不会再调用分页的回调函数 <code>callback</code> 了</p>
+<h3 id="disable"><a href="#disable" class="headerlink" title="disable"></a>disable</h3><p>禁用分页，执行后分页不可用，要重新恢复可用需要调用解锁事件 <code>container.pagination(&#39;enable&#39;)</code></p>
+<p>每次异步翻页发出请求前，会自动调用此方法，请求成功之后会自动调用 <code>enable</code> 解锁</p>
+<h3 id="enable"><a href="#enable" class="headerlink" title="enable"></a>enable</h3><p>解锁分页，执行后分页恢复可用</p>
+<h3 id="show"><a href="#show" class="headerlink" title="show"></a>show</h3><p>显示分页</p>
+<h3 id="hide"><a href="#hide" class="headerlink" title="hide"></a>hide</h3><p>隐藏分页</p>
+<h3 id="destroy"><a href="#destroy" class="headerlink" title="destroy"></a>destroy</h3><p>销毁分页实例</p>
+<h3 id="getSelectedPageNum-number"><a href="#getSelectedPageNum-number" class="headerlink" title="getSelectedPageNum number"></a>getSelectedPageNum <em>number</em></h3><p>获取当前页码</p>
+<h3 id="getTotalPage-number"><a href="#getTotalPage-number" class="headerlink" title="getTotalPage number"></a>getTotalPage <em>number</em></h3><p>获取总页数</p>
+<h3 id="getSelectedPageData-array"><a href="#getSelectedPageData-array" class="headerlink" title="getSelectedPageData array"></a>getSelectedPageData <em>array</em></h3><p>获取当前页码的数据</p>
+<h3 id="isDisabled-function"><a href="#isDisabled-function" class="headerlink" title="isDisabled function"></a>isDisabled <em>function</em></h3><p>当前是否正处在禁用状态</p>
+<h1 id="Events"><a href="#Events" class="headerlink" title="Events"></a><a href="id:events">Events</a></h1><p>分页事件的功能接口有 2 种使用方式，分别是 <code>回调函数</code> 和 <code>插件钩子</code></p>
+<p>使用回调函数：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var container &#x3D; $(&#39;#example1&#39;);</span><br><span class="line">container.pagination(&#123;</span><br><span class="line">	afterRender: function()&#123;</span><br><span class="line">		&#x2F;&#x2F; function body</span><br><span class="line">	&#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>使用插件钩子：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">var container &#x3D; $(&#39;#example2&#39;);</span><br><span class="line"></span><br><span class="line">container.pagination(&#123;</span><br><span class="line">	dataSource: [1, 2, 3],</span><br><span class="line">	pageSize: 1</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">container.addHook(&#39;afterRender&#39;, function()&#123;</span><br><span class="line">	&#x2F;&#x2F; function body</span><br><span class="line">&#125;);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>注意，钩子可以在分页初始化之前定义，也可以在初始化之后定义</p>
+<h3 id="beforeInit-function"><a href="#beforeInit-function" class="headerlink" title="beforeInit function"></a>beforeInit <em>function</em></h3><p>分页实例初始化之前调用，返回 <code>false</code> 将阻止初始化</p>
+<h3 id="beforeRender-function"><a href="#beforeRender-function" class="headerlink" title="beforeRender function"></a>beforeRender <em>function</em></h3><p>每次分页时会重新渲染分页条，渲染之前调用</p>
+<h3 id="beforePaging-function"><a href="#beforePaging-function" class="headerlink" title="beforePaging function"></a>beforePaging <em>function</em></h3><p>分页之前调用</p>
+<h3 id="beforeDestroy-function"><a href="#beforeDestroy-function" class="headerlink" title="beforeDestroy function"></a>beforeDestroy <em>function</em></h3><p>分页实例销毁之前调用</p>
+<h3 id="beforeDisable-function"><a href="#beforeDisable-function" class="headerlink" title="beforeDisable function"></a>beforeDisable <em>function</em></h3><p>禁用之前调用</p>
+<h3 id="beforeEnable-function"><a href="#beforeEnable-function" class="headerlink" title="beforeEnable function"></a>beforeEnable <em>function</em></h3><p>解锁之前调用</p>
+<h3 id="beforePreviousOnClick-function"><a href="#beforePreviousOnClick-function" class="headerlink" title="beforePreviousOnClick function"></a>beforePreviousOnClick <em>function</em></h3><p>点击上一页之前调用</p>
+<h3 id="beforePageOnClick-function"><a href="#beforePageOnClick-function" class="headerlink" title="beforePageOnClick function"></a>beforePageOnClick <em>function</em></h3><p>点击页码之前调用</p>
+<h3 id="beforeNextOnClick-function"><a href="#beforeNextOnClick-function" class="headerlink" title="beforeNextOnClick function"></a>beforeNextOnClick <em>function</em></h3><p>点击下一页之前调用</p>
+<h3 id="beforeGoInputOnEnter-function"><a href="#beforeGoInputOnEnter-function" class="headerlink" title="beforeGoInputOnEnter function"></a>beforeGoInputOnEnter <em>function</em></h3><p>分页输入框回车之前调用</p>
+<h3 id="beforeGoButtonOnClick-function"><a href="#beforeGoButtonOnClick-function" class="headerlink" title="beforeGoButtonOnClick function"></a>beforeGoButtonOnClick <em>function</em></h3><p>分页跳转按钮点击之前调用</p>
+<h3 id="afterInit-function"><a href="#afterInit-function" class="headerlink" title="afterInit function"></a>afterInit <em>function</em></h3><p>分页实例初始化创建完成之后调用</p>
+<h3 id="afterRender-function"><a href="#afterRender-function" class="headerlink" title="afterRender function"></a>afterRender <em>function</em></h3><p>每次分页时会重新渲染分页条，渲染之后调用</p>
+<h3 id="afterPaging-function"><a href="#afterPaging-function" class="headerlink" title="afterPaging function"></a>afterPaging <em>function</em></h3><p>分页之后调用</p>
+<h3 id="afterDestroy-function"><a href="#afterDestroy-function" class="headerlink" title="afterDestroy function"></a>afterDestroy <em>function</em></h3><p>分页实例销毁之后调用</p>
+<h3 id="afterDisable-function"><a href="#afterDisable-function" class="headerlink" title="afterDisable function"></a>afterDisable <em>function</em></h3><p>禁用之后调用</p>
+<h3 id="afterEnable-function"><a href="#afterEnable-function" class="headerlink" title="afterEnable function"></a>afterEnable <em>function</em></h3><p>解锁之后调用</p>
+<h3 id="afterPreviousOnClick-function"><a href="#afterPreviousOnClick-function" class="headerlink" title="afterPreviousOnClick function"></a>afterPreviousOnClick <em>function</em></h3><p>点击上一页之后调用</p>
+<h3 id="afterPageOnClick-function"><a href="#afterPageOnClick-function" class="headerlink" title="afterPageOnClick function"></a>afterPageOnClick <em>function</em></h3><p>点击页码之后调用</p>
+<h3 id="afterNextOnClick-function"><a href="#afterNextOnClick-function" class="headerlink" title="afterNextOnClick function"></a>afterNextOnClick <em>function</em></h3><p>点击下一页之后调用</p>
+<h3 id="afterGoInputOnEnter-function"><a href="#afterGoInputOnEnter-function" class="headerlink" title="afterGoInputOnEnter function"></a>afterGoInputOnEnter <em>function</em></h3><p>分页输入框回车之后调用</p>
+<h3 id="afterGoButtonOnClick-function"><a href="#afterGoButtonOnClick-function" class="headerlink" title="afterGoButtonOnClick function"></a>afterGoButtonOnClick <em>function</em></h3><p>分页跳转按钮点击之后调用</p>
+<h3 id="afterIsFirstPage-function"><a href="#afterIsFirstPage-function" class="headerlink" title="afterIsFirstPage function"></a>afterIsFirstPage <em>function</em></h3><p>当前是第一页时调用</p>
+<h3 id="afterIsLastPage-function"><a href="#afterIsLastPage-function" class="headerlink" title="afterIsLastPage function"></a>afterIsLastPage <em>function</em></h3><p>当前是最后一页时调用</p>
+<h1 id="Skin"><a href="#Skin" class="headerlink" title="Skin"></a>Skin</h1><p>分页组件自带了 5 套默认皮肤，但你完全可以定制你自己的皮肤</p>
+<p>例如蓝色皮肤，可以这样使用：</p>
+<pre><code>className: &#39;paginationjs-theme-blue&#39;</code></pre>
+<p>小号蓝色皮肤：</p>
+<pre><code>className: &#39;paginationjs-theme-blue paginationjs-small&#39;</code></pre>
+<p>大号蓝色皮肤：</p>
+<pre><code>className: &#39;paginationjs-theme-blue paginationjs-big&#39;</code></pre>
+<p>如果需要自定义样式，则可以增加 css 类 <code>custom-paginationjs</code></p>
+<h1 id="Configuring-Defaults"><a href="#Configuring-Defaults" class="headerlink" title="Configuring Defaults"></a>Configuring Defaults</h1><p>分页可通过 <code>$.fn.pagination.defaults</code> 对象来修改默认配置，修改后，将影响所有之后创建的实例</p>
+<p>例如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$.extend($.fn.pagination.defaults, &#123;</span><br><span class="line">	pageSize: 20</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>之后所有新建的分页实例，每页条数都是 20</p>
+<hr>
+<p><a href="https://github.com/superRaytin/paginationjs/issues">帮助改进这些文档，新建一个 issue 或 pull request</a></p>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">Murray</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://github.com/sunglowrise/sunglowrise.github.io/2018/06/02/pagination%E8%AF%B4%E6%98%8E/">https://github.com/sunglowrise/sunglowrise.github.io/2018/06/02/pagination%E8%AF%B4%E6%98%8E/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">Murray</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/Js/">
+                                    <span class="chip bg-color">Js</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2018/06/02/JS%E4%B8%AD%E6%AD%A3%E5%88%99%E5%8C%B9%E9%85%8D%E7%9A%843%E4%B8%AA%E6%96%B9%E6%B3%95/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="JS中正则匹配的3个方法">
+                        
+                        <span class="card-title">JS中正则匹配的3个方法</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2018-06-02
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            Murray
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Js/">
+                        <span class="chip bg-color">Js</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2018/06/02/%E4%B8%8A%E4%BC%A0%E6%96%87%E4%BB%B6%EF%BC%88%E5%9B%BE%E7%89%87%EF%BC%89/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="上传文件（图片）">
+                        
+                        <span class="card-title">上传文件（图片）</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2018-06-02
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            Murray
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Js/">
+                        <span class="chip bg-color">Js</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: Murray个人笔记<br />'
+            + '文章作者: Murray<br />'
+            + '文章链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+    <div class="container row center-align" style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2020-2022</span>
+            
+            <span id="year">2020</span>
+            <a href="/about" target="_blank">Murray</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <br>
+            
+            <span id="icp"><img src="/medias/icp.png" style="vertical-align: text-bottom;" />
+                <a href="https://beian.miit.gov.cn" target="_blank">浙ICP备2021006498号</a>
+            </span>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/sunglowrise" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:sunglowrise@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+
+
+
+
+    <a href="https://www.zhihu.com/people/ma-liang-19-36" class="tooltipped" target="_blank" data-tooltip="关注我的知乎: https://www.zhihu.com/people/ma-liang-19-36" data-position="top" data-delay="50">
+        <i class="fab fa-zhihu1">知</i>
+    </a>
+
+
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    <!--腾讯兔小巢-->
+    
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>

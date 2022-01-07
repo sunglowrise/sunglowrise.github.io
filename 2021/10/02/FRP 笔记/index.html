@@ -1,0 +1,1392 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="FRP 笔记, Java,Python,GO">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>FRP 笔记 | Murray个人笔记</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery.min.js"></script>
+
+<meta name="generator" content="Hexo 5.2.0"><link rel="alternate" href="/atom.xml" title="Murray个人笔记" type="application/atom+xml">
+</head>
+
+
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">Murray个人笔记</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">Murray个人笔记</div>
+        <div class="logo-desc">
+            
+            Never really desperate, only the lost of the soul.
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/8.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">FRP 笔记</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+        padding-bottom: 20px;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+        padding-top: 1.5rem
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        <!-- height: calc(100vh - 250px); -->
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/Frp/">
+                                <span class="chip bg-color">Frp</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2021-10-02
+                </div>
+                
+
+                
+
+                
+
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h2 id="FRP-一款很好用的内网穿透工具"><a href="#FRP-一款很好用的内网穿透工具" class="headerlink" title="FRP: 一款很好用的内网穿透工具"></a>FRP: 一款很好用的内网穿透工具</h2><blockquote>
+<p>对于没有公网 IP 的内网用户来说，远程管理或在外网访问内网机器上的服务是一个问题。FRP（Fast Reverse Proxy）是一款好用内网穿透工具。FRP 是一个使用 Go 语言开发的高性能的反向代理应用，可以帮助您轻松地进行内网穿透，对外网提供服务。FRP 支持 TCP、UDP、HTTP、HTTPS等协议类型，并且支持 Web 服务根据域名进行路由转发。</p>
+</blockquote>
+<blockquote>
+<p>FRP 项目地址：<a href="https://github.com/fatedier/frp">https://github.com/fatedier/frp</a></p>
+</blockquote>
+<h4 id="FRP-的作用"><a href="#FRP-的作用" class="headerlink" title="FRP 的作用"></a>FRP 的作用</h4><blockquote>
+<p>利用处于内网或防火墙后的机器，对外网环境提供 HTTP 或 HTTPS 服务。<br>对于 HTTP, HTTPS 服务支持基于域名的虚拟主机，支持自定义域名绑定，使多个域名可以共用一个 80 端口。</p>
+</blockquote>
+<blockquote>
+<p>利用处于内网或防火墙后的机器，对外网环境提供 TCP 和 UDP 服务，例如在家里通过 SSH 访问处于公司内网环境内的主机。</p>
+</blockquote>
+<h4 id="FRP-安装"><a href="#FRP-安装" class="headerlink" title="FRP 安装"></a>FRP 安装</h4><blockquote>
+<p>FRP 采用 Go 语言开发，支持 Windows、Linux、MacOS、ARM等多平台部署。FRP 安装非常容易，只需下载对应系统平台的软件包，并解压就可用。</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 示例Linux 下安装，为了方便管理把解压后的目录重命名为frp</span></span><br><span class="line">wget https://github.com/fatedier/frp/releases/download/v0.27.1/frp_0.27.1_linux_amd64.tar.gz</span><br><span class="line">tar xzvf frp_0.27.1_linux_amd64.tar.gz</span><br><span class="line">mv frp_0.27.1_linux_amd64 frp</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>软件包下载地址：<a href="https://github.com/fatedier/frp/releases">https://github.com/fatedier/frp/releases</a></p>
+</blockquote>
+<h4 id="FRP-服务端配置"><a href="#FRP-服务端配置" class="headerlink" title="FRP 服务端配置"></a>FRP 服务端配置</h4><blockquote>
+<p>配置 FRP 服务端的前提条件是需要一台具有 <strong>公网IP</strong> 的设备，得益于 FRP 是 Go 语言开发的，具有良好的跨平台特性。可以在 Windows、Linux、MacOS、ARM 等几乎任何可联网设备上部署。<br>FRP 默认给出两个服务端配置文件，一个是简版的 frps.ini，另一个是完整版本 frps_full.ini。</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">cat frps.ini</span><br><span class="line"></span><br><span class="line">[common]</span><br><span class="line">bind_port = 7000</span><br><span class="line"></span><br><span class="line"><span class="comment"># 启动 FRP 服务端</span></span><br><span class="line">./frps -c ./frps.ini</span><br></pre></td></tr></table></figure>
+
+<h4 id="FRP-客户端配置"><a href="#FRP-客户端配置" class="headerlink" title="FRP 客户端配置"></a>FRP 客户端配置</h4><blockquote>
+<p>和 FRP 服务端类似，FRP 默认也给出两个客户端配置文件，一个是简版的 frpc.ini，另一个是完整版本 frpc_full.ini。</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">vim frpc.ini</span><br><span class="line"></span><br><span class="line">[common]</span><br><span class="line"><span class="comment"># FRP 服务端的公网 IP</span></span><br><span class="line">server_addr = 4.3.2.1</span><br><span class="line"><span class="comment"># FRP 服务端监听的端口</span></span><br><span class="line">server_port = 7000</span><br><span class="line"></span><br><span class="line">[ssh]</span><br><span class="line"><span class="built_in">type</span> = tcp</span><br><span class="line"><span class="comment"># 本机IP</span></span><br><span class="line">local_ip = 127.0.0.1</span><br><span class="line">local_port = 22</span><br><span class="line">remote_port = 6000</span><br><span class="line"></span><br><span class="line"><span class="comment"># 启动 FRP 客户端</span></span><br><span class="line">./frpc -c ./frpc.ini</span><br><span class="line"></span><br><span class="line"><span class="comment"># 测试</span></span><br><span class="line">ssh 4.3.2.1 6000</span><br></pre></td></tr></table></figure>
+
+<h4 id="FRP-使用实例"><a href="#FRP-使用实例" class="headerlink" title="FRP 使用实例"></a>FRP 使用实例</h4><p><strong>通过 TCP 访问内网机器</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"># 修改 FRP 客户端配置文件 frpc.ini 文件</span><br><span class="line">cat frpc.ini</span><br><span class="line"></span><br><span class="line">[ssh]</span><br><span class="line">type &#x3D; tcp</span><br><span class="line">local_ip &#x3D; 127.0.0.1</span><br><span class="line">local_port &#x3D; 22</span><br><span class="line">remote_port &#x3D; 6000</span><br><span class="line"></span><br><span class="line"># 启动 FRP 客户端</span><br><span class="line">.&#x2F;frpc -c .&#x2F;frpc.ini</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><strong>通过自定义域名访问部署于内网的 Web 服务</strong></p>
+<blockquote>
+<p>有时需要在公有网络通过域名访问我们在本地环境搭建的 Web 服务，但是由于本地环境机器并没有公网 IP，无法将域名直接解析到本地的机器。<br>通过 FRP 就可以很容易实现这一功能。</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"># 首先修改 FRP 服务端配置文件，通过 vhost_http_port 参数来设置 HTTP 访问端口，这里将 HTTP 访问端口设为 8080。</span><br><span class="line">vim frps.ini</span><br><span class="line"></span><br><span class="line">[common]</span><br><span class="line">bind_port &#x3D; 7000</span><br><span class="line">vhost_http_port &#x3D; 8080</span><br><span class="line"></span><br><span class="line"># 启动 FRP 服务端</span><br><span class="line">.&#x2F;frps -c .&#x2F;frps.ini</span><br><span class="line"></span><br><span class="line"># 其次修改 FRP 客户端配置文件并增加如下内容</span><br><span class="line">vim frpc.ini</span><br><span class="line"></span><br><span class="line">[web]</span><br><span class="line">type &#x3D; http</span><br><span class="line">local_port &#x3D; 80</span><br><span class="line">custom_domains &#x3D; **.***.com</span><br><span class="line"># 通过 local_port 和 custom_domains 参数来设置本地机器上 Web 服务对应的端口和自定义的域名，这里我们分别设置端口为 80，对应域名为 **.***.com。</span><br><span class="line"></span><br><span class="line"># 启动 FRP 客户端</span><br><span class="line">.&#x2F;frpc -c .&#x2F;frpc.ini</span><br><span class="line"></span><br><span class="line"># 最后将 ..com 的域名 A 记录解析到 FRP 服务器的公网 IP 上，可以通过 http:&#x2F;&#x2F;.*.com:8080 这个 URL 访问到处于内网机器上对应的 Web 服务。</span><br><span class="line"></span><br><span class="line"># HTTPS 服务配置方法类似，只需将 vhost_http_port 替换为 vhost_https_port， type 设置为 https 即可。</span><br></pre></td></tr></table></figure>
+
+<p><strong>通过密码保护你的 Web 服务</strong></p>
+<blockquote>
+<p>由于所有客户端共用一个 FRP 服务端的 HTTP 服务端口，任何知道你的域名和 URL 的人都能访问到你部署在内网的 Web 服务，但是在某些场景下需要确保只有限定的用户才能访问。</p>
+</blockquote>
+<blockquote>
+<p>FRP 支持通过 HTTP Basic Auth 来保护你的 Web 服务，使用户需要通过用户名和密码才能访问到你的服务。需要实现此功能主要需要在 FRP 客户端的配置文件中添加用户名和密码的设置。</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">vim frpc.ini</span><br><span class="line"></span><br><span class="line">[web]</span><br><span class="line">type &#x3D; http</span><br><span class="line">local_port &#x3D; 80</span><br><span class="line">custom_domains &#x3D; **.***.com</span><br><span class="line"></span><br><span class="line"># 设置认证的用户名</span><br><span class="line">http_user &#x3D; abc</span><br><span class="line"></span><br><span class="line"># 设置认证的密码</span><br><span class="line">http_pwd &#x3D; abc</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>这时访问 http://.*.com:8080 这个 URL 时就需要输入配置的用户名和密码才能访问。<br>该功能目前仅限于 HTTP 类型的代理。</p>
+</blockquote>
+<p><strong>给 Web 服务增加自定义二级域名</strong></p>
+<blockquote>
+<p>在多人同时使用一个 FRP 服务端实现 Web 服务时，通过自定义二级域名的方式来使用会更加方便。</p>
+</blockquote>
+<blockquote>
+<p>通过在 FRP 服务端的配置文件中配置 subdomain_host参数就可以启用该特性。之后在 FRP 客户端的 http、https 类型的代理中可以不配置 custom_domains，而是配置一个 subdomain 参数。<br>然后只需要将 *.{subdomain_host} 解析到 FRP 服务端所在服务器。之后用户可以通过 subdomain 自行指定自己的 Web 服务所需要使用的二级域名，并通过 {subdomain}.{subdomain_host} 来访问自己的 Web 服务。</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"># 首先在 FRP 服务端配置 subdomain_host 参数</span><br><span class="line">vim frps.ini</span><br><span class="line">[common]</span><br><span class="line">subdomain_host &#x3D; ***.com</span><br><span class="line"></span><br><span class="line"># 其次在 FRP 客户端配置文件配置 subdomain 参数</span><br><span class="line">vim frpc.ini</span><br><span class="line">[web]</span><br><span class="line">type &#x3D; http</span><br><span class="line">local_port &#x3D; 80</span><br><span class="line">subdomain &#x3D; test</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>然后将泛域名 .com 解析到 FRP 服务端所在服务器的公网 IP 地址。FRP 服务端 和 FRP 客户端都启动成功后，通过 test.**.com 就可以访问到内网的 Web 服务。<br>同一个 HTTP 或 HTTPS 类型的代理中 custom_domains 和 subdomain 可以同时配置。</p>
+</blockquote>
+<blockquote>
+<p>需要注意的是如果 FPR 服务端配置了 subdomain_host，则 custom_domains 中不能是属于 subdomain_host 的子域名或者泛域名。</p>
+</blockquote>
+<p><strong>修改 Host Header</strong></p>
+<blockquote>
+<p>通常情况下 FRP 不会修改转发的任何数据。但有一些后端服务会根据 HTTP 请求 header 中的 host 字段来展现不同的网站，例如 Nginx 的虚拟主机服务，启用 host-header 的修改功能可以动态修改 HTTP 请求中的 host 字段。</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"># 实现此功能只需要在 FRP 客户端配置文件中定义 host_header_rewrite 参数。</span><br><span class="line">vim frpc.ini</span><br><span class="line">[web]</span><br><span class="line">type &#x3D; http</span><br><span class="line">local_port &#x3D; 80</span><br><span class="line">custom_domains &#x3D; test.***.com</span><br><span class="line">host_header_rewrite &#x3D; dev.***.com</span><br><span class="line"></span><br><span class="line"># 原来 HTTP 请求中的 host 字段 test.***.com 转发到后端服务时会被替换为 dev.***.com。</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>该功能仅限于 HTTP 类型的代理。</p>
+</blockquote>
+<p><strong>URL 路由</strong></p>
+<blockquote>
+<p>FRP 支持根据请求的 URL 路径路由转发到不同的后端服务。要实现这个功能可通过 FRP 客户端配置文件中的 locations 字段来指定。</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">$ vim frpc.ini</span><br><span class="line"></span><br><span class="line">[web01]</span><br><span class="line">type &#x3D; http</span><br><span class="line">local_port &#x3D; 80</span><br><span class="line">custom_domains &#x3D; web.***.com</span><br><span class="line">locations &#x3D; &#x2F;</span><br><span class="line"></span><br><span class="line">[web02]</span><br><span class="line">type &#x3D; http</span><br><span class="line">local_port &#x3D; 81</span><br><span class="line">custom_domains &#x3D; web.***.com</span><br><span class="line">locations &#x3D; &#x2F;news,&#x2F;about</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>按照上述的示例配置后，web.***.com 这个域名下所有以 /news 以及 /about 作为前缀的 URL 请求都会被转发到后端 web02 所在的后端服务，其余的请求会被转发到 web01 所在的后端服务。</p>
+</blockquote>
+<blockquote>
+<p>目前仅支持最大前缀匹配，之后会考虑支持正则匹配。</p>
+</blockquote>
+<p><strong>通过 UDP 访问内网机器</strong></p>
+<blockquote>
+<p>DNS 查询请求通常使用 UDP 协议，FRP 支持对内网 UDP 服务的穿透，配置方式和 TCP 基本一致。这里以转发到 Google 的 DNS 查询服务器 8.8.8.8 的 UDP 端口为例。</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"># 首先修改 FRP 客户端配置文件，并增加如下内容：</span><br><span class="line">vim frpc.ini</span><br><span class="line">[dns]</span><br><span class="line">type &#x3D; udp</span><br><span class="line">local_ip &#x3D; 8.8.8.8</span><br><span class="line">local_port &#x3D; 53</span><br><span class="line">remote_port &#x3D; 6001</span><br><span class="line"></span><br><span class="line"># 要转发到内网 DNS 服务器只需把 local_ip 改成对应 IP 即可。</span><br><span class="line"># 其次重新启动 FRP 客户端：</span><br><span class="line">.&#x2F;frpc -c .&#x2F;frpc.ini</span><br><span class="line"></span><br><span class="line"># 最后通过 dig 命令测试 UDP 包转发是否成功，预期会返回 www.google.com 域名的解析结果</span><br><span class="line">dig @4.3.2.1 -p 6001 www.google.com</span><br></pre></td></tr></table></figure>
+
+<p><strong>转发 Unix 域套接字</strong></p>
+<blockquote>
+<p>通过 TCP 端口访问内网的 Unix 域套接字，这里以和本地机器上的 Docker Daemon 通信为例。</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"># 首先修改 FRP 客户端配置文件，并增加如下内容：</span><br><span class="line">vim frpc.ini</span><br><span class="line"></span><br><span class="line">[unix_domain_socket]</span><br><span class="line">type &#x3D; tcp</span><br><span class="line">remote_port &#x3D; 6002</span><br><span class="line">plugin &#x3D; unix_domain_socket</span><br><span class="line">plugin_unix_path &#x3D; &#x2F;var&#x2F;run&#x2F;docker.sock</span><br><span class="line"></span><br><span class="line"># 这里主要是使用 plugin 和 plugin_unix_path 两个参数启用了 unix_domain_socket 插件和配置对应的套接字路径。</span><br><span class="line"></span><br><span class="line"># 其次重新启动 FRP 客户端：</span><br><span class="line">.&#x2F;frpc -c .&#x2F;frpc.ini</span><br><span class="line"></span><br><span class="line"># 最后通过 curl 命令查看 Docker 版本信息进行测试：</span><br><span class="line">curl http:&#x2F;&#x2F;4.3.2.1:6002&#x2F;version</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>FRP 从 1.5 版本开始支持客户端热加载配置文件，并不用每次都重启客户端程序。</p>
+</blockquote>
+<h3 id="FRP-高级进阶"><a href="#FRP-高级进阶" class="headerlink" title="FRP 高级进阶"></a>FRP 高级进阶</h3><p><strong>给 FRP 服务端增加一个 Dashboard</strong></p>
+<blockquote>
+<p>通过 Dashboard 可以方便的查看 FRP 的状态以及代理统计信息展示，要使用这个功能首先需要在 FRP 服务端配置文件中指定 Dashboard 服务使用的端口</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">$ vim frps.ini</span><br><span class="line"></span><br><span class="line">[common]</span><br><span class="line"># 指定 Dashboard 的监听的 IP 地址</span><br><span class="line">dashboard_addr &#x3D; 0.0.0.0</span><br><span class="line"># 指定 Dashboard 的监听的端口</span><br><span class="line">dashboard_port &#x3D; 7500</span><br><span class="line"># 指定访问 Dashboard 的用户名</span><br><span class="line">dashboard_user &#x3D; admin</span><br><span class="line"># 指定访问 Dashboard 的端口</span><br><span class="line">dashboard_pwd &#x3D; admin</span><br><span class="line"></span><br><span class="line"># 其次重新启动 FRP 服务端：</span><br><span class="line">.&#x2F;frps -c .&#x2F;frps.ini</span><br><span class="line"></span><br><span class="line"># 最后通过 http:&#x2F;&#x2F;[server_addr]:7500 访问 Dashboard 界面，用户名密码默认都为 admin。</span><br></pre></td></tr></table></figure>
+
+<p><strong>给 FRP 服务端加上身份验证</strong></p>
+<blockquote>
+<p>默认情况下只要知道 FRP 服务端开放的端口，任意 FRP 客户端都可以随意在服务端上注册端口映射，这样对于在公网上的 FRP 服务来说显然不太安全。FRP 提供了身份验证机制来提高 FRP 服务端的安全性。要启用这一特性也很简单，只需在 FRP 服务端和 FRP 客户端的 common 配置中启用 privilege_token 参数就行。</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[common]</span><br><span class="line">privilege_token &#x3D; 12345678</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>启用这一特性后，只有 FRP 服务端和 FRP 客户端的 common 配置中的 privilege_token 参数一致身份验证才会通过，FRP 客户端才能成功在 FRP 服务端注册端口映射。否则就会注册失败，出现类似下面的错误：</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">2018&#x2F;01&#x2F;25 17:29:27 [I] [proxy_manager.go:284] proxy removed: []</span><br><span class="line">2018&#x2F;01&#x2F;25 17:29:27 [I] [proxy_manager.go:294] proxy added: [ssh web dns unix_domain_socket]</span><br><span class="line">2018&#x2F;01&#x2F;25 17:29:27 [I] [proxy_manager.go:317] visitor removed: []</span><br><span class="line">2018&#x2F;01&#x2F;25 17:29:27 [I] [proxy_manager.go:326] visitor added: []</span><br><span class="line">2018&#x2F;01&#x2F;25 17:29:27 [E] [control.go:230] authorization failed</span><br><span class="line">2018&#x2F;01&#x2F;25 17:29:27 [W] [control.go:109] login to server failed: authorization failed</span><br><span class="line">authorization failed</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>需要注意的是 FRP 客户端所在机器和 FRP 服务端所在机器的时间相差不能超过 15 分钟，因为时间戳会被用于加密验证中，防止报文被劫持后被其他人利用。这个超时时间可以在配置文件中通过 authentication_timeout 这个参数来修改，单位为秒，默认值为 900，即 15 分钟。如果修改为 0，则 FRP 服务端将不对身份验证报文的时间戳进行超时校验。</p>
+</blockquote>
+<p><strong>FRP 客户端热加载配置文件</strong></p>
+<blockquote>
+<p>当修改了 FRP 客户端中的配置文件，从 0.15 版本开始可以通过 frpc reload 命令来动态加载配置文件，通常会在 10 秒内完成代理的更新。</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"># 启用此功能需要在 FRP 客户端配置文件中启用 admin 端口，用于提供 API 服务。配置如下：</span><br><span class="line">vim frpc.ini</span><br><span class="line">[common]</span><br><span class="line">admin_addr &#x3D; 127.0.0.1</span><br><span class="line">admin_port &#x3D; 7400</span><br><span class="line"># 重启 FRP 客户端，以后就可通过热加载方式进行 FRP 客户端配置变更了。</span><br><span class="line">.&#x2F;frpc -c .&#x2F;frpc.ini</span><br><span class="line"></span><br><span class="line"># 重新加载配置</span><br><span class="line">.&#x2F;frpc reload -c .&#x2F;frpc.ini</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>等待一段时间后客户端会根据新的配置文件创建、更新、删除代理。<br>需要注意的是 [common] 中的参数除了 start 外目前无法被修改。</p>
+</blockquote>
+<blockquote>
+<p>启用 admin_addr 后，还可以通过 frpc status -c ./frpc.ini 命令在 FRP 客户端很方便的查看当前代理状态信息。</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.&#x2F;frpc status -c .&#x2F;frpc.ini</span><br></pre></td></tr></table></figure>
+
+<p><strong>给 FRP 服务端增加端口白名单</strong></p>
+<blockquote>
+<p>为了防止 FRP 端口被滥用，FRP 提供了指定允许哪些端口被分配的功能。可通过 FRP 服务端的配置文件中 privilege_allow_ports 参数来指定：</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">vim frps.ini</span><br><span class="line"></span><br><span class="line">[common]</span><br><span class="line">privilege_allow_ports &#x3D; 2000-3000,3001,3003,4000-5000</span><br><span class="line"></span><br><span class="line">privilege_allow_ports </span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>可以配置允许使用的某个指定端口或者是一个范围内的所有端口，以 , 分隔，指定的范围以 - 分隔。</p>
+</blockquote>
+<blockquote>
+<p>当使用不允许的端口注册时，就会注册失败。出现类似以下错误：</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.&#x2F;frpc status -c .&#x2F;frpc.ini</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Proxy Status...</span><br><span class="line">TCP</span><br><span class="line">Name Status LocalAddr Plugin RemoteAddr Error</span><br><span class="line">ssh start error 127.0.0.1:22 4.3.2.1:60000 port not allowed</span><br><span class="line">unix_domain_socket start error unix_domain_socket 4.3.2.1:60002 port not allowed</span><br></pre></td></tr></table></figure>
+
+
+<p><strong>启用 TCP 多路复用</strong></p>
+<blockquote>
+<p>从 v0.10.0 版本开始，客户端和服务器端之间的连接支持多路复用，不再需要为每一个用户请求创建一个连接，使连接建立的延迟降低，并且避免了大量文件描述符的占用，使 FRP 可以承载更高的并发数。</p>
+</blockquote>
+<blockquote>
+<p>该功能默认启用，如需关闭可以在 FRP 服务端配置文件和 FRP 客户端配置文件中配置，该配置项在服务端和客户端必须一致：</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># frps.ini 和 frpc.ini 中</span><br><span class="line">[common]</span><br><span class="line">tcp_mux &#x3D; falseFRP </span><br></pre></td></tr></table></figure>
+
+
+<p><strong>底层通信启用 KCP 协议</strong></p>
+<blockquote>
+<p>FRP 从 v0.12.0 版本开始，底层通信协议支持选择 KCP 协议，在弱网络环境下传输效率会提升明显，但是会有一些额外的流量消耗。</p>
+</blockquote>
+<blockquote>
+<p>要开启 KCP 协议支持，首先要在 FRP 服务端配置文件中启用 KCP 协议支持：</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">vim frps.ini</span><br><span class="line">[common]</span><br><span class="line">bind_port &#x3D; 7000</span><br><span class="line"># 指定一个 UDP 端口用于接收客户端请求 KCP 绑定的是 UDP 端口，可以和 bind_port 一样</span><br><span class="line">kcp_bind_port &#x3D; 7000</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>其次是在 FRP 客户端配置文件指定需要使用的协议类型，目前只支持 TCP 和 KCP。其它代理配置不需要变更：</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">vim frpc.ini</span><br><span class="line">[common]</span><br><span class="line">server_addr &#x3D; 4.3.2.1</span><br><span class="line"># server_port 指定为 FRP 服务端里 kcp_bind_port 指定的端口</span><br><span class="line">server_port &#x3D; 7000</span><br><span class="line"># 指定需要使用的协议类型，默认类型为 TCP</span><br><span class="line">protocol &#x3D; kcp</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>需要注意开放相关机器上的 UDP 端口的访问权限。</p>
+</blockquote>
+<p><strong>给 FRP 服务端配置连接池</strong></p>
+<blockquote>
+<p>默认情况下，当用户请求建立连接后，FRP 服务端才会请求 FRP 客户端主动与后端服务建立一个连接。</p>
+</blockquote>
+<blockquote>
+<p>当为指定的 FRP 服务端启用连接池功能后，FRP 会预先和后端服务建立起指定数量的连接，每次接收到用户请求后，会从连接池中取出一个连接和用户连接关联起来，避免了等待与后端服务建立连接以及 FRP 客户端 和 FRP 服务端之间传递控制信息的时间。</p>
+</blockquote>
+<blockquote>
+<p>首先需要在 FRP 服务端配置文件中设置每个代理可以创建的连接池上限，避免大量资源占用，客户端设置超过此配置后会被调整到当前值：</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">vim frps.ini</span><br><span class="line">[common]</span><br><span class="line">max_pool_count &#x3D; 5</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>其次在 FRP 客户端配置文件中为客户端启用连接池，指定预创建连接的数量：</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">vim frpc.ini</span><br><span class="line">[common]</span><br><span class="line">pool_count &#x3D; 1</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>此功能比较适合有大量短连接请求时开启。</p>
+</blockquote>
+<p><strong>加密与压缩</strong></p>
+<blockquote>
+<p>如果公司内网防火墙对外网访问进行了流量识别与屏蔽，例如禁止了 SSH 协议等，可通过设置 use_encryption = true，将 FRP 客户端 与 FRP 服务端之间的通信内容加密传输，将会有效防止流量被拦截。</p>
+</blockquote>
+<blockquote>
+<p>如果传输的报文长度较长，通过设置 use_compression = true 对传输内容进行压缩，可以有效减小 FRP 客户端 与 FRP 服务端之间的网络流量，来加快流量转发速度，但是会额外消耗一些 CPU 资源。<br>这两个功能默认是不开启的，需要在 FRP 客户端配置文件中通过配置来为指定的代理启用加密与压缩的功能，压缩算法使用的是 snappy。</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">vim frpc.ini</span><br><span class="line"></span><br><span class="line">[ssh]</span><br><span class="line">type &#x3D; tcp</span><br><span class="line">local_port &#x3D; 22</span><br><span class="line">remote_port &#x3D; 6000</span><br><span class="line">use_encryption &#x3D; true</span><br><span class="line">use_compression &#x3D; true</span><br></pre></td></tr></table></figure>
+
+<p><strong>通过 FRP 客户端代理其它内网机器访问外网</strong></p>
+<blockquote>
+<p>FRP 客户端内置了 http_proxy 和 socks5 插件，通过这两个插件可以使其它内网机器通过 FPR 客户端的的网络访问互联网。</p>
+</blockquote>
+<blockquote>
+<p>要启用此功能，首先需要在 FRP 客户端配置文件中启用相关插件，这里以 http_proxy 插件为例：</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">vim frpc.ini</span><br><span class="line"></span><br><span class="line">[common]</span><br><span class="line">server_addr &#x3D; 4.3.2.1</span><br><span class="line">server_port &#x3D; 7000</span><br><span class="line"></span><br><span class="line">[http_proxy]</span><br><span class="line">type &#x3D; tcp</span><br><span class="line">remote_port &#x3D; 6000</span><br><span class="line">plugin &#x3D; http_proxy</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>其次将需要通过这个代理访问外网的内部机器的代理地址设置为 4.3.2.1:6000，这样就可以通过 FRP 客户端机器的网络访问互联网了。<br>http_proxy 插件也支持认证机制，如果需要启用认证可通过配置参数 plugin_http_user 和 plugin_http_passwd 启用。</p>
+</blockquote>
+<blockquote>
+<p>如需启用 Socks5 代理，只需将 plugin 的值更换为 socks5 即可。</p>
+</blockquote>
+<blockquote>
+<p>通过代理连接 FRP 服务端<br>在只能通过代理访问外网的环境内，FRP 客户端支持通过 HTTP_PROXY 参数来配置代理和 FRP 服务端进行通信。要使用此功能可以通过设置系统环境变量 HTTP_PROXY 或者通过在 FRP 客户端的配置文件中设置 http_proxy 参数来使用此功能。</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">vim frpc.ini</span><br><span class="line"></span><br><span class="line">[common]</span><br><span class="line">server_addr &#x3D; 4.3.2.1</span><br><span class="line">server_port &#x3D; 7000</span><br><span class="line">protocol &#x3D; tcp</span><br><span class="line">http_proxy &#x3D; http:&#x2F;&#x2F;user:pwd@4.3.2.2:8080</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>仅在 protocol = tcp 时生效，暂时不支持 kcp 协议。</p>
+</blockquote>
+<p><strong>安全地暴露内网服务</strong></p>
+<blockquote>
+<p>对于一些比较敏感的服务如果直接暴露于公网上将会存在安全隐患，FRP 也提供了一种安全的转发方式 STCP。使用 STCP (secret tcp) 类型的代理可以避免让任何人都能访问到穿透到公网的内网服务，要使用 STCP 模式访问者需要单独运行另外一个 FRP 客户端。</p>
+</blockquote>
+<blockquote>
+<p>下面就以创建一个只有自己能访问到的 SSH 服务代理为例，FRP 服务端和其它的部署步骤相同，主要区别是在 FRP 客户端上。</p>
+</blockquote>
+<blockquote>
+<p>首先配置 FRP 客户端，和常规 TCP 转发不同的是这里不需要指定远程端口。</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">vim frpc.ini</span><br><span class="line">[common]</span><br><span class="line">server_addr &#x3D; 4.3.2.1</span><br><span class="line">server_port &#x3D; 7000</span><br><span class="line"></span><br><span class="line">[secret_ssh]</span><br><span class="line">type &#x3D; stcp</span><br><span class="line"></span><br><span class="line"># 只有 sk 一致的用户才能访问到此服务</span><br><span class="line">sk &#x3D; abcdefg</span><br><span class="line">local_ip &#x3D; 127.0.0.1</span><br><span class="line">local_port &#x3D; 22</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>其次在要访问这个服务的机器上启动另外一个 FRP 客户端，配置如下：</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">vim frpc.ini</span><br><span class="line">[common]</span><br><span class="line">server_addr &#x3D; 4.3.2.1</span><br><span class="line">server_port &#x3D; 7000</span><br><span class="line"></span><br><span class="line">[secret_ssh_visitor]</span><br><span class="line">type &#x3D; stcp</span><br><span class="line"># STCP 的访问者</span><br><span class="line">role &#x3D; visitor</span><br><span class="line"># 要访问的 STCP 代理的名字，和前面定义的相同。</span><br><span class="line">server_name &#x3D; secret_ssh</span><br><span class="line"># 和前面定义的要一致</span><br><span class="line">sk &#x3D; abcdefg</span><br><span class="line"># 绑定本地端口用于访问 ssh 服务</span><br><span class="line">bind_addr &#x3D; 127.0.0.1</span><br><span class="line">bind_port &#x3D; 6005</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>最后在本机启动一个 FRP 客户端，这样就可以通过本机 6005 端口对内网机器 SSH 服务进行访问，假设用户名为 mike：</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">.&#x2F;frpc -c .&#x2F;frpc.ini</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><strong>点对点内网穿透</strong></p>
+<blockquote>
+<p>在传输大量数据时如果都经过服务器中转的话，这样会对服务器端带宽压力比较大。FRP 提供了一种新的代理类型 XTCP 来解决这个问题，XTCP 模式下可以在传输大量数据时让流量不经过服务器中转。<br>使用方式同 STCP 类似，需要在传输数据的两端都部署上 FRP 客户端上用于建立直接的连接。</p>
+</blockquote>
+<blockquote>
+<p>首先在 FRP 服务端配置上增加一个 UDP 端口用于支持该类型的客户端:</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">vim frps.ini</span><br><span class="line">bind_udp_port &#x3D; 7001</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>其次配置 FRP 客户端，和常规 TCP 转发不同的是这里不需要指定远程端口。</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">vim frpc.ini</span><br><span class="line"></span><br><span class="line">[common]</span><br><span class="line">server_addr &#x3D; 4.3.2.1</span><br><span class="line">server_port &#x3D; 7000</span><br><span class="line"></span><br><span class="line">[p2p_ssh]</span><br><span class="line">type &#x3D; xtcp</span><br><span class="line"></span><br><span class="line"># 只有 sk 一致的用户才能访问到此服务</span><br><span class="line">sk &#x3D; abcdefg</span><br><span class="line">local_ip &#x3D; 127.0.0.1</span><br><span class="line">local_port &#x3D; 22</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>然后在要访问这个服务的机器上启动另外一个 FRP 客户端，配置如下：</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">vim frpc.ini</span><br><span class="line">[common]</span><br><span class="line">server_addr &#x3D; 4.3.2.1</span><br><span class="line">server_port &#x3D; 7000</span><br><span class="line"></span><br><span class="line">[p2p_ssh_visitor]</span><br><span class="line">type &#x3D; xtcp</span><br><span class="line"># XTCP 的访问者</span><br><span class="line">role &#x3D; visitor</span><br><span class="line"># 要访问的 XTCP 代理的名字</span><br><span class="line">server_name &#x3D; p2p_ssh</span><br><span class="line">sk &#x3D; abcdefg</span><br><span class="line"># 绑定本地端口用于访问 ssh 服务</span><br><span class="line">bind_addr &#x3D; 127.0.0.1</span><br><span class="line">bind_port &#x3D; 6006</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>最后在本机启动一个 FRP 客户端，这样就可以通过本机 6006 端口对内网机器 SSH 服务进行访问，假设用户名为 mike：</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.&#x2F;frpc -c .&#x2F;frpc.ini</span><br></pre></td></tr></table></figure>
+
+<h3 id="一键安装脚本"><a href="#一键安装脚本" class="headerlink" title="一键安装脚本"></a>一键安装脚本</h3><blockquote>
+<p>项目地址：<a href="https://github.com/clangcn/onekey-install-shell/%E4%B8%8B%E8%BD%BD%E4%B8%80%E9%94%AE%E9%83%A8%E7%BD%B2%E8%84%9A%E6%9C%AC">https://github.com/clangcn/onekey-install-shell/下载一键部署脚本</a></p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">wget --no-check-certificate https://raw.githubusercontent.com/clangcn/onekey-install-shell/master/frps/install-frps.sh -O ./install-frps.sh</span><br><span class="line">chmod 700 ./install-frps.sh  </span><br><span class="line"><span class="comment"># 安装 FRP 服务端</span></span><br><span class="line">./install-frps.sh install </span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>配置 FRP</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">.&#x2F;install-frps.sh # config更新 FRP 服务端</span><br><span class="line">.&#x2F;install-frps.sh # update卸载 FRP 服务端</span><br><span class="line">.&#x2F;install-frps.sh # uninstallFRP 服务端日常管理</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="设置开机启动"><a href="#设置开机启动" class="headerlink" title="设置开机启动"></a>设置开机启动</h3><p><strong>自定义服务frpc.service</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"># vim &#x2F;lib&#x2F;systemd&#x2F;system&#x2F;frpc.service</span><br><span class="line">[Unit]</span><br><span class="line">Description&#x3D; frpc start service</span><br><span class="line"></span><br><span class="line">[Service]</span><br><span class="line">User&#x3D;root</span><br><span class="line">ExecStart&#x3D;&#x2F;root&#x2F;code&#x2F;frp&#x2F;frpc -c &#x2F;root&#x2F;code&#x2F;frp&#x2F;frpc.ini</span><br><span class="line"></span><br><span class="line">SuccessExitStatus&#x3D;143</span><br><span class="line">TimeoutStopSec&#x3D;10</span><br><span class="line">Restart&#x3D;on-failure</span><br><span class="line">RestartSec&#x3D;5</span><br><span class="line"></span><br><span class="line">[Install]</span><br><span class="line">WantedBy&#x3D;multi-user.target</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p><strong>注册服务</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">systemctl daemon-reload</span><br><span class="line">systemctl enable frpc.service</span><br><span class="line">systemctl start frpc.service</span><br><span class="line">systemctl status frpc.service</span><br></pre></td></tr></table></figure>
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">Murray</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://github.com/sunglowrise/sunglowrise.github.io/2021/10/02/FRP%20%E7%AC%94%E8%AE%B0/">https://github.com/sunglowrise/sunglowrise.github.io/2021/10/02/FRP%20%E7%AC%94%E8%AE%B0/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">Murray</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/Frp/">
+                                    <span class="chip bg-color">Frp</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2021/10/02/%E6%8A%80%E6%9C%AF%E6%A0%88%E6%80%BB%E7%BB%93/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="技术栈总结">
+                        
+                        <span class="card-title">技术栈总结</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-10-02
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            Murray
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/DB/">
+                        <span class="chip bg-color">DB</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2021/10/01/win10%20%E5%AD%90%E7%B3%BB%E7%BB%9F%20Ubuntu/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="win10 子系统 Ubuntu">
+                        
+                        <span class="card-title">win10 子系统 Ubuntu</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-10-01
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            Murray
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Docker/">
+                        <span class="chip bg-color">Docker</span>
+                    </a>
+                    
+                    <a href="/tags/Ubuntu/">
+                        <span class="chip bg-color">Ubuntu</span>
+                    </a>
+                    
+                    <a href="/tags/Windows/">
+                        <span class="chip bg-color">Windows</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: Murray个人笔记<br />'
+            + '文章作者: Murray<br />'
+            + '文章链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+    <div class="container row center-align" style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2020-2022</span>
+            
+            <span id="year">2020</span>
+            <a href="/about" target="_blank">Murray</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <br>
+            
+            <span id="icp"><img src="/medias/icp.png" style="vertical-align: text-bottom;" />
+                <a href="https://beian.miit.gov.cn" target="_blank">浙ICP备2021006498号</a>
+            </span>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/sunglowrise" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:sunglowrise@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+
+
+
+
+    <a href="https://www.zhihu.com/people/ma-liang-19-36" class="tooltipped" target="_blank" data-tooltip="关注我的知乎: https://www.zhihu.com/people/ma-liang-19-36" data-position="top" data-delay="50">
+        <i class="fab fa-zhihu1">知</i>
+    </a>
+
+
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    <!--腾讯兔小巢-->
+    
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>

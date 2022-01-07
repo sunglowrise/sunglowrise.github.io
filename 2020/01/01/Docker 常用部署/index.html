@@ -1,0 +1,1141 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="Docker 常用部署, Java,Python,GO">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>Docker 常用部署 | Murray个人笔记</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery.min.js"></script>
+
+<meta name="generator" content="Hexo 5.2.0"><link rel="alternate" href="/atom.xml" title="Murray个人笔记" type="application/atom+xml">
+</head>
+
+
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">Murray个人笔记</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">Murray个人笔记</div>
+        <div class="logo-desc">
+            
+            Never really desperate, only the lost of the soul.
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/2.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">Docker 常用部署</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+        padding-bottom: 20px;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+        padding-top: 1.5rem
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        <!-- height: calc(100vh - 250px); -->
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/Docker/">
+                                <span class="chip bg-color">Docker</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2020-01-01
+                </div>
+                
+
+                
+
+                
+
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h4 id="Mysql部署"><a href="#Mysql部署" class="headerlink" title="Mysql部署"></a>Mysql部署</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">mkdir -p /opt/mysql &amp;&amp; <span class="built_in">cd</span> /opt/mysql </span><br><span class="line">docker run -p 3306:3306 --name mysql-57 \</span><br><span class="line">--restart=always \</span><br><span class="line">--privileged=<span class="literal">true</span> \</span><br><span class="line">-v <span class="variable">$PWD</span>/conf:/etc/mysql/conf.d \</span><br><span class="line">-v <span class="variable">$PWD</span>/logs:/logs \</span><br><span class="line">-v <span class="variable">$PWD</span>/data:/var/lib/mysql \</span><br><span class="line">-e MYSQL_ROOT_PASSWORD=1q2w3e \</span><br><span class="line">-d mysql:5.7</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">docker run -p 3306:3306 --name mysql-57 \</span><br><span class="line">--restart=always \</span><br><span class="line">--privileged=<span class="literal">true</span> \</span><br><span class="line">-v /data/mysql/conf:/etc/mysql/conf.d \</span><br><span class="line">-v /data/mysql/logs:/logs \</span><br><span class="line">-v /data/mysql/data:/var/lib/mysql \</span><br><span class="line">-e MYSQL_ROOT_PASSWORD=1q2w3e \</span><br><span class="line">-e MYSQL_DATABASE=zeus \</span><br><span class="line">-e MYSQL_USER=zeus \</span><br><span class="line">-e MYSQL_PASSWORD=1q2w3e \</span><br><span class="line">-d mysql:5.7</span><br></pre></td></tr></table></figure>
+
+<h4 id="Redis"><a href="#Redis" class="headerlink" title="Redis"></a>Redis</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">docker run -p 6379:6379 --name redis \</span><br><span class="line">--restart=always \</span><br><span class="line">--privileged=<span class="literal">true</span> \</span><br><span class="line">-d redis:latest \</span><br><span class="line">--requirepass 1q2w3e</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 创建目录</span></span><br><span class="line">sudo mkdir /home/docker/redis/&#123;conf,data&#125; -p</span><br><span class="line"><span class="built_in">cd</span> /home/docker/redis</span><br><span class="line"></span><br><span class="line"><span class="comment"># 下载配置文件</span></span><br><span class="line">sudo wget https://raw.githubusercontent.com/antirez/redis/5.0.7/redis.conf -O conf/redis.conf</span><br><span class="line"><span class="comment"># 或</span></span><br><span class="line">sudo wget http://download.redis.io/redis-stable/redis.conf -O conf/redis.conf</span><br><span class="line"></span><br><span class="line"><span class="comment"># 替换编辑</span></span><br><span class="line">sudo sed -i <span class="string">&#x27;s/logfile &quot;&quot;/logfile &quot;access.log&quot;/&#x27;</span> conf/redis.conf</span><br><span class="line">sudo sed -i <span class="string">&#x27;s/bind 127.0.0.1/bind 0.0.0.0/&#x27;</span> conf/redis.conf</span><br><span class="line">sudo sed -i <span class="string">&#x27;s/appendonly no/appendonly yes/&#x27;</span> conf/redis.conf</span><br><span class="line"></span><br><span class="line"><span class="comment"># redis</span></span><br><span class="line">docker run \</span><br><span class="line">--restart=always \</span><br><span class="line">--privileged=<span class="literal">true</span> \</span><br><span class="line">-p 26379:6379 \</span><br><span class="line">--name redis \</span><br><span class="line">-v /home/docker/redis/conf/redis.conf:/etc/redis/redis.conf \</span><br><span class="line">-v /home/docker/redis/data:/data \</span><br><span class="line">-d redis redis-server /etc/redis/redis.conf \</span><br><span class="line">--appendonly yes</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h4 id="Postgres"><a href="#Postgres" class="headerlink" title="Postgres"></a>Postgres</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">docker run -p 5432:5432 --name postgres-latest \</span><br><span class="line">--restart=always \</span><br><span class="line">--privileged=<span class="literal">true</span> \</span><br><span class="line">-v /data/postgres/data:/var/lib/postgresql/data \</span><br><span class="line">-e POSTGRES_USER=postgres \</span><br><span class="line">-e POSTGRES_DB=postgres \</span><br><span class="line">-e POSTGRES_PASSWORD=1q2w3e \</span><br><span class="line">-d postgres:latest</span><br></pre></td></tr></table></figure>
+
+
+<h4 id="Nginx"><a href="#Nginx" class="headerlink" title="Nginx"></a>Nginx</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">docker run --name nginx \</span><br><span class="line">--restart=always \</span><br><span class="line">--privileged=<span class="literal">true</span> \</span><br><span class="line">-p 8080:8080 \</span><br><span class="line">-v /data/nginx/conf.d/:/etc/nginx/conf.d/ \</span><br><span class="line">-v /data/nginx/logs:/var/<span class="built_in">log</span>/nginx \</span><br><span class="line">-v /data/www/:/var/www/ \</span><br><span class="line">-d nginx</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h4 id="Openresty"><a href="#Openresty" class="headerlink" title="Openresty"></a>Openresty</h4><blockquote>
+<p>Docker Store 地址:<a target="_blank" rel="noopener" href="https://store.docker.com/community/images/openresty/openresty">https://store.docker.com/community/images/openresty/openresty</a></p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">docker run -d --name openresty \ </span><br><span class="line">-p 80:80 \</span><br><span class="line">-v /opt/<span class="built_in">local</span>/openresty/nginx.conf:/usr/<span class="built_in">local</span>/openresty/nginx/conf/nginx.conf:ro \</span><br><span class="line">-v /opt/<span class="built_in">local</span>/openresty/logs:/usr/<span class="built_in">local</span>/openresty/nginx/logs \</span><br><span class="line">-v /opt/<span class="built_in">local</span>/openresty/conf.d:/etc/nginx/conf.d \</span><br><span class="line">-v /opt/<span class="built_in">local</span>/openresty/html:/etc/nginx/html \</span><br><span class="line">-d openresty/openresty</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># nginx-demo.conf 见文末</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+<h4 id="EMQ-X"><a href="#EMQ-X" class="headerlink" title="EMQ X"></a>EMQ X</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 文档</span></span><br><span class="line"><span class="comment"># http://docs.emqtt.cn/zh_CN/latest/getstarted.html</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 镜像下载（http://emqtt.com/downloads/latest/docker）</span></span><br><span class="line">wget https://www.emqx.io/downloads/enterprise/v3.2.1/emqx-ee-docker-v3.2.1-amd64.zip -O emqx-ee-docker-v3.2.1-amd64.zip</span><br><span class="line"></span><br><span class="line"><span class="comment"># 解压 emqx-docker 镜像包:</span></span><br><span class="line">unzip -o emqx-ee-docker-v3.2.1-amd64.zip</span><br><span class="line"></span><br><span class="line"><span class="comment"># 加载镜像:</span></span><br><span class="line">docker load &lt; emqx-ee-docker-v3.2.1-amd64</span><br><span class="line"></span><br><span class="line"><span class="comment"># 启动容器:</span></span><br><span class="line">docker run -tid --name emq321 -p 1883:1883 -p 8083:8083 -p 8883:8883 -p 8084:8084 -p 18083:18083  emqx/emqx-ee:v3.2.1-amd64</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h4 id="mattermost"><a href="#mattermost" class="headerlink" title="mattermost"></a>mattermost</h4><blockquote>
+<p>Mattermost 是一个开源的团队协作通讯工具</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># doc文档：https://docs.mattermost.com/</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 下载并启动容器</span></span><br><span class="line">docker run --name mattermost-preview -d --publish 8065:8065 mattermost/mattermost-preview</span><br><span class="line"></span><br><span class="line"><span class="comment"># ---------- docker部署 -----------</span></span><br><span class="line"><span class="comment"># 参考：https://docs.mattermost.com/install/prod-docker.html</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 安装docker-compose</span></span><br><span class="line">curl -L https://github.com/docker/compose/releases/download/<span class="variable">$dockerComposeVersion</span>/docker-compose-`uname -s`-`uname -m` &gt; /usr/<span class="built_in">local</span>/bin/docker-compose</span><br><span class="line">sudo chmod +x /usr/<span class="built_in">local</span>/bin/docker-compose</span><br><span class="line"></span><br><span class="line"><span class="comment"># 部署Mattermost</span></span><br><span class="line">sudo apt-get install git</span><br><span class="line">git <span class="built_in">clone</span> https://github.com/mattermost/mattermost-docker.git</span><br><span class="line"><span class="built_in">cd</span> mattermost-docker</span><br><span class="line">docker-compose build</span><br><span class="line">mkdir -pv ./volumes/app/mattermost/&#123;data,logs,config,plugins,client-plugins&#125;</span><br><span class="line">chown -R 2000:2000 ./volumes/app/mattermost/</span><br><span class="line">docker-compose up -d</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h4 id="Minio"><a href="#Minio" class="headerlink" title="Minio"></a>Minio</h4><blockquote>
+<p>Minio 是开源的对象存储服务</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 拉取镜像构建</span></span><br><span class="line">docker pull minio/minio</span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建容器</span></span><br><span class="line">docker run -p 9000:9000 --name minio \</span><br><span class="line">  -e <span class="string">&quot;MINIO_ACCESS_KEY=admin&quot;</span> \</span><br><span class="line">  -e <span class="string">&quot;MINIO_SECRET_KEY=bPxRfiCYEXAMPLEKEY&quot;</span> \</span><br><span class="line">  -v /data/minio/data:/data \</span><br><span class="line">  -v /data/minio/config:/root/.minio \</span><br><span class="line">  minio/minio server /data</span><br><span class="line"></span><br><span class="line"><span class="comment"># 参考</span></span><br><span class="line"><span class="comment"># https://docs.minio.io/docs/minio-docker-quickstart-guide</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h4 id="nginx-demo-conf"><a href="#nginx-demo-conf" class="headerlink" title="nginx-demo.conf"></a>nginx-demo.conf</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line">server &#123;</span><br><span class="line">    listen 3010;</span><br><span class="line">    #listen 3010 ssl;</span><br><span class="line">    #ssl_certificate &#x2F;etc&#x2F;nginx&#x2F;alikey&#x2F;214624595710549.pem;</span><br><span class="line">    #ssl_certificate_key &#x2F;etc&#x2F;nginx&#x2F;alikey&#x2F;214624595710549.key;</span><br><span class="line">    #ssl_session_timeout 5m;</span><br><span class="line">    #ssl_ciphers ECDHE-RSA-AES128-GCM-SHA256:ECDHE:ECDH:AES:HIGH:!NULL:!aNULL:!MD5:!ADH:!RC4;</span><br><span class="line">    #ssl_protocols TLSv1 TLSv1.1 TLSv1.2;</span><br><span class="line">    #ssl_prefer_server_ciphers on;</span><br><span class="line">    #server_name class.h3c.com;</span><br><span class="line">    server_name _;</span><br><span class="line">    charset utf-8;</span><br><span class="line">    client_max_body_size 40M;</span><br><span class="line">    uwsgi_read_timeout 300;</span><br><span class="line">    root &#x2F;usr&#x2F;share&#x2F;nginx&#x2F;html;</span><br><span class="line"></span><br><span class="line">    location &#x2F; &#123;</span><br><span class="line">        index index.html;</span><br><span class="line">    &#125;</span><br><span class="line">    location &#x2F;data&#x2F;file &#123;</span><br><span class="line">        root &#x2F;;</span><br><span class="line">        etag on;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    location &#x2F;lvz&#x2F; &#123;</span><br><span class="line">        add_header Access-Control-Allow-Origin *;</span><br><span class="line">        add_header Access-Control-Allow-Headers &#39;Content-Type,Authorization&#39;;</span><br><span class="line">        add_header Access-Control-Allow-Methods &#39;GET,POST,PUT,DELETE,OPTIONS&#39;;</span><br><span class="line">        proxy_set_header apikey b10882beb8704abea62596c85ce5d271;</span><br><span class="line">        proxy_pass https:&#x2F;&#x2F;lvzhouapi.h3c.com&#x2F;;</span><br><span class="line">    &#125;</span><br><span class="line">    location &#x2F;open&#x2F;uc&#x2F; &#123;</span><br><span class="line">        lua_code_cache off;</span><br><span class="line">        resolver 114.114.114.114;</span><br><span class="line">        access_by_lua_file &#x2F;etc&#x2F;nginx&#x2F;conf.d&#x2F;access1.lua;</span><br><span class="line">        #proxy_set_header &#39;Authorization&#39; &#39;Token 37a89ca74c58f4b190796eaf876861658ad2c9dc&#39;;</span><br><span class="line">        #proxy_pass http:&#x2F;&#x2F;edtech-test.h3c.com:12363&#x2F;api&#x2F;v1&#x2F;;</span><br><span class="line">        proxy_set_header &#39;Authorization&#39; &#39;Token 6c5a192e3e161342489971b10d36dee5250e64dd&#39;;</span><br><span class="line">        proxy_pass http:&#x2F;&#x2F;edtech.h3c.com:12363&#x2F;api&#x2F;v1&#x2F;;</span><br><span class="line">    &#125;</span><br><span class="line">    location &#x2F;open&#x2F;nva&#x2F; &#123;</span><br><span class="line">        lua_code_cache off;</span><br><span class="line">        resolver 114.114.114.114;</span><br><span class="line">        access_by_lua_file &#x2F;etc&#x2F;nginx&#x2F;conf.d&#x2F;access1.lua;</span><br><span class="line">        #proxy_set_header &#39;Authorization&#39;  &#39;Skeleton gjtxsjtyjsxqsl Z2p0eHNqdHlqc3hxc2w&#x3D;&#39;;</span><br><span class="line">        #proxy_pass http:&#x2F;&#x2F;edtech-test.h3c.com:14001&#x2F;api&#x2F;;</span><br><span class="line">        proxy_set_header &#39;Authorization&#39; &#39;Skeleton gjtxsjtyjsxqsl Z2p0eHNqdHlqc3hxc2w&#x3D;&#39;;</span><br><span class="line">        proxy_pass http:&#x2F;&#x2F;edtech.h3c.com:14001&#x2F;api&#x2F;;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h4 id="oracle-12c"><a href="#oracle-12c" class="headerlink" title="oracle 12c"></a>oracle 12c</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">docker run --name oracle12c -d -p 1521:1521 \</span><br><span class="line">-v &#x2F;data&#x2F;oracle&#x2F;:&#x2F;mnt \</span><br><span class="line">sath89&#x2F;oracle-12c</span><br></pre></td></tr></table></figure>
+
+
+<h4 id="Elasticsearch"><a href="#Elasticsearch" class="headerlink" title="Elasticsearch"></a>Elasticsearch</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">docker run -d --name es \</span><br><span class="line">-p 9200:9200 \</span><br><span class="line">-p 9300:9300 \</span><br><span class="line">-e HOSTNAME&#x3D;es-single \</span><br><span class="line">-e &quot;discovery.type&#x3D;single-node&quot; \</span><br><span class="line">-e ES_JAVA_OPTS&#x3D;&quot;-Xms256m -Xmx512m&quot; \</span><br><span class="line">-v &#x2F;root&#x2F;data&#x2F;esdata:&#x2F;usr&#x2F;share&#x2F;elasticsearch&#x2F;data \</span><br><span class="line">elasticsearch:7.4.0</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>安装ik(版本要对应，之后重启容器)</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">docker exec -it xxx &#x2F;bin&#x2F;bash</span><br><span class="line">.&#x2F;bin&#x2F;elasticsearch-plugin install https:&#x2F;&#x2F;github.com&#x2F;medcl&#x2F;elasticsearch-analysis-ik&#x2F;releases&#x2F;download&#x2F;v7.4.0&#x2F;elasticsearch-analysis-ik-7.4.0.zip</span><br></pre></td></tr></table></figure>
+
+<h5 id="mobz-elasticsearch-head"><a href="#mobz-elasticsearch-head" class="headerlink" title="mobz/elasticsearch-head"></a>mobz/elasticsearch-head</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">docker run -d --name es_ui \</span><br><span class="line">-p 9100:9100 \</span><br><span class="line">mobz&#x2F;elasticsearch-head:5-alpine</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h4 id="在线预览服务-keking-kkfileview"><a href="#在线预览服务-keking-kkfileview" class="headerlink" title="在线预览服务 keking/kkfileview"></a>在线预览服务 keking/kkfileview</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"># docker 安装</span><br><span class="line">docker pull keking&#x2F;kkfileview</span><br><span class="line"></span><br><span class="line"># 运行</span><br><span class="line">docker run --name kkfileview  -p 8012:8012 keking&#x2F;kkfileview</span><br><span class="line"># 或</span><br><span class="line">docker run -it -p 8012:8012 keking&#x2F;kkfileview</span><br><span class="line"></span><br><span class="line"># 项目接入使用</span><br><span class="line">var url &#x3D; &#39;http:&#x2F;&#x2F;127.0.0.1:8080&#x2F;file&#x2F;test.txt&#39;; &#x2F;&#x2F;要预览文件的访问地址</span><br><span class="line">window.open(&#39;http:&#x2F;&#x2F;127.0.0.1:8012&#x2F;onlinePreview?url&#x3D;&#39;+encodeURIComponent(previewUrl));</span><br><span class="line"></span><br><span class="line"># 说明：https:&#x2F;&#x2F;gitee.com&#x2F;kekingcn&#x2F;file-online-preview&#x2F;wikis&#x2F;pages</span><br></pre></td></tr></table></figure>
+
+
+<h4 id="Nacos"><a href="#Nacos" class="headerlink" title="Nacos"></a>Nacos</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">sudo docker pull nacos&#x2F;nacos-server</span><br><span class="line"></span><br><span class="line">docker run -d \</span><br><span class="line">--privileged&#x3D;true \</span><br><span class="line">-e PREFER_HOST_MODE&#x3D;ip \</span><br><span class="line">-e MODE&#x3D;standalone \</span><br><span class="line">-e SPRING_DATASOURCE_PLATFORM&#x3D;mysql \</span><br><span class="line">-e MYSQL_MASTER_SERVICE_HOST&#x3D;118.25.6.156 \</span><br><span class="line">-e MYSQL_MASTER_SERVICE_PORT&#x3D;3306 \</span><br><span class="line">-e MYSQL_MASTER_SERVICE_USER&#x3D;root \</span><br><span class="line">-e MYSQL_MASTER_SERVICE_PASSWORD&#x3D;1q2w3e \</span><br><span class="line">-e MYSQL_MASTER_SERVICE_DB_NAME&#x3D;nacos \</span><br><span class="line">-e MYSQL_SLAVE_SERVICE_HOST&#x3D;118.25.6.156 \</span><br><span class="line">-e MYSQL_SLAVE_SERVICE_PORT&#x3D;3306 \</span><br><span class="line">-v &#x2F;home&#x2F;dockerdata&#x2F;nacos&#x2F;logs:&#x2F;home&#x2F;nacos&#x2F;logs \</span><br><span class="line">-p 8848:8848 \</span><br><span class="line">--name nacos \</span><br><span class="line">--restart&#x3D;always \</span><br><span class="line">nacos&#x2F;nacos-server</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">Murray</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://github.com/sunglowrise/sunglowrise.github.io/2020/01/01/Docker%20%E5%B8%B8%E7%94%A8%E9%83%A8%E7%BD%B2/">https://github.com/sunglowrise/sunglowrise.github.io/2020/01/01/Docker%20%E5%B8%B8%E7%94%A8%E9%83%A8%E7%BD%B2/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">Murray</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/Docker/">
+                                    <span class="chip bg-color">Docker</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2020/02/01/%E5%BF%BD%E7%95%A5%E9%85%8D%E7%BD%AE.gitignore/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="忽略配置.gitignore">
+                        
+                        <span class="card-title">忽略配置.gitignore</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-02-01
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            Murray
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Git/">
+                        <span class="chip bg-color">Git</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2020/01/01/Docker%E4%B9%8B%E5%88%9B%E5%BB%BA%E9%95%9C%E5%83%8F%EF%BC%88Dockerfile%E3%80%81Commit%EF%BC%89/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="Docker之创建镜像（Dockerfile、Commit）">
+                        
+                        <span class="card-title">Docker之创建镜像（Dockerfile、Commit）</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-01-01
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            Murray
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Docker/">
+                        <span class="chip bg-color">Docker</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: Murray个人笔记<br />'
+            + '文章作者: Murray<br />'
+            + '文章链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+    <div class="container row center-align" style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2020-2022</span>
+            
+            <span id="year">2020</span>
+            <a href="/about" target="_blank">Murray</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <br>
+            
+            <span id="icp"><img src="/medias/icp.png" style="vertical-align: text-bottom;" />
+                <a href="https://beian.miit.gov.cn" target="_blank">浙ICP备2021006498号</a>
+            </span>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/sunglowrise" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:sunglowrise@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+
+
+
+
+    <a href="https://www.zhihu.com/people/ma-liang-19-36" class="tooltipped" target="_blank" data-tooltip="关注我的知乎: https://www.zhihu.com/people/ma-liang-19-36" data-position="top" data-delay="50">
+        <i class="fab fa-zhihu1">知</i>
+    </a>
+
+
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    <!--腾讯兔小巢-->
+    
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>

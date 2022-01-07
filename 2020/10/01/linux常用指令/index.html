@@ -1,0 +1,1133 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="linux常用指令, Java,Python,GO">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>linux常用指令 | Murray个人笔记</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery.min.js"></script>
+
+<meta name="generator" content="Hexo 5.2.0"><link rel="alternate" href="/atom.xml" title="Murray个人笔记" type="application/atom+xml">
+</head>
+
+
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">Murray个人笔记</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">Murray个人笔记</div>
+        <div class="logo-desc">
+            
+            Never really desperate, only the lost of the soul.
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/23.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">linux常用指令</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+        padding-bottom: 20px;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+        padding-top: 1.5rem
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        <!-- height: calc(100vh - 250px); -->
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/Linux/">
+                                <span class="chip bg-color">Linux</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2020-10-01
+                </div>
+                
+
+                
+
+                
+
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h3 id="linux常用指令"><a href="#linux常用指令" class="headerlink" title="linux常用指令"></a>linux常用指令</h3><blockquote>
+<p>参考：<a target="_blank" rel="noopener" href="https://www.runoob.com/linux/linux-comm-bzip2.html">https://www.runoob.com/linux/linux-comm-bzip2.html</a></p>
+</blockquote>
+<h4 id="文件目录类"><a href="#文件目录类" class="headerlink" title="文件目录类"></a>文件目录类</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">mkdir &lt;dir&gt;  <span class="comment"># 建立目录</span></span><br><span class="line">mkdir -p &lt;dir1&gt;/&lt;dir2&gt;/.../&lt;dirn&gt;  <span class="comment"># 建立多层目录　</span></span><br><span class="line">rmdir document_name  <span class="comment"># 删除空目录</span></span><br><span class="line"><span class="built_in">cd</span> &lt;path&gt;  <span class="comment"># 切换目录</span></span><br><span class="line"><span class="built_in">pwd</span>  <span class="comment"># 查看所在目录</span></span><br><span class="line">du -sh  <span class="comment"># 查看当前目录大小</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h4 id="文件类"><a href="#文件类" class="headerlink" title="文件类"></a>文件类</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">touch &lt;file_name&gt;  <span class="comment"># 新建空文件</span></span><br><span class="line">rm -rf &lt;file_or_dir&gt;  <span class="comment"># 强制删除文件或目录，包含子目录及内容，慎用</span></span><br><span class="line">ls -l <span class="comment"># 显示目录文件列表(-a：增加显示隐含目录；-l：显示详细信息；r表示反向排序，t表示按时间排序)</span></span><br><span class="line">more &lt;file&gt;  <span class="comment"># 查看文档</span></span><br><span class="line">less &lt;file&gt;  <span class="comment"># 查看文档</span></span><br><span class="line">head -n &lt;file&gt;  <span class="comment"># 查看文档，查看一个文件的最前n行</span></span><br><span class="line">tail -n &lt;file&gt;  <span class="comment"># 查看文档，查看一个文件的最后n行</span></span><br><span class="line">cat &lt;file&gt;  <span class="comment"># 查看文档，从第一个字节开始正向查看文件的内容</span></span><br><span class="line">tac &lt;file&gt;  <span class="comment"># 查看文档，从最后一行开始反向查看一个文件的内容</span></span><br><span class="line"></span><br><span class="line">cp &lt;org_file&gt; &lt;file_target&gt; <span class="comment"># 复制文件(-r：包含目录，-a：所有文件)</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="链接："><a href="#链接：" class="headerlink" title="链接："></a>链接：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># 建立hard链接</span><br><span class="line">ln &lt;org_file&gt; &lt;link_file&gt;  # 建立hard链接(-d：创建目录链接);</span><br><span class="line"></span><br><span class="line"># 建立符号链接</span><br><span class="line">ln -s &lt;org_file&gt; &lt;link_file&gt;  # 建立符号链接</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h4 id="文本处理"><a href="#文本处理" class="headerlink" title="文本处理"></a>文本处理</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">grep str &#x2F;tmp&#x2F;test  在文件 &#39;&#x2F;tmp&#x2F;test&#39; 中查找 &quot;str&quot;</span><br><span class="line">grep ^str &#x2F;tmp&#x2F;test 在文件 &#39;&#x2F;tmp&#x2F;test&#39; 中查找以 &quot;str&quot; 开始的行</span><br><span class="line">grep [0-9] &#x2F;tmp&#x2F;test 查找 &#39;&#x2F;tmp&#x2F;test&#39; 文件中所有包含数字的行</span><br><span class="line">grep str -r &#x2F;tmp&#x2F;*  在目录 &#39;&#x2F;tmp&#39; 及其子目录中查找 &quot;str&quot;</span><br><span class="line">diff file1 file2 找出两个文件的不同处</span><br><span class="line">sdiff file1 file2 以对比的方式显示两个文件的不同</span><br></pre></td></tr></table></figure>
+
+<h4 id="查找文件"><a href="#查找文件" class="headerlink" title="查找文件:"></a>查找文件:</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">grep -rn &lt;key_word&gt; &lt;file_path&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查找文件：(1)find (2)locate 命令名</span></span><br><span class="line">find / -name file  <span class="comment"># 从 &#x27;/&#x27; 开始进入根文件系统查找文件和目录</span></span><br><span class="line">find / -user user  <span class="comment"># 查找属于用户 &#x27;user&#x27; 的文件和目录</span></span><br><span class="line">find /usr/bin -<span class="built_in">type</span> f -atime +100 <span class="comment"># 查找在过去100天内未被使用过的执行文件</span></span><br><span class="line">find /usr/bin -<span class="built_in">type</span> f -mtime -10 <span class="comment"># 查找在10天内被创建或者修改过的文件</span></span><br><span class="line">find -name <span class="string">&#x27;*.[ch]&#x27;</span> | xargs grep -E <span class="string">&#x27;expr&#x27;</span> <span class="comment"># 在当前目录及其子目录所有.c和.h文件中查找 &#x27;expr&#x27;</span></span><br><span class="line">find -<span class="built_in">type</span> f -print0 | xargs -r0 grep -F <span class="string">&#x27;expr&#x27;</span> <span class="comment"># 在当前目录及其子目录的常规文件中查找 &#x27;expr&#x27;</span></span><br><span class="line">find -maxdepth 1 -<span class="built_in">type</span> f | xargs grep -F <span class="string">&#x27;expr&#x27;</span> <span class="comment"># 在当前目录中查找 &#x27;expr&#x27;</span></span><br><span class="line">find / -<span class="built_in">type</span> f -size +1024000k -<span class="built_in">exec</span> du -h &#123;&#125; \  <span class="comment"># 全盘查找大于1G的文件</span></span><br><span class="line">find . -<span class="built_in">type</span> f -size +10000k -<span class="built_in">exec</span> ls -lh &#123;&#125; \; | awk ‘&#123; <span class="built_in">print</span> <span class="variable">$8</span> “: ” <span class="variable">$5</span> &#125;’  <span class="comment"># 查找当前目录下大于10MB的文件</span></span><br><span class="line"></span><br><span class="line">locate \*.ps <span class="comment"># 寻找以 &#x27;.ps&#x27; 结尾的文件，先运行 &#x27;updatedb&#x27; 命令</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="压缩解压类"><a href="#压缩解压类" class="headerlink" title="压缩解压类"></a>压缩解压类</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># tar压缩</span></span><br><span class="line">tar -cvf archive.tar file  <span class="comment"># 把file打包成 archive.tar</span></span><br><span class="line">tar -cvf archive.tar file dir <span class="comment"># 把 file、dir 打包成 archive.tar</span></span><br><span class="line">tar -tf archive.tar  <span class="comment"># 显示包中的内容</span></span><br><span class="line">tar -xvf archive.tar <span class="comment"># 释放包</span></span><br><span class="line">tar -xvf archive.tar -C /tmp <span class="comment"># 把压缩包释放到/tmp目录下</span></span><br><span class="line"></span><br><span class="line">tar -zcvf archive.tar.gz file  <span class="comment"># 把file打包成 archive.tar.gz</span></span><br><span class="line">tar -zcvf archive.tar.gz file dir  <span class="comment"># 把file、dir打包成 archive.tar.gz</span></span><br><span class="line">tar -tf archive.tar.gz  <span class="comment"># 显示包中的内容</span></span><br><span class="line">tar -zxvf archive.tar.gz  <span class="comment"># 释放包</span></span><br><span class="line">tar -zxvf archive.tar.gz -C /tmp  <span class="comment"># 把压缩包释放到/tmp目录下</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># bzip2压缩</span></span><br><span class="line">bzip2 file  <span class="comment"># 压缩 file</span></span><br><span class="line">bunzip2 archive.bz2  <span class="comment"># 解压 archive.bz2</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># gzip压缩</span></span><br><span class="line">gzip file  <span class="comment"># 压缩 file</span></span><br><span class="line">gzip -9 file  <span class="comment"># 最大程度压缩 file</span></span><br><span class="line">gunzip file.gz  <span class="comment"># 解压 file.gz</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># zip压缩</span></span><br><span class="line">zip archive.zip file  <span class="comment"># 创建zip格式的压缩包</span></span><br><span class="line">zip -r archive.zip file dir  <span class="comment"># 把文件和目录压缩成zip格式的压缩包</span></span><br><span class="line">unzip archive.zip  <span class="comment"># 解压zip格式的压缩包到当前目录</span></span><br><span class="line">unzip archive.zip -d /tmp/  <span class="comment"># 解压zip格式的压缩包到 /tmp 目录</span></span><br><span class="line">unzip -o archive.zip -d /tmp/  <span class="comment"># 覆盖不提示,解压zip格式的压缩包到 /tmp 目录</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># tar命令：tar [-cxtzjvfpPN] 文件与目录</span></span><br><span class="line"><span class="comment"># tar命令参数：</span></span><br><span class="line"><span class="comment"># 　-c：建立一个压缩文件的参数指令</span></span><br><span class="line"><span class="comment"># 　-x：解开一个压缩文件的参数指令</span></span><br><span class="line"><span class="comment"># 　-t：查看 tarfile 里面的文件</span></span><br><span class="line"><span class="comment"># 　-z：是否同时具有 gzip 的属性，亦即是否需要用 gzip 压缩</span></span><br><span class="line"><span class="comment"># 　-j：是否同时具有 bzip2 的属性?亦即是否需要用 bzip2 压缩</span></span><br><span class="line"><span class="comment"># 　-v：压缩的过程中显示文件</span></span><br><span class="line"><span class="comment"># 　-f：使用档名，在 f 之后要立即接档名。</span></span><br><span class="line"><span class="comment"># 　-p：使用原文件的原来属性(属性不会依据使用者而变)</span></span><br><span class="line"><span class="comment"># 　-P：可以使用绝对路径来压缩</span></span><br><span class="line"><span class="comment"># 　-N：比后面接的日期(yyyy/mm/dd)，还要新的才会被打包进新建的文件中</span></span><br><span class="line"><span class="comment"># 　–exclude FILE：在压缩的过程中，不要将 FILE 打包</span></span><br><span class="line">``` </span><br><span class="line"></span><br><span class="line"><span class="comment">#### yum 软件工具</span></span><br><span class="line">```bash</span><br><span class="line">yum -y install [package]  <span class="comment"># 下载并安装rpm包</span></span><br><span class="line">yum localinstall [package.rpm]  <span class="comment"># 安装rpm包，使用自己的软件仓库解决所有依赖关系</span></span><br><span class="line">yum -y update  <span class="comment"># 更新当前系统中安装的所有rpm包</span></span><br><span class="line">yum update [package]  <span class="comment"># 更新一个rpm包</span></span><br><span class="line">yum remove [package]  <span class="comment"># 删除一个rpm包</span></span><br><span class="line">yum list  <span class="comment"># 列出当前系统中安装的所有包</span></span><br><span class="line">yum search [package]  <span class="comment"># 在rpm仓库中搜寻软件包</span></span><br><span class="line">yum clean [package]  <span class="comment"># 清除缓存目录（/var/cache/yum）下的软件包</span></span><br><span class="line">yum clean headers  <span class="comment"># 删除所有头文件</span></span><br><span class="line">yum clean all  <span class="comment"># 删除所有缓存的包和头文件</span></span><br></pre></td></tr></table></figure>
+<h3 id="apt-软件工"><a href="#apt-软件工" class="headerlink" title="apt 软件工"></a>apt 软件工</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">apt-get install package_name  <span class="comment"># 安装/更新一个 deb 包 </span></span><br><span class="line">apt-cdrom install package_name  <span class="comment"># 从光盘安装/更新一个 deb 包 </span></span><br><span class="line">apt-get update  <span class="comment"># 升级列表中的软件包 </span></span><br><span class="line">apt-get upgrade  <span class="comment"># 升级所有已安装的软件 </span></span><br><span class="line">apt-get remove package_name  <span class="comment"># 从系统删除一个deb包 </span></span><br><span class="line">apt-get check  <span class="comment"># 确认依赖的软件仓库正确 </span></span><br><span class="line">apt-get clean  <span class="comment"># 从下载的软件包中清理缓存 </span></span><br><span class="line">apt-cache search searched-package  <span class="comment"># 返回包含所要搜索字符串的软件包名称</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="网络"><a href="#网络" class="headerlink" title="网络"></a>网络</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">ifconfig eth0   <span class="comment"># 显示一个以太网卡的配置</span></span><br><span class="line">ifconfig eth0 192.168.1.1 netmask 255.255.255.0  <span class="comment"># 配置网卡的IP地址</span></span><br><span class="line">ifdown eth0  <span class="comment"># 禁用 &#x27;eth0&#x27; 网络设备</span></span><br><span class="line">ifup eth0  <span class="comment"># 启用 &#x27;eth0&#x27; 网络设备</span></span><br><span class="line">iwconfig eth1  <span class="comment"># 显示一个无线网卡的配置</span></span><br><span class="line">iwlist scan  <span class="comment"># 显示无线网络</span></span><br><span class="line">ip addr show  <span class="comment"># 显示网卡的IP地址</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="lsof指令"><a href="#lsof指令" class="headerlink" title="lsof指令"></a>lsof指令</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">lsof  filename  <span class="comment"># 显示打开指定文件的所有进程</span></span><br><span class="line">lsof -a  <span class="comment"># 表示两个参数都必须满足时才显示结果</span></span><br><span class="line">lsof -c string  <span class="comment"># 显示COMMAND列中包含指定字符的进程所有打开的文件</span></span><br><span class="line">lsof -u username  <span class="comment"># 显示所属user进程打开的文件</span></span><br><span class="line">lsof -g gid  <span class="comment"># 显示归属gid的进程情况</span></span><br><span class="line">lsof +d /DIR/  <span class="comment"># 显示目录下被进程打开的文件</span></span><br><span class="line">lsof +D /DIR/  <span class="comment"># 同上，但是会搜索目录下的所有目录，时间相对较长</span></span><br><span class="line">lsof -d FD  <span class="comment"># 显示指定文件描述符的进程</span></span><br><span class="line">lsof -n  <span class="comment"># 不将IP转换为hostname，缺省是不加上-n参数</span></span><br><span class="line">lsof -i  <span class="comment"># 用以显示符合条件的进程情况</span></span><br><span class="line">lsof -i[46] [protocol][@hostname|hostaddr][:service|port]</span><br><span class="line">    46 --&gt; IPv4 or IPv6</span><br><span class="line">    protocol --&gt; TCP or UDP</span><br><span class="line">    hostname --&gt; Internet host name</span><br><span class="line">    hostaddr --&gt; IPv4地址</span><br><span class="line">    service --&gt; /etc/service中的 service name</span><br><span class="line">    port --&gt; 端口号</span><br></pre></td></tr></table></figure>
+
+<h4 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">su -  # 切换到root权限（与su有区别）</span><br><span class="line">shutdown -h now  # 关机</span><br><span class="line">shutdown -r now  # 重启</span><br><span class="line">top  # 罗列使用CPU资源最多的linux任务（输入q退出）</span><br><span class="line">pstree  # 以树状图显示程序</span><br><span class="line">man ping  # 查看参考手册（例如ping 命令）</span><br><span class="line">passwd  # 修改密码</span><br><span class="line">df -h  # 显示磁盘的使用情况</span><br><span class="line">du -h # 文件或目录的大小</span><br><span class="line">cal -3  # 显示前一个月，当前月以及下一个月的月历</span><br><span class="line">cal 10 1988  # 显示指定月，年的月历</span><br><span class="line">netstat –apn | grep &lt;port&gt;  # 查询某端口是否被占用</span><br></pre></td></tr></table></figure>
+<h4 id="中文输入法"><a href="#中文输入法" class="headerlink" title="中文输入法"></a>中文输入法</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 小企鹅输入法：fcitx </span></span><br><span class="line"><span class="comment"># ubuntu</span></span><br><span class="line">apt install -y fcitx-table-wbpy</span><br><span class="line"><span class="comment"># centos</span></span><br><span class="line">yum install -y fcitx</span><br></pre></td></tr></table></figure>
+
+<h4 id="查看SELinux状态"><a href="#查看SELinux状态" class="headerlink" title="查看SELinux状态"></a>查看SELinux状态</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"># 查看SELinux状态</span><br><span class="line">&#x2F;usr&#x2F;sbin&#x2F;sestatus -v # 如果SELinux status参数为enabled，即为开启状态</span><br><span class="line"># 或</span><br><span class="line">getenforce # 也可以用这个命令检查</span><br><span class="line"></span><br><span class="line"># 关闭SELinux</span><br><span class="line"># 临时关闭（不用重启机器）：</span><br><span class="line">setenforce 0 # 设置SELinux 成为 permissive模式</span><br><span class="line"># setenforce 1  # 设置SELinux 成为 enforcing模式</span><br><span class="line"></span><br><span class="line"># 修改配置文件需要重启机器：</span><br><span class="line"># 修改&#x2F;etc&#x2F;selinux&#x2F;config 文件</span><br><span class="line">SELINUX&#x3D;disabled  # 将 SELINUX&#x3D;enforcing 改为 SELINUX&#x3D;disabled</span><br><span class="line"></span><br><span class="line"># SELinux有三种模式：enforcing、permissive、 disable.</span><br><span class="line"># enforcing模式就是应用SELinux所设定的Policy, 所有违反Policy的规则(Rules)都会被SELinux拒绝</span><br><span class="line"># permissive和enforcing的区别就在于它还是会遵循SELinux的Policy,但是对于违反规则的操作只会予以记录而并不会拒绝操作</span><br><span class="line"># disable 顾名思义就是完全禁用SELinux</span><br></pre></td></tr></table></figure>
+
+<h4 id="更改文件夹或文件属性"><a href="#更改文件夹或文件属性" class="headerlink" title="更改文件夹或文件属性"></a>更改文件夹或文件属性</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># 更改所属：</span><br><span class="line">chown -R www:www  &#x2F;home&#x2F;test&#x2F;</span><br><span class="line"># 更改权限：</span><br><span class="line">chmod -R 755 &#x2F;home&#x2F;test # 更改test以及其子目录权限（-R递归）</span><br></pre></td></tr></table></figure>
+
+<h4 id="拷贝文件"><a href="#拷贝文件" class="headerlink" title="拷贝文件"></a>拷贝文件</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cp -Rf &#x2F;home&#x2F;user&#x2F;* &#x2F;root&#x2F;temp&#x2F; # 将 &#x2F;home&#x2F;user目录下的所有东西拷到&#x2F;root&#x2F;temp&#x2F;下而不拷贝user目录本身。</span><br><span class="line">cp -Rf &#x2F;home&#x2F;user &#x2F;root&#x2F;temp&#x2F; # 将 &#x2F;home&#x2F;user目录下的所有东西拷到&#x2F;root&#x2F;temp&#x2F;下包括拷贝user目录本身。</span><br></pre></td></tr></table></figure>
+
+<h4 id="查看线程"><a href="#查看线程" class="headerlink" title="查看线程"></a>查看线程</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ps -ef | grep &lt;app&gt;</span><br><span class="line">pstack &lt;线程号&gt;</span><br></pre></td></tr></table></figure>
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">Murray</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://github.com/sunglowrise/sunglowrise.github.io/2020/10/01/linux%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4/">https://github.com/sunglowrise/sunglowrise.github.io/2020/10/01/linux%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">Murray</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/Linux/">
+                                    <span class="chip bg-color">Linux</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2020/10/01/linux%20%E6%9F%A5%E7%9C%8BSOCKET%E4%BD%BF%E7%94%A8%E6%83%85%E5%86%B5/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="linux 查看SOCKET使用情况">
+                        
+                        <span class="card-title">linux 查看SOCKET使用情况</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-10-01
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            Murray
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Linux/">
+                        <span class="chip bg-color">Linux</span>
+                    </a>
+                    
+                    <a href="/tags/Socket/">
+                        <span class="chip bg-color">Socket</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2020/10/01/shell%E8%84%9A%E6%9C%AC/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="shell脚本">
+                        
+                        <span class="card-title">shell脚本</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-10-01
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            Murray
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Linux/">
+                        <span class="chip bg-color">Linux</span>
+                    </a>
+                    
+                    <a href="/tags/Shell/">
+                        <span class="chip bg-color">Shell</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: Murray个人笔记<br />'
+            + '文章作者: Murray<br />'
+            + '文章链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+    <div class="container row center-align" style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2020-2022</span>
+            
+            <span id="year">2020</span>
+            <a href="/about" target="_blank">Murray</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <br>
+            
+            <span id="icp"><img src="/medias/icp.png" style="vertical-align: text-bottom;" />
+                <a href="https://beian.miit.gov.cn" target="_blank">浙ICP备2021006498号</a>
+            </span>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/sunglowrise" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:sunglowrise@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+
+
+
+
+    <a href="https://www.zhihu.com/people/ma-liang-19-36" class="tooltipped" target="_blank" data-tooltip="关注我的知乎: https://www.zhihu.com/people/ma-liang-19-36" data-position="top" data-delay="50">
+        <i class="fab fa-zhihu1">知</i>
+    </a>
+
+
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    <!--腾讯兔小巢-->
+    
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>

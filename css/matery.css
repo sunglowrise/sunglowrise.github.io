@@ -366,17 +366,32 @@ header .nav-transparent {
 header nav .brand-span {
     font-size: 1.45rem;
 }
+header nav .brand-logo {
+    left: 45%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-45%);
+}
+
+header nav .brand-logo {
+    position: absolute;
+    color: #fff;
+    display: inline-block;
+    font-size: 0;
+    padding: 0;
+    margin-right: -10%;
+}
 
 header .brand-logo .logo-img {
     /*height: 45px;*/
     height: 36px;
     vertical-align: middle;
     padding-bottom: 6px;
+    margin-top: -10px;
 }
 
 header .brand-logo .logo-span {
     /*font-size: 1.6rem;*/
-    font-size: 2rem;
+    font-size: 1.6rem;
 }
 
 /*修改顶部 logo 的文字垂直对齐为 top，避免默认 middle 看起来偏下*/
@@ -654,7 +669,8 @@ header .go-back i {
 }
 
 .bg-cover .title {
-    font-size: 4rem;
+    /* font-size: 4rem; */
+    font-size: 2.86rem;
     line-height: 1.85em;
     margin-bottom: 20px;
     position: relative;

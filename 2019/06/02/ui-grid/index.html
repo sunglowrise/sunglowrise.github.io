@@ -1,0 +1,1108 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="ui-grid, Java,Python,GO">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>ui-grid | Murray个人笔记</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery.min.js"></script>
+
+<meta name="generator" content="Hexo 5.2.0"><link rel="alternate" href="/atom.xml" title="Murray个人笔记" type="application/atom+xml">
+</head>
+
+
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">Murray个人笔记</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">Murray个人笔记</div>
+        <div class="logo-desc">
+            
+            Never really desperate, only the lost of the soul.
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/17.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">ui-grid</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+        padding-bottom: 20px;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+        padding-top: 1.5rem
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        <!-- height: calc(100vh - 250px); -->
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/Web/">
+                                <span class="chip bg-color">Web</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2019-06-02
+                </div>
+                
+
+                
+
+                
+
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <p>UI-Grid 导出数据：<a target="_blank" rel="noopener" href="http://blog.csdn.net/vesong87/article/details/71124859">http://blog.csdn.net/vesong87/article/details/71124859</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ui-grid-selection 数据项选择，option配置multiSelect: true,实现多项选择</span><br><span class="line">ui-grid-exporter ：数据导出</span><br></pre></td></tr></table></figure>
+
+<p>ui-grid 使用讲解<br>html代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">&lt;html ng-app&#x3D;&quot;myApp&quot;&gt;  </span><br><span class="line">    &lt;head&gt;</span><br><span class="line">        &lt;meta charset&#x3D;&quot;utf-8&quot;&gt;</span><br><span class="line">        &lt;title&gt;ui-Grid Example01&lt;&#x2F;title&gt;  </span><br><span class="line">        &lt;link rel&#x3D;&quot;stylesheet&quot; type&#x3D;&quot;text&#x2F;css&quot; href&#x3D;&quot;..&#x2F;css&#x2F;ui-grid&#x2F;ui-grid.css&quot; &#x2F;&gt;</span><br><span class="line">        &lt;script type&#x3D;&quot;text&#x2F;javascript&quot; src&#x3D;&quot;..&#x2F;js&#x2F;lib&#x2F;angular&#x2F;angular.js&quot;&gt;&lt;&#x2F;script&gt;</span><br><span class="line">        &lt;script type&#x3D;&quot;text&#x2F;javascript&quot; src&#x3D;&quot;..&#x2F;js&#x2F;lib&#x2F;jquery&#x2F;jquery-1.11.2.js&quot;&gt;&lt;&#x2F;script&gt;</span><br><span class="line">        &lt;script type&#x3D;&quot;text&#x2F;javascript&quot; src&#x3D;&quot;..&#x2F;js&#x2F;lib&#x2F;ui-grid&#x2F;ui-grid.js&quot;&gt;&lt;&#x2F;script&gt;</span><br><span class="line">        &lt;!-- ui-grid export 导出--&gt;</span><br><span class="line">	    &lt;script src&#x3D;&quot;..&#x2F;js&#x2F;lib&#x2F;pdfmake&#x2F;pdfmake.min.js&quot;&gt;&lt;&#x2F;script&gt;</span><br><span class="line">	    &lt;script src&#x3D;&quot;..&#x2F;js&#x2F;lib&#x2F;pdfmake&#x2F;vfs_fonts.js&quot;&gt;&lt;&#x2F;script&gt;</span><br><span class="line">	    &lt;script src&#x3D;&quot;..&#x2F;js&#x2F;lib&#x2F;ui-grid&#x2F;csv.js&quot;&gt;&lt;&#x2F;script&gt;</span><br><span class="line">    &lt;&#x2F;head&gt;</span><br><span class="line">    &lt;body ng-controller&#x3D;&quot;MyCtrl&quot;&gt;</span><br><span class="line">        &lt;div  ui-grid&#x3D;&quot;gridOptions&quot; style&#x3D;&quot;width: 100%; height: 500px; text-align: center;&quot; ui-grid-edit ui-grid-pagination </span><br><span class="line">        ui-grid-selection ui-grid-exporter ui-grid-resize-columns ui-grid-auto-resize&gt;</span><br><span class="line">        &lt;&#x2F;div&gt;</span><br><span class="line">        </span><br><span class="line">        &lt;div style&#x3D;&quot;width:100%; height: 100px&quot;&gt;</span><br><span class="line">             &lt;ol&gt;</span><br><span class="line">                &lt;li&gt;名称：&#123;&#123;testRow.name&#125;&#125;&lt;&#x2F;li&gt;</span><br><span class="line">                &lt;li&gt;年龄：&#123;&#123;testRow.age&#125;&#125;&lt;&#x2F;li&gt;</span><br><span class="line">                &lt;li&gt;生日：&#123;&#123;testRow.birthday&#125;&#125;&lt;&#x2F;li&gt;</span><br><span class="line">             &lt;&#x2F;ol&gt;   </span><br><span class="line">        &lt;&#x2F;div&gt;</span><br><span class="line">    &lt;&#x2F;body&gt;</span><br><span class="line">&lt;&#x2F;html&gt;</span><br></pre></td></tr></table></figure>
+<p>注：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">ui-grid-edit: grid 编辑指令；</span><br><span class="line">ui-gird-pagination : grid 分页指令；</span><br><span class="line">ui-grid-selection : grid 选择行所需指令；</span><br><span class="line">ui-grid-exporter : grid 导出功能所需指令；</span><br><span class="line">ui-grid-resize-columns: grid 列宽可以拉伸所需指令；</span><br><span class="line">ui-grid-auto-resize : 解决grid布局 自动适应div 高度和宽度问题（非常有用）；</span><br></pre></td></tr></table></figure>
+<p>js 代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br></pre></td><td class="code"><pre><span class="line">var app &#x3D; angular.module(&#39;myApp&#39;, [&#39;ui.grid&#39;,&#39;ui.grid.selection&#39;,&#39;ui.grid.edit&#39;,</span><br><span class="line">            &#39;ui.grid.exporter&#39;,&#39;ui.grid.pagination&#39;,&#39;ui.grid.resizeColumns&#39;,&#39;ui.grid.autoResize&#39;]);</span><br><span class="line">        </span><br><span class="line">        app.controller(&#39;MyCtrl&#39;, function($scope,i18nService) &#123;</span><br><span class="line">            &#x2F;&#x2F; 国际化；</span><br><span class="line">            i18nService.setCurrentLang(&quot;zh-cn&quot;);</span><br><span class="line">            </span><br><span class="line">            $scope.gridOptions &#x3D; &#123;</span><br><span class="line">                data: &#39;myData&#39;,</span><br><span class="line">                columnDefs: [&#123; field: &#39;name&#39;, </span><br><span class="line">                                 displayName: &#39;名字&#39;, </span><br><span class="line">                                 width: &#39;10%&#39;, </span><br><span class="line">                                 enableColumnMenu: false,&#x2F;&#x2F; 是否显示列头部菜单按钮</span><br><span class="line">                                 enableHiding: false,</span><br><span class="line">                                 suppressRemoveSort: true,</span><br><span class="line">                                 enableCellEdit: false &#x2F;&#x2F; 是否可编辑</span><br><span class="line">                             &#125;,</span><br><span class="line">                             &#123; field: &quot;age&quot;&#125;,</span><br><span class="line">                             &#123; field: &quot;birthday&quot;&#125;,</span><br><span class="line">                             &#123; field: &quot;salary&quot;&#125;</span><br><span class="line">                            ],</span><br><span class="line">                            </span><br><span class="line">                enableSorting: true, &#x2F;&#x2F;是否排序</span><br><span class="line">                useExternalSorting: false, &#x2F;&#x2F;是否使用自定义排序规则</span><br><span class="line">                enableGridMenu: true, &#x2F;&#x2F;是否显示grid 菜单</span><br><span class="line">                showGridFooter: true, &#x2F;&#x2F;是否显示grid footer</span><br><span class="line">                enableHorizontalScrollbar :  1, &#x2F;&#x2F;grid水平滚动条是否显示, 0-不显示  1-显示</span><br><span class="line">                enableVerticalScrollbar : 0, &#x2F;&#x2F;grid垂直滚动条是否显示, 0-不显示  1-显示</span><br><span class="line">                </span><br><span class="line">                &#x2F;&#x2F;-------- 分页属性 ----------------</span><br><span class="line">                enablePagination: true, &#x2F;&#x2F;是否分页，默认为true</span><br><span class="line">                enablePaginationControls: true, &#x2F;&#x2F;使用默认的底部分页</span><br><span class="line">                paginationPageSizes: [10, 15, 20], &#x2F;&#x2F;每页显示个数可选项</span><br><span class="line">                paginationCurrentPage:1, &#x2F;&#x2F;当前页码</span><br><span class="line">                paginationPageSize: 10, &#x2F;&#x2F;每页显示个数</span><br><span class="line">                &#x2F;&#x2F;paginationTemplate:&quot;&lt;div&gt;&lt;&#x2F;div&gt;&quot;, &#x2F;&#x2F;自定义底部分页代码</span><br><span class="line">                totalItems : 0, &#x2F;&#x2F; 总数量</span><br><span class="line">                useExternalPagination: true,&#x2F;&#x2F;是否使用分页按钮</span><br><span class="line">                </span><br><span class="line">           </span><br><span class="line">                &#x2F;&#x2F;----------- 选中 ----------------------</span><br><span class="line">                enableFooterTotalSelected: true, &#x2F;&#x2F; 是否显示选中的总数，默认为true, 如果显示，showGridFooter 必须为true</span><br><span class="line">                enableFullRowSelection : true, &#x2F;&#x2F;是否点击行任意位置后选中,默认为false,当为true时，checkbox可以显示但是不可选中</span><br><span class="line">                enableRowHeaderSelection : true, &#x2F;&#x2F;是否显示选中checkbox框 ,默认为true</span><br><span class="line">                enableRowSelection : true, &#x2F;&#x2F; 行选择是否可用，默认为true;</span><br><span class="line">                enableSelectAll : true, &#x2F;&#x2F; 选择所有checkbox是否可用，默认为true; </span><br><span class="line">                enableSelectionBatchEvent : true, &#x2F;&#x2F;默认true</span><br><span class="line">                   isRowSelectable: function(row)&#123; &#x2F;&#x2F;GridRow</span><br><span class="line">                   if(row.entity.age &gt; 45)&#123;</span><br><span class="line">                       row.grid.api.selection.selectRow(row.entity); &#x2F;&#x2F; 选中行</span><br><span class="line">                   &#125;</span><br><span class="line">                &#125;,</span><br><span class="line">                modifierKeysToMultiSelect: false ,&#x2F;&#x2F;默认false,为true时只能 按ctrl或shift键进行多选, multiSelect 必须为true;</span><br><span class="line">                multiSelect: true ,&#x2F;&#x2F; 是否可以选择多个,默认为true;</span><br><span class="line">                noUnselect: false,&#x2F;&#x2F;默认false,选中后是否可以取消选中</span><br><span class="line">                selectionRowHeaderWidth:30 ,&#x2F;&#x2F;默认30 ，设置选择列的宽度；</span><br><span class="line">                </span><br><span class="line">                &#x2F;&#x2F;--------------导出----------------------------------</span><br><span class="line">                exporterAllDataFn: function()&#123;</span><br><span class="line">                       return getPage(1,$scope.gridOptions.totalItems);</span><br><span class="line">                &#125;,</span><br><span class="line">                exporterCsvColumnSeparator: &#39;,&#39;,</span><br><span class="line">                exporterCsvFilename:&#39;download.csv&#39;,</span><br><span class="line">                exporterFieldCallback : function ( grid, row, col, value )&#123;</span><br><span class="line">                 if ( value &#x3D;&#x3D; 50 )&#123;</span><br><span class="line">                   value &#x3D; &quot;可以退休&quot;;</span><br><span class="line">                 &#125;</span><br><span class="line">                 return value;</span><br><span class="line">                &#125;,</span><br><span class="line">                exporterHeaderFilter :function( displayName )&#123; </span><br><span class="line">                   return &#39;col: &#39; + name; </span><br><span class="line">                &#125;,</span><br><span class="line">                exporterHeaderFilterUseName : true,</span><br><span class="line">                exporterMenuCsv : true,</span><br><span class="line">                exporterMenuLabel : &quot;Export&quot;,</span><br><span class="line">                exporterMenuPdf : true,</span><br><span class="line">                exporterOlderExcelCompatibility : false,</span><br><span class="line">                exporterPdfCustomFormatter : function ( docDefinition ) &#123;</span><br><span class="line">                 docDefinition.styles.footerStyle &#x3D; &#123; bold: true, fontSize: 10 &#125;;</span><br><span class="line">                 return docDefinition;</span><br><span class="line">                &#125;,</span><br><span class="line">                exporterPdfFooter :&#123; </span><br><span class="line">                                     text: &#39;My footer&#39;, </span><br><span class="line">                                     style: &#39;footerStyle&#39; </span><br><span class="line">                                   &#125;,</span><br><span class="line">                exporterPdfDefaultStyle : &#123;</span><br><span class="line">                  fontSize: 11,font:&#39;simblack&#39; &#x2F;&#x2F;font 设置自定义字体</span><br><span class="line">                &#125;,</span><br><span class="line">                exporterPdfFilename:&#39;download.pdf&#39;,</span><br><span class="line">                &#x2F;* exporterPdfFooter : &#123;</span><br><span class="line">                 columns: [</span><br><span class="line">                   &#39;Left part&#39;,</span><br><span class="line">                   &#123; text: &#39;Right part&#39;, alignment: &#39;right&#39; &#125;</span><br><span class="line">                 ]</span><br><span class="line">                &#125;, </span><br><span class="line">                或 *&#x2F;</span><br><span class="line">                exporterPdfFooter: function(currentPage, pageCount) &#123; </span><br><span class="line">                       return currentPage.toString() + &#39; of &#39; + pageCount; </span><br><span class="line">                &#125;,</span><br><span class="line">                exporterPdfHeader : function(currentPage, pageCount) &#123; </span><br><span class="line">                   return currentPage.toString() + &#39; of &#39; + pageCount; </span><br><span class="line">                &#125;,</span><br><span class="line">                exporterPdfMaxGridWidth : 720,</span><br><span class="line">                exporterPdfOrientation : &#39;landscape&#39;,&#x2F;&#x2F;  &#39;landscape&#39; 或 &#39;portrait&#39; pdf横向或纵向</span><br><span class="line">                exporterPdfPageSize : &#39;A4&#39;,&#x2F;&#x2F; &#39;A4&#39; or &#39;LETTER&#39; </span><br><span class="line">                exporterPdfTableHeaderStyle : &#123;</span><br><span class="line">                 bold: true,</span><br><span class="line">                 fontSize: 12,</span><br><span class="line">                 color: &#39;black&#39;</span><br><span class="line">                &#125;,</span><br><span class="line">                exporterPdfTableLayout : null,</span><br><span class="line">                exporterPdfTableStyle: &#123;</span><br><span class="line">                 margin: [0, 5, 0, 15]</span><br><span class="line">                &#125;,</span><br><span class="line">                exporterSuppressColumns : [&#39;buttons&#39;],</span><br><span class="line">                exporterSuppressMenu: false,</span><br><span class="line"></span><br><span class="line">                &#x2F;&#x2F;---------------api---------------------</span><br><span class="line">                onRegisterApi: function(gridApi) &#123;</span><br><span class="line">                    $scope.gridApi &#x3D; gridApi;</span><br><span class="line">                    &#x2F;&#x2F;分页按钮事件</span><br><span class="line">                    gridApi.pagination.on.paginationChanged($scope,function(newPage, pageSize) &#123;</span><br><span class="line">                          if(getPage) &#123; </span><br><span class="line">                              getPage(newPage, pageSize); </span><br><span class="line">                           &#125;</span><br><span class="line">                    &#125;);</span><br><span class="line">                    &#x2F;&#x2F;行选中事件</span><br><span class="line">                    $scope.gridApi.selection.on.rowSelectionChanged($scope,function(row,event)&#123;</span><br><span class="line">                        if(row)&#123;</span><br><span class="line">                            $scope.testRow &#x3D; row.entity;</span><br><span class="line">                        &#125;</span><br><span class="line">                     &#125;);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;;</span><br><span class="line">            </span><br><span class="line">            var getPage &#x3D; function(curPage, pageSize) &#123;</span><br><span class="line">                    var firstRow &#x3D; (curPage - 1) * pageSize;</span><br><span class="line">                    $scope.gridOptions.totalItems &#x3D; mydefalutData.length;</span><br><span class="line">                    $scope.gridOptions.data &#x3D; mydefalutData.slice(firstRow, firstRow + pageSize);</span><br><span class="line">                    &#x2F;&#x2F;或者像下面这种写法</span><br><span class="line">                    &#x2F;&#x2F;$scope.myData &#x3D; mydefalutData.slice(firstRow, firstRow + pageSize);</span><br><span class="line">            &#125;;</span><br><span class="line">            </span><br><span class="line">            var mydefalutData &#x3D; [&#123; name: &quot;Moroni&quot;, age: 50, birthday: &quot;Oct 28, 1970&quot;, salary: &quot;60,000&quot; &#125;,</span><br><span class="line">                            &#123; name: &quot;Tiancum&quot;, age: 43, birthday: &quot;Feb 12, 1985&quot;, salary: &quot;70,000&quot; &#125;,</span><br><span class="line">                            &#123; name: &quot;Jacob&quot;, age: 27, birthday: &quot;Aug 23, 1983&quot;, salary: &quot;50,000&quot; &#125;,</span><br><span class="line">                            &#123; name: &quot;Nephi&quot;, age: 29, birthday: &quot;May 31, 2010&quot;, salary: &quot;40,000&quot; &#125;,</span><br><span class="line">                            &#123; name: &quot;Enos&quot;, age: 34, birthday: &quot;Aug 3, 2008&quot;, salary: &quot;30,000&quot; &#125;,</span><br><span class="line">                            &#123; name: &quot;Moroni&quot;, age: 50, birthday: &quot;Oct 28, 1970&quot;, salary: &quot;60,000&quot; &#125;,</span><br><span class="line">                            &#123; name: &quot;Tiancum&quot;, age: 43, birthday: &quot;Feb 12, 1985&quot;, salary: &quot;70,000&quot; &#125;,</span><br><span class="line">                            &#123; name: &quot;Jacob&quot;, age: 27, birthday: &quot;Aug 23, 1983&quot;, salary: &quot;40,000&quot; &#125;,</span><br><span class="line">                            &#123; name: &quot;Nephi&quot;, age: 29, birthday: &quot;May 31, 2010&quot;, salary: &quot;50,000&quot; &#125;,</span><br><span class="line">                            &#123; name: &quot;Enos&quot;, age: 34, birthday: &quot;Aug 3, 2008&quot;, salary: &quot;30,000&quot; &#125;,</span><br><span class="line">                            &#123; name: &quot;Moroni&quot;, age: 50, birthday: &quot;Oct 28, 1970&quot;, salary: &quot;60,000&quot; &#125;,</span><br><span class="line">                            &#123; name: &quot;Tiancum&quot;, age: 43, birthday: &quot;Feb 12, 1985&quot;, salary: &quot;70,000&quot; &#125;,</span><br><span class="line">                            &#123; name: &quot;Jacob&quot;, age: 27, birthday: &quot;Aug 23, 1983&quot;, salary: &quot;40,000&quot; &#125;,</span><br><span class="line">                            &#123; name: &quot;Nephi&quot;, age: 29, birthday: &quot;May 31, 2010&quot;, salary: &quot;50,000&quot; &#125;,</span><br><span class="line">                            &#123; name: &quot;Enos&quot;, age: 34, birthday: &quot;Aug 3, 2008&quot;, salary: &quot;30,000&quot; &#125;];</span><br><span class="line">            </span><br><span class="line">            getPage(1, $scope.gridOptions.paginationPageSize);</span><br><span class="line">        &#125;);</span><br></pre></td></tr></table></figure>
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">Murray</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://github.com/sunglowrise/sunglowrise.github.io/2019/06/02/ui-grid/">https://github.com/sunglowrise/sunglowrise.github.io/2019/06/02/ui-grid/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">Murray</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/Web/">
+                                    <span class="chip bg-color">Web</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2019/06/02/jsonp%E8%AF%B4%E6%98%8E/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="jsonp说明">
+                        
+                        <span class="card-title">jsonp说明</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2019-06-02
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            Murray
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Web/">
+                        <span class="chip bg-color">Web</span>
+                    </a>
+                    
+                    <a href="/tags/Jsonp/">
+                        <span class="chip bg-color">Jsonp</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2019/06/02/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="前端开发工具">
+                        
+                        <span class="card-title">前端开发工具</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2019-06-02
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            Murray
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Web/">
+                        <span class="chip bg-color">Web</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: Murray个人笔记<br />'
+            + '文章作者: Murray<br />'
+            + '文章链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+    <div class="container row center-align" style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2020-2022</span>
+            
+            <span id="year">2020</span>
+            <a href="/about" target="_blank">Murray</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <br>
+            
+            <span id="icp"><img src="/medias/icp.png" style="vertical-align: text-bottom;" />
+                <a href="https://beian.miit.gov.cn" target="_blank">浙ICP备2021006498号</a>
+            </span>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/sunglowrise" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:sunglowrise@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+
+
+
+
+    <a href="https://www.zhihu.com/people/ma-liang-19-36" class="tooltipped" target="_blank" data-tooltip="关注我的知乎: https://www.zhihu.com/people/ma-liang-19-36" data-position="top" data-delay="50">
+        <i class="fab fa-zhihu1">知</i>
+    </a>
+
+
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    <!--腾讯兔小巢-->
+    
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>

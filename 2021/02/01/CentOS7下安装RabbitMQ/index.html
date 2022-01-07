@@ -1,0 +1,1267 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="CentOS7下安装RabbitMQ, Java,Python,GO">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>CentOS7下安装RabbitMQ | Murray个人笔记</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery.min.js"></script>
+
+<meta name="generator" content="Hexo 5.2.0"><link rel="alternate" href="/atom.xml" title="Murray个人笔记" type="application/atom+xml">
+</head>
+
+
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">Murray个人笔记</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">Murray个人笔记</div>
+        <div class="logo-desc">
+            
+            Never really desperate, only the lost of the soul.
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/14.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">CentOS7下安装RabbitMQ</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+        padding-bottom: 20px;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+        padding-top: 1.5rem
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        <!-- height: calc(100vh - 250px); -->
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/Linux/">
+                                <span class="chip bg-color">Linux</span>
+                            </a>
+                        
+                            <a href="/tags/MQ/">
+                                <span class="chip bg-color">MQ</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2021-02-01
+                </div>
+                
+
+                
+
+                
+
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h3 id="RabbitMQ安装"><a href="#RabbitMQ安装" class="headerlink" title="RabbitMQ安装"></a>RabbitMQ安装</h3><h4 id="安装阿里源"><a href="#安装阿里源" class="headerlink" title="安装阿里源"></a>安装阿里源</h4><p>参考：<a target="_blank" rel="noopener" href="https://opsx.alibaba.com/mirror">OPSX</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"># 备份</span><br><span class="line">mv &#x2F;etc&#x2F;yum.repos.d&#x2F;CentOS-Base.repo &#x2F;etc&#x2F;yum.repos.d&#x2F;CentOS-Base.repo.backup</span><br><span class="line"></span><br><span class="line"># 下载新的CentOS-Base.repo 到&#x2F;etc&#x2F;yum.repos.d&#x2F;</span><br><span class="line">wget -O &#x2F;etc&#x2F;yum.repos.d&#x2F;CentOS-Base.repo http:&#x2F;&#x2F;mirrors.aliyun.com&#x2F;repo&#x2F;Centos-7.repo</span><br><span class="line"></span><br><span class="line"># 生成缓存</span><br><span class="line">yum makecache</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h4 id="erlang-与-rabbitmq版本对应"><a href="#erlang-与-rabbitmq版本对应" class="headerlink" title="erlang 与 rabbitmq版本对应"></a>erlang 与 rabbitmq版本对应</h4><table>
+<thead>
+<tr>
+<th>RabbitMQ</th>
+<th>Mini Ver Erlang/OTP</th>
+<th>Max Ver Erlang/OTP</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>3.7.x</td>
+<td>19.3</td>
+<td>20.3.x</td>
+</tr>
+<tr>
+<td>3.6.16 / 3.6.15</td>
+<td>19.3</td>
+<td>20.3.x</td>
+</tr>
+<tr>
+<td>3.6.14 / 3.6.13 / 3.6.12 / 3.6.11</td>
+<td>R16B03</td>
+<td>20.1.x</td>
+</tr>
+<tr>
+<td>3.6.10 / 3.6.9 / 3.6.8 /3.6.7 / 3.6.6 / 3.6.5/ 3.6.4</td>
+<td>R16B03</td>
+<td>19.3.x</td>
+</tr>
+<tr>
+<td>3.6.3 / 3.6.2 / 3.6.1 / 3.6.0</td>
+<td>R16B03</td>
+<td>18.3.x</td>
+</tr>
+<tr>
+<td>3.5.x</td>
+<td>R14B04</td>
+<td>17.5.x</td>
+</tr>
+<tr>
+<td>3.4.x</td>
+<td>R13B03</td>
+<td>16B03</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="http://www.rabbitmq.com/which-erlang.html">参考</a>: <a target="_blank" rel="noopener" href="http://www.rabbitmq.com/which-erlang.html">http://www.rabbitmq.com/which-erlang.html</a></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h4 id="Erlang安装-RabbitMQ依赖Erlang"><a href="#Erlang安装-RabbitMQ依赖Erlang" class="headerlink" title="Erlang安装(RabbitMQ依赖Erlang)"></a>Erlang安装(RabbitMQ依赖Erlang)</h4><ol>
+<li>从Erlang Solution安装<blockquote>
+<p>参考：<a target="_blank" rel="noopener" href="https://packages.erlang-solutions.com/erlang/">Erlang源</a></p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># 添加erlang solutions源</span><br><span class="line">wget https:&#x2F;&#x2F;packages.erlang-solutions.com&#x2F;erlang-solutions-1.0-1.noarch.rpm </span><br><span class="line"></span><br><span class="line">rpm -Uvh erlang-solutions-1.0-1.noarch.rpm  </span><br><span class="line"> </span><br><span class="line">$ sudo yum install -y erlang erlang-wx</span><br><span class="line">  </span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>注意：上面方法安装最新版本的erlang，有可能rabbitmq不支持，导致不必要的麻烦。</p>
+</blockquote>
+</li>
+</ol>
+<blockquote>
+<p>若报错如下，安装<code>yum install -y epel-release</code> （和<code>yum install -y unixODBC unixODBC-devel wxBase wxGTK SDL wxGTK-gl</code>）</p>
+</blockquote>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">--&gt; Finished Dependency Resolution</span><br><span class="line">Error: Package: erlang-wx-21.0-1.el7.centos.x86_64 (erlang-solutions)</span><br><span class="line">           Requires: libwx_gtk2u_adv-2.8.so.0(WXU_2.8)(64bit)</span><br><span class="line">Error: Package: erlang-wx-21.0-1.el7.centos.x86_64 (erlang-solutions)</span><br><span class="line">           Requires: libwx_gtk2u_core-2.8.so.0()(64bit)</span><br><span class="line"></span><br><span class="line">......</span><br><span class="line"></span><br><span class="line">Error: Package: erlang-wx-21.0-1.el7.centos.x86_64 (erlang-solutions)</span><br><span class="line">           Requires: libwx_gtk2u_core-2.8.so.0(WXU_2.8.10)(64bit)</span><br><span class="line"> You could try using --skip-broken to work around the problem</span><br><span class="line"> You could try running: rpm -Va --nofiles --nodigest</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>从EPEL源安装</li>
+</ol>
+<blockquote>
+<p>该方式Erlang版本可能不是最新的，可能不能满足RabbitMQ所需的最低版本要求</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># 启动EPEL源</span><br><span class="line">$ sudo yum install -y epel-release </span><br><span class="line"># 安装erlang</span><br><span class="line">$ sudo yum install -y erlang </span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>指定erlang软件源安装（指定版本）</li>
+</ol>
+<blockquote>
+<p>指定版本(需要指定源)：<a href="https://github.com/rabbitmq/erlang-rpm">参考</a></p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"># In &#x2F;etc&#x2F;yum.repos.d&#x2F;rabbitmq-erlang.repo</span><br><span class="line">[rabbitmq-erlang]</span><br><span class="line">name&#x3D;rabbitmq-erlang</span><br><span class="line">baseurl&#x3D;https:&#x2F;&#x2F;dl.bintray.com&#x2F;rabbitmq&#x2F;rpm&#x2F;erlang&#x2F;20&#x2F;el&#x2F;7</span><br><span class="line">gpgcheck&#x3D;1</span><br><span class="line">gpgkey&#x3D;https:&#x2F;&#x2F;dl.bintray.com&#x2F;rabbitmq&#x2F;Keys&#x2F;rabbitmq-release-signing-key.asc</span><br><span class="line">repo_gpgcheck&#x3D;0</span><br><span class="line">enabled&#x3D;1</span><br><span class="line"></span><br><span class="line">yum makecache</span><br><span class="line"></span><br><span class="line">yum install -y erlang</span><br></pre></td></tr></table></figure>
+
+
+<ol start="4">
+<li>测试Erlang是否安装成功<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">erl -version</span><br><span class="line"></span><br><span class="line"># 输出提示：Erlang (SMP,ASYNC_THREADS,HIPE) (BEAM) emulator version 9.3.3</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h4 id="RabbitMQ安装-1"><a href="#RabbitMQ安装-1" class="headerlink" title="RabbitMQ安装"></a>RabbitMQ安装</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># wget https:&#x2F;&#x2F;www.rabbitmq.com&#x2F;releases&#x2F;rabbitmq-server&#x2F;v3.6.15&#x2F;rabbitmq-server-3.6.15-1.el6.noarch.rpm</span><br><span class="line">rpm --import https:&#x2F;&#x2F;dl.bintray.com&#x2F;rabbitmq&#x2F;Keys&#x2F;rabbitmq-release-signing-key.asc</span><br><span class="line"># 下载</span><br><span class="line">wget https:&#x2F;&#x2F;dl.bintray.com&#x2F;rabbitmq&#x2F;all&#x2F;rabbitmq-server&#x2F;3.7.6&#x2F;rabbitmq-server-3.7.6-1.el7.noarch.rpm</span><br><span class="line"></span><br><span class="line"># 安装</span><br><span class="line">yum install -y rabbitmq-server-3.7.6-1.el7.noarch.rpm </span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>若出现下面错误，说明rpm包有问题，重新下载rpm包。</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">Running transaction</span><br><span class="line">  Installing : socat-1.7.3.2-2.el7.x86_64                                                                                                                1&#x2F;2 </span><br><span class="line">  Installing : rabbitmq-server-3.6.15-1.el6.noarch                                                                                                       2&#x2F;2 </span><br><span class="line">Error unpacking rpm package rabbitmq-server-3.6.15-1.el6.noarch</span><br><span class="line">error: unpacking of archive failed on file &#x2F;usr&#x2F;lib&#x2F;rabbitmq&#x2F;lib&#x2F;rabbitmq_server-3.6.15&#x2F;plugins&#x2F;rabbitmq_mqtt-3.6.15.ez;5b3b1d27: cpio: read</span><br><span class="line">  Verifying  : socat-1.7.3.2-2.el7.x86_64                                                                                                                1&#x2F;2 </span><br><span class="line">  Verifying  : rabbitmq-server-3.6.15-1.el6.noarch                                                                                                       2&#x2F;2 </span><br><span class="line"></span><br><span class="line">Dependency Installed:</span><br><span class="line">  socat.x86_64 0:1.7.3.2-2.el7                                                                                                                     </span><br><span class="line"></span><br><span class="line">Failed:</span><br><span class="line">  rabbitmq-server.noarch 0:3.6.15-1.el6 </span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>若socat依赖错误，请安装socat: <code>yum install -y socat</code></p>
+</blockquote>
+<blockquote>
+<p>若erlang版本依赖问题，需升级erlang版本。</p>
+</blockquote>
+<blockquote>
+<p>RabbitMQ启动报错</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">[root@VM_0_6_centos ~]# service rabbitmq-server start</span><br><span class="line">Starting rabbitmq-server (via systemctl):  Job for rabbitmq-server.service failed because the control process exited with error code. See &quot;systemctl status rabbitmq-server.service&quot; and &quot;journalctl -xe&quot; for details.</span><br><span class="line">[FAILED]</span><br><span class="line"></span><br><span class="line">[root@VM_0_6_centos ~]# systemctl status rabbitmq-server.service</span><br><span class="line">● rabbitmq-server.service - LSB: Enable AMQP service provided by RabbitMQ broker</span><br><span class="line">   Loaded: loaded (&#x2F;etc&#x2F;rc.d&#x2F;init.d&#x2F;rabbitmq-server; bad; vendor preset: disabled)</span><br><span class="line">   Active: failed (Result: exit-code) since Tue 2018-07-03 15:36:24 CST; 2min 10s ago</span><br><span class="line">     Docs: man:systemd-sysv-generator(8)</span><br><span class="line">  Process: 10756 ExecStart&#x3D;&#x2F;etc&#x2F;rc.d&#x2F;init.d&#x2F;rabbitmq-server start (code&#x3D;exited, status&#x3D;1&#x2F;FAILURE)</span><br><span class="line"></span><br><span class="line">Jul 03 15:36:11 VM_0_6_centos systemd[1]: Starting LSB: Enable AMQP service provided by RabbitMQ broker...</span><br><span class="line">Jul 03 15:36:11 VM_0_6_centos su[10834]: (to rabbitmq) root on none</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>解决：RabbitMQ版本不对，<a target="_blank" rel="noopener" href="https://www.rabbitmq.com/install-rpm.html">参考官网(Download the server)</a>,选择正确的版本</p>
+<h4 id="RabbitMQ基本操作"><a href="#RabbitMQ基本操作" class="headerlink" title="RabbitMQ基本操作"></a>RabbitMQ基本操作</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;sbin&#x2F;service rabbitmq-server start　　　# 启动</span><br><span class="line">&#x2F;sbin&#x2F;service rabbitmq-server stop　　　 # 停止</span><br><span class="line">&#x2F;sbin&#x2F;service rabbitmq-server restart　　# 重启</span><br><span class="line">&#x2F;sbin&#x2F;service rabbitmq-server status     # 查看服务状态</span><br><span class="line">chkconfig rabbitmq-server on  # 开机启动RabbitMQ服务</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>查询</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># 查询</span><br><span class="line">ps -ef | grep rabbitmq</span><br><span class="line"></span><br><span class="line"># 重启报错时杀进程</span><br><span class="line">ps -ef | grep rabbitmq | grep -v grep | awk &#39;&#123;print $2&#125;&#39; | xargs kill -9</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>用户相关</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">rabbitmqctl list_users # 查看当前所有用户</span><br><span class="line">rabbitmqctl list_user_permissions guest # 查看默认guest用户的权限</span><br><span class="line"> </span><br><span class="line"># 由于RabbitMQ默认的账号用户名和密码都是guest。为了安全起见, 先删掉默认用户</span><br><span class="line">rabbitmqctl delete_user guest</span><br><span class="line"> </span><br><span class="line"># 为RabbitMQ创建用户</span><br><span class="line">rabbitmqctl add_user username password</span><br><span class="line"> </span><br><span class="line"># 设置用户tag，tag为角色名，对应administrator，monitoring，policymaker，management，或其他自定义名称</span><br><span class="line">rabbitmqctl set_user_tags username tags</span><br><span class="line"> </span><br><span class="line"># 赋予用户默认vhost的全部操作权限</span><br><span class="line">rabbitmqctl set_permissions -p &#x2F; username &quot;.*&quot; &quot;.*&quot; &quot;.*&quot;</span><br><span class="line"> </span><br><span class="line"># 查看用户的权限</span><br><span class="line">rabbitmqctl list_user_permissions username</span><br></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://www.rabbitmq.com/rabbitmqctl.8.html">RabbitMQ参考手册</a></p>
+<h4 id="开启web管理接口"><a href="#开启web管理接口" class="headerlink" title="开启web管理接口"></a>开启web管理接口</h4><blockquote>
+<p>RabbitMQ自带了web管理,更方便RabbitMQ的管理。</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># 开启web管理</span><br><span class="line">rabbitmq-plugins enable rabbitmq_management</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>web管理端口为15672，通过浏览器访问即可。</p>
+</blockquote>
+<blockquote>
+<p>rabbitmqctl报错</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">&#x3D;SUPERVISOR REPORT&#x3D;&#x3D;&#x3D;&#x3D; 5-Jul-2018::01:22:56.863757 &#x3D;&#x3D;&#x3D;</span><br><span class="line">supervisor: &#123;local,&#39;Elixir.Logger.Supervisor&#39;&#125;</span><br><span class="line">errorContext: start_error</span><br><span class="line">reason: noproc</span><br><span class="line">offender: [&#123;pid,undefined&#125;,</span><br><span class="line">           &#123;id,&#39;Elixir.Logger.ErrorHandler&#39;&#125;,</span><br><span class="line">           &#123;mfargs,</span><br><span class="line">               &#123;&#39;Elixir.Logger.Watcher&#39;,start_link,</span><br><span class="line">                   [&#123;error_logger,&#39;Elixir.Logger.ErrorHandler&#39;,</span><br><span class="line">                        &#123;true,false,500&#125;&#125;]&#125;&#125;,</span><br><span class="line">           &#123;restart_type,permanent&#125;,</span><br><span class="line">           &#123;shutdown,5000&#125;,</span><br><span class="line">           &#123;child_type,worker&#125;]</span><br><span class="line">......</span><br><span class="line"></span><br><span class="line">&#x3D;INFO REPORT&#x3D;&#x3D;&#x3D;&#x3D; 5-Jul-2018::01:22:56.871100 &#x3D;&#x3D;&#x3D;</span><br><span class="line">application: logger</span><br><span class="line">exited: &#123;&#123;shutdown,</span><br><span class="line">             &#123;failed_to_start_child,&#39;Elixir.Logger.ErrorHandler&#39;,noproc&#125;&#125;,</span><br><span class="line">         &#123;&#39;Elixir.Logger.App&#39;,start,[normal,[]]&#125;&#125;</span><br><span class="line">type: temporary</span><br><span class="line">Could not start application logger: Logger.App.start(:normal, []) returned an error: shutdown: failed to start child: Logger.ErrorHandler</span><br><span class="line">** (EXIT) no process: the process is not alive or there&#39;s no process currently associated with the given name, possibly because its application isn&#39;t started</span><br><span class="line"></span><br><span class="line">   </span><br></pre></td></tr></table></figure>
+<p>见图<img src="http://qiniu.mllove.top/blog/180704/hCLkie5Gkk.png" alt="mark"><br>解决：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">根据官网的RabbitMQ Erlang版本需求文档：http:&#x2F;&#x2F;www.rabbitmq.com&#x2F;which-erlang.html</span><br><span class="line">RabbitMQ 3.7.x 所要求的Erlang 版本：</span><br><span class="line">最低要求19.3 ，最高支持20.3.x</span><br><span class="line">所以RabbitMQ 3.7.6和Erlang 21.0 版本不匹配，把Erlang 21.0卸掉，换成Erlang 20.3</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h4 id="RabbitMQ配置"><a href="#RabbitMQ配置" class="headerlink" title="RabbitMQ配置"></a>RabbitMQ配置</h4><blockquote>
+<p>参考:<a target="_blank" rel="noopener" href="https://www.rabbitmq.com/configure.html">RabbitMQ官方配置文档</a></p>
+</blockquote>
+<blockquote>
+<p>配置文件rabbitmq.conf路径：<code>/usr/share/doc/rabbitmq-server/</code> 或 <code>/usr/share/doc/rabbitmq-server-3.7.6/</code></p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"># RabbitMQ配置文件</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># 开启用户远程访问</span><br><span class="line"># 默认情况下，RabbitMQ的默认的guest用户只允许本机访问， 若使得guest用户能够远程访问，只需要将配置文件中的loopback_users列表置为空即可</span><br><span class="line">&#123;loopback_users, []&#125;</span><br><span class="line"></span><br><span class="line"># 若使得新添加的用户只能本地访问，将用户名添加到列表即可, 如只允许admin用户本机访问</span><br><span class="line">&#123;loopback_users, [&quot;admin&quot;]&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>重启服务</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;sbin&#x2F;service rabbitmq-server restart</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="开放端口"><a href="#开放端口" class="headerlink" title="开放端口"></a>开放端口</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"># iptables </span><br><span class="line">&#x2F;sbin&#x2F;iptables -I INPUT -p tcp --dport 5672 -j ACCEPT</span><br><span class="line">&#x2F;sbin&#x2F;iptables -I INPUT -p tcp --dport 15672 -j ACCEPT</span><br><span class="line"></span><br><span class="line"># firewall</span><br><span class="line">firewall-cmd --zone&#x3D;public --add-port&#x3D;15672&#x2F;tcp --permanent</span><br><span class="line">firewall-cmd --zone&#x3D;public --add-port&#x3D;5672&#x2F;tcp --permanent</span><br><span class="line">firewall-cmd --reload</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+<h4 id="端口说明"><a href="#端口说明" class="headerlink" title="端口说明"></a>端口说明</h4><blockquote>
+<p>参考：<a target="_blank" rel="noopener" href="https://www.rabbitmq.com/networking.html">端口说明</a></p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"># erlang发现口</span><br><span class="line">4369 (epmd), 25672 (Erlang distribution)</span><br><span class="line"></span><br><span class="line"># client端通信口</span><br><span class="line">5672, 5671 (AMQP 0-9-1 without and with TLS)</span><br><span class="line"></span><br><span class="line"># 管理界面ui端口</span><br><span class="line">15672 (if management plugin is enabled)</span><br><span class="line"></span><br><span class="line">61613, 61614 (if STOMP is enabled)</span><br><span class="line"></span><br><span class="line">1883, 8883 (if MQTT is enabled)</span><br></pre></td></tr></table></figure>
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">Murray</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://github.com/sunglowrise/sunglowrise.github.io/2021/02/01/CentOS7%E4%B8%8B%E5%AE%89%E8%A3%85RabbitMQ/">https://github.com/sunglowrise/sunglowrise.github.io/2021/02/01/CentOS7%E4%B8%8B%E5%AE%89%E8%A3%85RabbitMQ/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">Murray</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/Linux/">
+                                    <span class="chip bg-color">Linux</span>
+                                </a>
+                            
+                                <a href="/tags/MQ/">
+                                    <span class="chip bg-color">MQ</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2021/02/28/Nacos%E5%88%9D%E6%8E%A2(1_4_1)/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="Nacos初探（单机）">
+                        
+                        <span class="card-title">Nacos初探（单机）</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-02-28
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            Murray
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Docker/">
+                        <span class="chip bg-color">Docker</span>
+                    </a>
+                    
+                    <a href="/tags/Nacos/">
+                        <span class="chip bg-color">Nacos</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2021/02/01/EMQ%20%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="EMQ 安装部署">
+                        
+                        <span class="card-title">EMQ 安装部署</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-02-01
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            Murray
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Linux/">
+                        <span class="chip bg-color">Linux</span>
+                    </a>
+                    
+                    <a href="/tags/MQ/">
+                        <span class="chip bg-color">MQ</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: Murray个人笔记<br />'
+            + '文章作者: Murray<br />'
+            + '文章链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+    <div class="container row center-align" style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2020-2022</span>
+            
+            <span id="year">2020</span>
+            <a href="/about" target="_blank">Murray</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <br>
+            
+            <span id="icp"><img src="/medias/icp.png" style="vertical-align: text-bottom;" />
+                <a href="https://beian.miit.gov.cn" target="_blank">浙ICP备2021006498号</a>
+            </span>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/sunglowrise" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:sunglowrise@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+
+
+
+
+    <a href="https://www.zhihu.com/people/ma-liang-19-36" class="tooltipped" target="_blank" data-tooltip="关注我的知乎: https://www.zhihu.com/people/ma-liang-19-36" data-position="top" data-delay="50">
+        <i class="fab fa-zhihu1">知</i>
+    </a>
+
+
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    <!--腾讯兔小巢-->
+    
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>

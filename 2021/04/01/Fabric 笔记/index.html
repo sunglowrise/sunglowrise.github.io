@@ -1,0 +1,1288 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="Fabric 笔记, Java,Python,GO">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>Fabric 笔记 | Murray个人笔记</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery.min.js"></script>
+
+<meta name="generator" content="Hexo 5.2.0"><link rel="alternate" href="/atom.xml" title="Murray个人笔记" type="application/atom+xml">
+</head>
+
+
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">Murray个人笔记</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">Murray个人笔记</div>
+        <div class="logo-desc">
+            
+            Never really desperate, only the lost of the soul.
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/9.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">Fabric 笔记</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+        padding-bottom: 20px;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+        padding-top: 1.5rem
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        <!-- height: calc(100vh - 250px); -->
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/Python/">
+                                <span class="chip bg-color">Python</span>
+                            </a>
+                        
+                            <a href="/tags/Fabric/">
+                                <span class="chip bg-color">Fabric</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2021-04-01
+                </div>
+                
+
+                
+
+                
+
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h3 id="Python-远程部署利器-Fabric-模块详解"><a href="#Python-远程部署利器-Fabric-模块详解" class="headerlink" title="Python 远程部署利器 Fabric 模块详解"></a>Python 远程部署利器 Fabric 模块详解</h3><blockquote>
+<p>参考： <a target="_blank" rel="noopener" href="https://blog.csdn.net/freeking101/article/details/81103945">https://blog.csdn.net/freeking101/article/details/81103945</a></p>
+</blockquote>
+<ul>
+<li>Fabric（Python3）：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/xiao-apple36/p/9124292.html">https://www.cnblogs.com/xiao-apple36/p/9124292.html</a></li>
+<li>fabric 官网英文文档：<a target="_blank" rel="noopener" href="http://www.fabfile.org/">http://www.fabfile.org/</a></li>
+<li>fabric 中文站点：<a target="_blank" rel="noopener" href="http://fabric-chs.readthedocs.io/zh_CN/chs/">http://fabric-chs.readthedocs.io/zh_CN/chs/</a></li>
+<li>python三大神器之一fabric使用：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/rufus-hua/p/5144210.html">https://www.cnblogs.com/rufus-hua/p/5144210.html</a></li>
+<li>如何用Fabric实现无密码输入提示的远程自动部署：<a target="_blank" rel="noopener" href="https://blog.csdn.net/slvher/article/details/50414675">https://blog.csdn.net/slvher/article/details/50414675</a></li>
+<li>自动化运维管理 fabric：<a target="_blank" rel="noopener" href="http://www.ttlsa.com/python/automation-operation-and-maintenance-tool-fabric/">http://www.ttlsa.com/python/automation-operation-and-maintenance-tool-fabric/</a></li>
+<li>Python3自动化运维之Fabric模版详解：<a target="_blank" rel="noopener" href="https://www.imooc.com/article/38448">https://www.imooc.com/article/38448</a></li>
+</ul>
+<h3 id="fab常用参数"><a href="#fab常用参数" class="headerlink" title="fab常用参数"></a>fab常用参数</h3><blockquote>
+<p>官方文档：<a target="_blank" rel="noopener" href="http://docs.fabfile.org/">http://docs.fabfile.org/</a></p>
+</blockquote>
+<blockquote>
+<p>fab作为Fabric程序的命令行入口，提供了丰富的参数调用，命令格式如下：</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fab [options] &lt;command&gt;[:arg1,arg2-val2,host&#x3D;foo,host&#x3D;&#39;h1;h2&#39;...]...</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>常用参数介绍（注：更多参数可使用fab –help查看）</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">-u: 主机用户名</span><br><span class="line">-p: 主机用户密码</span><br><span class="line">-l：显示定义好的任务函数名;</span><br><span class="line">-f：指定fab入口文件，默认入口文件名为fabfile.py;</span><br><span class="line">-g：指定网关(中转)设备，比如堡垒机环境，填写堡垒机IP即可；</span><br><span class="line">-H：指定目标主机，多态主机用&quot;,&quot;号分隔；</span><br><span class="line">-P：以异步并行方式运行多主机任务，默认为串行运行；</span><br><span class="line">-R：指定role(角色)，以角色名区分不同业务组设备；</span><br><span class="line">-t：设置设备连接超时时间(秒)；</span><br><span class="line">-T：设置远程主机命令执行超时时间(秒)；</span><br><span class="line">-w：当命令执行失败，发出警告，而非默认中止任务。</span><br></pre></td></tr></table></figure>
+
+
+<h4 id="Fabric-示例"><a href="#Fabric-示例" class="headerlink" title="Fabric 示例"></a>Fabric 示例</h4><ul>
+<li>简单示例 host_type.py<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/env python</span></span><br><span class="line"><span class="comment"># from fabric.api import run</span></span><br><span class="line"><span class="keyword">from</span> fabric.operations <span class="keyword">import</span> run</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">host_type</span>():</span></span><br><span class="line">    run(<span class="string">&#x27;uname -a&#x27;</span>)</span><br></pre></td></tr></table></figure></li>
+<li>执行<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fab -H localhost -u root -f host_type.py host_type</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h4 id="fabfile的编写"><a href="#fabfile的编写" class="headerlink" title="fabfile的编写"></a>fabfile的编写</h4><p><strong>全局属性设定</strong></p>
+<blockquote>
+<p>env对象的作用是定义fabfile的全局设定，支持多个属性，包含目标主机、用户名、密码、等角色，各属性说明如下：</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">evn.host：定义目标主机，可以用IP或主机名表示，以Python的列表形式定义，如evn.hosts[&#39;192.168.56.133&#39;,&#39;192.168.56.134&#39;]。</span><br><span class="line">env.exclude_hosts：排除指定主机，如env.exclude_hosts&#x3D;[&#39;192.168.56.133&#39;]。</span><br><span class="line">env.user：定义用户名，如env.user&#x3D;&quot;root&quot;。</span><br><span class="line">env.port：定义目标主机端口，默认为22，如env.port&#x3D;&quot;22&quot;。</span><br><span class="line">env.password：定义密码，如env.password&#x3D;&#39;1234567&#39;。</span><br><span class="line">env.passwords：与password功能一样，区别在于不同主机不同密码的应用场景，需要注意的是，配置passwords是需配置用户、主机、端口等信息，如：</span><br><span class="line">env.passwords &#x3D; &#123;    </span><br><span class="line">    &#39;root@192.168.56.131:22&#39;:&#39;1234567&#39;,</span><br><span class="line">    &#39;root@192.168.56.132:22&#39;:&#39;1234567&#39;</span><br><span class="line">&#125;</span><br><span class="line">env.gateway：定义网关(中转、堡垒机)IP，如env.gateway &#x3D; &#39;192.168.56.1&#39;。</span><br><span class="line">env.deploy_release_dir：自定义全局变量，格式：env.+&quot;变量名称&quot;，如env.deploy_release_dir、env.age、env.sex等。</span><br><span class="line">env.roledefs：定义角色分组，比如web组与db组主机区分开来，定义如下：</span><br><span class="line">env.roledefs &#x3D; &#123;</span><br><span class="line">    &#39;webservers&#39;:[</span><br><span class="line">        &#39;192.168.56.131&#39;,</span><br><span class="line">        &#39;192.168.56.132&#39;</span><br><span class="line">    ],    </span><br><span class="line">    &#39;dbserver&#39;:[</span><br><span class="line">        &#39;192.168.56.134&#39;,</span><br><span class="line">        &#39;192.168.56.135&#39;</span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="常用API"><a href="#常用API" class="headerlink" title="常用API"></a>常用API</h4><blockquote>
+<p>Fabric提供了一组简单但功能强大的fabric.api命令集，简单地调用这些API就能完成大部分应用场景需求。</p>
+</blockquote>
+<blockquote>
+<p>Fabric常用方法及说明如下：</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">local：执行本地命令，如：local(&#39;uname -s&#39;);</span><br><span class="line">run：执行远程命令，如：run(&#39;free -m&#39;);</span><br><span class="line">sudo：以sudo权限执行远程命令，如：sudo(&#39;&#x2F;etc&#x2F;init.d&#x2F;httpd start&#39;);</span><br><span class="line">get: 从远程主机 copy file 到本地,功能跟scp一样。可以从远程主机下载</span><br><span class="line">备份，或者日志文件等等。</span><br><span class="line">put：上传本地文件到远程主机，如：put(&#39;&#x2F;home&#x2F;user.info&#39;,&#39;&#x2F;data&#x2F;user.info&#39;);</span><br><span class="line">prompt：获得用户输入信息，如：prompt(&#39;please input user password:&#39;);</span><br><span class="line">reboot：重启远程主机，如：reboot();</span><br><span class="line">confirm：获得提示信息确认，如：confirm(&quot;Tests failed. Continue[Y&#x2F;N]?&quot;);</span><br><span class="line">task：函数修饰符，标识的函数为fab可调用的，非标记对fab不可见，纯业务逻辑;</span><br><span class="line">runs_once：函数修饰符，标识的函数只会执行一次，不受多台主机影响。</span><br><span class="line">lcd：切换本地目录，如：lcd(&#39;&#x2F;home&#39;);</span><br><span class="line">cd：切换远程目录，如：cd(&#39;&#x2F;data&#x2F;logs&#39;);</span><br><span class="line">path: 添加远程机的PATH路径</span><br><span class="line">settings: 设置Fabric环境变量参数</span><br><span class="line">prefix: 设置命令执行前缀</span><br><span class="line">env：保存用户配置的字典, 定义全局信息，如主机、密码等</span><br><span class="line">shell_env:  设置Shell环境变量</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>run()</p>
+<blockquote>
+<p>run()：在远程服务器上执行 Linux命令，还有一个重要的参数 pty，如果我们执行命令以后需要有一个常驻的服务进程，那么就需要设置 pty=False，避免因为 Fabric 退出导致进程的退出。如：<code>run(&#39;service mysqld start&#39;,pty=False)</code></p>
+</blockquote>
+</li>
+<li><p>sudo()</p>
+<blockquote>
+<p>sudo()：功能与 run() 方法类似，只是是使用管理员权限在远程服务器上执行shell命令，区别是它相当于在 Shell 命令前加上了”sudo”，所以拥有超级用户的权限。使用此功能前，需要将用户设为sudoer，而且无需输密码。</p>
+</blockquote>
+</li>
+<li><p>local()</p>
+<blockquote>
+<p>local()：用来执行本地 Shell 命令，返回要执行的命令，local 是对 Python 的 Subprocess 模块的封装，更负载的功能可以直接使用 Subprocess 模块，包含 capture 参数，默认为 False，表示 subprocess 输出的信息进行显示，如果不想显示，那么指定capture=True 即可</p>
+</blockquote>
+</li>
+<li><p>get()</p>
+<blockquote>
+<p>get()：从远程服务器上获取文件，通过remote_path参数声明从何处下载，通过local_path表示下载到何处。remote_path支持通配符。</p>
+</blockquote>
+</li>
+<li><p>put()</p>
+<blockquote>
+<p>put()：将本地的文件上传到远程服务器，参数与get相似，此外，还可以通过mode参数执行远程文件的权限配置。</p>
+</blockquote>
+</li>
+<li><p>reboot()</p>
+<blockquote>
+<p>reboot()：重启远程服务器，可以通过wait参数设置等待几秒钟重启,没有此参数则代表立即重启。</p>
+</blockquote>
+</li>
+<li><p>path()</p>
+<blockquote>
+<p>path()：配置远程服务器PATH环境变量，只对当前会话有效，不会影响远程服务器的其他操作，path的修改支持多种模式。</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">append：默认行为，将给定的路径添加到PATH后面。</span><br><span class="line">prepend：将给定的路径添加到PATH的前面。</span><br><span class="line">replace：替换当前环境的PATH变量。</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>prefix()</p>
+<blockquote>
+<p>prefix() 前缀，它接受一个命令作为参数，表示在其内部执行的代码块，都要先执行prefix的命令参数。</p>
+</blockquote>
+</li>
+<li><p>shell_env()</p>
+<blockquote>
+<p>shell_env()：设置 shell 脚本的环境变量。可以用来临时设置远程和本地机上Shell的环境变量。</p>
+</blockquote>
+</li>
+<li><p>settings()</p>
+<blockquote>
+<p>settings()：通用配置，设置Fabric环境变量参数，用于临时覆盖env变量。</p>
+</blockquote>
+</li>
+</ul>
+<p><strong>注意：</strong></p>
+<blockquote>
+<p>在windows服务器执行命令，首先windows机器需要安装ssh服务，注意ssh服务所用的账户需要设置能够运行exec的权限，否则无法启动windwos程序。<br>其次由于fabric默认使用bash，因此需要设置变量 env.shell=”cmd /c”，否则会报错。</p>
+</blockquote>
+<h2 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h2><h3 id="1-查看本地与远程主机信息"><a href="#1-查看本地与远程主机信息" class="headerlink" title="1. 查看本地与远程主机信息"></a>1. 查看本地与远程主机信息</h3><ul>
+<li><p>查看本地信息(local_test.py)</p>
+<blockquote>
+<p>调用local()方法执行本地(主控端)命令，添加”@runs_once”修饰符保证该任务函数只执行一次。调用run()方法执行远程命令。</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/env python</span></span><br><span class="line"><span class="keyword">from</span> fabric.api <span class="keyword">import</span> env, local, runs_once</span><br><span class="line"></span><br><span class="line">env.user = <span class="string">&#x27;root&#x27;</span></span><br><span class="line">env.hosts = [<span class="string">&#x27;localhost&#x27;</span>]</span><br><span class="line">env.password = <span class="string">&#x27;1q2w3e&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="meta">@runs_once</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">local_task</span>():</span></span><br><span class="line">    local(<span class="string">&quot;uname -a&quot;</span>)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>运行：<code>fab -f local_test.py local_task</code></p>
+</blockquote>
+</li>
+<li><p>查看远程主机信息(remote_test.py)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">#!&#x2F;usr&#x2F;bin&#x2F;env python</span><br><span class="line">from fabric.api import cd, run, env, runs_once</span><br><span class="line"></span><br><span class="line">env.user &#x3D; &#39;root&#39;</span><br><span class="line">env.hosts &#x3D; [&#39;192.168.56.200&#39;]</span><br><span class="line">env.password &#x3D; &#39;1q2w3e&#39;</span><br><span class="line"></span><br><span class="line">@runs_once</span><br><span class="line">def remote_task():</span><br><span class="line">    with cd(&quot;&#x2F;root&#x2F;code&#x2F;&quot;):</span><br><span class="line">        run(&quot;pwd&quot;)</span><br><span class="line">        run(&quot;ls -l&quot;)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>运行：<code>fab -f remote_test.py remote_task</code></p>
+</blockquote>
+</li>
+</ul>
+<h3 id="2-动态获取远程目录列表"><a href="#2-动态获取远程目录列表" class="headerlink" title="2. 动态获取远程目录列表"></a>2. 动态获取远程目录列表</h3><blockquote>
+<p>使用”@task’修复符标志入口函数go()对外部可见，配合”@runs_once”修饰符接受用户输入，最后调用worktask()任务函数实现远程命令执行。</p>
+</blockquote>
+<ul>
+<li>动态获取远程目录(dynamic_test.py)<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/env python</span></span><br><span class="line"><span class="keyword">from</span> fabric.api <span class="keyword">import</span> env, prompt, run, task</span><br><span class="line"></span><br><span class="line">env.user = <span class="string">&#x27;root&#x27;</span></span><br><span class="line">env.hosts = [<span class="string">&quot;192.168.56.200&quot;</span>]</span><br><span class="line">env.password = <span class="string">&#x27;1q2w3e&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">input_raw</span>():</span></span><br><span class="line">    <span class="keyword">return</span> prompt(<span class="string">&quot;Please input directory name: &quot;</span>, default=<span class="string">&quot;~/&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">work_task</span>(<span class="params">dir_name</span>):</span></span><br><span class="line">    run(<span class="string">&quot;ls -l &#123;&#125;&quot;</span>.format(dir_name))</span><br><span class="line"></span><br><span class="line"><span class="meta">@task</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">go</span>():</span></span><br><span class="line">    dir_name = input_raw()</span><br><span class="line">    work_task(dir_name)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>运行：<code>fab -f dynamic_test.py go</code></p>
+</blockquote>
+</li>
+</ul>
+<h3 id="3-网关模式文件上传与执行"><a href="#3-网关模式文件上传与执行" class="headerlink" title="3. 网关模式文件上传与执行"></a>3. 网关模式文件上传与执行</h3><blockquote>
+<p>通过Fabric的env对象定义网关模式，即俗称的中转、堡垒机环境。定义格式为”env.gateway=’192.168.56.11’”,其中IP”192.168.56.11”为堡垒机IP，再结合任务函数实现目标主机文件上传与执行的操作。</p>
+</blockquote>
+<ul>
+<li>上传与执行(upload_run_test.py)<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/env python</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> fabric.api <span class="keyword">import</span> env, task, run, settings, put, cd</span><br><span class="line"><span class="keyword">from</span> fabric.contrib.console <span class="keyword">import</span> confirm</span><br><span class="line"><span class="keyword">from</span> fabric.utils <span class="keyword">import</span> abort</span><br><span class="line"></span><br><span class="line">env.user = <span class="string">&quot;root&quot;</span></span><br><span class="line">env.gateway = <span class="string">&#x27;192.168.56.11&#x27;</span>  <span class="comment"># 定义堡垒机IP，作为文件上传、执行的中转设备</span></span><br><span class="line">env.hosts = [<span class="string">&quot;192.168.56.12&quot;</span>, <span class="string">&quot;192.168.56.13&quot;</span>]</span><br><span class="line">env.passwords = &#123;</span><br><span class="line">    <span class="string">&quot;root@192.168.56.11:22&quot;</span>: <span class="string">&#x27;1q2w3e&#x27;</span>,  <span class="comment"># 堡垒机账号信息</span></span><br><span class="line">    <span class="string">&#x27;root@192.168.56.12:22&#x27;</span>: <span class="string">&#x27;1q2w3e&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;root@192.168.56.13:22&#x27;</span>: <span class="string">&#x27;1q2w3e&#x27;</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">l_pack_path = <span class="string">&quot;/home/install/nginx-1.10.1.tar.gz&quot;</span>  <span class="comment"># 本地安装包路径</span></span><br><span class="line">r_pack_path = <span class="string">&quot;/tmp/install&quot;</span>  <span class="comment"># 远程安装包路径</span></span><br><span class="line"></span><br><span class="line"><span class="meta">@task</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">put_task</span>():</span></span><br><span class="line">    run(<span class="string">&quot;mkdir -p /tmp/install&quot;</span>)</span><br><span class="line">    <span class="keyword">with</span> settings(warn_only=<span class="literal">True</span>):</span><br><span class="line">        result = put(l_pack_path, r_pack_path)  <span class="comment"># 上传安装包</span></span><br><span class="line">        <span class="keyword">if</span> result.failed <span class="keyword">and</span> <span class="keyword">not</span> confirm(<span class="string">&quot;put file failed, Continue[Y/N]?&quot;</span>):</span><br><span class="line">            abort(<span class="string">&quot;Abort file put task!&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="meta">@task</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">run_task</span>():</span>  <span class="comment"># 执行远程命令，安装nginx</span></span><br><span class="line">    <span class="keyword">with</span> cd(r_pack_path):</span><br><span class="line">        run(<span class="string">&quot;tar -xvf nginx-1.10.1.tar.gz&quot;</span>)</span><br><span class="line">        <span class="keyword">with</span> cd(<span class="string">&quot;nginx-1.10.1/&quot;</span>):</span><br><span class="line">            run(<span class="string">&quot;./nginx_install.sh&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="meta">@task</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">go</span>():</span></span><br><span class="line">    put_task()</span><br><span class="line">    run_task()</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>串行运行：<code>fab -f upload_run_test.py go</code></p>
+</blockquote>
+</li>
+</ul>
+<blockquote>
+<p>异步并行: <code>fab -Pf upload_run_test.py go</code></p>
+</blockquote>
+<h3 id="4-文件打包、上传与校验"><a href="#4-文件打包、上传与校验" class="headerlink" title="4. 文件打包、上传与校验"></a>4. 文件打包、上传与校验</h3><blockquote>
+<p>时常做一些文件包分发的工作，实施步骤一般是先压缩打包，在批量上传至目标服务器，最后做一致性校验。</p>
+</blockquote>
+<blockquote>
+<p>示例通过put()方法实现文件的上传，通过对比本地与远程主机文件的md5，最终实现文件一致性校验。</p>
+</blockquote>
+<ul>
+<li>文件打包、上传与校验(pack_tar_teat.py)<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line">#!&#x2F;usr&#x2F;bin&#x2F;env python</span><br><span class="line"># -*- coding: utf-8 -*-</span><br><span class="line"></span><br><span class="line">from fabric.api import env, runs_once, lcd, local, task, settings, run, prompt, cd, put</span><br><span class="line">from fabric.contrib.console import confirm</span><br><span class="line">from fabric.utils import abort</span><br><span class="line"></span><br><span class="line">env.user &#x3D; &#39;root&#39;</span><br><span class="line">env.hosts &#x3D; [&#39;192.168.56.12&#39;, &#39;192.168.56.13&#39;]</span><br><span class="line">env.passwords &#x3D; &#123;</span><br><span class="line">    &#39;root@192.168.56.12:22&#39;: &#39;1q2w3e&#39;,</span><br><span class="line">    &#39;root@192.168.56.13:22&#39;: &#39;1q2w3e&#39;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@runs_once</span><br><span class="line">def tar_task():  # 本地打包任务函数，只执行一次</span><br><span class="line">    with lcd(&quot;&#x2F;home&#x2F;mayw&#x2F;devops&quot;):</span><br><span class="line">        local(&quot;tar -zcf devops.tar.gz *&quot;)</span><br><span class="line"></span><br><span class="line">@task</span><br><span class="line">def put_task():  # 上传文件任务函数</span><br><span class="line">    run(&quot;mkdir -p &#x2F;root&#x2F;devops&quot;)</span><br><span class="line">    with cd(&quot;&#x2F;root&#x2F;devops&quot;):</span><br><span class="line">        with settings(warn_only&#x3D;True):  # put(上传)出现异常时继续执行，非终止</span><br><span class="line">            result &#x3D; put(&quot;&#x2F;home&#x2F;mayw&#x2F;devops&#x2F;devops.tar.gz&quot;, &quot;&#x2F;root&#x2F;devops&#x2F;devops.tar.gz&quot;)</span><br><span class="line">            if result.failed and not confirm(&quot;put file failed.Continue[Y&#x2F;N]?&quot;):</span><br><span class="line">                abort(&quot;Aborting file put task!&quot;)  # 出现异常时，确认用户是否继续，(Y继续)</span><br><span class="line"></span><br><span class="line">@task</span><br><span class="line">def check_task():</span><br><span class="line">    with settings(warn_only&#x3D;True):</span><br><span class="line">        lmd5 &#x3D; local(&quot;md5sum &#x2F;home&#x2F;mayw&#x2F;devops&#x2F;devops.tar.gz&quot;, capture&#x3D;True).split(&#39; &#39;)[0]</span><br><span class="line">        rmd5 &#x3D; run(&quot;md5sum &#x2F;root&#x2F;devops&#x2F;devops.tar.gz&quot;).split(&#39; &#39;)[0]</span><br><span class="line">        if lmd5 &#x3D;&#x3D; rmd5:  # 对比本地及远程文件md5信息</span><br><span class="line">            prompt(&quot;OK&quot;)</span><br><span class="line">        else:</span><br><span class="line">            prompt(&quot;ERROR&quot;)</span><br><span class="line"></span><br><span class="line">@task</span><br><span class="line">def go():</span><br><span class="line">    tar_task()</span><br><span class="line">    put_task()</span><br><span class="line">    check_task()</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>执行：<code>fab -f pack_tar_teat.py go</code></p>
+</blockquote>
+</li>
+</ul>
+<h3 id="5-部署LNMP业务服务环境"><a href="#5-部署LNMP业务服务环境" class="headerlink" title="5. 部署LNMP业务服务环境"></a>5. 部署LNMP业务服务环境</h3><blockquote>
+<p>通过env.roledefs定义不同主机角色，在使用”@roles(‘webservers’)”修复符绑定到对应的任务函数，实现不同角色主机的部署差异。</p>
+</blockquote>
+<ul>
+<li>部署LNMP业务服务环境(lnmp_test.py)<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line">#!&#x2F;usr&#x2F;bin&#x2F;env python</span><br><span class="line"># -*- coding: utf-8 -*-</span><br><span class="line"></span><br><span class="line">from fabric.api import env, roles, settings, run, execute</span><br><span class="line">from fabric.colors import yellow</span><br><span class="line"></span><br><span class="line">env.user &#x3D; &#39;root&#39;</span><br><span class="line">env.roledefs &#x3D; &#123;</span><br><span class="line">    &#39;webservers&#39;: [&#39;192.168.56.11&#39;, &#39;192.168.56.12&#39;],</span><br><span class="line">    &#39;dbservers&#39;: [&#39;192.168.56.13&#39;]</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">env.passwords &#x3D; &#123;</span><br><span class="line">    &#39;root@192.168.56.11:22&#39;: &#39;1q2w3e&#39;,</span><br><span class="line">    &#39;root@192.168.56.12:22&#39;: &#39;1q2w3e&#39;,</span><br><span class="line">    &#39;root@192.168.56.13:22&#39;: &#39;1q2w3e&#39;,</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">@roles(&#39;webservers&#39;)  # 使用webtask任务函数引用&#39;webservers&#39;角色修复符</span><br><span class="line">def web_task():</span><br><span class="line">    print(yellow(&#39;Install nginx php php-fpm...&#39;))</span><br><span class="line">    with settings(warn_only&#x3D;True):</span><br><span class="line">        run(&quot;yum -y install nginx&quot;)</span><br><span class="line">        run(&quot;yum -y install php-fpm php-mysql php-mbstring php-xml php-mcrypt php-gd&quot;)</span><br><span class="line">        run(&quot;chkconfig --levels 235 php-fpm on&quot;)</span><br><span class="line">        run(&quot;chkconfig --levels 235 nginx on&quot;)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">@roles(&#39;dbservers&#39;)  # dbtask任务函数引用&#39;dbservers&#39;角色修复符</span><br><span class="line">def db_task():</span><br><span class="line">    print(yellow(&quot;Install Mysql...&quot;))</span><br><span class="line">    with settings(warn_only&#x3D;True):</span><br><span class="line">        run(&quot;yum -y install mysql mysql-server&quot;)</span><br><span class="line">        run(&quot;chkconfig --levels 235 mysqld on&quot;)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">@roles(&#39;webservers&#39;, &#39;dbservers&#39;)  # publictask任务函数同时引用两个角色修复符</span><br><span class="line">def public_task():  # 部署公共类环境，如epel、ntp等</span><br><span class="line">    print(yellow(&quot;Install epel ntp....&quot;))</span><br><span class="line">    with settings(warn_only&#x3D;True):</span><br><span class="line">        run(&quot;wget -O &#x2F;etc&#x2F;yum.repos.d&#x2F;epel.repo http:&#x2F;&#x2F;mirrors.aliyun.com&#x2F;repo&#x2F;epel-7.repo&quot;)</span><br><span class="line">        run(&quot;yum -y install ntp&quot;)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">def deploy():</span><br><span class="line">    execute(public_task)</span><br><span class="line">    execute(web_task)</span><br><span class="line">    execute(db_task)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<blockquote>
+<p>执行：<code>fab -Pf lnmp_test.py go</code></p>
+</blockquote>
+<h3 id="6-生产环境代码包发布管理"><a href="#6-生产环境代码包发布管理" class="headerlink" title="6. 生产环境代码包发布管理"></a>6. 生产环境代码包发布管理</h3><blockquote>
+<p>程序生产环境的发布是业务上线的最后一个环境，要求具备源码打包、发布、切换、回滚、版本管理等功能。</p>
+</blockquote>
+<blockquote>
+<p>本示例实现了这一套流程功能，其中版本切换与回滚使用了Linux下的软链接实现。</p>
+</blockquote>
+<ul>
+<li>生产环境代码包发布管理(package_mgt.py)<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/local/env python</span></span><br><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> fabric.api <span class="keyword">import</span> env, runs_once, run, task, prompt, settings, cd, abort, lcd, local, put</span><br><span class="line"><span class="keyword">from</span> fabric.colors <span class="keyword">import</span> yellow, green</span><br><span class="line"><span class="keyword">from</span> fabric.contrib.console <span class="keyword">import</span> confirm</span><br><span class="line"></span><br><span class="line">env.user = <span class="string">&#x27;root&#x27;</span></span><br><span class="line">env.host = [<span class="string">&#x27;192.168.56.12&#x27;</span>, <span class="string">&#x27;192.168.56.13&#x27;</span>]</span><br><span class="line">env.passwords = &#123;</span><br><span class="line">    <span class="string">&#x27;root@192.168.56.12:22&#x27;</span>: <span class="string">&#x27;1q2w3e&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;root@192.168.56.13:22&#x27;</span>: <span class="string">&#x27;1q2w3e&#x27;</span>,</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">env.project_dev_source = <span class="string">&#x27;/data/dev/Lwebadmin/&#x27;</span>  <span class="comment"># 开发服务器项目主目录</span></span><br><span class="line">env.project_tar_source = <span class="string">&#x27;/data/dev/releases/&#x27;</span>  <span class="comment"># 开发服务器项目压缩包存储目录</span></span><br><span class="line">env.project_pack_name = <span class="string">&#x27;release&#x27;</span>  <span class="comment"># 项目压缩包前缀，文件名为release.tar.gz</span></span><br><span class="line"></span><br><span class="line">env.deploy_project_root = <span class="string">&#x27;/data/www/Lwebadmin/&#x27;</span>  <span class="comment"># 项目生产环境主目录</span></span><br><span class="line">env.deploy_release_dir = <span class="string">&#x27;releases&#x27;</span>  <span class="comment"># 项目发布目录，位于主目录下面</span></span><br><span class="line">env.deploy_current_dir = <span class="string">&#x27;current&#x27;</span>  <span class="comment"># 对外服务的当前版本软链接</span></span><br><span class="line">env.deploy_version = time.strftime(<span class="string">&quot;%Y%m%d&quot;</span>) + <span class="string">&quot;v2&quot;</span>  <span class="comment"># 版本号</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">@runs_once</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">input_version_id</span>():</span>  <span class="comment"># 获得用户输入的版本号，以便做版本回滚操作</span></span><br><span class="line">    <span class="keyword">return</span> prompt(<span class="string">&quot;Please input project rollback version ID:&quot;</span>, default=<span class="string">&quot;&quot;</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">@task</span></span><br><span class="line"><span class="meta">@runs_once</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">tar_source</span>():</span>  <span class="comment"># 打包本地项目主目录，并将压缩包存储到本地压缩包目录</span></span><br><span class="line">    prompt(yellow(<span class="string">&quot;Creating source package....&quot;</span>))</span><br><span class="line">    <span class="keyword">with</span> lcd(env.project_dev_source):</span><br><span class="line">        local(<span class="string">&quot;tar -zcf %s.tar.gz .&quot;</span> % (env.project_tar_source + env.project_pack_name))</span><br><span class="line">    prompt(green(<span class="string">&quot;Creating source package success!&quot;</span>))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">@task</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">put_package</span>():</span>  <span class="comment"># 上传任务函数</span></span><br><span class="line">    prompt(yellow(<span class="string">&quot;Start put package....&quot;</span>))</span><br><span class="line">    <span class="keyword">with</span> settings(warn_only=<span class="literal">True</span>):</span><br><span class="line">        <span class="keyword">with</span> cd(env.deploy_project_root + env.deploy_release_dir):</span><br><span class="line">            run(<span class="string">&quot;mkdir %s&quot;</span> % env.deploy_version)  <span class="comment"># 创建版本目录</span></span><br><span class="line">    env.deploy_full_path = env.deploy_project_root + env.deploy_release_dir + <span class="string">&quot;/&quot;</span> + env.deploy_version</span><br><span class="line">    <span class="keyword">with</span> settings(warn_only=<span class="literal">True</span>):  <span class="comment"># 上传项目压缩包至此目录</span></span><br><span class="line">        result = put(env.project_tar_source + env.project_pack_name + <span class="string">&quot;.tar.gz&quot;</span>, env.deploy_full_path)</span><br><span class="line">        <span class="keyword">if</span> result.failed <span class="keyword">and</span> <span class="keyword">not</span> confirm(<span class="string">&quot;put file failed,Continue[Y/N]?&quot;</span>):</span><br><span class="line">            abort(<span class="string">&quot;Aborting file put task!&quot;</span>)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">with</span> cd(env.deploy_full_path):  <span class="comment"># 成功解压后删除压缩包</span></span><br><span class="line">        run(<span class="string">&quot;tar -zxvf %s.tar.gz&quot;</span> % env.project_pack_name)</span><br><span class="line">        run(<span class="string">&quot;rm -rf %s.tar.gz&quot;</span> % env.project_pack_name)</span><br><span class="line"></span><br><span class="line">    print(green(<span class="string">&quot;Put &amp; untar package success!&quot;</span>))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">@task</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">make_symlink</span>():</span>  <span class="comment"># 为当前版本目录做软链接</span></span><br><span class="line">    print(yellow(<span class="string">&quot;update current symlink&quot;</span>))</span><br><span class="line">    env.deploy_full_path = env.deploy_project_root + env.deploy_release_dir + <span class="string">&quot;/&quot;</span> + env.deploy_version</span><br><span class="line">    <span class="keyword">with</span> settings(warn_only=<span class="literal">True</span>):  <span class="comment"># 删除软链接，重新创建并指定软链接源目录，新版本生效</span></span><br><span class="line">        run(<span class="string">&quot;rm -rf %s&quot;</span> % (env.deploy_project_root + env.deploy_current_dir))</span><br><span class="line">        run(<span class="string">&quot;ln -s %s %s&quot;</span> % (env.deploy_full_path, env.deploy_project_root + env.deploy_current_dir))</span><br><span class="line">    print(green(<span class="string">&quot;make symlink success!&quot;</span>))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">@task</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">rollback</span>():</span>  <span class="comment"># 版本回滚任务函数</span></span><br><span class="line">    print(yellow(<span class="string">&quot;rollback project version&quot;</span>))</span><br><span class="line">    version_id = input_version_id()  <span class="comment"># 获取用户输入的回滚版本号</span></span><br><span class="line">    <span class="keyword">if</span> version_id == <span class="string">&#x27;&#x27;</span>:</span><br><span class="line">        abort(<span class="string">&quot;Project version ID error,abort!&quot;</span>)</span><br><span class="line"></span><br><span class="line">    env.deploy_full_path = env.deploy_project_root + env.deploy_release_dir + <span class="string">&quot;/&quot;</span> + version_id</span><br><span class="line">    run(<span class="string">&quot;rm -r %s&quot;</span> % (env.deploy_project_root + env.deploy_current_dir))</span><br><span class="line">    <span class="comment"># 删除软链接，重新创建并指定软链接源目录，新版本生效</span></span><br><span class="line">    run(<span class="string">&quot;ln -s %s %s&quot;</span> % (env.deploy_full_path, env.deploy_project_root + env.deploy_current_dir))</span><br><span class="line">    print(green(<span class="string">&quot;rollback success!&quot;</span>))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">@task</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">go</span>():</span>  <span class="comment"># 自动化程序版本发布入口函数</span></span><br><span class="line">    tar_source()</span><br><span class="line">    put_package()</span><br><span class="line">    make_symlink()</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<blockquote>
+<p>执行：<code>fab -Pf package_mgt.py go</code></p>
+</blockquote>
+<blockquote>
+<p>在生产环境中将站点的根目录指向”/data/www/Lwebadmin/current”,由于使用Linux软链接做切换，管理员的版本发布、回滚操作用户无感知。</p>
+</blockquote>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">Murray</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://github.com/sunglowrise/sunglowrise.github.io/2021/04/01/Fabric%20%E7%AC%94%E8%AE%B0/">https://github.com/sunglowrise/sunglowrise.github.io/2021/04/01/Fabric%20%E7%AC%94%E8%AE%B0/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">Murray</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/Python/">
+                                    <span class="chip bg-color">Python</span>
+                                </a>
+                            
+                                <a href="/tags/Fabric/">
+                                    <span class="chip bg-color">Fabric</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2021/04/01/%E7%8A%B6%E6%80%81%E7%A0%81%20response%20code/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="状态码 response code">
+                        
+                        <span class="card-title">状态码 response code</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-04-01
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            Murray
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Python/">
+                        <span class="chip bg-color">Python</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2021/04/01/python%E4%B9%8Bthreading%E5%A4%9A%E7%BA%BF%E7%A8%8B/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="python之threading多线程">
+                        
+                        <span class="card-title">python之threading多线程</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-04-01
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            Murray
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Python/">
+                        <span class="chip bg-color">Python</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: Murray个人笔记<br />'
+            + '文章作者: Murray<br />'
+            + '文章链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+    <div class="container row center-align" style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2020-2022</span>
+            
+            <span id="year">2020</span>
+            <a href="/about" target="_blank">Murray</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <br>
+            
+            <span id="icp"><img src="/medias/icp.png" style="vertical-align: text-bottom;" />
+                <a href="https://beian.miit.gov.cn" target="_blank">浙ICP备2021006498号</a>
+            </span>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/sunglowrise" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:sunglowrise@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+
+
+
+
+    <a href="https://www.zhihu.com/people/ma-liang-19-36" class="tooltipped" target="_blank" data-tooltip="关注我的知乎: https://www.zhihu.com/people/ma-liang-19-36" data-position="top" data-delay="50">
+        <i class="fab fa-zhihu1">知</i>
+    </a>
+
+
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    <!--腾讯兔小巢-->
+    
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>
