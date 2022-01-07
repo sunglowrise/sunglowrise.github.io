@@ -684,8 +684,8 @@ header .go-back i {
 }
 
 .bg-cover .post-title {
-    margin: 0 auto;
-    font-size: 2.5rem;
+    /* margin: 0 auto; */
+    font-size: 1.6rem;
     font-weight: 400;
 }
 
@@ -1100,7 +1100,8 @@ article .article-tags .chip {
 
 /*文章详情样式*/
 #artDetail {
-    margin-top: -60px;
+    /* margin-top: -60px; */
+    margin-top: -20px;
 }
 
 /* 修改小屏幕下文章详情table样式. */
@@ -1112,7 +1113,7 @@ article .article-tags .chip {
 
 @media only screen and (min-width: 1418px) {
     #artDetail {
-        margin-top: -60px;
+        margin-top: -20px;
         padding: 0 0.75rem;
     }
 }
