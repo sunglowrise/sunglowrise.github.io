@@ -378,7 +378,7 @@
 <ol>
 <li>JSONP定义<br>JSONP是英文JSON with Padding的缩写，是一个非官方的协议。它允许在服务器端生成script tags返回至客户端，通过javascript callback的形式来实现站点访问。 JSONP是一种script tag的注入，将server返回的response添加到页面实现特定功能。</li>
 </ol>
-<p>2.JSONP由来<br>要解释JSONP的来由，先要说一下浏览器的“同源策略(SOP:Same Origin Policy)”。 简而言之，就是浏览器限制脚本程序只能和同协议、同域名、同端口的脚本进行交互，这包括共享和传递变量等。cookie的传递也是遵从同样策略。这就造成一些涉及到多个服务器的应用在整合时一些麻烦。跨域访问的问题造成A站点的Ajax代码无法访问B站点的数据。<br>     如何解决跨域访问呢？那就要借助浏览器的一个特性：尽管浏览器不允许页面中的脚本程序跨域读取数据，但却允许HTML引用跨域的资源，如图片，CSS和脚本程序。对于脚本程序的引用比较特殊，它被浏览器解析以后，就和本地的脚本程序别无二致且可立即进行解释并执行。如在B站点的一个js文件，一个简单的提示框：alert（“This is Victor！”）;。在A站点引用这个js，这个脚本就会在B站点的应用中执行，显示一个alert信息。由于站外脚本的引用是通过script tag来实现的，而脚本程序又可通过DOM的方式可以对HTML页面的所有标签进行控制（包括动态的创建script标签），这就可以实现通过调用站外程序对本地资源进行更改了。另外，通过<script> 标记的使用，就可从服务端直接返回可执行的JavaScript函数调用或者JSON数据。</p>
+<p>2.JSONP由来<br>要解释JSONP的来由，先要说一下浏览器的”同源策略(SOP:Same Origin Policy)”。 简而言之，就是浏览器限制脚本程序只能和同协议、同域名、同端口的脚本进行交互，这包括共享和传递变量等。cookie的传递也是遵从同样策略。这就造成一些涉及到多个服务器的应用在整合时一些麻烦。跨域访问的问题造成A站点的Ajax代码无法访问B站点的数据。<br>     如何解决跨域访问呢？那就要借助浏览器的一个特性：尽管浏览器不允许页面中的脚本程序跨域读取数据，但却允许HTML引用跨域的资源，如图片，CSS和脚本程序。对于脚本程序的引用比较特殊，它被浏览器解析以后，就和本地的脚本程序别无二致且可立即进行解释并执行。如在B站点的一个js文件，一个简单的提示框：alert（”This is Victor！”）;。在A站点引用这个js，这个脚本就会在B站点的应用中执行，显示一个alert信息。由于站外脚本的引用是通过script tag来实现的，而脚本程序又可通过DOM的方式可以对HTML页面的所有标签进行控制（包括动态的创建script标签），这就可以实现通过调用站外程序对本地资源进行更改了。另外，通过<script> 标记的使用，就可从服务端直接返回可执行的JavaScript函数调用或者JSON数据。</p>
 <ol start="3">
 <li>JSONP原理与实现<br> 首先在客户端注册一个callback, 然后把callback的名字传给服务器。此时，服务器先生成 JSON数据。然后以JavaScript 语法的方式，生成一个function, function名字就是传递上来的参数jsonp.<br> 然后，将JSON数据直接以入参的方式，放置到function中，这样就生成了一段 js 语法的文档，返回给客户端。<br> 最后，在客户端浏览器中解析script标签，并执行返回的JavaScript文档，此时数据作为参数，传入到了客户端预先定义好的回调函数里(动态执行回调函数) 。</li>
 </ol>
@@ -677,13 +677,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/06/02/ui-grid/">
+                <a href="/2019/06/02/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="ui-grid">
+                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="前端开发工具">
                         
-                        <span class="card-title">ui-grid</span>
+                        <span class="card-title">前端开发工具</span>
                     </div>
                 </a>
                 <div class="card-content article-content">

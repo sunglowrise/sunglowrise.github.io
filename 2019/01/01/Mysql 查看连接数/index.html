@@ -388,7 +388,7 @@
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">1、虽然这里写的32000。但实际MySQL服务器允许的最大连接数16384；</span><br><span class="line">2、除max_connections外，上述其他配置应该根据你们系统自身需要进行配置，不必拘泥；</span><br><span class="line">3、添加了最大允许连接数，对系统消耗增加不大。</span><br><span class="line">4、如果你的mysql用的是my.ini作配置文件，设置类似，但设置的格式要稍作变通。</span><br><span class="line"> </span><br></pre></td></tr></table></figure>
 
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">用mysqld --help 可以查看到max_connections 变量。　</span><br><span class="line">或者 mysql -uuser -p</span><br><span class="line">后mysql&gt;show variables;</span><br><span class="line">也会看到max_connections 。  </span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">用mysqld --help 可以查看到max_connections 变量。 </span><br><span class="line">或者 mysql -uuser -p</span><br><span class="line">后mysql&gt;show variables;</span><br><span class="line">也会看到max_connections 。  </span><br></pre></td></tr></table></figure>
 
 <blockquote>
 <p>mysql的最大连接数默认是100, 这个数值对于并发连接很多的数据库应用是远远不够的，当连接请求大于默认连接数后，就会出现无法连接数据库的错误，因此我们需要把它适当调大一些， 有两种办法可以修改最大连接数，一种是修改safe_mysqld，另一种是直接修改原代码并重新编译。下面分别介绍这两种方法：</p>

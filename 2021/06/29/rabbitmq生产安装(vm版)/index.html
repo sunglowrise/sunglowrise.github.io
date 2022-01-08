@@ -374,11 +374,11 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="rabbitmq安装"><a href="#rabbitmq安装" class="headerlink" title="rabbitmq安装"></a>rabbitmq安装</h1><p>注意事项:</p>
+                <h3 id="rabbitmq安装"><a href="#rabbitmq安装" class="headerlink" title="rabbitmq安装"></a>rabbitmq安装</h3><p>注意事项:</p>
 <blockquote>
 <p>1.安装rabbitmq前请先安装好docker，具体安装方法参考文档&lt;&lt;docker生产安装.md&gt;&gt;。<br>2.文档中IP地址为示意地址，安装时请替换为实际生产地址。<br>3.本文档不要一次性执行一个命令框（灰色框）内的全部命令，请按照步骤说明分步执行。<br>4.文档中主机名称mq-11，mq-12，mq-13也需要根据生产环境ip设置为对应的主机名称。</p>
 </blockquote>
-<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><p><em>注意：以下操作都在3台机器上分别执行</em></p>
+<h4 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h4><p><em>注意：以下操作都在3台机器上分别执行</em></p>
 <p><strong>规划机器，rabbitmq版本3.8.9</strong></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">192.168.68.11 mq-11</span><br><span class="line">192.168.68.12 mq-12</span><br><span class="line">192.168.68.13 mq-13</span><br></pre></td></tr></table></figure>
 
@@ -389,7 +389,7 @@
 <p><strong>下载稳定版安装包</strong></p>
 <p>官方地址：<a target="_blank" rel="noopener" href="https://www.rabbitmq.com/download.html">https://www.rabbitmq.com/download.html</a></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">#socat</span><br><span class="line">wget http:&#x2F;&#x2F;www.rpmfind.net&#x2F;linux&#x2F;centos&#x2F;7.9.2009&#x2F;os&#x2F;x86_64&#x2F;Packages&#x2F;socat-1.7.3.2-2.el7.x86_64.rpm</span><br><span class="line"></span><br><span class="line">#epel</span><br><span class="line">wget https:&#x2F;&#x2F;mirrors.tuna.tsinghua.edu.cn&#x2F;epel&#x2F;7&#x2F;x86_64&#x2F;Packages&#x2F;e&#x2F;epel-release-7-13.noarch.rpm</span><br><span class="line"></span><br><span class="line">#erland</span><br><span class="line">wget https:&#x2F;&#x2F;github.com&#x2F;rabbitmq&#x2F;erlang-rpm&#x2F;releases&#x2F;download&#x2F;v23.2.1&#x2F;erlang-23.2.1-1.el7.x86_64.rpm</span><br><span class="line"></span><br><span class="line">#rabbitmq</span><br><span class="line">wget https:&#x2F;&#x2F;dl.bintray.com&#x2F;rabbitmq&#x2F;all&#x2F;rabbitmq-server&#x2F;3.8.9&#x2F;rabbitmq-server-3.8.9-1.el7.noarch.rpm</span><br><span class="line"></span><br><span class="line">#内网地址</span><br><span class="line">wget http:&#x2F;&#x2F;10.7.102.125:8000&#x2F;downloads&#x2F;rabbitmq&#x2F;socat-1.7.3.2-2.el7.x86_64.rpm</span><br><span class="line">wget http:&#x2F;&#x2F;10.7.102.125:8000&#x2F;downloads&#x2F;rabbitmq&#x2F;epel-release-7-13.noarch.rpm</span><br><span class="line">wget http:&#x2F;&#x2F;10.7.102.125:8000&#x2F;downloads&#x2F;rabbitmq&#x2F;erlang-23.2.1-1.el7.x86_64.rpm</span><br><span class="line">wget http:&#x2F;&#x2F;10.7.102.125:8000&#x2F;downloads&#x2F;rabbitmq&#x2F;rabbitmq-server-3.8.9-1.el7.noarch.rpm</span><br></pre></td></tr></table></figure>
-<h2 id="安装步骤"><a href="#安装步骤" class="headerlink" title="安装步骤"></a>安装步骤</h2><p><em>注意：以下操作在3台机器上都要执行</em></p>
+<h4 id="安装步骤"><a href="#安装步骤" class="headerlink" title="安装步骤"></a>安装步骤</h4><p><em>注意：以下操作在3台机器上都要执行</em></p>
 <p><strong>socat安装</strong></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo yum -y install socat-1.7.3.2-2.el7.x86_64.rpm</span><br></pre></td></tr></table></figure>
 
@@ -405,7 +405,7 @@
 <p>同步.erlang.cookie文件，保持3台机器上.erlang.cookie内容一样</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#备注：官方在介绍集群的文档中提到过.erlang.cookie一般会存在两个地址：</span><br><span class="line">#第一个是$home&#x2F;.erlang.cookie，第二个地方就是&#x2F;var&#x2F;lib&#x2F;rabbitmq&#x2F;.erlang.cookie</span><br></pre></td></tr></table></figure>
 
-<h2 id="集群搭建"><a href="#集群搭建" class="headerlink" title="集群搭建"></a>集群搭建</h2><p><em>注意：以下操作都在3台机器上分别执行</em></p>
+<h4 id="集群搭建"><a href="#集群搭建" class="headerlink" title="集群搭建"></a>集群搭建</h4><p><em>注意：以下操作都在3台机器上分别执行</em></p>
 <p>1.修改/etc/hosts文件，添加IP和节点名称</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#sudo vim /etc/hosts</span></span><br></pre></td></tr></table></figure>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">sudo cat &lt;&lt;EOF &gt;&gt; &#x2F;etc&#x2F;hosts</span><br><span class="line">192.168.68.11 mq-1</span><br><span class="line">192.168.68.12 mq-2</span><br><span class="line">192.168.68.13 mq-3</span><br><span class="line">EOF</span><br><span class="line"></span><br><span class="line">cat &#x2F;etc&#x2F;hosts</span><br></pre></td></tr></table></figure>
@@ -441,7 +441,7 @@
 </blockquote>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">sudo rabbitmqctl cluster_status</span><br><span class="line"><span class="comment">#启动管理插件</span></span><br><span class="line">sudo rabbitmq-plugins <span class="built_in">enable</span> rabbitmq_management</span><br><span class="line"></span><br><span class="line"><span class="comment">#添加admin用户,否则用guest登陆会报User can only log in via localhost</span></span><br><span class="line">sudo rabbitmqctl add_user admin admin</span><br><span class="line">sudo rabbitmqctl set_permissions -p / admin <span class="string">&quot;.*&quot;</span> <span class="string">&quot;.*&quot;</span> <span class="string">&quot;.*&quot;</span></span><br><span class="line">sudo rabbitmqctl set_user_tags admin administrator</span><br><span class="line"></span><br><span class="line"><span class="comment">#访问控制管理页面</span></span><br><span class="line">http://192.168.2.11:15672/</span><br></pre></td></tr></table></figure>
 
-<h2 id="设置镜像队列"><a href="#设置镜像队列" class="headerlink" title="设置镜像队列"></a>设置镜像队列</h2><p><em>注意：以下操作只在主服务器mq-11上操作</em></p>
+<h4 id="设置镜像队列"><a href="#设置镜像队列" class="headerlink" title="设置镜像队列"></a>设置镜像队列</h4><p><em>注意：以下操作只在主服务器mq-11上操作</em></p>
 <p>针对每一个镜像队列都包含一个master节点和多个slave节点。如果master不工作，那么镜像队列最早的salve会升级为master。</p>
 <p>镜像队列的配置主要是通过添加相应的 Policy 来完成，命令如下 ：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rabbitmqctl set_policy [-p vhost] [--priority priority] [--apply-to apply-to] &#123;name&#125; &#123;pattern&#125; &#123;definition&#125;</span><br></pre></td></tr></table></figure>

@@ -5,7 +5,7 @@ $(function () {
     var $notice = $('<div class="codecopy_notice"></div>')
     $('.code-area').prepend($copyIcon)
     $('.code-area').prepend($notice)
-    // “复制成功”字出现
+    // "复制成功"字出现
     function copy(text, ctx) {
         if (document.queryCommandSupported && document.queryCommandSupported('copy')) {
             try {

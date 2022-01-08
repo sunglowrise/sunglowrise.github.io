@@ -374,7 +374,7 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="ELK-之-docker-部署"><a href="#ELK-之-docker-部署" class="headerlink" title="ELK 之 docker 部署"></a>ELK 之 docker 部署</h2><blockquote>
+                <h3 id="ELK-之-docker-部署"><a href="#ELK-之-docker-部署" class="headerlink" title="ELK 之 docker 部署"></a>ELK 之 docker 部署</h3><blockquote>
 <p>基于docker部署使用ELK+FileBeat日志管理平台, ELK+Filebeat的集中式日志解决方案也是大热。</p>
 </blockquote>
 <p><img src="https://gitee.com/sunglowrise/images/raw/master/ydnote/2019/elk%E6%B5%81%E7%A8%8B.png" alt="ELK流程"></p>
@@ -413,23 +413,23 @@
 <h3 id="ELK客户端配置"><a href="#ELK客户端配置" class="headerlink" title="ELK客户端配置"></a>ELK客户端配置</h3><blockquote>
 <p>ELK客户端配置核心在于Filebeat的相关配置</p>
 </blockquote>
-<h5 id="1-添加elastic-key至客户端"><a href="#1-添加elastic-key至客户端" class="headerlink" title="1. 添加elastic key至客户端"></a>1. 添加elastic key至客户端</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget -qO - https:&#x2F;&#x2F;artifacts.elastic.co&#x2F;GPG-KEY-elasticsearch | sudo apt-key add -</span><br></pre></td></tr></table></figure>
+<h4 id="1-添加elastic-key至客户端"><a href="#1-添加elastic-key至客户端" class="headerlink" title="1. 添加elastic key至客户端"></a>1. 添加elastic key至客户端</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget -qO - https:&#x2F;&#x2F;artifacts.elastic.co&#x2F;GPG-KEY-elasticsearch | sudo apt-key add -</span><br></pre></td></tr></table></figure>
 
-<h5 id="2-安装apt-transport-https"><a href="#2-安装apt-transport-https" class="headerlink" title="2. 安装apt-transport-https"></a>2. 安装apt-transport-https</h5><blockquote>
+<h4 id="2-安装apt-transport-https"><a href="#2-安装apt-transport-https" class="headerlink" title="2. 安装apt-transport-https"></a>2. 安装apt-transport-https</h4><blockquote>
 <p>由于将使用https传输的elastic数据，需安装apt-transport-https</p>
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install -y apt-transport-https</span><br></pre></td></tr></table></figure>
 
-<h5 id="3-添加elastic库并更新apt-get库"><a href="#3-添加elastic库并更新apt-get库" class="headerlink" title="3. 添加elastic库并更新apt-get库"></a>3. 添加elastic库并更新apt-get库</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">echo &quot;deb https:&#x2F;&#x2F;artifacts.elastic.co&#x2F;packages&#x2F;6.x&#x2F;apt stable main&quot; | sudo tee -a &#x2F;etc&#x2F;apt&#x2F;sources.list.d&#x2F;elastic-6.x.list</span><br><span class="line">sudo apt-get update</span><br></pre></td></tr></table></figure>
+<h4 id="3-添加elastic库并更新apt-get库"><a href="#3-添加elastic库并更新apt-get库" class="headerlink" title="3. 添加elastic库并更新apt-get库"></a>3. 添加elastic库并更新apt-get库</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">echo &quot;deb https:&#x2F;&#x2F;artifacts.elastic.co&#x2F;packages&#x2F;6.x&#x2F;apt stable main&quot; | sudo tee -a &#x2F;etc&#x2F;apt&#x2F;sources.list.d&#x2F;elastic-6.x.list</span><br><span class="line">sudo apt-get update</span><br></pre></td></tr></table></figure>
 
-<h5 id="4-安装Filebeat及相关配置"><a href="#4-安装Filebeat及相关配置" class="headerlink" title="4. 安装Filebeat及相关配置"></a>4. 安装Filebeat及相关配置</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install -y filebeat</span><br><span class="line">sudo vi &#x2F;etc&#x2F;filebeat&#x2F;filebeat.yml</span><br></pre></td></tr></table></figure>
+<h4 id="4-安装Filebeat及相关配置"><a href="#4-安装Filebeat及相关配置" class="headerlink" title="4. 安装Filebeat及相关配置"></a>4. 安装Filebeat及相关配置</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install -y filebeat</span><br><span class="line">sudo vi &#x2F;etc&#x2F;filebeat&#x2F;filebeat.yml</span><br></pre></td></tr></table></figure>
 
 <p><strong>相关配置</strong></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">filebeat.inputs:</span><br><span class="line">- type: log</span><br><span class="line">  enabled: true</span><br><span class="line">  paths:</span><br><span class="line">    - &#x2F;var&#x2F;log&#x2F;simple-flask.log</span><br><span class="line">    #- c:\programdata\elasticsearch\logs\*</span><br><span class="line"></span><br><span class="line">  fields:</span><br><span class="line">    region: Beijing</span><br><span class="line">    type: log</span><br><span class="line"></span><br><span class="line">output.logstash:</span><br><span class="line">  hosts: [&quot;&lt;logstash_ip&gt;:5044&quot;]</span><br><span class="line">  bulk_max_size: 2048</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
-<h5 id="5-启动Filebeat"><a href="#5-启动Filebeat" class="headerlink" title="5. 启动Filebeat"></a>5. 启动Filebeat</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl start filebeat  // 启动  </span><br><span class="line">sudo systemctl <span class="built_in">enable</span> filebeat // 设置为开机启动</span><br><span class="line">sudo systemctl status filebeat // 检查服务状态</span><br></pre></td></tr></table></figure>
+<h4 id="5-启动Filebeat"><a href="#5-启动Filebeat" class="headerlink" title="5. 启动Filebeat"></a>5. 启动Filebeat</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl start filebeat  // 启动  </span><br><span class="line">sudo systemctl <span class="built_in">enable</span> filebeat // 设置为开机启动</span><br><span class="line">sudo systemctl status filebeat // 检查服务状态</span><br></pre></td></tr></table></figure>
 
-<h5 id="5-kibana-配置"><a href="#5-kibana-配置" class="headerlink" title="5. kibana 配置"></a>5. kibana 配置</h5><ul>
+<h4 id="6-kibana-配置"><a href="#6-kibana-配置" class="headerlink" title="6. kibana 配置"></a>6. kibana 配置</h4><ul>
 <li><ol>
 <li>点击左侧management，选择Kibana菜单中的”Index Patterns”，创建”Index Pattern”。</li>
 </ol>

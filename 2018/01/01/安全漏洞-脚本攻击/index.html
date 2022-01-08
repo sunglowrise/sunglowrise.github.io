@@ -374,9 +374,9 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h4 id="1、sql中值用-代替"><a href="#1、sql中值用-代替" class="headerlink" title="1、sql中值用#代替$"></a>1、sql中值用#代替$</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">如：SELECT * FROM orginfo WHERE fname LIKE &#39;%$众华$%&#39; 存在安全漏洞，</span><br><span class="line">应修改为SELECT * FROM orginfo WHERE fname LIKE &#39;%#众华#%&#39;</span><br></pre></td></tr></table></figure>
+                <h3 id="1、sql中值用-代替"><a href="#1、sql中值用-代替" class="headerlink" title="1、sql中值用#代替$"></a>1、sql中值用#代替$</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">如：SELECT * FROM orginfo WHERE fname LIKE &#39;%$众华$%&#39; 存在安全漏洞，</span><br><span class="line">应修改为SELECT * FROM orginfo WHERE fname LIKE &#39;%#众华#%&#39;</span><br></pre></td></tr></table></figure>
 
-<h4 id="2、关闭不安全的http-方法"><a href="#2、关闭不安全的http-方法" class="headerlink" title="2、关闭不安全的http 方法"></a>2、关闭不安全的http 方法</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 关闭不安全的http 方法 --&gt;</span><br><span class="line">&lt;security-constraint&gt;</span><br><span class="line">&lt;web-resource-collection&gt;</span><br><span class="line">&lt;web-resource-name&gt;anyname&lt;&#x2F;web-resource-name&gt;</span><br><span class="line">&lt;url-pattern&gt;&#x2F;*&lt;&#x2F;url-pattern&gt;</span><br><span class="line">&lt;http-method&gt;PUT&lt;&#x2F;http-method&gt;</span><br><span class="line">&lt;http-method&gt;DELETE&lt;&#x2F;http-method&gt;</span><br><span class="line">&lt;http-method&gt;HEAD&lt;&#x2F;http-method&gt;</span><br><span class="line">&lt;http-method&gt;OPTIONS&lt;&#x2F;http-method&gt;</span><br><span class="line">&lt;http-method&gt;TRACE&lt;&#x2F;http-method&gt;</span><br><span class="line">&lt;&#x2F;web-resource-collection&gt;</span><br><span class="line">&lt;auth-constraint&gt;</span><br><span class="line">&lt;&#x2F;auth-constraint&gt;    </span><br><span class="line"> &lt;&#x2F;security-constraint&gt;    </span><br><span class="line"> &lt;login-config&gt;    </span><br><span class="line">   &lt;auth-method&gt;BASIC&lt;&#x2F;auth-method&gt;    </span><br><span class="line"> &lt;&#x2F;login-config&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="2、关闭不安全的http-方法"><a href="#2、关闭不安全的http-方法" class="headerlink" title="2、关闭不安全的http 方法"></a>2、关闭不安全的http 方法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 关闭不安全的http 方法 --&gt;</span><br><span class="line">&lt;security-constraint&gt;</span><br><span class="line">&lt;web-resource-collection&gt;</span><br><span class="line">&lt;web-resource-name&gt;anyname&lt;&#x2F;web-resource-name&gt;</span><br><span class="line">&lt;url-pattern&gt;&#x2F;*&lt;&#x2F;url-pattern&gt;</span><br><span class="line">&lt;http-method&gt;PUT&lt;&#x2F;http-method&gt;</span><br><span class="line">&lt;http-method&gt;DELETE&lt;&#x2F;http-method&gt;</span><br><span class="line">&lt;http-method&gt;HEAD&lt;&#x2F;http-method&gt;</span><br><span class="line">&lt;http-method&gt;OPTIONS&lt;&#x2F;http-method&gt;</span><br><span class="line">&lt;http-method&gt;TRACE&lt;&#x2F;http-method&gt;</span><br><span class="line">&lt;&#x2F;web-resource-collection&gt;</span><br><span class="line">&lt;auth-constraint&gt;</span><br><span class="line">&lt;&#x2F;auth-constraint&gt;    </span><br><span class="line"> &lt;&#x2F;security-constraint&gt;    </span><br><span class="line"> &lt;login-config&gt;    </span><br><span class="line">   &lt;auth-method&gt;BASIC&lt;&#x2F;auth-method&gt;    </span><br><span class="line"> &lt;&#x2F;login-config&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
                 
             </div>
             <hr/>
@@ -666,13 +666,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2018/01/01/%E6%89%93%E5%BC%80%E5%BE%AE%E4%BF%A1/">
+                <a href="/2018/01/01/%E6%95%B0%E5%AD%97%E7%AD%BE%E5%90%8D/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="打开微信">
+                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="数字签名">
                         
-                        <span class="card-title">打开微信</span>
+                        <span class="card-title">数字签名</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -696,12 +696,12 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Android/">
-                        <span class="chip bg-color">Android</span>
+                    <a href="/tags/Java/">
+                        <span class="chip bg-color">Java</span>
                     </a>
                     
-                    <a href="/tags/WeChat/">
-                        <span class="chip bg-color">WeChat</span>
+                    <a href="/tags/PKI/">
+                        <span class="chip bg-color">PKI</span>
                     </a>
                     
                 </div>

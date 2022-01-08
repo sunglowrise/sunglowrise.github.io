@@ -262,75 +262,20 @@
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2018/01/01/OGNL-%EF%BF%BD#%01%25%EF%BF%BD$&%EF%BF%BD/">
+                    <a href="/2018/01/01/%E8%AF%BB%E5%8F%96properties%E6%96%87%E4%BB%B6/">
                         <div class="card-image">
                             
                             
-                            <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="OGNL中的#、%和$符号">
+                            <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="读取properties文件">
                             
-                            <span class="card-title">OGNL中的#、%和$符号</span>
+                            <span class="card-title">读取properties文件</span>
                         </div>
                     </a>
 
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                1．#符号的三种用法
-1231）访问非根对象属性，例如示例中的#session.msg表达式，由于Struts 2中值栈被视为根对象，所以访问其他非根对象时，需要加#前缀。实际上，#相当于ActionContext. getContext(
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2018-01-01
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-user fa-fw"></i>
-                                Murray
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/Web/">
-                            <span class="chip bg-color">Web</span>
-                        </a>
-                        
-                        <a href="/tags/Java/">
-                            <span class="chip bg-color">Java</span>
-                        </a>
-                        
-                        <a href="/tags/OGNL/">
-                            <span class="chip bg-color">OGNL</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-            
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2018/01/01/RSA%E7%AE%97%E6%B3%95%E4%BB%8B%E7%BB%8D%E5%8F%8AJAVA%E5%AE%9E%E7%8E%B0%E8%AF%A6%E8%A7%A3/">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="RSA算法介绍及JAVA实现详解">
-                            
-                            <span class="card-title">RSA算法介绍及JAVA实现详解</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                &lt;一&gt;基础
-RSA算法非常简单，概述如下：找两素数p和q取n=pq取t=(p-1)(q-1)取任何一个数e,要求满足e&lt;t并且e与t互素（就是最大公因数为1）取d*e%t==1
-这样最终得到三个数： n d e
-设消息为数
+                                spring中配置方法一：12345678910&lt;!-- 读取配置文件 --&gt;    &lt;bean id&#x3D;&quot;propertyConfigurer&quot; class&#x3D;&quot;org.sp
                             
                         </div>
                         <div class="publish-info">
@@ -353,8 +298,8 @@ RSA算法非常简单，概述如下：找两素数p和q取n=pq取t=(p-1)(q-1)�
                             <span class="chip bg-color">Java</span>
                         </a>
                         
-                        <a href="/tags/PKI/">
-                            <span class="chip bg-color">PKI</span>
+                        <a href="/tags/Spring/">
+                            <span class="chip bg-color">Spring</span>
                         </a>
                         
                     </div>
@@ -364,21 +309,21 @@ RSA算法非常简单，概述如下：找两素数p和q取n=pq取t=(p-1)(q-1)�
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2018/01/01/Redirect%E5%92%8CDispatcher%20%E5%8C%BA%E5%88%AB/">
+                    <a href="/2018/01/01/%E8%BF%87%E6%BB%A4%E5%99%A8%E4%B8%8E%E6%8B%A6%E6%88%AA%E5%99%A8%E7%9A%84%E5%8C%BA%E5%88%AB/">
                         <div class="card-image">
                             
                             
-                            <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="Redirect和Dispatcher 区别">
+                            <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="过滤器与拦截器的区别">
                             
-                            <span class="card-title">Redirect和Dispatcher 区别</span>
+                            <span class="card-title">过滤器与拦截器的区别</span>
                         </div>
                     </a>
 
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                Redirect和Dispatcher 区别
-使用forward是服务跳转，浏览器不知道它所请求的具体资源来源，浏览器的地址栏不会变；使用redirect，服务端根据逻辑,发送一个状态码,告诉浏览器重新去请求那个地址.所以地址栏显示的是新的
+                                java web 过滤器跟拦截器的区别和使用1、首先要明确什么是拦截器、什么是过滤器
+什么是拦截器：拦截器，在AOP（Aspect-Oriented Programming）中用于在某个方法或字段被访问之前，进行拦截然后在之前或之后加入某些
                             
                         </div>
                         <div class="publish-info">
@@ -412,20 +357,67 @@ RSA算法非常简单，概述如下：找两素数p和q取n=pq取t=(p-1)(q-1)�
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2018/01/01/java%20native%E6%96%B9%E6%B3%95%E5%8F%8AJNI%E5%AE%9E%E4%BE%8B/">
+                    <a href="/2018/01/01/Excel%E6%93%8D%E4%BD%9C/">
                         <div class="card-image">
                             
                             
-                            <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="java native方法及JNI实例">
+                            <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="Excel操作">
                             
-                            <span class="card-title">java native方法及JNI实例</span>
+                            <span class="card-title">Excel操作</span>
                         </div>
                     </a>
 
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                1.参考文献：http://blog.csdn.net/youjianbo_han_87/article/details/2586375http://blog.csdn.net/yangjiali014/article/details/16
+                                创建Excel12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2018-01-01
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-user fa-fw"></i>
+                                Murray
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/Java/">
+                            <span class="chip bg-color">Java</span>
+                        </a>
+                        
+                        <a href="/tags/POI/">
+                            <span class="chip bg-color">POI</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2018/01/01/HASH%E7%AE%97%E6%B3%95/">
+                        <div class="card-image">
+                            
+                            
+                            <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="HASH算法">
+                            
+                            <span class="card-title">HASH算法</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                获取文档hash1234567891011121314151617181920212223242526272829303132333435363738394041&#x2F;**    * 描述：获取文档hash    *    * @au
                             
                         </div>
                         <div class="publish-info">
@@ -455,21 +447,21 @@ RSA算法非常简单，概述如下：找两素数p和q取n=pq取t=(p-1)(q-1)�
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2018/01/01/java%E5%8A%A0%E5%AF%86%E4%B8%8E%E6%95%B0%E5%AD%97%E8%AF%81%E4%B9%A6/">
+                    <a href="/2018/01/01/JVM%E5%8E%9F%E7%90%86%E8%AE%B2%E8%A7%A3%E5%92%8C%E8%B0%83%E4%BC%98/">
                         <div class="card-image">
                             
                             
-                            <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="java加密与数字证书">
+                            <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="JVM原理讲解和调优">
                             
-                            <span class="card-title">java加密与数字证书</span>
+                            <span class="card-title">JVM原理讲解和调优</span>
                         </div>
                     </a>
 
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                数字摘要数字摘要就是采用单项Hash函数将需要加密的明文“摘要”成一串固定长度（128位）的密文，这一串密文又称为数字指纹，HASH值或摘要值 ，它有固定的长度，而且不同的明文摘要成密文，其结果总是不同的，而同样的明文其摘要必定一致。
-目前
+                                JVM原理讲解和调优原文：https://blog.csdn.net/hjxgood/article/details/53896229
+一、什么是JVMJVM是Java Virtual Machine（Java虚拟机）的缩写，JVM是一种用
                             
                         </div>
                         <div class="publish-info">
@@ -492,8 +484,8 @@ RSA算法非常简单，概述如下：找两素数p和q取n=pq取t=(p-1)(q-1)�
                             <span class="chip bg-color">Java</span>
                         </a>
                         
-                        <a href="/tags/PKI/">
-                            <span class="chip bg-color">PKI</span>
+                        <a href="/tags/Jvm/">
+                            <span class="chip bg-color">Jvm</span>
                         </a>
                         
                     </div>
@@ -503,111 +495,23 @@ RSA算法非常简单，概述如下：找两素数p和q取n=pq取t=(p-1)(q-1)�
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2018/01/01/java%E7%BA%BF%E7%A8%8B%E4%BB%8B%E7%BB%8D/">
+                    <a href="/2018/01/01/Struts2+Spring3+Mybatis3%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/">
                         <div class="card-image">
                             
                             
-                            <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="java线程介绍">
+                            <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="Struts2+Spring3+Mybatis3开发环境搭建">
                             
-                            <span class="card-title">java线程介绍</span>
+                            <span class="card-title">Struts2+Spring3+Mybatis3开发环境搭建</span>
                         </div>
                     </a>
 
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                1、new Thread123456new Thread(new Runnable() &#123; @Overridepublic void run() &#123;&#x2F;&#x2F; TODO Auto-generated met
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2018-01-01
-                            </span>
-                            <span class="publish-author">
                                 
-                                <i class="fas fa-user fa-fw"></i>
-                                Murray
-                                
-                            </span>
-                        </div>
-                    </div>
+Struts2+Spring3+Mybatis3开发环境搭建http://blog.csdn.net/shan9liang/article/details/9079567
 
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/Java/">
-                            <span class="chip bg-color">Java</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-            
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2018/01/01/quartz%E5%AE%9A%E6%97%B6%E5%99%A8%E9%85%8D%E7%BD%AE/">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="quartz定时器配置">
-                            
-                            <span class="card-title">quartz定时器配置</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                quartz的配置文件spring-quartz.xml：
-12345678910111213141516171819202122232425262728293031323334353637383940414243444546&lt;?xm
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2018-01-01
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-user fa-fw"></i>
-                                Murray
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/Java/">
-                            <span class="chip bg-color">Java</span>
-                        </a>
-                        
-                        <a href="/tags/Quartz/">
-                            <span class="chip bg-color">Quartz</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-            
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2018/01/01/session%E5%91%A8%E6%9C%9F/">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="session周期">
-                            
-                            <span class="card-title">session周期</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                12345678910111213141516//获取session超时时间Session session = SecurityUtils.getSubject().getSession();long timeout = session.g
+Struts2+Spring3+Mybatis3开发环境搭建环境
                             
                         </div>
                         <div class="publish-info">
@@ -637,21 +541,20 @@ RSA算法非常简单，概述如下：找两素数p和q取n=pq取t=(p-1)(q-1)�
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2018/01/01/%E5%85%AC%E7%A7%81%E9%92%A5%E7%94%9F%E6%88%90/">
+                    <a href="/2018/01/01/java%E6%8A%80%E6%9C%AF%E6%A0%88/">
                         <div class="card-image">
                             
                             
-                            <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="公私钥生成">
+                            <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="java技术栈">
                             
-                            <span class="card-title">公私钥生成</span>
+                            <span class="card-title">java技术栈</span>
                         </div>
                     </a>
 
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                1、字符串生成公钥对象 PublicKey
-1234567891011121314151617181920212223242526&#x2F;**  * 实例化公钥  *   * @return  *&#x2F; private Publi
+                                123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646
                             
                         </div>
                         <div class="publish-info">
@@ -674,8 +577,104 @@ RSA算法非常简单，概述如下：找两素数p和q取n=pq取t=(p-1)(q-1)�
                             <span class="chip bg-color">Java</span>
                         </a>
                         
-                        <a href="/tags/PKI/">
-                            <span class="chip bg-color">PKI</span>
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2018/01/01/log4j%E8%AF%A6%E7%BB%86%E9%85%8D%E7%BD%AE/">
+                        <div class="card-image">
+                            
+                            
+                            <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="log4j详细配置">
+                            
+                            <span class="card-title">log4j详细配置</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                Slf4j简单日志输出1234567891011import org.slf4j.Logger;import org.slf4j.LoggerFactory;public class TestLog &#123;private static
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2018-01-01
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-user fa-fw"></i>
+                                Murray
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/Web/">
+                            <span class="chip bg-color">Web</span>
+                        </a>
+                        
+                        <a href="/tags/Java/">
+                            <span class="chip bg-color">Java</span>
+                        </a>
+                        
+                        <a href="/tags/Log/">
+                            <span class="chip bg-color">Log</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2018/01/01/%E4%BA%8C%E7%BB%B4%E7%A0%81QRCode/">
+                        <div class="card-image">
+                            
+                            
+                            <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="二维码QRCode">
+                            
+                            <span class="card-title">二维码QRCode</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                二维码概念二维码是一种采用黑白相间的平面几何图形通过相应的编码算法来记录文字、图片、网址等信息的条码图片。
+二维码特点：
+高密度编码，信息容量大  可容纳多达1850个大写字母或2710个数字或1108个字节，或500多个汉字，比普通条码信
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2018-01-01
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-user fa-fw"></i>
+                                Murray
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/Java/">
+                            <span class="chip bg-color">Java</span>
+                        </a>
+                        
+                        <a href="/tags/Qrcode/">
+                            <span class="chip bg-color">Qrcode</span>
                         </a>
                         
                     </div>
@@ -700,7 +699,7 @@ RSA算法非常简单，概述如下：找两素数p和q取n=pq取t=(p-1)(q-1)�
             
         </div>
         <div class="page-info col m4 l4 hide-on-small-only">
-            <div class="center-align b-text-gray">27 / 29</div>
+            <div class="center-align b-text-gray">27 / 28</div>
         </div>
         <div class="col s6 m4 l4">
             

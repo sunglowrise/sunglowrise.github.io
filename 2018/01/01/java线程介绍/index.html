@@ -370,11 +370,11 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h5 id="1、new-Thread"><a href="#1、new-Thread" class="headerlink" title="1、new Thread"></a>1、new Thread</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">new Thread(new Runnable() &#123;</span><br><span class="line"> @Override</span><br><span class="line">public void run() &#123;</span><br><span class="line">&#x2F;&#x2F; TODO Auto-generated method stub</span><br><span class="line">&#125;</span><br><span class="line">&#125;).start();</span><br></pre></td></tr></table></figure>
+                <h3 id="1、new-Thread"><a href="#1、new-Thread" class="headerlink" title="1、new Thread"></a>1、new Thread</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">new Thread(new Runnable() &#123;</span><br><span class="line"> @Override</span><br><span class="line">public void run() &#123;</span><br><span class="line">&#x2F;&#x2F; TODO Auto-generated method stub</span><br><span class="line">&#125;</span><br><span class="line">&#125;).start();</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>new Thread的弊端如下：<br>a. 每次new Thread新建对象性能差。<br>b. 线程缺乏统一管理，可能无限制新建线程，相互之间竞争，及可能占用过多系统资源导致死机或oom(内存溢出)。<br>c. 缺乏更多功能，如定时执行、定期执行、线程中断。<br>相比new Thread，Java提供的四种线程池的好处在于：<br>a. 重用存在的线程，减少对象创建、消亡的开销，性能佳。<br>b. 可有效控制最大并发线程数，提高系统资源的使用率，同时避免过多资源竞争，避免堵塞。<br>c. 提供定时执行、定期执行、单线程、并发数控制等功能。</p>
 </blockquote>
-<h5 id="2、Java-线程池"><a href="#2、Java-线程池" class="headerlink" title="2、Java 线程池"></a>2、Java 线程池</h5><blockquote>
+<h3 id="2、Java-线程池"><a href="#2、Java-线程池" class="headerlink" title="2、Java 线程池"></a>2、Java 线程池</h3><blockquote>
 <p>Java通过Executors提供四种线程池，分别为：</p>
 </blockquote>
 <blockquote>
@@ -423,14 +423,14 @@
 <blockquote>
 <p>结果依次输出，相当于顺序执行各个任务。<br>现行大多数GUI程序都是单线程的。Android中单线程可用于数据库操作，文件操作，应用批量安装，应用批量删除等不适合并发但可能IO阻塞性及影响UI线程响应的操作。</p>
 </blockquote>
-<h5 id="线程池的作用："><a href="#线程池的作用：" class="headerlink" title="线程池的作用："></a>线程池的作用：</h5><blockquote>
+<h3 id="线程池的作用："><a href="#线程池的作用：" class="headerlink" title="线程池的作用："></a>线程池的作用：</h3><blockquote>
 <p>线程池作用就是限制系统中执行线程的数量。根据系统的环境情况，可以自动或手动设置线程数量，达到运行的最佳效果；少了浪费了系统资源，多了造成系统拥挤效率不高。用线程池控制线程数量，其他线程排队等候。一个任务执行完毕，再从队列的中取最前面的任务开始执行。若队列中没有等待进程，线程池的这一资源处于等待。当一个新任务需要运行时，如果线程池 中有等待的工作线程，就可以开始运行了；否则进入等待队列。</p>
 </blockquote>
-<h5 id="为什么要用线程池"><a href="#为什么要用线程池" class="headerlink" title="为什么要用线程池:"></a>为什么要用线程池:</h5><ol>
+<h3 id="为什么要用线程池"><a href="#为什么要用线程池" class="headerlink" title="为什么要用线程池:"></a>为什么要用线程池:</h3><ol>
 <li>减少了创建和销毁线程的次数，每个工作线程都可以被重复利用，可执行多个任务。</li>
 <li>可以根据系统的承受能力，调整线程池中工作线线程的数目，防止因为消耗过多的内存，而把服务器累趴下(每个线程需要大约1MB内存，线程开的越多，消耗的内存也就越大，最后死机)。<br>Java里面线程池的顶级接口是Executor，但是严格意义上讲Executor并不是一个线程池，而只是一个执行线程的工具。真正的线程池接口是ExecutorService。</li>
 </ol>
-<h5 id="比较重要的几个类："><a href="#比较重要的几个类：" class="headerlink" title="比较重要的几个类："></a>比较重要的几个类：</h5><blockquote>
+<h3 id="比较重要的几个类："><a href="#比较重要的几个类：" class="headerlink" title="比较重要的几个类："></a>比较重要的几个类：</h3><blockquote>
 <p>ExecutorService：真正的线程池接口。<br><br>ScheduledExecutorService：能和Timer/TimerTask类似，解决那些需要任务重复执行的问题。<br><br>ThreadPoolExecutor：ExecutorService的默认实现。<br><br>ScheduledThreadPoolExecutor：继承ThreadPoolExecutor的ScheduledExecutorService接口实现，周期性任务调度的类实现。</p>
 </blockquote>
 <p>要配置一个线程池是比较复杂的，尤其是对于线程池的原理不是很清楚的情况下，很有可能配置的线程池不是较优的，因此在Executors类里面提供了一些静态工厂，生成一些常用的线程池。</p>
@@ -440,7 +440,7 @@
 <li>newCachedThreadPool<br>创建一个可缓存的线程池。如果线程池的大小超过了处理任务所需要的线程，<br>那么就会回收部分空闲（60秒不执行任务）的线程，当任务数增加时，此线程池又可以智能的添加新线程来处理任务。此线程池不会对线程池大小做限制，线程池大小完全依赖于操作系统（或者说JVM）能够创建的最大线程大小。</li>
 <li>newScheduledThreadPool<br>创建一个大小无限的线程池。此线程池支持定时以及周期性执行任务的需求。</li>
 </ol>
-<h5 id="3、SpringMVC整合TaskExecutor线程池的配置-使用"><a href="#3、SpringMVC整合TaskExecutor线程池的配置-使用" class="headerlink" title="3、SpringMVC整合TaskExecutor线程池的配置/使用"></a>3、SpringMVC整合TaskExecutor线程池的配置/使用</h5><p>①配置jdbc.properties添加：</p>
+<h3 id="3、SpringMVC整合TaskExecutor线程池的配置-使用"><a href="#3、SpringMVC整合TaskExecutor线程池的配置-使用" class="headerlink" title="3、SpringMVC整合TaskExecutor线程池的配置/使用"></a>3、SpringMVC整合TaskExecutor线程池的配置/使用</h3><p>①配置jdbc.properties添加：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">#------------ Task ------------</span><br><span class="line">task.core_pool_size&#x3D;5</span><br><span class="line">task.max_pool_size&#x3D;50</span><br><span class="line">task.queue_capacity&#x3D;1000</span><br><span class="line">task.keep_alive_seconds&#x3D;60</span><br></pre></td></tr></table></figure>
 <p>②配置Spring的applicationContext.xml添加：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;bean id&#x3D;&quot;taskExecutor&quot; class&#x3D;&quot;org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor&quot;&gt;</span><br><span class="line">	&lt;!-- 核心线程数 --&gt;	 </span><br><span class="line">	&lt;property name&#x3D;&quot;corePoolSize&quot; value&#x3D;&quot;$&#123;task.core_pool_size&#125;&quot; &#x2F;&gt;</span><br><span class="line">	&lt;!-- 最大线程数 --&gt;  </span><br><span class="line">	&lt;property name&#x3D;&quot;maxPoolSize&quot; value&#x3D;&quot;$&#123;task.max_pool_size&#125;&quot; &#x2F;&gt;</span><br><span class="line">	&lt;!-- 队列最大长度 --&gt;</span><br><span class="line">	&lt;property name&#x3D;&quot;queueCapacity&quot; value&#x3D;&quot;$&#123;task.queue_capacity&#125;&quot; &#x2F;&gt;</span><br><span class="line">	&lt;!-- 线程池维护线程所允许的空闲时间，默认为60s --&gt;</span><br><span class="line">	&lt;property name&#x3D;&quot;keepAliveSeconds&quot; value&#x3D;&quot;$&#123;task.keep_alive_seconds&#125;&quot; &#x2F;&gt;</span><br><span class="line">&lt;&#x2F;bean&gt;</span><br><span class="line">&lt;!-- 注解式 --&gt;</span><br><span class="line">&lt;task:annotation-driven &#x2F;&gt;</span><br></pre></td></tr></table></figure>

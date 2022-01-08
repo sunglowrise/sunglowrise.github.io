@@ -402,7 +402,7 @@
 <li><p>创建表结构</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">Base &#x3D; declarative_base() # 声明基础类</span><br><span class="line"></span><br><span class="line">class User(Base):</span><br><span class="line">    __tablename__ &#x3D; &#39;user&#39;  # 表名称</span><br><span class="line">    id &#x3D; Column(Integer, primary_key&#x3D;True)</span><br><span class="line">    u_id &#x3D; Column(Integer, nullable&#x3D;False)</span><br><span class="line">    u_name &#x3D; Column(String(32), nullable&#x3D;False)</span><br><span class="line">    u_pass &#x3D; Column(String(32), nullable&#x3D;False)</span><br><span class="line"></span><br><span class="line"># Base.metadata.create_all(engine)</span><br><span class="line"># Base.metadata.drop_all(engine)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <blockquote>
-<p>注意：多次执行，不会重复创建，若DB中有该表，那么只是将该表的“表结构”映射给 class；（对表的操作，必须有该表的表结构）</p>
+<p>注意：多次执行，不会重复创建，若DB中有该表，那么只是将该表的”表结构”映射给 class；（对表的操作，必须有该表的表结构）</p>
 </blockquote>
 </li>
 </ul>

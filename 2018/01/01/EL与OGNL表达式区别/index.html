@@ -402,7 +402,7 @@
 <blockquote>
 <p>标识符</p>
 </blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">例:</span><br><span class="line">$&#123;abc&#125; 相当于&lt;%&#x3D;pageContext.findAttribute(“abc”)%&gt;</span><br><span class="line">$&#123;og_1&#125; &lt;%&#x3D;pageContext.findAttribute(“og_1”)%&gt; 就是说&#123;&#125;内的标识符除了11个保留字之外都表示作用域中的数据对应的名.</span><br><span class="line"></span><br><span class="line">$&#123;requestScope&#125;中的requestScope是11个EL隐式对象之一,它不再表示作用域中数据,而是表示request作用域;</span><br><span class="line"></span><br><span class="line">EL隐藏对象</span><br><span class="line">pageContext  PageContext 实例对应于当前页面的处理</span><br><span class="line">pageScope  与页面作用域属性的名称和值相关联的Map类</span><br><span class="line">requestScope 与请求作用域属性的名称和值相关联的Map类</span><br><span class="line">sessionScope 与会话作用域属性的名称和值相关联的Map类</span><br><span class="line">applicationScope 与应用程序作用域属性的名称和值相关联的Map类</span><br><span class="line">param  按名称存储请求参数的主要值的 Map 类</span><br><span class="line">paramValues 将请求参数的所有值作为 String 数组存储的 Map 类</span><br><span class="line">Header  按名称存储请求头主要值的 Map 类</span><br><span class="line">headerValues 将请求头的所有值作为 String 数组存储的 Map 类</span><br><span class="line">cookie  按名称存储请求附带的 cookie 的 Map 类</span><br><span class="line">initParam  按名称存储 Web 应用程序上下文初始化参数的Map类</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">例:</span><br><span class="line">$&#123;abc&#125; 相当于&lt;%&#x3D;pageContext.findAttribute(&quot;abc&quot;)%&gt;</span><br><span class="line">$&#123;og_1&#125; &lt;%&#x3D;pageContext.findAttribute(&quot;og_1&quot;)%&gt; 就是说&#123;&#125;内的标识符除了11个保留字之外都表示作用域中的数据对应的名.</span><br><span class="line"></span><br><span class="line">$&#123;requestScope&#125;中的requestScope是11个EL隐式对象之一,它不再表示作用域中数据,而是表示request作用域;</span><br><span class="line"></span><br><span class="line">EL隐藏对象</span><br><span class="line">pageContext  PageContext 实例对应于当前页面的处理</span><br><span class="line">pageScope  与页面作用域属性的名称和值相关联的Map类</span><br><span class="line">requestScope 与请求作用域属性的名称和值相关联的Map类</span><br><span class="line">sessionScope 与会话作用域属性的名称和值相关联的Map类</span><br><span class="line">applicationScope 与应用程序作用域属性的名称和值相关联的Map类</span><br><span class="line">param  按名称存储请求参数的主要值的 Map 类</span><br><span class="line">paramValues 将请求参数的所有值作为 String 数组存储的 Map 类</span><br><span class="line">Header  按名称存储请求头主要值的 Map 类</span><br><span class="line">headerValues 将请求头的所有值作为 String 数组存储的 Map 类</span><br><span class="line">cookie  按名称存储请求附带的 cookie 的 Map 类</span><br><span class="line">initParam  按名称存储 Web 应用程序上下文初始化参数的Map类</span><br></pre></td></tr></table></figure>
 
 <blockquote>
 <p>EL存取器: 存取器用来检索对象的特性或集合的元素。</p>
@@ -410,7 +410,7 @@
 <blockquote>
 <p>存取器: 通过 “[]” 或 “.” 符号获取相关数据</p>
 </blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">例:</span><br><span class="line">$&#123;userBean.suser&#125;  或  $&#123;userBean[“suser”]&#125; &#x2F;&#x2F;获取输出bean中的suser属性值;</span><br><span class="line">$&#123;mcType[“id”]&#125; &#x2F;&#x2F;获取map中key为id对应的值;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">例:</span><br><span class="line">$&#123;userBean.suser&#125;  或  $&#123;userBean[&quot;suser&quot;]&#125; &#x2F;&#x2F;获取输出bean中的suser属性值;</span><br><span class="line">$&#123;mcType[&quot;id&quot;]&#125; &#x2F;&#x2F;获取map中key为id对应的值;</span><br></pre></td></tr></table></figure>
 
 <blockquote>
 <p>EL运算符: 运算符允许对数据和文字进行组合以及比较。</p>
@@ -446,7 +446,7 @@
 <p>验证运算符(empty):对于验证数据特别有用。</p>
 </blockquote>
 <blockquote>
-<p>empty 运算符采用单个表达式作为其变量（也即，${empty input}）, 并返回一个布尔值，该布尔值表示对表达式求值的结果是不是“空”值。求值结果为 null 的表达式被认为是空，即无元素的集合或数组。</p>
+<p>empty 运算符采用单个表达式作为其变量（也即，${empty input}）, 并返回一个布尔值，该布尔值表示对表达式求值的结果是不是”空”值。求值结果为 null 的表达式被认为是空，即无元素的集合或数组。</p>
 </blockquote>
 <blockquote>
 <p>如果参数是对长度为零的 String 求值所得的结果，则 empty 运算符也将返回 true。</p>
@@ -474,7 +474,7 @@
 <blockquote>
 <p>解决上面的问题可以使用定制标记库，JSTL使JSP开发者可以减少对脚本元素的需求，甚至可以不需要它们，从而避免了相关的维护成本。使分工更明确。</p>
 </blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;% if (session.getAttribute(“user”).equals(“member”)) &#123; %&gt;</span><br><span class="line">    &lt;p&gt;Welcome, member!&lt;&#x2F;p&gt;</span><br><span class="line">&lt;% &#125; else &#123; %&gt;</span><br><span class="line">    &lt;p&gt;Welcome, guest!&lt;&#x2F;p&gt;</span><br><span class="line">&lt;% &#125; %&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;% if (session.getAttribute(&quot;user&quot;).equals(&quot;member&quot;)) &#123; %&gt;</span><br><span class="line">    &lt;p&gt;Welcome, member!&lt;&#x2F;p&gt;</span><br><span class="line">&lt;% &#125; else &#123; %&gt;</span><br><span class="line">    &lt;p&gt;Welcome, guest!&lt;&#x2F;p&gt;</span><br><span class="line">&lt;% &#125; %&gt;</span><br></pre></td></tr></table></figure>
 
 <blockquote>
 <p>JSTL一般配合EL一起使用,因此先看看EL.</p>
@@ -498,10 +498,10 @@
 <blockquote>
 <p>在jsp文件中添加</p>
 </blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;%@ taglib prefix&#x3D;“c” uri&#x3D;“http:&#x2F;&#x2F;java.sun.com&#x2F;jsp&#x2F;jstl&#x2F;core” %&gt;或&lt;%@ taglib prefix&#x3D;&quot;c&quot; uri&#x3D;&quot;&#x2F;WEB-INF&#x2F;c.tld&quot; %&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;%@ taglib prefix&#x3D;&quot;c&quot; uri&#x3D;&quot;http:&#x2F;&#x2F;java.sun.com&#x2F;jsp&#x2F;jstl&#x2F;core&quot; %&gt;或&lt;%@ taglib prefix&#x3D;&quot;c&quot; uri&#x3D;&quot;&#x2F;WEB-INF&#x2F;c.tld&quot; %&gt;</span><br></pre></td></tr></table></figure>
 
 <blockquote>
-<p>使用 <code>&lt;c:out value=“HelloWorld” /&gt;</code></p>
+<p>使用 <code>&lt;c:out value=&quot;HelloWorld&quot; /&gt;</code></p>
 </blockquote>
 <blockquote>
 <p>Core的操作作用域变量标签</p>
@@ -522,7 +522,7 @@
 <blockquote>
 <p>Core的循环控制标签</p>
 </blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">实现简单循环</span><br><span class="line">&lt;c:forEach &gt;  var&#x3D;&#39;item&#39; begin&#x3D;&#39;5&#39; end&#x3D;&#39;10&#39; step&#x3D;&#39;2‘ varStatus&#x3D;‘’</span><br><span class="line">实现迭代(遍历)</span><br><span class="line">&lt;c:forEach &gt; items&#x3D;&#39;&#39; var&#x3D;&#39;item‘ varStatus&#x3D;‘’</span><br><span class="line"></span><br><span class="line">属性varStatus和var相似设置一个作用域变量;只是varStatus作用域变量中存的是包括运行状态的对象;此对象包含如下属性:</span><br><span class="line">current  index  count  first  last  begin  end  step</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">实现简单循环</span><br><span class="line">&lt;c:forEach &gt;  var&#x3D;&#39;item&#39; begin&#x3D;&#39;5&#39; end&#x3D;&#39;10&#39; step&#x3D;&#39;2&#39; varStatus&#x3D;&#39;&#39;</span><br><span class="line">实现迭代(遍历)</span><br><span class="line">&lt;c:forEach &gt; items&#x3D;&#39;&#39; var&#x3D;&#39;item&#39; varStatus&#x3D;&#39;&#39;</span><br><span class="line"></span><br><span class="line">属性varStatus和var相似设置一个作用域变量;只是varStatus作用域变量中存的是包括运行状态的对象;此对象包含如下属性:</span><br><span class="line">current  index  count  first  last  begin  end  step</span><br></pre></td></tr></table></figure>
 
 <blockquote>
 <p>简单循环</p>
@@ -542,7 +542,7 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; 在jsp文件中添加</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jstl/fmt" %>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; 使用</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<fmt:formatDate value=“” pattern=“yyyy-MM-dd” />
+<fmt:formatDate value="" pattern="yyyy-MM-dd" />
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"> </span><br><span class="line"> </span><br><span class="line">&gt; Format常用标签</span><br><span class="line"></span><br><span class="line">&gt; 格式化输出日期:</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <fmt:formatDate > value type var pattern
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&gt; type取值:</span><br><span class="line"></span><br></pre></td></tr></table></figure>
@@ -550,10 +550,10 @@ short: 10/19/00 6:07 PM
 medium: Oct 19, 2000 6:07:01 PM
 long: October 19, 2000 6:07:01 PM MDT
 full: Thursday, October 19, 2000 6:07:01 PM MDT
-例: <fmt:formatDate value=“” pattern=“yyyy/MM/dd” />
+例: <fmt:formatDate value="" pattern="yyyy/MM/dd" />
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&gt; 格式化输出数字:</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <fmt:formatNumber> value var pattern
-例:<fmt:formatNumber value=“” pattern=“###.##” />
+例:<fmt:formatNumber value="" pattern="###.##" />
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&gt; format实例</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <%@ page language="java" contentType="text/html; charset=GBK"%>
 <%@ taglib prefix="fmt" uri="/WEB-INF/fmt.tld" %>

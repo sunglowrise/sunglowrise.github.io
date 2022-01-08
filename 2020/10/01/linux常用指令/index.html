@@ -373,7 +373,7 @@
                 <h3 id="linux常用指令"><a href="#linux常用指令" class="headerlink" title="linux常用指令"></a>linux常用指令</h3><blockquote>
 <p>参考：<a target="_blank" rel="noopener" href="https://www.runoob.com/linux/linux-comm-bzip2.html">https://www.runoob.com/linux/linux-comm-bzip2.html</a></p>
 </blockquote>
-<h4 id="文件目录类"><a href="#文件目录类" class="headerlink" title="文件目录类"></a>文件目录类</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">mkdir &lt;dir&gt;  <span class="comment"># 建立目录</span></span><br><span class="line">mkdir -p &lt;dir1&gt;/&lt;dir2&gt;/.../&lt;dirn&gt;  <span class="comment"># 建立多层目录　</span></span><br><span class="line">rmdir document_name  <span class="comment"># 删除空目录</span></span><br><span class="line"><span class="built_in">cd</span> &lt;path&gt;  <span class="comment"># 切换目录</span></span><br><span class="line"><span class="built_in">pwd</span>  <span class="comment"># 查看所在目录</span></span><br><span class="line">du -sh  <span class="comment"># 查看当前目录大小</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h4 id="文件目录类"><a href="#文件目录类" class="headerlink" title="文件目录类"></a>文件目录类</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">mkdir &lt;dir&gt;  <span class="comment"># 建立目录</span></span><br><span class="line">mkdir -p &lt;dir1&gt;/&lt;dir2&gt;/.../&lt;dirn&gt;  <span class="comment"># 建立多层目录 </span></span><br><span class="line">rmdir document_name  <span class="comment"># 删除空目录</span></span><br><span class="line"><span class="built_in">cd</span> &lt;path&gt;  <span class="comment"># 切换目录</span></span><br><span class="line"><span class="built_in">pwd</span>  <span class="comment"># 查看所在目录</span></span><br><span class="line">du -sh  <span class="comment"># 查看当前目录大小</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 <h4 id="文件类"><a href="#文件类" class="headerlink" title="文件类"></a>文件类</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">touch &lt;file_name&gt;  <span class="comment"># 新建空文件</span></span><br><span class="line">rm -rf &lt;file_or_dir&gt;  <span class="comment"># 强制删除文件或目录，包含子目录及内容，慎用</span></span><br><span class="line">ls -l <span class="comment"># 显示目录文件列表(-a：增加显示隐含目录；-l：显示详细信息；r表示反向排序，t表示按时间排序)</span></span><br><span class="line">more &lt;file&gt;  <span class="comment"># 查看文档</span></span><br><span class="line">less &lt;file&gt;  <span class="comment"># 查看文档</span></span><br><span class="line">head -n &lt;file&gt;  <span class="comment"># 查看文档，查看一个文件的最前n行</span></span><br><span class="line">tail -n &lt;file&gt;  <span class="comment"># 查看文档，查看一个文件的最后n行</span></span><br><span class="line">cat &lt;file&gt;  <span class="comment"># 查看文档，从第一个字节开始正向查看文件的内容</span></span><br><span class="line">tac &lt;file&gt;  <span class="comment"># 查看文档，从最后一行开始反向查看一个文件的内容</span></span><br><span class="line"></span><br><span class="line">cp &lt;org_file&gt; &lt;file_target&gt; <span class="comment"># 复制文件(-r：包含目录，-a：所有文件)</span></span><br></pre></td></tr></table></figure>
 
@@ -381,9 +381,9 @@
 
 <h4 id="文本处理"><a href="#文本处理" class="headerlink" title="文本处理"></a>文本处理</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">grep str &#x2F;tmp&#x2F;test  在文件 &#39;&#x2F;tmp&#x2F;test&#39; 中查找 &quot;str&quot;</span><br><span class="line">grep ^str &#x2F;tmp&#x2F;test 在文件 &#39;&#x2F;tmp&#x2F;test&#39; 中查找以 &quot;str&quot; 开始的行</span><br><span class="line">grep [0-9] &#x2F;tmp&#x2F;test 查找 &#39;&#x2F;tmp&#x2F;test&#39; 文件中所有包含数字的行</span><br><span class="line">grep str -r &#x2F;tmp&#x2F;*  在目录 &#39;&#x2F;tmp&#39; 及其子目录中查找 &quot;str&quot;</span><br><span class="line">diff file1 file2 找出两个文件的不同处</span><br><span class="line">sdiff file1 file2 以对比的方式显示两个文件的不同</span><br></pre></td></tr></table></figure>
 
-<h4 id="查找文件"><a href="#查找文件" class="headerlink" title="查找文件:"></a>查找文件:</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">grep -rn &lt;key_word&gt; &lt;file_path&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查找文件：(1)find (2)locate 命令名</span></span><br><span class="line">find / -name file  <span class="comment"># 从 &#x27;/&#x27; 开始进入根文件系统查找文件和目录</span></span><br><span class="line">find / -user user  <span class="comment"># 查找属于用户 &#x27;user&#x27; 的文件和目录</span></span><br><span class="line">find /usr/bin -<span class="built_in">type</span> f -atime +100 <span class="comment"># 查找在过去100天内未被使用过的执行文件</span></span><br><span class="line">find /usr/bin -<span class="built_in">type</span> f -mtime -10 <span class="comment"># 查找在10天内被创建或者修改过的文件</span></span><br><span class="line">find -name <span class="string">&#x27;*.[ch]&#x27;</span> | xargs grep -E <span class="string">&#x27;expr&#x27;</span> <span class="comment"># 在当前目录及其子目录所有.c和.h文件中查找 &#x27;expr&#x27;</span></span><br><span class="line">find -<span class="built_in">type</span> f -print0 | xargs -r0 grep -F <span class="string">&#x27;expr&#x27;</span> <span class="comment"># 在当前目录及其子目录的常规文件中查找 &#x27;expr&#x27;</span></span><br><span class="line">find -maxdepth 1 -<span class="built_in">type</span> f | xargs grep -F <span class="string">&#x27;expr&#x27;</span> <span class="comment"># 在当前目录中查找 &#x27;expr&#x27;</span></span><br><span class="line">find / -<span class="built_in">type</span> f -size +1024000k -<span class="built_in">exec</span> du -h &#123;&#125; \  <span class="comment"># 全盘查找大于1G的文件</span></span><br><span class="line">find . -<span class="built_in">type</span> f -size +10000k -<span class="built_in">exec</span> ls -lh &#123;&#125; \; | awk ‘&#123; <span class="built_in">print</span> <span class="variable">$8</span> “: ” <span class="variable">$5</span> &#125;’  <span class="comment"># 查找当前目录下大于10MB的文件</span></span><br><span class="line"></span><br><span class="line">locate \*.ps <span class="comment"># 寻找以 &#x27;.ps&#x27; 结尾的文件，先运行 &#x27;updatedb&#x27; 命令</span></span><br></pre></td></tr></table></figure>
+<h4 id="查找文件"><a href="#查找文件" class="headerlink" title="查找文件:"></a>查找文件:</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">grep -rn &lt;key_word&gt; &lt;file_path&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查找文件：(1)find (2)locate 命令名</span></span><br><span class="line">find / -name file  <span class="comment"># 从 &#x27;/&#x27; 开始进入根文件系统查找文件和目录</span></span><br><span class="line">find / -user user  <span class="comment"># 查找属于用户 &#x27;user&#x27; 的文件和目录</span></span><br><span class="line">find /usr/bin -<span class="built_in">type</span> f -atime +100 <span class="comment"># 查找在过去100天内未被使用过的执行文件</span></span><br><span class="line">find /usr/bin -<span class="built_in">type</span> f -mtime -10 <span class="comment"># 查找在10天内被创建或者修改过的文件</span></span><br><span class="line">find -name <span class="string">&#x27;*.[ch]&#x27;</span> | xargs grep -E <span class="string">&#x27;expr&#x27;</span> <span class="comment"># 在当前目录及其子目录所有.c和.h文件中查找 &#x27;expr&#x27;</span></span><br><span class="line">find -<span class="built_in">type</span> f -print0 | xargs -r0 grep -F <span class="string">&#x27;expr&#x27;</span> <span class="comment"># 在当前目录及其子目录的常规文件中查找 &#x27;expr&#x27;</span></span><br><span class="line">find -maxdepth 1 -<span class="built_in">type</span> f | xargs grep -F <span class="string">&#x27;expr&#x27;</span> <span class="comment"># 在当前目录中查找 &#x27;expr&#x27;</span></span><br><span class="line">find / -<span class="built_in">type</span> f -size +1024000k -<span class="built_in">exec</span> du -h &#123;&#125; \  <span class="comment"># 全盘查找大于1G的文件</span></span><br><span class="line">find . -<span class="built_in">type</span> f -size +10000k -<span class="built_in">exec</span> ls -lh &#123;&#125; \; | awk <span class="string">&#x27;&#123; print $8 &quot;: &quot; $5 &#125;&#x27;</span>  <span class="comment"># 查找当前目录下大于10MB的文件</span></span><br><span class="line"></span><br><span class="line">locate \*.ps <span class="comment"># 寻找以 &#x27;.ps&#x27; 结尾的文件，先运行 &#x27;updatedb&#x27; 命令</span></span><br></pre></td></tr></table></figure>
 
-<h4 id="压缩解压类"><a href="#压缩解压类" class="headerlink" title="压缩解压类"></a>压缩解压类</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># tar压缩</span></span><br><span class="line">tar -cvf archive.tar file  <span class="comment"># 把file打包成 archive.tar</span></span><br><span class="line">tar -cvf archive.tar file dir <span class="comment"># 把 file、dir 打包成 archive.tar</span></span><br><span class="line">tar -tf archive.tar  <span class="comment"># 显示包中的内容</span></span><br><span class="line">tar -xvf archive.tar <span class="comment"># 释放包</span></span><br><span class="line">tar -xvf archive.tar -C /tmp <span class="comment"># 把压缩包释放到/tmp目录下</span></span><br><span class="line"></span><br><span class="line">tar -zcvf archive.tar.gz file  <span class="comment"># 把file打包成 archive.tar.gz</span></span><br><span class="line">tar -zcvf archive.tar.gz file dir  <span class="comment"># 把file、dir打包成 archive.tar.gz</span></span><br><span class="line">tar -tf archive.tar.gz  <span class="comment"># 显示包中的内容</span></span><br><span class="line">tar -zxvf archive.tar.gz  <span class="comment"># 释放包</span></span><br><span class="line">tar -zxvf archive.tar.gz -C /tmp  <span class="comment"># 把压缩包释放到/tmp目录下</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># bzip2压缩</span></span><br><span class="line">bzip2 file  <span class="comment"># 压缩 file</span></span><br><span class="line">bunzip2 archive.bz2  <span class="comment"># 解压 archive.bz2</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># gzip压缩</span></span><br><span class="line">gzip file  <span class="comment"># 压缩 file</span></span><br><span class="line">gzip -9 file  <span class="comment"># 最大程度压缩 file</span></span><br><span class="line">gunzip file.gz  <span class="comment"># 解压 file.gz</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># zip压缩</span></span><br><span class="line">zip archive.zip file  <span class="comment"># 创建zip格式的压缩包</span></span><br><span class="line">zip -r archive.zip file dir  <span class="comment"># 把文件和目录压缩成zip格式的压缩包</span></span><br><span class="line">unzip archive.zip  <span class="comment"># 解压zip格式的压缩包到当前目录</span></span><br><span class="line">unzip archive.zip -d /tmp/  <span class="comment"># 解压zip格式的压缩包到 /tmp 目录</span></span><br><span class="line">unzip -o archive.zip -d /tmp/  <span class="comment"># 覆盖不提示,解压zip格式的压缩包到 /tmp 目录</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># tar命令：tar [-cxtzjvfpPN] 文件与目录</span></span><br><span class="line"><span class="comment"># tar命令参数：</span></span><br><span class="line"><span class="comment"># 　-c：建立一个压缩文件的参数指令</span></span><br><span class="line"><span class="comment"># 　-x：解开一个压缩文件的参数指令</span></span><br><span class="line"><span class="comment"># 　-t：查看 tarfile 里面的文件</span></span><br><span class="line"><span class="comment"># 　-z：是否同时具有 gzip 的属性，亦即是否需要用 gzip 压缩</span></span><br><span class="line"><span class="comment"># 　-j：是否同时具有 bzip2 的属性?亦即是否需要用 bzip2 压缩</span></span><br><span class="line"><span class="comment"># 　-v：压缩的过程中显示文件</span></span><br><span class="line"><span class="comment"># 　-f：使用档名，在 f 之后要立即接档名。</span></span><br><span class="line"><span class="comment"># 　-p：使用原文件的原来属性(属性不会依据使用者而变)</span></span><br><span class="line"><span class="comment"># 　-P：可以使用绝对路径来压缩</span></span><br><span class="line"><span class="comment"># 　-N：比后面接的日期(yyyy/mm/dd)，还要新的才会被打包进新建的文件中</span></span><br><span class="line"><span class="comment"># 　–exclude FILE：在压缩的过程中，不要将 FILE 打包</span></span><br><span class="line">``` </span><br><span class="line"></span><br><span class="line"><span class="comment">#### yum 软件工具</span></span><br><span class="line">```bash</span><br><span class="line">yum -y install [package]  <span class="comment"># 下载并安装rpm包</span></span><br><span class="line">yum localinstall [package.rpm]  <span class="comment"># 安装rpm包，使用自己的软件仓库解决所有依赖关系</span></span><br><span class="line">yum -y update  <span class="comment"># 更新当前系统中安装的所有rpm包</span></span><br><span class="line">yum update [package]  <span class="comment"># 更新一个rpm包</span></span><br><span class="line">yum remove [package]  <span class="comment"># 删除一个rpm包</span></span><br><span class="line">yum list  <span class="comment"># 列出当前系统中安装的所有包</span></span><br><span class="line">yum search [package]  <span class="comment"># 在rpm仓库中搜寻软件包</span></span><br><span class="line">yum clean [package]  <span class="comment"># 清除缓存目录（/var/cache/yum）下的软件包</span></span><br><span class="line">yum clean headers  <span class="comment"># 删除所有头文件</span></span><br><span class="line">yum clean all  <span class="comment"># 删除所有缓存的包和头文件</span></span><br></pre></td></tr></table></figure>
+<h4 id="压缩解压类"><a href="#压缩解压类" class="headerlink" title="压缩解压类"></a>压缩解压类</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># tar压缩</span></span><br><span class="line">tar -cvf archive.tar file  <span class="comment"># 把file打包成 archive.tar</span></span><br><span class="line">tar -cvf archive.tar file dir <span class="comment"># 把 file、dir 打包成 archive.tar</span></span><br><span class="line">tar -tf archive.tar  <span class="comment"># 显示包中的内容</span></span><br><span class="line">tar -xvf archive.tar <span class="comment"># 释放包</span></span><br><span class="line">tar -xvf archive.tar -C /tmp <span class="comment"># 把压缩包释放到/tmp目录下</span></span><br><span class="line"></span><br><span class="line">tar -zcvf archive.tar.gz file  <span class="comment"># 把file打包成 archive.tar.gz</span></span><br><span class="line">tar -zcvf archive.tar.gz file dir  <span class="comment"># 把file、dir打包成 archive.tar.gz</span></span><br><span class="line">tar -tf archive.tar.gz  <span class="comment"># 显示包中的内容</span></span><br><span class="line">tar -zxvf archive.tar.gz  <span class="comment"># 释放包</span></span><br><span class="line">tar -zxvf archive.tar.gz -C /tmp  <span class="comment"># 把压缩包释放到/tmp目录下</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># bzip2压缩</span></span><br><span class="line">bzip2 file  <span class="comment"># 压缩 file</span></span><br><span class="line">bunzip2 archive.bz2  <span class="comment"># 解压 archive.bz2</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># gzip压缩</span></span><br><span class="line">gzip file  <span class="comment"># 压缩 file</span></span><br><span class="line">gzip -9 file  <span class="comment"># 最大程度压缩 file</span></span><br><span class="line">gunzip file.gz  <span class="comment"># 解压 file.gz</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># zip压缩</span></span><br><span class="line">zip archive.zip file  <span class="comment"># 创建zip格式的压缩包</span></span><br><span class="line">zip -r archive.zip file dir  <span class="comment"># 把文件和目录压缩成zip格式的压缩包</span></span><br><span class="line">unzip archive.zip  <span class="comment"># 解压zip格式的压缩包到当前目录</span></span><br><span class="line">unzip archive.zip -d /tmp/  <span class="comment"># 解压zip格式的压缩包到 /tmp 目录</span></span><br><span class="line">unzip -o archive.zip -d /tmp/  <span class="comment"># 覆盖不提示,解压zip格式的压缩包到 /tmp 目录</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># tar命令：tar [-cxtzjvfpPN] 文件与目录</span></span><br><span class="line"><span class="comment"># tar命令参数：</span></span><br><span class="line"><span class="comment">#  -c：建立一个压缩文件的参数指令</span></span><br><span class="line"><span class="comment">#  -x：解开一个压缩文件的参数指令</span></span><br><span class="line"><span class="comment">#  -t：查看 tarfile 里面的文件</span></span><br><span class="line"><span class="comment">#  -z：是否同时具有 gzip 的属性，亦即是否需要用 gzip 压缩</span></span><br><span class="line"><span class="comment">#  -j：是否同时具有 bzip2 的属性?亦即是否需要用 bzip2 压缩</span></span><br><span class="line"><span class="comment">#  -v：压缩的过程中显示文件</span></span><br><span class="line"><span class="comment">#  -f：使用档名，在 f 之后要立即接档名。</span></span><br><span class="line"><span class="comment">#  -p：使用原文件的原来属性(属性不会依据使用者而变)</span></span><br><span class="line"><span class="comment">#  -P：可以使用绝对路径来压缩</span></span><br><span class="line"><span class="comment">#  -N：比后面接的日期(yyyy/mm/dd)，还要新的才会被打包进新建的文件中</span></span><br><span class="line"><span class="comment">#  –exclude FILE：在压缩的过程中，不要将 FILE 打包</span></span><br><span class="line">``` </span><br><span class="line"></span><br><span class="line"><span class="comment">#### yum 软件工具</span></span><br><span class="line">```bash</span><br><span class="line">yum -y install [package]  <span class="comment"># 下载并安装rpm包</span></span><br><span class="line">yum localinstall [package.rpm]  <span class="comment"># 安装rpm包，使用自己的软件仓库解决所有依赖关系</span></span><br><span class="line">yum -y update  <span class="comment"># 更新当前系统中安装的所有rpm包</span></span><br><span class="line">yum update [package]  <span class="comment"># 更新一个rpm包</span></span><br><span class="line">yum remove [package]  <span class="comment"># 删除一个rpm包</span></span><br><span class="line">yum list  <span class="comment"># 列出当前系统中安装的所有包</span></span><br><span class="line">yum search [package]  <span class="comment"># 在rpm仓库中搜寻软件包</span></span><br><span class="line">yum clean [package]  <span class="comment"># 清除缓存目录（/var/cache/yum）下的软件包</span></span><br><span class="line">yum clean headers  <span class="comment"># 删除所有头文件</span></span><br><span class="line">yum clean all  <span class="comment"># 删除所有缓存的包和头文件</span></span><br></pre></td></tr></table></figure>
 <h3 id="apt-软件工"><a href="#apt-软件工" class="headerlink" title="apt 软件工"></a>apt 软件工</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">apt-get install package_name  <span class="comment"># 安装/更新一个 deb 包 </span></span><br><span class="line">apt-cdrom install package_name  <span class="comment"># 从光盘安装/更新一个 deb 包 </span></span><br><span class="line">apt-get update  <span class="comment"># 升级列表中的软件包 </span></span><br><span class="line">apt-get upgrade  <span class="comment"># 升级所有已安装的软件 </span></span><br><span class="line">apt-get remove package_name  <span class="comment"># 从系统删除一个deb包 </span></span><br><span class="line">apt-get check  <span class="comment"># 确认依赖的软件仓库正确 </span></span><br><span class="line">apt-get clean  <span class="comment"># 从下载的软件包中清理缓存 </span></span><br><span class="line">apt-cache search searched-package  <span class="comment"># 返回包含所要搜索字符串的软件包名称</span></span><br></pre></td></tr></table></figure>
 
 <h4 id="网络"><a href="#网络" class="headerlink" title="网络"></a>网络</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">ifconfig eth0   <span class="comment"># 显示一个以太网卡的配置</span></span><br><span class="line">ifconfig eth0 192.168.1.1 netmask 255.255.255.0  <span class="comment"># 配置网卡的IP地址</span></span><br><span class="line">ifdown eth0  <span class="comment"># 禁用 &#x27;eth0&#x27; 网络设备</span></span><br><span class="line">ifup eth0  <span class="comment"># 启用 &#x27;eth0&#x27; 网络设备</span></span><br><span class="line">iwconfig eth1  <span class="comment"># 显示一个无线网卡的配置</span></span><br><span class="line">iwlist scan  <span class="comment"># 显示无线网络</span></span><br><span class="line">ip addr show  <span class="comment"># 显示网卡的IP地址</span></span><br></pre></td></tr></table></figure>
@@ -400,6 +400,87 @@
 <h4 id="拷贝文件"><a href="#拷贝文件" class="headerlink" title="拷贝文件"></a>拷贝文件</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cp -Rf &#x2F;home&#x2F;user&#x2F;* &#x2F;root&#x2F;temp&#x2F; # 将 &#x2F;home&#x2F;user目录下的所有东西拷到&#x2F;root&#x2F;temp&#x2F;下而不拷贝user目录本身。</span><br><span class="line">cp -Rf &#x2F;home&#x2F;user &#x2F;root&#x2F;temp&#x2F; # 将 &#x2F;home&#x2F;user目录下的所有东西拷到&#x2F;root&#x2F;temp&#x2F;下包括拷贝user目录本身。</span><br></pre></td></tr></table></figure>
 
 <h4 id="查看线程"><a href="#查看线程" class="headerlink" title="查看线程"></a>查看线程</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ps -ef | grep &lt;app&gt;</span><br><span class="line">pstack &lt;线程号&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="Linux-工具（神器）"><a href="#Linux-工具（神器）" class="headerlink" title="Linux 工具（神器）"></a>Linux 工具（神器）</h3><table>
+<thead>
+<tr>
+<th>命令</th>
+<th>说明</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>ag</td>
+<td>比grep、ack更快的递归搜索文件内容。</td>
+<td><code>ag &quot;aaa bbb&quot;</code></td>
+</tr>
+<tr>
+<td>tig</td>
+<td>字符模式下交互查看git项目，可以替代git命令。</td>
+<td><code>tig init</code></td>
+</tr>
+<tr>
+<td>mycli</td>
+<td>mysql客户端，支持语法高亮和命令补全，可替代mysql命令。</td>
+<td><code>mycli -h127.0.0.1 -uroot -p</code></td>
+</tr>
+<tr>
+<td>jq</td>
+<td>json文件处理以及格式化显示，支持高亮，可以替换python -m json.tool。</td>
+<td></td>
+</tr>
+<tr>
+<td>shellcheck</td>
+<td>shell脚本静态检查工具，能够识别语法错误以及不规范的写法。</td>
+<td><code>shellcheck demo.sh</code></td>
+</tr>
+<tr>
+<td>fzf</td>
+<td>命令行下模糊搜索工具，能够交互式智能搜索并选取文件或者内容，配合终端ctrl-r历史命令搜索简直完美。</td>
+<td></td>
+</tr>
+<tr>
+<td>PathPicker(fpp)</td>
+<td>在命令行输出中自动识别目录和文件，支持交互式，配合git非常有用。</td>
+<td>`git diff HEAD~8 –stat</td>
+</tr>
+<tr>
+<td>htop</td>
+<td>提供更美观、更方便的进程监控工具，替代top命令。</td>
+<td><code>htop</code></td>
+</tr>
+<tr>
+<td>glances</td>
+<td>更强大的 htop / top 代替者。</td>
+<td><code>glances</code></td>
+</tr>
+<tr>
+<td>axel</td>
+<td>多线程下载工具，下载文件时可以替代curl、wget。</td>
+<td><code>axel -n 20 http://centos.ustc.edu.cn/centos/7/isos/x86_64/CentOS-7-x86_64-Minimal-1511.iso</code></td>
+</tr>
+<tr>
+<td>sz/rz</td>
+<td>交互式文件传输，在多重跳板机下传输文件非常好用，不用一级一级传输。</td>
+<td></td>
+</tr>
+<tr>
+<td>cloc</td>
+<td>代码统计工具，能够统计代码的空行数、注释行、编程语言。</td>
+<td></td>
+</tr>
+<tr>
+<td>tmux</td>
+<td>终端复用工具，替代screen、nohup。</td>
+<td></td>
+</tr>
+<tr>
+<td>script/scriptreplay</td>
+<td>终端会话录制。</td>
+<td></td>
+</tr>
+</tbody></table>
+
                 
             </div>
             <hr/>
@@ -640,13 +721,13 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/10/01/linux%20%E6%9F%A5%E7%9C%8BSOCKET%E4%BD%BF%E7%94%A8%E6%83%85%E5%86%B5/">
+                <a href="/2020/10/01/find%20-mtime%E6%9D%A5%E6%89%BE%E6%9F%90%E6%9F%90%E6%97%B6%E9%97%B4%E7%82%B9%E4%B9%8B%E5%89%8D%E7%9A%84%E6%96%87%E4%BB%B6/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="linux 查看SOCKET使用情况">
+                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="find -mtime来找某某时间点之前的文件">
                         
-                        <span class="card-title">linux 查看SOCKET使用情况</span>
+                        <span class="card-title">find -mtime来找某某时间点之前的文件</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -674,10 +755,6 @@
                         <span class="chip bg-color">Linux</span>
                     </a>
                     
-                    <a href="/tags/Socket/">
-                        <span class="chip bg-color">Socket</span>
-                    </a>
-                    
                 </div>
                 
             </div>
@@ -689,13 +766,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/10/01/shell%E8%84%9A%E6%9C%AC/">
+                <a href="/2020/10/01/linux%20%E6%9F%A5%E7%9C%8BSOCKET%E4%BD%BF%E7%94%A8%E6%83%85%E5%86%B5/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="shell脚本">
+                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="linux 查看SOCKET使用情况">
                         
-                        <span class="card-title">shell脚本</span>
+                        <span class="card-title">linux 查看SOCKET使用情况</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -723,8 +800,8 @@
                         <span class="chip bg-color">Linux</span>
                     </a>
                     
-                    <a href="/tags/Shell/">
-                        <span class="chip bg-color">Shell</span>
+                    <a href="/tags/Socket/">
+                        <span class="chip bg-color">Socket</span>
                     </a>
                     
                 </div>
