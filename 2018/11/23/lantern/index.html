@@ -386,7 +386,7 @@
                 <h3 id="蓝灯（lantern），-我的邀请码：LJVPVX"><a href="#蓝灯（lantern），-我的邀请码：LJVPVX" class="headerlink" title="蓝灯（lantern）， 我的邀请码：LJVPVX"></a>蓝灯（lantern）， 我的邀请码：LJVPVX</h3><ul>
 <li><p>总的来说还算不错的VPN，简单方便。当然也有其他比较好用的VPN，如SSR，SSR可以免费试用，也可以自己搭建服务器。SSR搭建教程可以参考：<a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=h0sQGvuWcTg">https://www.youtube.com/watch?v=h0sQGvuWcTg</a> （需要翻墙观看）。</p>
 </li>
-<li><p>言归正传，购买蓝灯或者续费需要邀请码。蓝灯邀请码，使用者和邀请码拥有者都会多1个月或者3个月的期限（前提你是蓝灯的专业版使用者，这需要购买）。购买时使用邀请码，购买者和拥有者都可以多获得1个月或者3个月的免费时长。这里附上我的邀请码：LJVPVX 。蓝灯下载下载地址： <a href="https://github.com/getlantern/forum">https://github.com/getlantern/forum</a></p>
+<li><p>言归正传，购买蓝灯或者续费需要邀请码。蓝灯邀请码，使用者和邀请码拥有者都会多1个月或者3个月的期限（前提你是蓝灯的专业版使用者，这需要购买）。购买时使用邀请码，购买者和拥有者都可以多获得1个月或者3个月的免费时长。这里附上我的邀请码：LJVPVX 。蓝灯下载下载地址： <a target="_blank" rel="noopener" href="https://github.com/getlantern/forum">https://github.com/getlantern/forum</a></p>
 </li>
 <li><p>需要说明的是一个账号最多能授权三个设备，蓝灯支持Android手机设备和PC设备，因此安卓手机可以使用蓝灯，但是目前IOS尚未推出蓝灯客户端。</p>
 </li>
@@ -417,7 +417,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://github.com/sunglowrise/sunglowrise.github.io/2018/11/23/lantern/">https://github.com/sunglowrise/sunglowrise.github.io/2018/11/23/lantern/</a>
+                    <a href="https://sunglowrise.github.io/2018/11/23/lantern/">https://sunglowrise.github.io/2018/11/23/lantern/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -901,16 +901,16 @@
 
     <footer class="page-footer bg-color">
     
-    <div class="container row center-align" style="margin-bottom: 0px !important;">
+    <div class="container row center-align" style="margin-bottom: 15px !important;">
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
             
-                <span id="year">2020-2022</span>
+                <span id="year">2018-2022</span>
             
-            <span id="year">2020</span>
+            <span id="year">2018</span>
             <a href="/about" target="_blank">Murray</a>
-            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
-            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <!-- |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a> -->
             <br>
             
             
@@ -919,21 +919,63 @@
             
             
             <span id="busuanzi_container_site_pv">
-                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                &nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
                     class="white-color"></span>&nbsp;次
             </span>
             
             
             <span id="busuanzi_container_site_uv">
-                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                &nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
                     class="white-color"></span>&nbsp;人
             </span>
             
-            <br>
             
-            <br>
+            <br><span id="sitetime">载入运行时间...</span>
+            <script>
+                function siteTime() {
+                    var seconds = 1000;
+                    var minutes = seconds * 60;
+                    var hours = minutes * 60;
+                    var days = hours * 24;
+                    var years = days * 365;
+                    var today = new Date();
+                    var startYear = "2018";
+                    var startMonth = "08";
+                    var startDate = "13";
+                    var startHour = "0";
+                    var startMinute = "0";
+                    var startSecond = "0";
+                    var todayYear = today.getFullYear();
+                    var todayMonth = today.getMonth() + 1;
+                    var todayDate = today.getDate();
+                    var todayHour = today.getHours();
+                    var todayMinute = today.getMinutes();
+                    var todaySecond = today.getSeconds();
+                    var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
+                    var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+                    var diff = t2 - t1;
+                    var diffYears = Math.floor(diff / years);
+                    var diffDays = Math.floor((diff / days) - diffYears * 365);
+                    var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+                    var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) /
+                        minutes);
+                    var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours -
+                        diffMinutes * minutes) / seconds);
+                    if (startYear == todayYear) {
+                        document.getElementById("year").innerHTML = todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffDays + " 天 " + diffHours +
+                            " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    } else {
+                        document.getElementById("year").innerHTML = startYear + " - " + todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffYears + " 年 " + diffDays +
+                            " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    }
+                }
+                setInterval(siteTime, 1000);
+            </script>
             
-            <span id="icp"><img src="/medias/icp.png" style="vertical-align: text-bottom;" />
+            
+            <br><span id="icp"><img src="/medias/icp.png" style="vertical-align: text-bottom;" />
                 <a href="https://beian.miit.gov.cn" target="_blank">浙ICP备2021006498号</a>
             </span>
             

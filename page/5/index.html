@@ -262,22 +262,28 @@
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2021/04/01/Django%E9%85%8D%E7%BD%AEmongodb/">
+                    <a href="/2021/04/01/Django%20%E7%BC%93%E5%AD%98%20cache/">
                         <div class="card-image">
                             
                             
-                            <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="Django配置mongodb">
+                            <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="Django 缓存 cache">
                             
-                            <span class="card-title">Django配置mongodb</span>
+                            <span class="card-title">Django 缓存 cache</span>
                         </div>
                     </a>
 
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                添加依赖包12mongoengine&#x3D;&#x3D;0.18.2pymongo&#x3D;&#x3D;3.8.0
+                                Django中提供了6种缓存方式
+开发调试
+内存
+文件
+数据库
+Memcache缓存（python-memcached模块）
+Memcache缓存（pylibmc模块）
 
-settings.py配置123456789101112131415# 配置mongoMONGO_DATABASE 
+配置1. 开发调试1234567891011121314151617
                             
                         </div>
                         <div class="publish-info">
@@ -306,10 +312,6 @@ settings.py配置123456789101112131415# 配置mongoMONGO_DATABASE
                         
                         <a href="/tags/Django/">
                             <span class="chip bg-color">Django</span>
-                        </a>
-                        
-                        <a href="/tags/MongoDB/">
-                            <span class="chip bg-color">MongoDB</span>
                         </a>
                         
                     </div>
@@ -423,22 +425,29 @@ Excel下载12345678910111213141516171819202122232
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2021/04/01/Flask%E4%B8%8B%E8%BD%BD%E4%B8%AD%E6%96%87%E5%90%8D%E6%96%87%E4%BB%B6%E6%8A%A5%E9%94%99%E9%97%AE%E9%A2%98/">
+                    <a href="/2021/04/01/Flask%20i18n%20%E5%9B%BD%E9%99%85%E5%8C%96%E5%92%8C%E6%9C%AC%E5%9C%B0%E5%8C%96/">
                         <div class="card-image">
                             
                             
-                            <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="Flask下载中文名文件报错问题">
+                            <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="Flask i18n 国际化和本地化">
                             
-                            <span class="card-title">Flask下载中文名文件报错问题</span>
+                            <span class="card-title">Flask i18n 国际化和本地化</span>
                         </div>
                     </a>
 
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                Flask下载中文名文件
-错误
-1234567891011121314Traceback (most recent call last):  File &quot;&#x2F;root&#x2F;.virtualenvs&#x2F;lite
+                                国际化和本地化
+国际化和本地化，通常简称 I18n 和 L10n。
+
+
+Flask-Babel，它提供了一种简单使用的框架用来把应用程序翻译成不用的应用。
+
+安装 Flask-Babel：
+Linux 和 Mac 用户:
+
+1flask&#
                             
                         </div>
                         <div class="publish-info">
@@ -476,29 +485,22 @@ Excel下载12345678910111213141516171819202122232
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2021/04/01/Flask%20i18n%20%E5%9B%BD%E9%99%85%E5%8C%96%E5%92%8C%E6%9C%AC%E5%9C%B0%E5%8C%96/">
+                    <a href="/2021/04/01/Flask%E4%B8%8B%E8%BD%BD%E4%B8%AD%E6%96%87%E5%90%8D%E6%96%87%E4%BB%B6%E6%8A%A5%E9%94%99%E9%97%AE%E9%A2%98/">
                         <div class="card-image">
                             
                             
-                            <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="Flask i18n 国际化和本地化">
+                            <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="Flask下载中文名文件报错问题">
                             
-                            <span class="card-title">Flask i18n 国际化和本地化</span>
+                            <span class="card-title">Flask下载中文名文件报错问题</span>
                         </div>
                     </a>
 
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                国际化和本地化
-国际化和本地化，通常简称 I18n 和 L10n。
-
-
-Flask-Babel，它提供了一种简单使用的框架用来把应用程序翻译成不用的应用。
-
-安装 Flask-Babel：
-Linux 和 Mac 用户:
-
-1flask&#
+                                Flask下载中文名文件
+错误
+1234567891011121314Traceback (most recent call last):  File &quot;&#x2F;root&#x2F;.virtualenvs&#x2F;lite
                             
                         </div>
                         <div class="publish-info">
@@ -792,16 +794,16 @@ SocketServer 它提供了服务器重心，可以简化网络服务器的开发�
 
     <footer class="page-footer bg-color">
     
-    <div class="container row center-align" style="margin-bottom: 0px !important;">
+    <div class="container row center-align" style="margin-bottom: 15px !important;">
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
             
-                <span id="year">2020-2022</span>
+                <span id="year">2018-2022</span>
             
-            <span id="year">2020</span>
+            <span id="year">2018</span>
             <a href="/about" target="_blank">Murray</a>
-            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
-            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <!-- |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a> -->
             <br>
             
             
@@ -810,21 +812,63 @@ SocketServer 它提供了服务器重心，可以简化网络服务器的开发�
             
             
             <span id="busuanzi_container_site_pv">
-                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                &nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
                     class="white-color"></span>&nbsp;次
             </span>
             
             
             <span id="busuanzi_container_site_uv">
-                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                &nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
                     class="white-color"></span>&nbsp;人
             </span>
             
-            <br>
             
-            <br>
+            <br><span id="sitetime">载入运行时间...</span>
+            <script>
+                function siteTime() {
+                    var seconds = 1000;
+                    var minutes = seconds * 60;
+                    var hours = minutes * 60;
+                    var days = hours * 24;
+                    var years = days * 365;
+                    var today = new Date();
+                    var startYear = "2018";
+                    var startMonth = "08";
+                    var startDate = "13";
+                    var startHour = "0";
+                    var startMinute = "0";
+                    var startSecond = "0";
+                    var todayYear = today.getFullYear();
+                    var todayMonth = today.getMonth() + 1;
+                    var todayDate = today.getDate();
+                    var todayHour = today.getHours();
+                    var todayMinute = today.getMinutes();
+                    var todaySecond = today.getSeconds();
+                    var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
+                    var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+                    var diff = t2 - t1;
+                    var diffYears = Math.floor(diff / years);
+                    var diffDays = Math.floor((diff / days) - diffYears * 365);
+                    var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+                    var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) /
+                        minutes);
+                    var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours -
+                        diffMinutes * minutes) / seconds);
+                    if (startYear == todayYear) {
+                        document.getElementById("year").innerHTML = todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffDays + " 天 " + diffHours +
+                            " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    } else {
+                        document.getElementById("year").innerHTML = startYear + " - " + todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffYears + " 年 " + diffDays +
+                            " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    }
+                }
+                setInterval(siteTime, 1000);
+            </script>
             
-            <span id="icp"><img src="/medias/icp.png" style="vertical-align: text-bottom;" />
+            
+            <br><span id="icp"><img src="/medias/icp.png" style="vertical-align: text-bottom;" />
                 <a href="https://beian.miit.gov.cn" target="_blank">浙ICP备2021006498号</a>
             </span>
             
